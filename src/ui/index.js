@@ -9,3 +9,4 @@ export * from './Navbar.jsx';
 //FOOTER COMPONENT
 export * from './Footer.jsx';
 
+ 
