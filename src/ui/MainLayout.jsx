@@ -3,7 +3,7 @@
 import { Navbar } from './Navbar.jsx';
 
 //ESTILOS
-import '../styles_scss/layout_scss/MainLayout.scss';
+import '../styles_scss/layout_scss/mainLayout.scss';
 
 
 
