@@ -1,0 +1,23 @@
+@use '../base_scss/variables' as *;
+@use '../base_scss/responsive' as *;
+
+
+
+.layout-principal {
+  flex: 1;
+  padding: $espaciado-lg;
+  
+  width: 100%;
+  height: auto;
+
+  border: 1px solid $color-primario;
+  background-color: $test_fondo_color;
+
+  @include para-tablet {
+    padding: $espaciado-md;
+  }
+
+  @include para-movil {
+    padding: $espaciado-sm;
+  } 
+}

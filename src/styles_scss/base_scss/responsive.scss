@@ -1,0 +1,34 @@
+@use '../base_scss/variables' as *;
+
+
+
+@mixin para-movil {
+  @media (max-width: $ancho-maximo-movil) {
+    @content;
+  }
+}
+
+@mixin para-tablet {
+  @media (max-width: $ancho-maximo-tablet) {
+    @content;
+  }
+}
+
+@mixin para-escritorio {
+  @media (min-width: $ancho-minimo-escritorio) {
+    @content;
+  }
+}
+
+@mixin para-escritorio-grande {
+  @media (min-width: $ancho-minimo-escritorio-grande) {
+    @content;
+  }
+}
+
+@mixin desde-hasta($min, $max) {
+  @media (min-width: $min) and (max-width: $max) {
+    @content;
+  }
+}
+
