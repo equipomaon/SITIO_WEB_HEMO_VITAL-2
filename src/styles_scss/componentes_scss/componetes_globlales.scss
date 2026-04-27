@@ -2,7 +2,7 @@
 @use '../base_scss/responsive.scss' as *;
 
 // ==============================================
-// CONTENEDOR GENERAL (opcional pero recomendado)
+// CONTENEDOR GENERAL
 // ==============================================
 
 .layout-pagina {
@@ -10,51 +10,78 @@
   flex-direction: column;
   gap: $espaciado-md;
   padding: $espaciado-md;
+
   background-color: $color-fondo;
+
+  // 🔥 protección global contra overflow
+  width: 100%;
+  box-sizing: border-box;
+  overflow-x: hidden;
 }
 
 // ==============================================
-// SECCIÓN BASE
+// SECCIÓN BASE (UI VISUAL)
 // ==============================================
 
 .layout-pagina__seccion {
-  background-color: white;
-  padding: $espaciado-md;
+
+  //estilos guias
+  background-color: rgba(255, 255, 255, 0.9);
   border-radius: $radio-borde;
+
+  //  separación visual tipo “card”
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+  //  borde de debug suave (estructura visible)
+  border: 1px dashed rgba(0, 0, 0, 0.15);
+
+  height: 100vh; // para probar el comportamiento de cada sección
+
+  padding: $espaciado-md;
+
+
   color: $color-texto;
 
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+
+
+  //  evita overflow interno
+  box-sizing: border-box;
+  min-width: 0;
+  max-width: 100%;
 }
 
 // ==============================================
-// MODIFICADORES
+// MODIFICADORES (VISUALES)
 // ==============================================
 
 .layout-pagina__seccion--superior {
-  // Ejemplo: header interno
+  background-color: rgba(0, 255, 0, 0.03);
 }
 
 .layout-pagina__seccion--media {
-  // contenido principal
+  background-color: rgba(0, 0, 255, 0.03);
 }
 
 .layout-pagina__seccion--inferior {
-  // footer interno
+  background-color: rgba(255, 0, 0, 0.03);
 }
 
 // ==============================================
 // RESPONSIVE
 // ==============================================
 
-// 📱 Tablet
+//  Tablet
 @include para-tablet {
   .layout-pagina {
     padding: $espaciado-sm;
     gap: $espaciado-sm;
   }
+
+  .layout-pagina__seccion {
+    padding: $espaciado-sm;
+  }
 }
 
-// 💻 Escritorio
+//  Escritorio
 @include para-escritorio {
   .layout-pagina {
     flex-direction: row;
@@ -69,7 +96,7 @@
   }
 }
 
-// 🖥 Escritorio grande
+//  Escritorio grande
 @include para-escritorio-grande {
   .layout-pagina {
     max-width: 1200px;

@@ -16,7 +16,7 @@ export const Navbar = () => {
 
       {/* 🔹 BRAND / LOGO */}
       <Link className="navbar__brand" to="/">
-        Mi Aplicación
+        Logo_aplicacion
       </Link>
 
       {/* 🔹 MENÚ DE NAVEGACIÓN */}

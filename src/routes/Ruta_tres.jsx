@@ -1,8 +1,25 @@
 export const RutaTres = () => {
   return (
-    <div>
-      <h1>VISTA # 3 NOMBRE RUTA: (RutaTres)</h1>
+     <>
+    
+      <div className="layout-pagina__seccion layout-pagina__seccion--superior">
+        <h1>home seccion 1</h1>
+      </div>
+
+      <div className="layout-pagina__seccion layout-pagina__seccion--media">
+         <h1>home seccion 2</h1>
+      </div>
+
+      <div className="layout-pagina__seccion layout-pagina__seccion--inferior">
+        <h1>home seccion 3</h1> 
+      </div>
+
       
-    </div>
+    
+      <div className="layout-pagina__seccion layout-pagina__seccion--inferior">
+        <h1>home seccion 4</h1> 
+      </div>
+    
+    </> 
   );
 };
