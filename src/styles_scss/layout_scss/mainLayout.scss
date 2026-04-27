@@ -5,13 +5,17 @@
 
 .layout-principal {
   flex: 1;
-  padding: $espaciado-lg;
-  
+  padding: 0;
+  margin: 0;
+
   width: 100%;
   height: auto;
 
   border: 1px solid $color-primario;
-  background-color: $test_fondo_color;
+
+  // 🔥 CLAVE: evita que hijos rompan el layout horizontal
+  overflow-x: hidden;
+  box-sizing: border-box;
 
   @include para-tablet {
     padding: $espaciado-md;
@@ -19,5 +23,5 @@
 
   @include para-movil {
     padding: $espaciado-sm;
-  } 
+  }
 }

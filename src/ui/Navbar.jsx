@@ -1,45 +1,64 @@
 import { NavLink, Link, useNavigate } from 'react-router-dom';
 
+
+//ESTILOS
+import '../styles_scss/componentes_scss/navbar_component.scss';
+
 export const Navbar = () => {
   const navigate = useNavigate();
 
-  // Función para cerrar sesión o ir a una ruta específica programáticamente
   const handleLogout = () => {
-    // Aquí iría tu lógica de limpieza
-    navigate('/'); // Redirige al inicio
+    navigate('/');
   };
 
   return (
-    <nav className="navbar navbar-expand-lg navbar-dark bg-dark px-4">
-      <Link className="navbar-brand" to="/">Mi Aplicación</Link>
-      
-      <div className="navbar-nav me-auto">
-        {/* NavLink añade automáticamente la clase 'active' cuando la ruta coincide */}
-        <NavLink 
-          className={({ isActive }) => `nav-link ${isActive ? 'active fw-bold' : ''}`} 
+    <nav className="navbar">
+
+      {/* 🔹 BRAND / LOGO */}
+      <Link className="navbar__brand" to="/">
+        Mi Aplicación
+      </Link>
+
+      {/* 🔹 MENÚ DE NAVEGACIÓN */}
+      <div className="navbar__menu">
+
+        <NavLink
+          className={({ isActive }) =>
+            `navbar__link ${isActive ? 'navbar__link--active' : ''}`
+          }
           to="/"
         >
           Inicio
         </NavLink>
 
-        <NavLink 
-          className={({ isActive }) => `nav-link ${isActive ? 'active fw-bold' : ''}`} 
+        <NavLink
+          className={({ isActive }) =>
+            `navbar__link ${isActive ? 'navbar__link--active' : ''}`
+          }
           to="/ruta-dos"
         >
           Vista 2
         </NavLink>
 
-        <NavLink 
-          className={({ isActive }) => `nav-link ${isActive ? 'active fw-bold' : ''}`} 
+        <NavLink
+          className={({ isActive }) =>
+            `navbar__link ${isActive ? 'navbar__link--active' : ''}`
+          }
           to="/ruta-tres"
         >
           Vista 3
         </NavLink>
-          </div>
 
-      <button className="btn btn-outline-danger btn-sm" onClick={handleLogout}>
+      </div>
+
+      {/* 🔹 ACCIÓN (LOGOUT) */}
+      <button
+        className="navbar__button navbar__button--danger"
+        onClick={handleLogout}
+      >
         Cerrar Sesión
       </button>
+
     </nav>
   );
 };
