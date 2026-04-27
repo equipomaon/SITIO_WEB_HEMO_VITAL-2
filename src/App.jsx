@@ -1,8 +1,8 @@
 import { useState } from 'react'
 
-import { AppRoutes } from './Routes/AppRoutes.jsx'
+import { AppRoutes } from './routes/AppRoutes.jsx'
 
-import './Styles_scss/base_scss/global.scss';
+import './styles_scss/base_scss/global.scss';
 
 function App() {
   const [count, setCount] = useState(0)
