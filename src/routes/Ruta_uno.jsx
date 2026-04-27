@@ -6,7 +6,7 @@ export const Home = () => {
     <>
     
       <div className="layout-pagina__seccion layout-pagina__seccion--superior">
-        <h1>home seccion 1</h1>
+        <h1></h1>
       </div>
 
       <div className="layout-pagina__seccion layout-pagina__seccion--media">

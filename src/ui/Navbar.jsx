@@ -37,7 +37,7 @@ export const Navbar = () => {
           }
           to="/ruta-dos"
         >
-          Vista 2
+           ¿Eres veterinario? 
         </NavLink>
 
         <NavLink
@@ -46,7 +46,25 @@ export const Navbar = () => {
           }
           to="/ruta-tres"
         >
-          Vista 3
+          ¿Quieres ser donante? 
+        </NavLink>
+
+        <NavLink
+          className={({ isActive }) =>
+            `navbar__link ${isActive ? 'navbar__link--active' : ''}`
+          }
+          to="/ruta-tres"
+        >
+          Productos o servicios 
+        </NavLink>
+
+         <NavLink
+          className={({ isActive }) =>
+            `navbar__link ${isActive ? 'navbar__link--active' : ''}`
+          }
+          to="/ruta-tres"
+        >
+          Distribuidores
         </NavLink>
 
       </div>
