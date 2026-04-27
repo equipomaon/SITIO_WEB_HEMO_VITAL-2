@@ -1,3 +1,5 @@
+//REACT 
+import { Outlet } from 'react-router-dom';
 
 //COMPONENTES UI
 import { Navbar } from './Navbar.jsx';
@@ -17,7 +19,7 @@ export const MainLayout = ({ children }) => {
 
         <main className="contenido-principal">
 
-            {children}
+            <Outlet />
 
         </main>
 
