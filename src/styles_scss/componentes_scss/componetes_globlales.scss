@@ -1,0 +1,77 @@
+@use '../base_scss/variables' as *;
+
+// ==============================================
+// CONTENEDOR GENERAL (opcional pero recomendado)
+// ==============================================
+
+.layout-pagina {
+  display: flex;
+  flex-direction: column;
+  gap: $espaciado-md;
+  padding: $espaciado-md;
+  background-color: $color-fondo;
+}
+
+// ==============================================
+// SECCIÓN BASE
+// ==============================================
+
+.layout-pagina__seccion {
+  background-color: white;
+  padding: $espaciado-md;
+  border-radius: $radio-borde;
+  color: $color-texto;
+
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+}
+
+// ==============================================
+// MODIFICADORES
+// ==============================================
+
+.layout-pagina__seccion--superior {
+  // Ejemplo: header interno
+}
+
+.layout-pagina__seccion--media {
+  // contenido principal
+}
+
+.layout-pagina__seccion--inferior {
+  // footer interno
+}
+
+// ==============================================
+// RESPONSIVE
+// ==============================================
+
+// 📱 Tablet
+@include para-tablet {
+  .layout-pagina {
+    padding: $espaciado-sm;
+    gap: $espaciado-sm;
+  }
+}
+
+// 💻 Escritorio
+@include para-escritorio {
+  .layout-pagina {
+    flex-direction: row;
+  }
+
+  .layout-pagina__seccion {
+    flex: 1;
+  }
+
+  .layout-pagina__seccion--media {
+    flex: 2; // sección principal más grande
+  }
+}
+
+// 🖥 Escritorio grande
+@include para-escritorio-grande {
+  .layout-pagina {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+}
