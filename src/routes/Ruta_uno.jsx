@@ -1,4 +1,5 @@
 import '../styles_scss/componentes_scss/componetes_globlales.scss';
+import '../styles_scss/componentes_scss/home.scss';
 
 export const Home = () => {
   return (
@@ -6,7 +7,18 @@ export const Home = () => {
     <>
     
       <div className="layout-pagina__seccion layout-pagina__seccion--superior">
-        <h1></h1>
+
+        <section className="seccion-principal">
+
+          <div className='seccion-principal__texto-infromativo'>
+
+             <h1 className="seccion-principal__titulo" > H1: TITULO PRINCIPAL HEMO VITAL </h1>
+             <p className="seccion-principal__descripcion">Este es un párrafo de ejemplo para la sección superior.</p>
+
+          </div>
+         
+
+        </section>
       </div>
 
       <div className="layout-pagina__seccion layout-pagina__seccion--media">
