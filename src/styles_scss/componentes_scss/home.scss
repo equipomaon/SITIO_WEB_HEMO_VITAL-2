@@ -338,11 +338,114 @@
 }
 
 // =====================================================
-// 6. SECCIÓN INFERIOR
+// 6. SECCIÓN EXTRA 3 (FAQ)
 // =====================================================
 
-// (lista para usar en futuro)
+.seccion_faq{
+  height: 100vh;
+}
 
-.layout-pagina__seccion--inferior {
-  
+.padre_contenedor_faq {
+  width: 100%;
+  margin-top: $espaciado-lg;
+
+  display: flex;
+  flex-direction: column;
+  gap: $espaciado-lg;
+}
+
+// -----------------------------------------------------
+// 6.1 HEADER
+// -----------------------------------------------------
+
+.faq__header {
+  text-align: center;
+}
+
+.faq__titulo {
+  font-size: 2rem;
+  font-weight: bold;
+  color: $color-texto;
+  margin: 0;
+}
+
+// -----------------------------------------------------
+// 6.2 GRID
+// -----------------------------------------------------
+
+.faq__grid {
+  display: grid;
+
+  grid-template-columns: repeat(3, 1fr); // 🔥 desktop 3 columnas
+  gap: $espaciado-md;
+}
+
+// -----------------------------------------------------
+// 6.3 ITEM
+// -----------------------------------------------------
+
+.faq__item {
+  background: white;
+  padding: $espaciado-md;
+
+  border-radius: $radio-borde;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.06);
+
+  display: flex;
+  flex-direction: column;
+  gap: $espaciado-sm;
+
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+  &:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 6px 14px rgba(0, 0, 0, 0.1);
+  }
+}
+
+// -----------------------------------------------------
+// 6.4 ELEMENTOS INTERNOS
+// -----------------------------------------------------
+
+.faq__pregunta {
+  font-size: 1.1rem;
+  font-weight: bold;
+  color: $color-texto;
+  margin: 0;
+}
+
+.faq__respuesta {
+  font-size: 0.95rem;
+  color: rgba(0, 0, 0, 0.7);
+  margin: 0;
+}
+
+// -----------------------------------------------------
+// 6.5 RESPONSIVE FAQ
+// -----------------------------------------------------
+
+// 📱 Tablet → 2 columnas
+@include para-tablet {
+  .faq__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+// 📱 Móvil → 1 columna
+@include para-movil {
+  .faq__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .faq__titulo {
+    font-size: 1.6rem;
+  }
+
+  .faq__pregunta {
+    font-size: 1rem;
+  }
+
+  .faq__respuesta {
+    font-size: 0.85rem;
+  }
 }
