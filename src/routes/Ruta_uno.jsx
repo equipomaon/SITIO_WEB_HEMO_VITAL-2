@@ -27,56 +27,76 @@ export const Home = () => {
       {/* ---------------- HOME SECCIÓN MEDIA ---------------- */}
       <div className="layout-pagina__seccion layout-pagina__seccion--media">
          
-         <section className="padre_contendor">
+            <section className="padre_contendor_cards">
 
-              {/* ---------- CONTENEDOR DE CARDS ---------- */}
-              <div className="contenedor_cards">
+                  {/* ---------- CONTENEDOR DE CARDS ---------- */}
+                  <div className="contenedor_cards">
 
-                  {/* ---------- CARD 1 ---------- */}
-                  <article className="card">
-                    <div className="card__imagen"></div>
+                      {/* ---------- CARD 1 ---------- */}
+                      <article className="card">
+                        <div className="card__imagen"></div>
 
-                    <div className="card__contenido">
-                      <h3 className="card__titulo">Título 1</h3>
-                      <p className="card__texto">
-                        Este es el texto descriptivo de la tarjeta 1.
-                      </p>
-                    </div>
-                  </article>
+                        <div className="card__contenido">
+                          <h3 className="card__titulo">Título 1</h3>
+                          <p className="card__texto">
+                            Este es el texto descriptivo de la tarjeta 1.
+                          </p>
+                        </div>
+                      </article>
 
-                  {/* ---------- CARD 2 ---------- */}
-                  <article className="card">
-                    <div className="card__imagen"></div>
+                      {/* ---------- CARD 2 ---------- */}
+                      <article className="card">
+                        <div className="card__imagen"></div>
 
-                    <div className="card__contenido">
-                      <h3 className="card__titulo">Título 2</h3>
-                      <p className="card__texto">
-                        Este es el texto descriptivo de la tarjeta 2.
-                      </p>
-                    </div>
-                  </article>
+                        <div className="card__contenido">
+                          <h3 className="card__titulo">Título 2</h3>
+                          <p className="card__texto">
+                            Este es el texto descriptivo de la tarjeta 2.
+                          </p>
+                        </div>
+                      </article>
 
-                  {/* ---------- CARD 3 ---------- */}
-                  <article className="card">
-                    <div className="card__imagen"></div>
+                      {/* ---------- CARD 3 ---------- */}
+                      <article className="card">
+                        <div className="card__imagen"></div>
 
-                    <div className="card__contenido">
-                      <h3 className="card__titulo">Título 3</h3>
-                      <p className="card__texto">
-                        Este es el texto descriptivo de la tarjeta 3.
-                      </p>
-                    </div>
-                  </article>
+                        <div className="card__contenido">
+                          <h3 className="card__titulo">Título 3</h3>
+                          <p className="card__texto">
+                            Este es el texto descriptivo de la tarjeta 3.
+                          </p>
+                        </div>
+                      </article>
 
-              </div>
-      
-        </section>
+                  </div>      
+            </section>
+
+      </div>
+
+       {/* ---------------- SECCIÓN EXTRA 1 ---------------- */}
+      <div className="layout-pagina__seccion layout-pagina__seccion--media">
+
+            <section className="padre_contendor_presentacion">
+
+                <div className="presentacion__texto">
+                  <p>Este es un párrafo de ejemplo para la sección extra 1.</p>
+                </div>
+
+                <figure className="presentacion__imagen">
+                  <img src="" alt="aqui va la imagen_presentacion" />
+                </figure>
+
+                <button>Botón de accion</button>
+
+            </section>
 
       </div>
 
       {/* ---------------- HOME SECCIÓN INFERIOR ---------------- */}
       <div className="layout-pagina__seccion layout-pagina__seccion--inferior">
-        <h1>home seccion 3</h1> 
+
+        
+
       </div>
 
       

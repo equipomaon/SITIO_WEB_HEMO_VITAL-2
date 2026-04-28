@@ -5,8 +5,9 @@
 // 1. PADRE CONTENEDOR
 // ==============================================
 
-.padre_contendor {
+.padre_contendor_cards {
   margin: 0;
+  
 }
 
 // ==============================================
@@ -155,6 +156,58 @@
   .card__imagen {
     height: 160px;
   }
+}
+
+// ==============================================
+// 9. SECCIÓN EXTRA 1 (PRESENTACIÓN)
+// ==============================================
+
+.padre_contendor_presentacion {
+  display: flex;
+
+  flex-direction: column;
+
+  height: 70vh;
+  justify-content: center;  // horizontal
+  align-items: center;      // vertical
+
+  width: 100%;
+
+  gap: $espaciado-lg;
+
+  box-sizing: border-box;
+
+  // 🔥 visualización (debug)
+  border: 3px dashed red;
+}
+
+  //VARRIABLES DE TESTEO
+
+// ==============================================
+// 10. ELEMENTOS INTERNOS (PRESENTACIÓN)
+// ==============================================
+
+.padre_contendor_presentacion p {
+  max-width: 400px;
+
+  // debug
+  border: 2px solid blue;
+}
+
+.padre_contendor_presentacion figure {
+  margin: 0;
+
+  // debug
+  border: 2px solid green;
+}
+
+.padre_contendor_presentacion img {
+  width: 250px;
+  height: auto;
+  display: block;
+
+  // debug
+  border: 2px solid purple;
 }
 
 // ==============================================
