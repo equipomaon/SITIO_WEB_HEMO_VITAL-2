@@ -1,6 +1,10 @@
 @use '../base_scss/variables' as *;
 @use '../base_scss/responsive' as *;
 
+// ==============================================
+// 1. NAVBAR BASE (ESTRUCTURA PRINCIPAL)
+// ==============================================
+
 .navbar {
   display: flex;
   align-items: center;
@@ -8,14 +12,10 @@
 
   padding: $espaciado-md $espaciado-lg;
 
-  // 🎨 FONDO CLARO (tipo UI base)
   background-color: rgba(255, 255, 255, 0.85);
-
-  // 🧠 SOMBRA SUAVE (separación visual del layout)
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
 
-  // 🔥 BORDE DE DEBUG (puedes quitarlo luego)
-  border: 2px solid rgba(0, 0, 0, 0.15);
+  border: 2px solid rgba(0, 0, 0, 0.15); // debug
 
   color: $color-texto;
 
@@ -23,105 +23,186 @@
   box-sizing: border-box;
 
   position: fixed;
-top: 0;
-left: 0;
-width: 100%;
+  top: 0;
+  left: 0;
+}
 
-  // 🔹 RESPONSIVE
-  @include para-tablet {
-    flex-direction: column;
-    gap: $espaciado-md;
-    align-items: flex-start;
+// ==============================================
+// 2. BRAND (LOGO)
+// ==============================================
+
+.navbar__brand {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: $color-texto;
+  text-decoration: none;
+
+  padding: 6px 10px;
+
+  border: 1px dashed rgba(0, 0, 0, 0.2); // debug
+
+  transition: opacity 0.2s ease;
+
+  &:hover {
+    opacity: 0.8;
+  }
+}
+
+// ==============================================
+// 3. MENÚ (DESKTOP)
+// ==============================================
+
+.navbar__menu {
+  display: flex;
+  gap: $espaciado-lg;
+  align-items: center;
+
+  border: 1px dashed rgba(0, 0, 0, 0.25); // debug
+  padding: 5px;
+}
+
+// ==============================================
+// 4. LINKS
+// ==============================================
+
+.navbar__link {
+  color: $color-texto;
+  text-decoration: none;
+
+  font-size: 1rem;
+
+  padding: 4px 6px;
+  border-radius: 4px;
+
+  transition: all 0.2s ease;
+
+  &:hover {
+    background-color: rgba(0, 0, 0, 0.05);
   }
 
-  // 🔹 BRAND
-  &__brand {
-    font-size: 1.2rem;
-    font-weight: bold;
-    color: $color-texto;
-    text-decoration: none;
+  &--active {
+    border-bottom: 2px solid black;
+    font-weight: 600;
+  }
+}
 
-    padding: 6px 10px;
+// ==============================================
+// 5. BOTÓN (ACCIONES)
+// ==============================================
 
-    border: 1px dashed rgba(0, 0, 0, 0.2); // 👀 visual debug
+.navbar__button {
+  padding: $espaciado-sm $espaciado-md;
 
-    transition: opacity 0.2s ease;
+  border: 1px solid black;
+  border-radius: $radio-borde;
+
+  cursor: pointer;
+
+  background-color: white;
+  color: $color-texto;
+
+  transition: all 0.2s ease;
+
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+
+  &:hover {
+    transform: scale(1.05);
+  }
+
+  &--danger {
+    background-color: rgb(204, 10, 10);
+    color: white;
+    border: 1px solid rgb(204, 10, 10);
 
     &:hover {
-      opacity: 0.8;
+      background-color: white;
+      color: rgb(204, 10, 10);
     }
   }
+}
 
-  // 🔹 MENU
-  &__menu {
-    display: flex;
-    gap: $espaciado-lg;
+// ==============================================
+// 6. TOGGLE (BOTÓN HAMBURGUESA)
+// ==============================================
+
+.navbar__toggle {
+  display: none;
+
+  font-size: 1.5rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+
+  border: 1px dashed red; // debug
+}
+
+// ==============================================
+// 7. RESPONSIVE + ANIMACIÓN MENÚ MÓVIL
+// ==============================================
+
+@include para-tablet {
+
+  .navbar {
+    flex-direction: row;
     align-items: center;
-
-    border: 1px dashed rgba(0, 0, 0, 0.25); // 👀 visual debug
-
-    padding: 5px;
-
-    @include para-tablet {
-      flex-direction: column;
-      align-items: flex-start;
-      gap: $espaciado-sm;
-    }
   }
 
-  // 🔹 LINKS
-  &__link {
-    color: $color-texto;
-    text-decoration: none;
-
-    font-size: 1rem;
-
-    padding: 4px 6px;
-
-    border-radius: 4px;
-
-    transition: all 0.2s ease;
-
-    &:hover {
-      background-color: rgba(0, 0, 0, 0.05); // 👀 hover visual real
-    }
-
-    &--active {
-      border-bottom: 2px solid black;
-      font-weight: 600;
-    }
+  // 🔹 botón hamburguesa visible
+  .navbar__toggle {
+    display: block;
   }
 
-  // 🔹 BOTÓN
-  &__button {
-    padding: $espaciado-sm $espaciado-md;
+  // 🔹 menú base (cerrado)
+  .navbar__menu {
+    flex-direction: column;
+    align-items: flex-start;
 
-    border: 1px solid black;
+    gap: $espaciado-md;
+
+    width: 100%;
+    margin-top: $espaciado-md;
+
+    // 🔥 animación
+    max-height: 0;
+    opacity: 0;
+    overflow: hidden;
+
+    transition: max-height 0.3s ease, opacity 0.2s ease;
+
+    // 🎨 fondo visual
+    background-color: rgba(255, 255, 255, 0.95);
     border-radius: $radio-borde;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
 
-    cursor: pointer;
-
-    background-color: white;
-    color: $color-texto;
-
-    transition: all 0.2s ease;
-
-    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1); // 👀 elevación ligera
-
-    &:hover {
-      transform: scale(1.05);
-    }
-
-    &--danger {
-      background-color: rgb(204, 10, 10);
-      color: white;
-
-      border: 1px solid rgb(204, 10, 10);
-
-      &:hover {
-        background-color: white;
-        color: rgb(204, 10, 10);
-      }
-    }
+    padding: 0 $espaciado-md;
   }
+
+  // 🔹 menú abierto
+  .navbar__menu--open {
+    max-height: 500px;
+    opacity: 1;
+
+    padding: $espaciado-md;
+  }
+
+  // 🔹 ocultar botón en móvil (opcional)
+  .navbar__button {
+    display: none;
+  }
+}
+
+// ==============================================
+// 8. ESTADO NAVBAR ABIERTO
+// ==============================================
+
+@include para-tablet {
+
+  .navbar--open {
+
+    .navbar__brand {
+      display: none; // 🔥 oculta logo
+    }
+
+  }
+
 }

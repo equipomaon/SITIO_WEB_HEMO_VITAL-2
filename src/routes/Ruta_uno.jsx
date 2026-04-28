@@ -92,12 +92,67 @@ export const Home = () => {
 
       </div>
 
-      {/* ---------------- HOME SECCIÓN INFERIOR ---------------- */}
-      <div className="layout-pagina__seccion layout-pagina__seccion--inferior">
+      {/* ---------------- HOME SECCIÓN EXTRA 2 ---------------- */}
+      {/* ---------------- HOME SECCIÓN EXTRA 2 ---------------- */}
+<div className="layout-pagina__seccion layout-pagina__seccion--media">
 
-        
+  <section className="padre_contenedor_galeria">
+
+    <div className="galeria">
+
+      <div className="galeria__track">
+
+        {/* ================= ORIGINAL ================= */}
+
+        {/* GRUPO 1 */}
+        <div className="galeria__grupo">
+          <img src="/img/1.jpg" alt="galeria 1" />
+          <img src="/img/2.jpg" alt="galeria 2" />
+          <img src="/img/3.jpg" alt="galeria 3" />
+        </div>
+
+        {/* GRUPO 2 */}
+        <div className="galeria__grupo">
+          <img src="/img/4.jpg" alt="galeria 4" />
+          <img src="/img/5.jpg" alt="galeria 5" />
+          <img src="/img/6.jpg" alt="galeria 6" />
+        </div>
+
+        {/* GRUPO 3 */}
+        <div className="galeria__grupo">
+          <img src="/img/7.jpg" alt="galeria 7" />
+          <img src="/img/8.jpg" alt="galeria 8" />
+          <img src="/img/9.jpg" alt="galeria 9" />
+        </div>
+
+        {/* ================= DUPLICADO ================= */}
+        {/* 🔥 necesario para efecto infinito */}
+
+        <div className="galeria__grupo">
+          <img src="/img/1.jpg" alt="galeria 1" />
+          <img src="/img/2.jpg" alt="galeria 2" />
+          <img src="/img/3.jpg" alt="galeria 3" />
+        </div>
+
+        <div className="galeria__grupo">
+          <img src="/img/4.jpg" alt="galeria 4" />
+          <img src="/img/5.jpg" alt="galeria 5" />
+          <img src="/img/6.jpg" alt="galeria 6" />
+        </div>
+
+        <div className="galeria__grupo">
+          <img src="/img/7.jpg" alt="galeria 7" />
+          <img src="/img/8.jpg" alt="galeria 8" />
+          <img src="/img/9.jpg" alt="galeria 9" />
+        </div>
 
       </div>
+
+    </div>
+
+  </section>
+
+</div>
 
       
     

@@ -211,7 +211,7 @@
 }
 
 // ==============================================
-// 9. RESPONSIVE MÓVIL
+// 11. RESPONSIVE MÓVIL
 // ==============================================
 
 @include para-movil {
@@ -238,5 +238,97 @@
 
   .card__texto {
     font-size: 0.85rem;
+  }
+}
+
+
+// ==============================================
+// 11. SECCIÓN EXTRA 2 (GALERÍA CARRUSEL)
+// ==============================================
+
+.padre_contenedor_galeria {
+  width: 100%;
+  overflow: hidden; // 🔥 CLAVE (oculta lo que se mueve)
+  margin-top: $espaciado-lg;
+}
+
+// VIEWPORT
+.galeria {
+  width: 100%;
+  overflow: hidden;
+}
+
+// TRACK (el que se mueve)
+.galeria__track {
+  display: flex;
+  width: max-content;
+
+  animation: scroll-galeria 25s linear infinite;
+}
+
+// GRUPOS
+.galeria__grupo {
+  display: flex;
+  gap: $espaciado-sm;
+
+  margin-right: $espaciado-md;
+}
+
+// IMÁGENES
+.galeria__grupo img {
+  width: 200px;
+  height: 150px;
+
+  object-fit: cover;
+  border-radius: $radio-borde;
+
+  flex-shrink: 0; // 🔥 evita que se deformen
+
+  transition: transform 0.3s ease;
+}
+
+// HOVER
+.galeria__grupo img:hover {
+  transform: scale(1.05);
+}
+
+// ==============================================
+// 12. ANIMACIÓN CARRUSEL
+// ==============================================
+
+@keyframes scroll-galeria {
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+// ==============================================
+// 13. INTERACCIÓN
+// ==============================================
+
+// Pausar al pasar el mouse
+.galeria:hover .galeria__track {
+  animation-play-state: paused;
+}
+
+// ==============================================
+// 14. RESPONSIVE GALERÍA
+// ==============================================
+
+@include para-tablet {
+  .galeria__grupo img {
+    width: 160px;
+    height: 120px;
+  }
+}
+
+@include para-movil {
+  .galeria__grupo img {
+    width: 130px;
+    height: 100px;
   }
 }

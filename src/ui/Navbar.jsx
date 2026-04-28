@@ -1,4 +1,5 @@
-import { NavLink, Link, useNavigate } from 'react-router-dom';
+import { NavLink, Link, useNavigate,  } from 'react-router-dom';
+import { useState } from 'react';
 
 
 //ESTILOS
@@ -6,76 +7,48 @@ import '../styles_scss/componentes_scss/navbar_component.scss';
 
 export const Navbar = () => {
   const navigate = useNavigate();
+  const [menuAbierto, setMenuAbierto] = useState(false);
 
   const handleLogout = () => {
     navigate('/');
   };
 
-  return (
-    <nav className="navbar">
+  const toggleMenu = () => {
+    setMenuAbierto(!menuAbierto);
+  };
 
-      {/* 🔹 BRAND / LOGO */}
+  return (
+    <nav className={`navbar ${menuAbierto ? 'navbar--open' : ''}`}>
+ 
+      {/* 🔹 BRAND */}
       <Link className="navbar__brand" to="/">
         Logo_aplicacion
       </Link>
 
-      {/* 🔹 MENÚ DE NAVEGACIÓN */}
-      <div className="navbar__menu">
+      {/* 🔹 BOTÓN HAMBURGUESA */}
+      <button className="navbar__toggle" onClick={toggleMenu}>
+        ☰
+      </button>
 
-        <NavLink
-          className={({ isActive }) =>
-            `navbar__link ${isActive ? 'navbar__link--active' : ''}`
-          }
-          to="/"
-        >
-          Inicio
-        </NavLink>
+      {/* 🔹 MENÚ */}
+      <div className={`navbar__menu ${menuAbierto ? 'navbar__menu--open' : ''}`}>
 
-        <NavLink
-          className={({ isActive }) =>
-            `navbar__link ${isActive ? 'navbar__link--active' : ''}`
-          }
-          to="/ruta-dos"
-        >
-           ¿Eres veterinario? 
-        </NavLink>
-
-        <NavLink
-          className={({ isActive }) =>
-            `navbar__link ${isActive ? 'navbar__link--active' : ''}`
-          }
-          to="/ruta-tres"
-        >
-          ¿Quieres ser donante? 
-        </NavLink>
-
-        <NavLink
-          className={({ isActive }) =>
-            `navbar__link ${isActive ? 'navbar__link--active' : ''}`
-          }
-          to="/ruta-tres"
-        >
-          Productos o servicios 
-        </NavLink>
-
-         <NavLink
-          className={({ isActive }) =>
-            `navbar__link ${isActive ? 'navbar__link--active' : ''}`
-          }
-          to="/ruta-tres"
-        >
-          Distribuidores
-        </NavLink>
+        <NavLink className="navbar__link" to="/">Inicio</NavLink>
+        <NavLink className="navbar__link" to="/ruta-dos">¿Eres veterinario?</NavLink>
+        <NavLink className="navbar__link" to="/ruta-tres">¿Quieres ser donante?</NavLink>
+        <NavLink className="navbar__link" to="/ruta-tres">Productos o servicios</NavLink>
+        <NavLink className="navbar__link" to="/ruta-tres">Distribuidores</NavLink>
 
       </div>
 
-      {/* 🔹 ACCIÓN (LOGOUT) */}
+      {/* 🔹 BOTÓN 
       <button
         className="navbar__button navbar__button--danger"
         onClick={handleLogout}
       >
         Cerrar Sesión
       </button>
+      */}
 
     </nav>
   );
