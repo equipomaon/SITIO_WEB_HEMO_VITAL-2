@@ -6,6 +6,7 @@ import '../styles_scss/componentes_scss/home.scss';
 import  imgFestival  from '../assets/testeo_festival.png';
 import imgCalvin  from '../assets/testeo_calvin.png';
 import img_gato from '../assets/testeo_gato.png';
+import huella_perro from '../assets/huella.png';
 
 export const Home = () => {
   return (
@@ -151,6 +152,12 @@ export const Home = () => {
                 <img src={img_gato} alt="galeria 9" />
               </div>
 
+            </div>
+
+            <div className='boton_cita'>
+              <button className="btn-imagen">
+                pide tu cita
+              </button>
             </div>
 
           </div>
