@@ -1,6 +1,12 @@
 import '../styles_scss/componentes_scss/componetes_globlales.scss';
 import '../styles_scss/componentes_scss/home.scss';
 
+
+//ASSETS
+import  imgFestival  from '../assets/testeo_festival.png';
+import imgCalvin  from '../assets/testeo_calvin.png';
+import img_gato from '../assets/testeo_gato.png';
+
 export const Home = () => {
   return (
    
@@ -105,44 +111,44 @@ export const Home = () => {
 
               {/* GRUPO 1 */}
               <div className="galeria__grupo">
-                <img src="/img/1.jpg" alt="galeria 1" />
-                <img src="/img/2.jpg" alt="galeria 2" />
-                <img src="/img/3.jpg" alt="galeria 3" />
+                <img src={imgFestival} alt="Dog wearing a flower collar and blue harness smiling next to a person at an outdoor blood donation awareness event" />
+                <img src={imgCalvin} alt="galeria 2" />
+                <img src={img_gato} alt="galeria 3" />
               </div>
 
               {/* GRUPO 2 */}
               <div className="galeria__grupo">
-                <img src="/img/4.jpg" alt="galeria 4" />
-                <img src="/img/5.jpg" alt="galeria 5" />
-                <img src="/img/6.jpg" alt="galeria 6" />
+                <img src={imgFestival} alt="galeria 4" />
+                <img src={imgCalvin} alt="galeria 5" />
+                <img src={img_gato} alt="galeria 6" />
               </div>
 
               {/* GRUPO 3 */}
               <div className="galeria__grupo">
-                <img src="/img/7.jpg" alt="galeria 7" />
-                <img src="/img/8.jpg" alt="galeria 8" />
-                <img src="/img/9.jpg" alt="galeria 9" />
+                <img src={imgFestival} alt="galeria 7" />
+                <img src={imgCalvin} alt="galeria 8" />
+                <img src={img_gato} alt="galeria 9" />
               </div>
 
               {/* ================= DUPLICADO ================= */}
               {/* 🔥 necesario para efecto infinito */}
 
               <div className="galeria__grupo">
-                <img src="/img/1.jpg" alt="galeria 1" />
-                <img src="/img/2.jpg" alt="galeria 2" />
-                <img src="/img/3.jpg" alt="galeria 3" />
+                <img src={imgFestival} alt="galeria 1" />
+                <img src={imgCalvin} alt="galeria 2" />
+                <img src={img_gato} alt="galeria 3" />
               </div>
 
               <div className="galeria__grupo">
-                <img src="/img/4.jpg" alt="galeria 4" />
-                <img src="/img/5.jpg" alt="galeria 5" />
-                <img src="/img/6.jpg" alt="galeria 6" />
+                <img src={imgFestival} alt="galeria 4" />
+                <img src={imgCalvin} alt="galeria 5" />
+                <img src={img_gato} alt="galeria 6" />
               </div>
 
               <div className="galeria__grupo">
-                <img src="/img/7.jpg" alt="galeria 7" />
-                <img src="/img/8.jpg" alt="galeria 8" />
-                <img src="/img/9.jpg" alt="galeria 9" />
+                <img src={imgFestival} alt="galeria 7" />
+                <img src={imgCalvin} alt="galeria 8" />
+                <img src={img_gato} alt="galeria 9" />
               </div>
 
             </div>

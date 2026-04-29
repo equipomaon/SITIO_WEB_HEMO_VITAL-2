@@ -26,45 +26,48 @@
 .seccion-principal {
   display: flex;
   flex-direction: column;
-
-  align-items: flex-start;
-  text-align: left;
+  align-items: center; 
+  justify-content: center;
+  text-align: center;
 
   gap: $espaciado-sm;
-
   width: 100%;
   height: 90vh;
-
   padding: $espaciado-lg;
-
   border-radius: $radio-borde;
   box-sizing: border-box;
-
   margin-top: 60px;
 
-  border-left: 3px solid $color-primario;
-  background: rgba(0, 255, 0, 0.05);
+  background-color: #fce4ec; 
+  border-left: none; 
 }
 
 // -----------------------------------------------------
-// 2.1 ELEMENTOS INTERNOS
+// 2.1 ELEMENTOS INTERNOS HOME SECCIÓN SUPERIOR
 // -----------------------------------------------------
 
 .seccion-principal__texto-infromativo {
-  border: 3px solid $color-primario;
+  background-color: #ffffff; 
+  border-radius: 50% / 50%; 
+  box-shadow: 0px 20px 50px rgba(0, 0, 0, 0.1);
+  padding: 6rem 4rem; 
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  
+  width: 90%; 
+  max-width: 1000px;
+  margin: 0 auto; 
+  border: none; 
 
   .seccion-principal__titulo {
     font-size: 2.2rem;
     font-weight: bold;
     color: $color-texto;
-    margin: 0;
+    margin-bottom: 1rem;
   }
-}
-
-.seccion-principal__descripcion {
-  font-size: 1rem;
-  color: rgba(0, 0, 0, 0.7);
-  max-width: 600px;
 }
 
 // -----------------------------------------------------
@@ -76,56 +79,62 @@
     padding: $espaciado-md;
     height: auto;
   }
-
   .seccion-principal__titulo {
     font-size: 1.8rem;
   }
 }
 
 @include para-movil {
-  .seccion-principal {
-    padding: $espaciado-sm;
-    height: auto;
-  }
-
   .seccion-principal__titulo {
     font-size: 1.5rem;
   }
-
   .seccion-principal__descripcion {
     font-size: 0.9rem;
   }
 }
 
 // =====================================================
-// 3. SECCIÓN MEDIA (CARDS)
+// 3. SECCIÓN MEDIA (CARDS CON FONDO OVALADO)
 // =====================================================
+
+.layout-pagina__seccion--media {
+  background-color: #d7b5b5; 
+  overflow: hidden;         
+  width: 100%;
+}
+
+.padre_contendor_cards {
+  background-color: white;
+  width: 110%;              
+  margin-left: -5%;         
+  border-radius: 50% / 25%; 
+  padding: 80px 5%; 
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.05);
+}
 
 .contenedor_cards {
   display: flex;
   justify-content: space-between;
   gap: $espaciado-md;
-
+  max-width: 1100px; 
   width: 100%;
-  margin-top: $espaciado-lg;
+  margin: 0 auto;
 }
 
 // -----------------------------------------------------
 // 3.1 CARD BASE
 // -----------------------------------------------------
-
 .card {
   flex: 1;
-
   display: flex;
   flex-direction: column;
-
   background: white;
   border-radius: $radio-borde;
   overflow: hidden;
-
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-
   transition: transform 0.3s ease;
 
   &:hover {
@@ -136,18 +145,15 @@
 // -----------------------------------------------------
 // 3.2 ELEMENTOS CARD
 // -----------------------------------------------------
-
 .card__imagen {
   width: 100%;
   height: 180px;
-
   background-color: rgba(52, 152, 219, 0.15);
   border-bottom: 2px solid $color-primario;
 }
 
 .card__contenido {
   padding: $espaciado-md;
-
   display: flex;
   flex-direction: column;
   gap: $espaciado-sm;
@@ -171,26 +177,15 @@
 // -----------------------------------------------------
 
 @include para-tablet {
+  .padre_contendor_cards {
+    width: 100%;       
+    margin-left: 0;
+    border-radius: 0;   
+    padding: 60px 20px;
+  }
   .contenedor_cards {
     flex-direction: column;
-  }
-
-  .card__imagen {
-    height: 160px;
-  }
-}
-
-@include para-movil {
-  .card__imagen {
-    height: 140px;
-  }
-
-  .card__titulo {
-    font-size: 1rem;
-  }
-
-  .card__texto {
-    font-size: 0.85rem;
+    align-items: center;
   }
 }
 
@@ -201,55 +196,55 @@
 .padre_contendor_presentacion {
   display: flex;
   flex-direction: column;
-
   height: 70vh;
   justify-content: center;
   align-items: center;
-
   width: 100%;
   gap: $espaciado-lg;
-
   box-sizing: border-box;
-
-  // debug
-  border: 3px dashed red;
 }
-
-// -----------------------------------------------------
-// 4.1 ELEMENTOS INTERNOS
-// -----------------------------------------------------
 
 .padre_contendor_presentacion p {
   max-width: 400px;
-  border: 2px solid blue;
-}
-
-.padre_contendor_presentacion figure {
-  margin: 0;
-  border: 2px solid green;
 }
 
 .padre_contendor_presentacion img {
   width: 250px;
   height: auto;
   display: block;
-  border: 2px solid purple;
 }
 
 // =====================================================
-// 5. SECCIÓN EXTRA 2 (GALERÍA CARRUSEL)
+// 5. SECCIÓN EXTRA 2 (GALERÍA CARRUSEL - REFACTORIZADA)
 // =====================================================
 
 .padre_contenedor_galeria {
   width: 100%;
   overflow: hidden;
   margin-top: $espaciado-lg;
+  padding: 60px 0;
+  background-color: #fcfcfc; // Fondo sutil
+
+  // EFECTO DESVANECIMIENTO LATERAL (OPCIÓN 1)
+  -webkit-mask-image: linear-gradient(
+    to right, 
+    transparent, 
+    black 15%, 
+    black 85%, 
+    transparent
+  );
+  mask-image: linear-gradient(
+    to right, 
+    transparent, 
+    black 15%, 
+    black 85%, 
+    transparent
+  );
 }
 
 // -----------------------------------------------------
 // 5.1 VIEWPORT
 // -----------------------------------------------------
-
 .galeria {
   width: 100%;
   overflow: hidden;
@@ -258,82 +253,65 @@
 // -----------------------------------------------------
 // 5.2 TRACK (ANIMACIÓN)
 // -----------------------------------------------------
-
 .galeria__track {
   display: flex;
   width: max-content;
-
-  animation: scroll-galeria 25s linear infinite;
+  animation: scroll-galeria 30s linear infinite; // Un poco más lento para apreciar fotos
 }
 
 // -----------------------------------------------------
 // 5.3 GRUPOS
 // -----------------------------------------------------
-
 .galeria__grupo {
   display: flex;
-  gap: $espaciado-sm;
-
-  margin-right: $espaciado-md;
+  gap: 30px; // Más espacio entre fotos
+  margin-right: 30px;
 }
 
 // -----------------------------------------------------
-// 5.4 IMÁGENES
+// 5.4 IMÁGENES (ESTILO POLAROID DECORATIVO)
 // -----------------------------------------------------
-
 .galeria__grupo img {
-  width: 200px;
-  height: 150px;
-
+  width: 240px; 
+  height: 320px;
   object-fit: cover;
-  border-radius: $radio-borde;
-
+  
+  // Estilo decorativo
+  background-color: white;
+  border: 10px solid white; // Borde grueso tipo foto antigua
+  border-radius: 4px; // Bordes menos redondeados para el look Polaroid
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  
   flex-shrink: 0;
+  transition: all 0.4s ease;
 
-  transition: transform 0.3s ease;
+  &:hover {
+    transform: scale(1.08) rotate(3deg); // Escala y rotación suave
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+    z-index: 10;
+  }
 }
 
 // -----------------------------------------------------
-// 5.5 INTERACCIÓN
+// 5.5 INTERACCIÓN Y ANIMACIÓN
 // -----------------------------------------------------
-
 .galeria:hover .galeria__track {
   animation-play-state: paused;
 }
 
-.galeria__grupo img:hover {
-  transform: scale(1.05);
-}
-
-// -----------------------------------------------------
-// 5.6 ANIMACIÓN
-// -----------------------------------------------------
-
 @keyframes scroll-galeria {
-  0% {
-    transform: translateX(0);
-  }
-
-  100% {
-    transform: translateX(-50%);
-  }
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
 }
 
 // -----------------------------------------------------
 // 5.7 RESPONSIVE GALERÍA
 // -----------------------------------------------------
-
 @include para-tablet {
   .galeria__grupo img {
-    width: 160px;
-    height: 120px;
-  }
-}
-
-@include para-movil {
-  .galeria__grupo img {
-    width: 130px;
-    height: 100px;
+    width: 180px;
+    height: 240px;
+    border: 6px solid white;
   }
 }
 
@@ -348,15 +326,10 @@
 .padre_contenedor_faq {
   width: 100%;
   margin-top: $espaciado-lg;
-
   display: flex;
   flex-direction: column;
   gap: $espaciado-lg;
 }
-
-// -----------------------------------------------------
-// 6.1 HEADER
-// -----------------------------------------------------
 
 .faq__header {
   text-align: center;
@@ -366,86 +339,34 @@
   font-size: 2rem;
   font-weight: bold;
   color: $color-texto;
-  margin: 0;
 }
-
-// -----------------------------------------------------
-// 6.2 GRID
-// -----------------------------------------------------
 
 .faq__grid {
   display: grid;
-
-  grid-template-columns: repeat(3, 1fr); // 🔥 desktop 3 columnas
+  grid-template-columns: repeat(3, 1fr);
   gap: $espaciado-md;
 }
-
-// -----------------------------------------------------
-// 6.3 ITEM
-// -----------------------------------------------------
 
 .faq__item {
   background: white;
   padding: $espaciado-md;
-
   border-radius: $radio-borde;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.06);
-
-  display: flex;
-  flex-direction: column;
-  gap: $espaciado-sm;
-
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition: transform 0.3s ease;
 
   &:hover {
     transform: translateY(-4px);
-    box-shadow: 0 6px 14px rgba(0, 0, 0, 0.1);
   }
 }
 
-// -----------------------------------------------------
-// 6.4 ELEMENTOS INTERNOS
-// -----------------------------------------------------
-
-.faq__pregunta {
-  font-size: 1.1rem;
-  font-weight: bold;
-  color: $color-texto;
-  margin: 0;
-}
-
-.faq__respuesta {
-  font-size: 0.95rem;
-  color: rgba(0, 0, 0, 0.7);
-  margin: 0;
-}
-
-// -----------------------------------------------------
-// 6.5 RESPONSIVE FAQ
-// -----------------------------------------------------
-
-// 📱 Tablet → 2 columnas
 @include para-tablet {
   .faq__grid {
     grid-template-columns: repeat(2, 1fr);
   }
 }
 
-// 📱 Móvil → 1 columna
 @include para-movil {
   .faq__grid {
     grid-template-columns: 1fr;
-  }
-
-  .faq__titulo {
-    font-size: 1.6rem;
-  }
-
-  .faq__pregunta {
-    font-size: 1rem;
-  }
-
-  .faq__respuesta {
-    font-size: 0.85rem;
   }
 }
