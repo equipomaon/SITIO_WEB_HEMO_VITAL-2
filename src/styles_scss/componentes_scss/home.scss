@@ -43,7 +43,7 @@
 }
 
 // -----------------------------------------------------
-// 2.1 ELEMENTOS INTERNOS HOME SECCIÓN SUPERIOR
+// 2.1 ELEMENTOS INTERNOS
 // -----------------------------------------------------
 
 .seccion-principal__texto-infromativo {
@@ -71,7 +71,7 @@
 }
 
 // -----------------------------------------------------
-// 2.2 RESPONSIVE SECCIÓN PRINCIPAL
+// 2.2 RESPONSIVE
 // -----------------------------------------------------
 
 @include para-tablet {
@@ -79,22 +79,14 @@
     padding: $espaciado-md;
     height: auto;
   }
+
   .seccion-principal__titulo {
     font-size: 1.8rem;
   }
 }
 
-@include para-movil {
-  .seccion-principal__titulo {
-    font-size: 1.5rem;
-  }
-  .seccion-principal__descripcion {
-    font-size: 0.9rem;
-  }
-}
-
 // =====================================================
-// 3. SECCIÓN MEDIA (CARDS CON FONDO OVALADO)
+// 3. SECCIÓN MEDIA (CARDS)
 // =====================================================
 
 .layout-pagina__seccion--media {
@@ -125,8 +117,9 @@
 }
 
 // -----------------------------------------------------
-// 3.1 CARD BASE
+// 3.1 CARD
 // -----------------------------------------------------
+
 .card {
   flex: 1;
   display: flex;
@@ -142,9 +135,6 @@
   }
 }
 
-// -----------------------------------------------------
-// 3.2 ELEMENTOS CARD
-// -----------------------------------------------------
 .card__imagen {
   width: 100%;
   height: 180px;
@@ -159,41 +149,12 @@
   gap: $espaciado-sm;
 }
 
-.card__titulo {
-  font-size: 1.2rem;
-  font-weight: bold;
-  color: $color-texto;
-  margin: 0;
-}
-
-.card__texto {
-  font-size: 0.95rem;
-  color: rgba(0, 0, 0, 0.7);
-  margin: 0;
-}
-
-// -----------------------------------------------------
-// 3.3 RESPONSIVE CARDS
-// -----------------------------------------------------
-
-@include para-tablet {
-  .padre_contendor_cards {
-    width: 100%;       
-    margin-left: 0;
-    border-radius: 0;   
-    padding: 60px 20px;
-  }
-  .contenedor_cards {
-    flex-direction: column;
-    align-items: center;
-  }
-}
-
 // =====================================================
 // 4. SECCIÓN EXTRA 1 (PRESENTACIÓN)
 // =====================================================
 
 .padre_contendor_presentacion {
+  position: relative;
   display: flex;
   flex-direction: column;
   height: 70vh;
@@ -202,6 +163,38 @@
   width: 100%;
   gap: $espaciado-lg;
   box-sizing: border-box;
+  overflow: hidden;
+}
+
+// 🔥 FORMAS ORGÁNICAS
+.padre_contendor_presentacion::before {
+  content: "";
+  position: absolute;
+  width: 300px;
+  height: 300px;
+  background: #ffd6e0;
+  border-radius: 50%;
+  top: -80px;
+  left: -80px;
+  z-index: 0;
+}
+
+.padre_contendor_presentacion::after {
+  content: "";
+  position: absolute;
+  width: 250px;
+  height: 250px;
+  background: #ffe9f0;
+  border-radius: 50%;
+  bottom: -80px;
+  right: -60px;
+  z-index: 0;
+}
+
+// CONTENIDO ENCIMA
+.padre_contendor_presentacion > * {
+  position: relative;
+  z-index: 1;
 }
 
 .padre_contendor_presentacion p {
@@ -210,12 +203,10 @@
 
 .padre_contendor_presentacion img {
   width: 250px;
-  height: auto;
-  display: block;
 }
 
 // =====================================================
-// 5. SECCIÓN EXTRA 2 (GALERÍA CARRUSEL - REFACTORIZADA)
+// 5. GALERÍA
 // =====================================================
 
 .padre_contenedor_galeria {
@@ -223,85 +214,29 @@
   overflow: hidden;
   margin-top: $espaciado-lg;
   padding: 60px 0;
-  background-color: #fcfcfc; // Fondo sutil
+  background-color: #fcfcfc;
 
   display: flex;
   flex-direction: column;
   align-items: center;
 
-  // EFECTO DESVANECIMIENTO LATERAL (OPCIÓN 1)
-  -webkit-mask-image: linear-gradient(
-    to right, 
-    transparent, 
-    black 15%, 
-    black 85%, 
-    transparent
-  );
-  mask-image: linear-gradient(
-    to right, 
-    transparent, 
-    black 15%, 
-    black 85%, 
-    transparent
-  );
+  -webkit-mask-image: linear-gradient(to right, transparent, black 15%, black 85%, transparent);
+  mask-image: linear-gradient(to right, transparent, black 15%, black 85%, transparent);
 }
 
-// -----------------------------------------------------
-// 5.1 VIEWPORT
-// -----------------------------------------------------
-.galeria {
-  width: 100%;
-  overflow: hidden;
-  height: auto;
-}
-
-// -----------------------------------------------------
-// 5.2 TRACK (ANIMACIÓN)
-// -----------------------------------------------------
 .galeria__track {
   display: flex;
   width: max-content;
-  animation: scroll-galeria 30s linear infinite; // Un poco más lento para apreciar fotos
+  animation: scroll-galeria 30s linear infinite;
 }
 
-// -----------------------------------------------------
-// 5.3 GRUPOS
-// -----------------------------------------------------
-.galeria__grupo {
-  display: flex;
-  gap: 30px; // Más espacio entre fotos
-  margin-right: 30px;
-}
-
-// -----------------------------------------------------
-// 5.4 IMÁGENES (ESTILO POLAROID DECORATIVO)
-// -----------------------------------------------------
 .galeria__grupo img {
   width: 240px; 
   height: 320px;
   object-fit: cover;
-  
-  // Estilo decorativo
   background-color: white;
-  border: 10px solid white; // Borde grueso tipo foto antigua
-  border-radius: 4px; // Bordes menos redondeados para el look Polaroid
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
-  
-  flex-shrink: 0;
-  transition: all 0.4s ease;
-
-  &:hover {
-    transform: scale(1.08) rotate(3deg); // Escala y rotación suave
-    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
-    z-index: 10;
-  }
-}
-
-// -----------------------------------------------------
-// 5.5 INTERACCIÓN Y ANIMACIÓN
-// -----------------------------------------------------
-.galeria:hover .galeria__track {
-  animation-play-state: paused;
+  border: 10px solid white;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
 }
 
 @keyframes scroll-galeria {
@@ -309,94 +244,46 @@
   100% { transform: translateX(-50%); }
 }
 
-// -----------------------------------------------------
-// 5.7 RESPONSIVE GALERÍA
-// -----------------------------------------------------
-@include para-tablet {
-  .galeria__grupo img {
-    width: 180px;
-    height: 240px;
-    border: 6px solid white;
-  }
-}
-
-// -----------------------------------------------------
-// 5.8 BOTON DE CITA (PRUEBA DE INTERACCIÓN)
-// -----------------------------------------------------
+// =====================================================
+// 5.8 BOTÓN CTA
+// =====================================================
 
 .boton_cita {
   width: 100%;
   display: flex;
   justify-content: center;
-
   margin-top: $espaciado-lg;
 }
 
 .btn-imagen {
   width: 100%;
-  max-width: 400px; // 🔥 controla que no se vuelva gigante en desktop
-
+  max-width: 400px;
   padding: 18px 24px;
-
   font-size: 1.2rem;
   font-weight: bold;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-
   color: white;
   background: linear-gradient(135deg, $color-primario, lighten($color-primario, 10%));
-
   border: none;
   border-radius: 12px;
-
   cursor: pointer;
-
-  box-shadow: 0 6px 18px rgba(0,0,0,0.15);
-
   transition: all 0.25s ease;
 
-  // HOVER
   &:hover {
     transform: translateY(-2px);
-    box-shadow: 0 10px 22px rgba(0,0,0,0.2);
   }
 
-  // CLICK (🔥 lo que pediste)
   &:active {
     transform: scale(0.97);
-    background: lighten($color-primario, 20%); // 🔥 color más vivo
-    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-  }
-
-  // FOCUS (accesibilidad)
-  &:focus {
-    outline: none;
+    background: lighten($color-primario, 20%);
   }
 }
+
 // =====================================================
-// 6. SECCIÓN EXTRA 3 (FAQ)
+// 6. FAQ
 // =====================================================
 
-.seccion_faq{
+.seccion_faq {
   height: 100vh;
-}
-
-.padre_contenedor_faq {
-  width: 100%;
-  margin-top: $espaciado-lg;
-  display: flex;
-  flex-direction: column;
-  gap: $espaciado-lg;
-}
-
-.faq__header {
-  text-align: center;
-}
-
-.faq__titulo {
-  font-size: 2rem;
-  font-weight: bold;
-  color: $color-texto;
 }
 
 .faq__grid {
@@ -405,122 +292,91 @@
   gap: $espaciado-md;
 }
 
-.faq__item {
-  background: white;
-  padding: $espaciado-md;
-  border-radius: $radio-borde;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.06);
-  transition: transform 0.3s ease;
-
-  &:hover {
-    transform: translateY(-4px);
-  }
-}
-
-@include para-tablet {
-  .faq__grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
-@include para-movil {
-  .faq__grid {
-    grid-template-columns: 1fr;
-  }
-}
-
+// =====================================================
+// 7. 🔥 RESPONSIVE GLOBAL MOBILE
+// =====================================================
 
 @include para-movil {
 
-  // ===============================
-  // 1. SECCIÓN PRINCIPAL
-  // ===============================
+  .layout-pagina__seccion {
+    width: 100%;
+    padding: 0; // 🔥 evita dobles paddings
+  }
 
+  .layout-pagina__seccion--superior {
+    padding: 20px 0; // 🔥 aire arriba y abajo
+  }
+
+
+  // SECCIÓN PRINCIPAL
   .seccion-principal {
-    height: auto; // 🔥 quitar 90vh
+    height: auto;
     padding: 40px 20px;
   }
 
   .seccion-principal__texto-infromativo {
-    padding: 3rem 1.5rem; // 🔥 menos agresivo
-    border-radius: 30px;  // 🔥 evita forma oval exagerada
+    padding: 3rem 1.5rem;
+    border-radius: 30px;
   }
 
-  // ===============================
-  // 2. CARDS
-  // ===============================
-
+  // CARDS
   .padre_contendor_cards {
     padding: 40px 15px;
   }
 
   .contenedor_cards {
-    gap: 20px;
+    flex-direction: column;
+    align-items: center;
   }
 
-  .card {
-    width: 100%;
-    max-width: 350px;
-  }
-
-  // ===============================
-  // 3. PRESENTACIÓN
-  // ===============================
-
+  // PRESENTACIÓN 🔥 MEJORADA
   .padre_contendor_presentacion {
-    height: auto; // 🔥 quitar 70vh
-    padding: 40px 20px;
-    text-align: center;
+    height: auto;
+    padding: 60px 20px;
+  }
+
+  .padre_contendor_presentacion::before {
+    width: 180px;
+    height: 180px;
+    top: -40px;
+    left: -40px;
+  }
+
+  .padre_contendor_presentacion::after {
+    width: 150px;
+    height: 150px;
+    bottom: -40px;
+    right: -30px;
   }
 
   .padre_contendor_presentacion img {
-    width: 180px; // 🔥 mejor proporción
+    width: 180px;
   }
 
-  // ===============================
-  // 4. GALERÍA
-  // ===============================
-
-  .padre_contenedor_galeria {
-    padding: 40px 0;
-  }
-
-  .galeria__grupo {
-    gap: 15px;
-    margin-right: 15px;
-  }
-
+  // GALERÍA
   .galeria__grupo img {
-    width: 140px;
-    height: 180px;
-    border: 5px solid white;
-  }
+  width: 180px;     // 🔥 un poco más ancho
+  height: 260px;    // 🔥 mucho más alto (clave)
+  
+  object-fit: cover;
 
-  // ===============================
-  // 5. BOTÓN CTA
-  // ===============================
+  border: 6px solid white; // opcional, más limpio en móvil
+}
 
+  // BOTÓN
   .btn-imagen {
     max-width: 90%;
     font-size: 1rem;
-    padding: 14px 16px;
+    padding: 14px;
   }
 
-  // ===============================
-  // 6. FAQ
-  // ===============================
-
+  // FAQ
   .seccion_faq {
-    height: auto; // 🔥 eliminar 100vh
+    height: auto;
     padding: 40px 20px;
   }
 
-  .faq__titulo {
-    font-size: 1.6rem;
+  .faq__grid {
+    grid-template-columns: 1fr;
   }
-
-  .faq__item {
-    padding: 15px;
-  }
-
 }
