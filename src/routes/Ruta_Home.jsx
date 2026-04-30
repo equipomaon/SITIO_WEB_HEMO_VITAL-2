@@ -8,10 +8,10 @@ import imgCalvin  from '../assets/testeo_calvin.png';
 import img_gato from '../assets/testeo_gato.png';
 import huella_perro from '../assets/huella.png';
 
-export const Home = () => {
+export const Ruta_Home = () => {
   return (
    
-    <>
+    <> 
     
 
     {/* ---------------- HOME SECCIÓN SUPERIOR ---------------- */}    
