@@ -35,11 +35,11 @@ export const MainLayout = () => {
 
   return (
 
-    <div className="layout-principal">
+    <div className="contenedor-principal">
 
       <Navbar />
 
-      <main className="contenido-principal">
+      <main >
 
         <Outlet />
 

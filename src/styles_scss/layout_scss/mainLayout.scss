@@ -3,7 +3,7 @@
 
 
 
-.layout-principal {
+.contenedorprincipal {
   flex: 1;
   padding: 0;
   margin: 0;
@@ -15,7 +15,9 @@
 
   // 🔥 CLAVE: evita que hijos rompan el layout horizontal
   overflow-x: hidden;
-  box-sizing: border-box;
+  box-sizing: border-box; 
+
+
 
   @include para-tablet {
     padding: $espaciado-md;

@@ -1,382 +1,82 @@
 @use '../base_scss/variables' as *;
 @use '../base_scss/responsive' as *;
 
-// =====================================================
-// 1. PADRE CONTENEDOR
-// =====================================================
-
-.padre_contendor_cards {
-  margin: 0;
-}
-
-// -----------------------------------------------------
-// 1.1 RESPONSIVE PADRE CONTENEDOR
-// -----------------------------------------------------
-
-@include para-tablet {
-  .padre_contendor_cards {
-    width: 100%;
-  }
-}
-
-// =====================================================
-// 2. SECCIÓN PRINCIPAL (SUPERIOR)
-// =====================================================
-
-.seccion-principal {
-  display: flex;
-  flex-direction: column;
-  align-items: center; 
-  justify-content: center;
-  text-align: center;
-
-  gap: $espaciado-sm;
+// Estilo para el contenedor general del Header
+.layout-pagina__seccion--superior {
+  background-color: #ffffff;
+  padding: 40px 20px; // Aire a los lados y arriba
   width: 100%;
-  height: 90vh;
-  padding: $espaciado-lg;
-  border-radius: $radio-borde;
   box-sizing: border-box;
-  margin-top: 60px;
-
-  background-color: #fce4ec; 
-  border-left: none; 
 }
 
-// -----------------------------------------------------
-// 2.1 ELEMENTOS INTERNOS
-// -----------------------------------------------------
+.padre_contendor_home_seccion_header {
+  display: flex;
+  flex-direction: column; // Los elementos se apilan hacia abajo
+  gap: 24px;
+  max-width: 100%;
+}
 
-.seccion-principal__texto-infromativo {
-  background-color: #ffffff; 
-  border-radius: 50% / 50%; 
-  box-shadow: 0px 20px 50px rgba(0, 0, 0, 0.1);
-  padding: 6rem 4rem; 
-
+// 1. Bloque de Texto
+.home_seccion_header__texto-infromativo {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  
-  width: 90%; 
-  max-width: 1000px;
-  margin: 0 auto; 
-  border: none; 
+  text-align: left; // Alineado a la izquierda como la imagen
+  gap: 16px;
 
   .seccion-principal__titulo {
-    font-size: 2.2rem;
-    font-weight: bold;
-    color: $color-texto;
-    margin-bottom: 1rem;
-  }
-}
-
-// -----------------------------------------------------
-// 2.2 RESPONSIVE
-// -----------------------------------------------------
-
-@include para-tablet {
-  .seccion-principal {
-    padding: $espaciado-md;
-    height: auto;
+    font-size: 2.5rem; // Grande y destacado
+    line-height: 1.1;
+    font-weight: 500;
+    color: #000000;
+    margin: 0;
   }
 
-  .seccion-principal__titulo {
-    font-size: 1.8rem;
-  }
-}
-
-// =====================================================
-// 3. SECCIÓN MEDIA (CARDS)
-// =====================================================
-
-.layout-pagina__seccion--media {
-  background-color: #d7b5b5; 
-  overflow: hidden;         
-  width: 100%;
-}
-
-.padre_contendor_cards {
-  background-color: white;
-  width: 110%;              
-  margin-left: -5%;         
-  border-radius: 50% / 25%; 
-  padding: 80px 5%; 
-  box-sizing: border-box;
-  display: flex;
-  justify-content: center;
-  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.05);
-}
-
-.contenedor_cards {
-  display: flex;
-  justify-content: space-between;
-  gap: $espaciado-md;
-  max-width: 1100px; 
-  width: 100%;
-  margin: 0 auto;
-}
-
-// -----------------------------------------------------
-// 3.1 CARD
-// -----------------------------------------------------
-
-.card {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  background: white;
-  border-radius: $radio-borde;
-  overflow: hidden;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-  transition: transform 0.3s ease;
-
-  &:hover {
-    transform: translateY(-5px);
-  }
-}
-
-.card__imagen {
-  width: 100%;
-  height: 180px;
-  background-color: rgba(52, 152, 219, 0.15);
-  border-bottom: 2px solid $color-primario;
-}
-
-.card__contenido {
-  padding: $espaciado-md;
-  display: flex;
-  flex-direction: column;
-  gap: $espaciado-sm;
-}
-
-// =====================================================
-// 4. SECCIÓN EXTRA 1 (PRESENTACIÓN)
-// =====================================================
-
-.padre_contendor_presentacion {
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  height: 70vh;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  gap: $espaciado-lg;
-  box-sizing: border-box;
-  overflow: hidden;
-}
-
-// 🔥 FORMAS ORGÁNICAS
-.padre_contendor_presentacion::before {
-  content: "";
-  position: absolute;
-  width: 300px;
-  height: 300px;
-  background: #ffd6e0;
-  border-radius: 50%;
-  top: -80px;
-  left: -80px;
-  z-index: 0;
-}
-
-.padre_contendor_presentacion::after {
-  content: "";
-  position: absolute;
-  width: 250px;
-  height: 250px;
-  background: #ffe9f0;
-  border-radius: 50%;
-  bottom: -80px;
-  right: -60px;
-  z-index: 0;
-}
-
-// CONTENIDO ENCIMA
-.padre_contendor_presentacion > * {
-  position: relative;
-  z-index: 1;
-}
-
-.padre_contendor_presentacion p {
-  max-width: 400px;
-}
-
-.padre_contendor_presentacion img {
-  width: 250px;
-}
-
-// =====================================================
-// 5. GALERÍA
-// =====================================================
-
-.padre_contenedor_galeria {
-  width: 100%;
-  overflow: hidden;
-  margin-top: $espaciado-lg;
-  padding: 60px 0;
-  background-color: #fcfcfc;
-
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-
-  -webkit-mask-image: linear-gradient(to right, transparent, black 15%, black 85%, transparent);
-  mask-image: linear-gradient(to right, transparent, black 15%, black 85%, transparent);
-}
-
-.galeria__track {
-  display: flex;
-  width: max-content;
-  animation: scroll-galeria 30s linear infinite;
-}
-
-.galeria__grupo img {
-  width: 240px; 
-  height: 320px;
-  object-fit: cover;
-  background-color: white;
-  border: 10px solid white;
-  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
-}
-
-@keyframes scroll-galeria {
-  0% { transform: translateX(0); }
-  100% { transform: translateX(-50%); }
-}
-
-// =====================================================
-// 5.8 BOTÓN CTA
-// =====================================================
-
-.boton_cita {
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  margin-top: $espaciado-lg;
-}
-
-.btn-imagen {
-  width: 100%;
-  max-width: 400px;
-  padding: 18px 24px;
-  font-size: 1.2rem;
-  font-weight: bold;
-  color: white;
-  background: linear-gradient(135deg, $color-primario, lighten($color-primario, 10%));
-  border: none;
-  border-radius: 12px;
-  cursor: pointer;
-  transition: all 0.25s ease;
-
-  &:hover {
-    transform: translateY(-2px);
-  }
-
-  &:active {
-    transform: scale(0.97);
-    background: lighten($color-primario, 20%);
-  }
-}
-
-// =====================================================
-// 6. FAQ
-// =====================================================
-
-.seccion_faq {
-  height: 100vh;
-}
-
-.faq__grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: $espaciado-md;
-}
-
-// =====================================================
-// 7. 🔥 RESPONSIVE GLOBAL MOBILE
-// =====================================================
-
-@include para-movil {
-
-  .layout-pagina__seccion {
-    width: 100%;
-    padding: 0; // 🔥 evita dobles paddings
-  }
-
-  .layout-pagina__seccion--superior {
-    padding: 20px 0; // 🔥 aire arriba y abajo
-  }
-
-
-  // SECCIÓN PRINCIPAL
-  .seccion-principal {
-    height: auto;
-    padding: 40px 20px;
-  }
-
-  .seccion-principal__texto-infromativo {
-    padding: 3rem 1.5rem;
-    border-radius: 30px;
-  }
-
-  // CARDS
-  .padre_contendor_cards {
-    padding: 40px 15px;
-  }
-
-  .contenedor_cards {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  // PRESENTACIÓN 🔥 MEJORADA
-  .padre_contendor_presentacion {
-    height: auto;
-    padding: 60px 20px;
-  }
-
-  .padre_contendor_presentacion::before {
-    width: 180px;
-    height: 180px;
-    top: -40px;
-    left: -40px;
-  }
-
-  .padre_contendor_presentacion::after {
-    width: 150px;
-    height: 150px;
-    bottom: -40px;
-    right: -30px;
-  }
-
-  .padre_contendor_presentacion img {
-    width: 180px;
-  }
-
-  // GALERÍA
-  .galeria__grupo img {
-  width: 380px;     // 🔥 un poco más ancho
-  height: 260px;    // 🔥 mucho más alto (clave)
-  
-  object-fit: cover;
-
-  border: 6px solid white; // opcional, más limpio en móvil
-}
-
-  // BOTÓN
-  .btn-imagen {
-    max-width: 90%;
+  .seccion-principal__descripcion {
     font-size: 1rem;
-    padding: 14px;
+    line-height: 1.5;
+    color: #000000;
+    margin: 0;
+  }
+}
+
+// 2. Bloque de Botones
+.home_seccion_header__botones {
+  display: flex;
+  gap: 12px; // Espacio entre botones
+  margin-top: 8px;
+
+  button {
+    flex: 1; // Hacen que midan lo mismo en móvil
+    padding: 12px 20px;
+    font-size: 1rem;
+    border: 1px solid #000000;
+    cursor: pointer;
+    background: none;
+    transition: 0.3s;
   }
 
-  // FAQ
-  .seccion_faq {
-    height: auto;
-    padding: 40px 20px;
+  .btn-negro {
+    background-color: #000000;
+    color: #ffffff;
   }
 
-  .faq__grid {
-    grid-template-columns: 1fr;
+  .btn-outline {
+    background-color: #ffffff;
+    color: #000000;
+  }
+}
+
+// 3. Bloque Visual (Imagen Gris)
+.home_seccion_header__visual {
+  width: 100%;
+  margin-top: 16px;
+
+  .placeholder-imagen {
+    width: 100%;
+    aspect-ratio: 1 / 1.1; // Un poco más alto que ancho
+    background-color: #e0e0e0; // El gris de la imagen
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 }
