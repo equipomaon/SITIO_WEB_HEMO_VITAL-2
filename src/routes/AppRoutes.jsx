@@ -4,7 +4,7 @@ import { Route, Routes, Navigate } from 'react-router-dom';
 // RUTAS DE LA APLICACION
 
 import { Ruta_Home } from './Ruta_Home.jsx';
-import { RutaDos } from './Ruta_dos.jsx';
+import { Ruta_Eresveterinario } from './Ruta_Eresveterinario.jsx';
 import { RutaTres } from './Ruta_tres.jsx';   
 
 
@@ -21,7 +21,7 @@ export const AppRoutes = () => {
 
                 <Route element={<MainLayout />}>
                     <Route path="/home" element={<Ruta_Home />} /> 
-                    <Route path="/ruta-dos" element={<RutaDos />} />
+                    <Route path="/ruta-dos" element={<Ruta_Eresveterinario />} />
                     <Route path="/ruta-tres" element={<RutaTres />} />
                 </Route>
 
