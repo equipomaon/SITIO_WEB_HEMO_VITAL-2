@@ -6,7 +6,7 @@ import '../styles_scss/componentes_scss/home.scss';
 import  imgFestival  from '../assets/testeo_festival.png';
 import imgCalvin  from '../assets/testeo_calvin.png';
 import img_gato from '../assets/testeo_gato.png';
-import huella_perro from '../assets/huella.png';
+import huella_perro from '../assets/huella.png'; 
 
 export const Ruta_Home = () => {
   return (
