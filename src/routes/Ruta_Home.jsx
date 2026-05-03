@@ -7,7 +7,7 @@ import imgFestival from '../assets/testeo_festival.png';
 export const Ruta_Home = () => {
   return (
     <> 
-      {/* ---------------- HOME SECCIÓN HEADER (HERO) ---------------- */}    
+      {/* ---------------- HOME SECCIÓN 1 HEADER (HERO) ---------------- */}    
       <div className="layout-pagina__seccion layout-pagina__seccion--superior">
 
         <div className="padre_contendor padre_contendor_home_seccion_header">
@@ -38,10 +38,80 @@ export const Ruta_Home = () => {
           </div>
 
         </div>
+
       </div>
 
-      {/* Otras secciones vacías por ahora */}
-      <div className="layout-pagina__seccion layout-pagina__seccion--media"></div>
+      {/* ---------------- HOME SECCIÓN 2  ---------------- */}
+      <div className="layout-pagina__seccion layout-pagina__seccion--media">
+
+          <div className="padre_contendor padre_contendor_home_seccion_2">
+
+              {/*HOME SECCION 2.1:  ENCABEZADO DE LA SECCIÓN */}
+              <div className="home_s2__encabezado">
+                <span className="home_s2__tagline">Tagline</span>
+                <h2 className="home_s2__titulo">Short heading goes here</h2>
+                <p className="home_s2__descripcion">
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                </p>
+              </div>
+
+              {/* HOME SECCION 2.2: GRID TARJETAS   */}
+              <div className="home_s2__grid">
+
+                {/* TARJETA 1 — icono + texto */}
+                <div className="home_s2__card home_s2__card--texto">
+                  <span className="home_s2__card-icono">🐾</span>
+                  <h3 className="home_s2__card-titulo">Medium length section heading goes here</h3>
+                  <p className="home_s2__card-descripcion">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                  <a className="home_s2__card-link" href="#">Button &rsaquo;</a>
+                </div>
+
+                {/* TARJETA 2 — icono + texto */}
+                <div className="home_s2__card home_s2__card--texto">
+                  <span className="home_s2__card-icono">🐾</span>
+                  <h3 className="home_s2__card-titulo">Medium length section heading goes here</h3>
+                  <p className="home_s2__card-descripcion">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                  <a className="home_s2__card-link" href="#">Button &rsaquo;</a>
+                </div>
+
+
+                {/* TARJETA 3 — tagline + texto (fila 2 centro) */}
+                <div className="home_s2__card home_s2__card--texto home_s2__card--con-tagline">
+                  <span className="home_s2__tagline">Tagline</span>
+                  <h3 className="home_s2__card-titulo">Medium length section heading goes here</h3>
+                  <p className="home_s2__card-descripcion">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                  <a className="home_s2__card-link" href="#">Button &rsaquo;</a>
+                </div>
+
+                {/* TARJETA 4 — tagline + texto (fila 2 derecha) */}
+                <div className="home_s2__card home_s2__card--texto home_s2__card--con-tagline">
+                  <span className="home_s2__tagline">Tagline</span>
+                  <h3 className="home_s2__card-titulo">Medium length section heading goes here</h3>
+                  <p className="home_s2__card-descripcion">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                  <a className="home_s2__card-link" href="#">Button &rsaquo;</a>
+                </div>
+
+                {/* TARJETA 5 — tagline + texto (fila 2 derecha) */}
+                <div className="home_s2__card home_s2__card--texto home_s2__card--con-tagline">
+                  <span className="home_s2__tagline">Tagline</span>
+                  <h3 className="home_s2__card-titulo">Medium length section heading goes here</h3>
+                  <p className="home_s2__card-descripcion">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                  <a className="home_s2__card-link" href="#">Button &rsaquo;</a>
+                </div>
+
+                {/* TARJETA 6 — tagline + texto (fila 2 derecha) */}
+                <div className="home_s2__card home_s2__card--texto home_s2__card--con-tagline">
+                  <span className="home_s2__tagline">Tagline</span>
+                  <h3 className="home_s2__card-titulo">Medium length section heading goes here</h3>
+                  <p className="home_s2__card-descripcion">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                  <a className="home_s2__card-link" href="#">Button &rsaquo;</a>
+                </div>
+
+              </div>
+
+          </div>
+      </div>
+
       <div className="layout-pagina__seccion layout-pagina__seccion--media"></div>
       <div className="layout-pagina__seccion layout-pagina__seccion--media"></div>
       <div className="layout-pagina__seccion layout-pagina__seccion--media seccion_faq"></div>
