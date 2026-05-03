@@ -112,7 +112,8 @@ export const Ruta_Home = () => {
           </div>
       </div>
 
-      <div className="layout-pagina__seccion layout-pagina__seccion--media"></div>
+
+
       <div className="layout-pagina__seccion layout-pagina__seccion--media"></div>
       <div className="layout-pagina__seccion layout-pagina__seccion--media seccion_faq"></div>
     </> 
