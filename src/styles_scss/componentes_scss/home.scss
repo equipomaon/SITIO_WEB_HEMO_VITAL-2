@@ -28,8 +28,7 @@
   max-width: 1400px;
   margin: 0 auto;
 
-  //ESTILOS DE TESTEO
-   background: rgba(239, 219, 5, 0.249); ; // 🔥 para visualizar el contenedor en desarrollo
+  
 
   // Transformación a 2 columnas en escritorio
   @include para-escritorio {
@@ -47,8 +46,7 @@
   text-align: left; 
   gap: 16px;
 
-   //ESTILOS DE TESTEO
-   background: rgba(5, 60, 239, 0.249); ; // 🔥 para visualizar el contenedor en desarrollo
+   
 
   @include para-escritorio {
     flex: 1; // Ocupa el 50% del ancho
@@ -61,8 +59,7 @@
     color: #000000;
     margin: 0;
 
-    //ESTILOS DE TESTEO
-   background: rgba(239, 5, 5, 0.249); ; // 🔥 para visualizar el contenedor en desarrollo
+   
 
     @include para-escritorio {
       font-size: 4rem; // Título más grande en PC
@@ -76,8 +73,7 @@
     margin: 0;
     max-width: 550px;
 
-    //ESTILOS DE TESTEO
-   background: rgba(239, 5, 5, 0.249); ; // 🔥 para visualizar el contenedor en desarrollo
+   
   }
 }
 
@@ -87,8 +83,7 @@
   gap: 12px; 
   margin-top: 8px;
 
-   //ESTILOS DE TESTEO
-   background: rgba(239, 5, 5, 0.249); ; // 🔥 para visualizar el contenedor en desarrollo
+
 
   button {
     flex: 1; // Botones anchos en móvil
@@ -165,8 +160,7 @@
   flex-direction: column;
   gap: 48px;
 
-     //ESTILOS DE TESTEO
-    background: rgba(229, 241, 7, 0.249); ; // 🔥 para visualizar el contenedor en desarrollo
+   
 }
 
   // --- HOME SECCION 2.1:  ENCABEZADO DE LA SECCIÓN ---
@@ -220,8 +214,7 @@
     grid-template-columns: 1fr;
 
     
-     //ESTILOS DE TESTEO
-    background: rgba(7, 89, 241, 0.477); ; // 🔥 para visualizar el contenedor en desarrollo
+    
 
   
 
