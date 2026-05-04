@@ -101,33 +101,9 @@ export const Ruta_Home = () => {
                 </div>
               </div>
 
-              {/* TARJETA 4 */}
-              <div className="home_s2__card">
-                <div className="home_s2__card-img-wrapper">
-                  <img src={imgFestival} alt="Imagen tarjeta 4" className="home_s2__card-img" />
-                </div>
-                <div className="home_s2__card-body">
-                  <span className="home_s2__card-icono">🐾</span>
-                  <h3 className="home_s2__card-titulo">Medium length section heading goes here</h3>
-                  <p className="home_s2__card-descripcion">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                  <a className="home_s2__card-link" href="#">Button &rsaquo;</a>
-                </div>
-              </div>
+              
 
-              {/* TARJETA 5 */}
-              <div className="home_s2__card">
-                <div className="home_s2__card-img-wrapper">
-                  <img src={imgFestival} alt="Imagen tarjeta 5" className="home_s2__card-img" />
-                </div>
-                <div className="home_s2__card-body">
-                  <span className="home_s2__card-icono">🐾</span>
-                  <h3 className="home_s2__card-titulo">Medium length section heading goes here</h3>
-                  <p className="home_s2__card-descripcion">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                  <a className="home_s2__card-link" href="#">Button &rsaquo;</a>
-                </div>
-              </div>
-
-              {/* TARJETA 6 */}
+              {/* TARJETA 6  base
               <div className="home_s2__card">
                 <div className="home_s2__card-img-wrapper">
                   <img src={imgFestival} alt="Imagen tarjeta 6" className="home_s2__card-img" />
@@ -139,6 +115,7 @@ export const Ruta_Home = () => {
                   <a className="home_s2__card-link" href="#">Button &rsaquo;</a>
                 </div>
               </div>
+              */}
 
             </div>
 
