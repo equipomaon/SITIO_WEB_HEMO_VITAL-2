@@ -2,7 +2,7 @@ import { NavLink, Link } from 'react-router-dom';
 import { useState } from 'react';
 
 // ASSETS - Asegúrate de que esta ruta sea la de tu logo nuevo con letras
-import logo_vital from '../assets/huella.png'; 
+import logo_tipo from '../assets/Imagotipo_Hemovital_Horizontal_1.png'; 
 
 // ESTILOS
 import '../styles_scss/componentes_scss/navbar_component.scss';
@@ -21,7 +21,7 @@ export const Navbar = () => {
         
         {/* LOGO (Siempre a la izquierda) */}
         <Link className="navbar__brand" to="/" onClick={cerrarMenu}>
-          <img src={logo_vital} alt="Hemovital Logo" />
+          <img src={logo_tipo} alt="Hemovital Logo" />
         </Link>
 
         {/* 🔹 LINKS PARA ESCRITORIO (Se ocultan en móvil) */}
@@ -35,10 +35,13 @@ export const Navbar = () => {
             </NavLink>
           </div>
 
+          {/* 🔹 ACCIONES PARA ESCRITORIO (Se ocultan en móvil)
           <div className="navbar__desktop-actions">
             <button className="btn-outline">Button</button>
             <button className="btn-solid">Button</button>
           </div>
+
+           */}
         </div>
 
         {/* 🔹 BOTÓN HAMBURGUESA (Solo visible en móvil) */}
@@ -55,7 +58,7 @@ export const Navbar = () => {
       
       <div className={`navbar__overlay ${menuAbierto ? 'navbar__overlay--open' : ''}`}>
         <div className="navbar__overlay-header">
-          <img src={logo_vital} alt="Logo" className="logo-small" />
+          <img src={logo_tipo} alt="Logo" className="logo-small" />
           <button className="navbar__close" onClick={toggleMenu}>✕</button>
         </div>
 

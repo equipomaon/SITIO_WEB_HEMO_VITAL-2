@@ -2,6 +2,7 @@ import '../styles_scss/componentes_scss/home.scss';
 
 // ASSETS
 import imgFestival from '../assets/testeo_festival.png';
+import home_header from '../assets/home_header.png';
 
 
 
@@ -32,9 +33,11 @@ export const Ruta_Home = () => {
           <div className="home_seccion_header__visual">
              <div className="placeholder-imagen">
                 {/* Icono de montaña representativo */}
-                <svg width="60" height="60" viewBox="0 0 24 24" fill="none" stroke="#a0a0a0" strokeWidth="1">
-                  <rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/>
-                </svg>
+                <img
+                    src={home_header}
+                    alt="Imagen principal Hero"
+                    className="home_seccion_header__img"
+                  />
              </div>
           </div>
 
