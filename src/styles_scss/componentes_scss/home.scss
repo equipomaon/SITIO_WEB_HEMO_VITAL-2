@@ -146,6 +146,10 @@
 // HOME — SECCIÓN 2
 // ==========================================================================
 
+// ==========================================================================
+// HOME — SECCIÓN 2
+// ==========================================================================
+
 .layout-pagina__seccion--media {
   padding: 60px 20px;
   width: 100%;
@@ -154,8 +158,6 @@
   @include para-escritorio {
     padding: 80px 5%;
   }
-
- 
 }
 
 .padre_contendor_home_seccion_2 {
@@ -164,146 +166,284 @@
   display: flex;
   flex-direction: column;
   gap: 48px;
-
-     //ESTILOS DE TESTEO
-    background: rgba(229, 241, 7, 0.249); ; // 🔥 para visualizar el contenedor en desarrollo
 }
 
-  // --- HOME SECCION 2.1:  ENCABEZADO DE LA SECCIÓN ---
-  .home_s2__encabezado {
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 12px;
-  }
+// --- Encabezado centrado ---
+.home_s2__encabezado {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+}
 
-  .home_s2__tagline {
-    font-size: 0.85rem;
-    font-weight: 500;
-    color: #555;
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
-  }
+.home_s2__tagline {
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: #555;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
 
-  .home_s2__titulo {
-    font-size: 2rem;
-    font-weight: 500;
-    color: #000;
-    margin: 0;
+.home_s2__titulo {
+  font-size: 2rem;
+  font-weight: 500;
+  color: #000;
+  margin: 0;
 
-    @include para-escritorio {
-      font-size: 2.8rem;
-    }
+  @include para-escritorio {
+    font-size: 2.8rem;
   }
+}
 
-  .home_s2__descripcion {
-    font-size: 1rem;
-    color: #444;
-    max-width: 560px;
-    line-height: 1.6;
-    margin: 0;
-  }
+.home_s2__descripcion {
+  font-size: 1rem;
+  color: #444;
+  max-width: 560px;
+  line-height: 1.6;
+  margin: 0;
+}
 
 // --- Grid principal ---
 // Layout del diseño:
 //  Fila 1: [card-texto] [card-texto] [imagen-grande ← ocupa 2 filas]
 //  Fila 2: [imagen-peq] [card-texto] [card-texto]
 
+.home_s2__grid {
+  display: grid;
+  gap: 16px;
 
-  // --- HOME SECCION 2.2: GRID DE TARJETAS ---
-  .home_s2__grid {
-    display: grid;
-    gap: 16px;
+  // Mobile: 1 columna
+  grid-template-columns: 1fr;
 
-    // Mobile: 1 columna
-    grid-template-columns: 1fr;
+  // Escritorio: 3 columnas, 2 filas
+  @include para-escritorio {
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: auto auto;
 
-    
-     //ESTILOS DE TESTEO
-    background: rgba(7, 89, 241, 0.477); ; // 🔥 para visualizar el contenedor en desarrollo
+    // Tarjeta 3 (imagen derecha) ocupa las 2 filas en col 3
+    .home_s2__card--imagen-derecha {
+      grid-column: 3;
+      grid-row: 1 / 3;
+    }
 
-  
-
-    // Escritorio: 3 columnas, 2 filas
-    @include para-escritorio {
-      grid-template-columns: repeat(3, 1fr);
-      grid-template-rows: auto auto;
-
-      // Tarjeta 3 (imagen derecha) ocupa las 2 filas en col 3
-      .home_s2__card--imagen-derecha {
-        grid-column: 3;
-        grid-row: 1 / 3;
-      }
-
-      // Tarjeta 4 (imagen izquierda) va en fila 2, col 1
-      .home_s2__card--imagen-izquierda {
-        grid-column: 1;
-        grid-row: 2;
-      }
+    // Tarjeta 4 (imagen izquierda) va en fila 2, col 1
+    .home_s2__card--imagen-izquierda {
+      grid-column: 1;
+      grid-row: 2;
     }
   }
+}
 
-    // --- Tarjeta base ---
-    .home_s2__card {
-      border: 1px solid #e0e0e0;
-      padding: 28px;
-      display: flex;
-      flex-direction: column;
-      gap: 12px;
-      box-sizing: border-box;
-    }
+// --- Imagen dentro de card de texto ---
+.home_s2__card-img-wrapper {
+  width: calc(100% + 56px); // compensa el padding de la card (28px * 2)
+  margin: -28px -28px 0 -28px; // saca la imagen hasta los bordes
+  overflow: hidden;
+  aspect-ratio: 16 / 9;
+}
 
-    // --- Tarjeta de texto ---
-    .home_s2__card--texto {
-      background-color: #ffffff;
-    }
+.home_s2__card-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
 
-    .home_s2__card-icono {
-      font-size: 1.5rem;
-    }
+// --- Imagen que ocupa toda la card (tarjetas 3 y 4) ---
+.home_s2__card-img--cover {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
 
-    .home_s2__card-titulo {
-      font-size: 1.1rem;
-      font-weight: 500;
-      color: #000;
-      margin: 0;
-      line-height: 1.3;
-    }
+// --- Tarjeta base ---
+.home_s2__card {
+  border: 1px solid #e0e0e0;
+  padding: 28px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  box-sizing: border-box;
+}
 
-    .home_s2__card-descripcion {
-      font-size: 0.95rem;
-      color: #444;
-      line-height: 1.5;
-      margin: 0;
-      flex: 1; // empuja el link hacia abajo
-    }
+// --- Tarjeta de texto ---
+.home_s2__card--texto {
+  background-color: #ffffff;
+}
 
-    .home_s2__card-link {
-      font-size: 0.9rem;
-      color: #000;
-      text-decoration: none;
-      font-weight: 500;
-      margin-top: 8px;
+.home_s2__card-icono {
+  font-size: 1.5rem;
+}
 
-      &:hover {
-        text-decoration: underline;
-      }
-    }
+.home_s2__card-titulo {
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: #000;
+  margin: 0;
+  line-height: 1.3;
+}
 
-  // --- Tarjeta de imagen ---
-  .home_s2__card--imagen {
-    background-color: #e8e8e8;
-    border: none;
-    padding: 0;
-    min-height: 220px;
+.home_s2__card-descripcion {
+  font-size: 0.95rem;
+  color: #444;
+  line-height: 1.5;
+  margin: 0;
+  flex: 1; // empuja el link hacia abajo
+}
+
+.home_s2__card-link {
+  font-size: 0.9rem;
+  color: #000;
+  text-decoration: none;
+  font-weight: 500;
+  margin-top: 8px;
+
+  &:hover {
+    text-decoration: underline;
   }
+}
 
-  .home_s2__placeholder-img {
+// --- Tarjeta de imagen ---
+.home_s2__card--imagen {
+  background-color: #e8e8e8;
+  border: none;
+  padding: 0;
+  min-height: 220px;
+}
+
+.home_s2__placeholder-img {
+  width: 100%;
+  height: 100%;
+  min-height: 220px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+// ==========================================================================
+// HOME — SECCIÓN 3
+// ==========================================================================
+
+.padre_contendor_home_seccion_3 {
+  max-width: 1400px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+// --- 3.1 Tarjeta encabezado centrada ---
+.home_s3__tarjeta-encabezado {
+  border: 1px dashed #aaa;
+  padding: 40px 32px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 14px;
+
+  @include para-escritorio {
+    max-width: 680px;
+    margin: 0 auto;
     width: 100%;
-    height: 100%;
-    min-height: 220px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
   }
+}
+
+.home_s3__icono {
+  width: 64px;       // 👈 ancho de la imagen
+  height: 64px;      // 👈 alto de la imagen
+  object-fit: cover; // recorta sin deformar
+  border-radius: 8px; // opcional: esquinas redondeadas
+}
+
+.home_s3__tagline {
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: #555;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.home_s3__titulo {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #000;
+  margin: 0;
+  line-height: 1.2;
+
+  @include para-escritorio {
+    font-size: 2.2rem;
+  }
+}
+
+.home_s3__descripcion {
+  font-size: 0.95rem;
+  color: #444;
+  line-height: 1.6;
+  margin: 0;
+  max-width: 500px;
+}
+
+// --- 3.2 Botones ---
+.home_s3__botones {
+  display: flex;
+  gap: 12px;
+  margin-top: 8px;
+  flex-wrap: wrap;
+  justify-content: center;
+
+  button {
+    padding: 12px 28px;
+    font-size: 1rem;
+    border: 1px solid #000;
+    cursor: pointer;
+    background: none;
+    transition: 0.3s;
+  }
+
+  .btn-negro {
+    background-color: #000;
+    color: #fff;
+    &:hover { background-color: #333; }
+  }
+
+  .btn-outline {
+    background-color: #fff;
+    color: #000;
+    &:hover { background-color: #f5f5f5; }
+  }
+}
+
+// --- 3.3 Placeholder de video ---
+// 👇 AQUÍ se controla el tamaño del video:
+//    - width: 100% → ocupa todo el ancho del contenedor padre
+//    - aspect-ratio: 16 / 9 → el ALTO se calcula automáticamente
+//      según el ancho. Puedes cambiarlo a 4/3, 21/9, etc.
+//    - Si prefieres alto fijo, reemplaza aspect-ratio por: height: 500px;
+.home_s3__video-wrapper {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  background-color: #757575;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+}
+
+.home_s3__play-btn {
+  width: 72px;
+  height: 72px;
+  border-radius: 16px;
+  background-color: rgba(0, 0, 0, 0.45);
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.3s;
+
+  &:hover {
+    background-color: rgba(0, 0, 0, 0.65);
+  }
+}
