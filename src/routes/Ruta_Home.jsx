@@ -2,7 +2,8 @@ import '../styles_scss/componentes_scss/home.scss';
 
 // ASSETS
 import imgFestival from '../assets/testeo_festival.png';
-// ... otros imports
+
+
 
 export const Ruta_Home = () => {
   return (
@@ -142,10 +143,6 @@ export const Ruta_Home = () => {
           
       </div>
 
-<<<<<<< HEAD
-
-
-=======
       {/* ---------------- HOME SECCIÓN 3  ---------------- */}
 
 <div className="layout-pagina__seccion layout-pagina__seccion--media">
