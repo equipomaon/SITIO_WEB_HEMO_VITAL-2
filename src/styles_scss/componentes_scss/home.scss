@@ -10,7 +10,47 @@
 }
 
 .layout-pagina__seccion--superior {
-  background-image: url('../../assets/home_fondo_seccion_1_imagen-de-fondo-principal-web-.png');
+  background-image: url('../../assets/home_fondo_seccion_1_imagen-de-fondo-principal-web-.png');  
+   
+  // 1. Evita que la imagen se duplique
+  background-repeat: no-repeat;
+  
+  // 2. Hace que la imagen cubra todo el ancho y alto sin deformarse
+  background-size: cover;
+  
+  // 3. Centra la imagen para que el foco esté siempre en el medio
+  background-position: center;
+
+  // 4. (Opcional) Altura mínima para que luzca como un Hero real
+  min-height: 80vh; 
+  display: flex;
+  align-items: center;
+
+  padding: 100px 20px; 
+  width: 100%;
+  box-sizing: border-box;
+
+  position: relative;
+  z-index: 1; // Un nivel abajo
+
+  @include para-escritorio {
+    padding: 0;
+    min-height: 105vh; // Un poco más alto en PC
+  }
+}
+
+.padre_contendor_home_seccion_header {
+  display: flex;
+  flex-direction: column; // Apilado vertical para móvil
+  gap: 24px;
+  width: 100%;
+  margin: 0 auto;
+  color: #FFFFFF;
+
+  border: 1px solid rgb(190, 248, 17); // 🔥 para visualizar el contenedor principa  l
+
+
+  background-image: url('../../assets/home_fondo_seccion_1.png');
   
   // 1. Evita que la imagen se duplique
   background-repeat: no-repeat;
@@ -31,35 +71,24 @@
   box-sizing: border-box;
 
   @include para-escritorio {
-    padding: 80px 5%;
+    padding: 0;
     min-height: 90vh; // Un poco más alto en PC
-  }
-}
 
-.padre_contendor_home_seccion_header {
-  display: flex;
-  flex-direction: column; // Apilado vertical para móvil
-  gap: 24px;
-  width: 100%;
-  margin: 0 auto;
-  color: #FFFFFF;
-
-  border: 1px solid rgb(190, 248, 17); // 🔥 para visualizar el contenedor principa  l
-  
-
-  
-
-  // Transformación a 2 columnas en escritorio
-  @include para-escritorio {
-    flex-direction: row; 
+     flex-direction: row; 
     align-items: center;
     justify-content: space-between;
     gap: 60px;
 
     height: 90vh;
+    width: 100%;
 
     margin-top: 30px;
   }
+  
+
+  
+
+  
 }
 
 // --- 1.1 Bloque de Texto ---
@@ -134,13 +163,15 @@
   .btn-negro {
     background-color: #000000;
     color: #ffffff;
+    border-radius: 50px; 
     &:hover { background-color: #333; }
   }
 
   .btn-outline {
     background-color: #ffffff;
     color: #000000;
-    &:hover { background-color: #f5f5f5; }
+    border-radius: 50px; 
+    &:hover { background-color: #ff9d96 ; }
   }
 }
 
@@ -176,47 +207,99 @@
 
 // Contenedor interno que limita el ancho del contenido
 .padre_contendor_home_seccion_2 {
-  max-width: 1400px;
+   max-width: 1400px;
   margin: 0 auto;
   width: 100%;
   display: flex;
   flex-direction: column;
   gap: 48px;
   box-sizing: border-box;
+  padding: 60px 20px; // Espacio interno para que el texto no toque las curvas
  
 }
 // --- Arco superior sección 2 ---
 .layout-pagina__seccion--dos {
   position: relative;
-  //background-image:url('../../assets/fondo_seccion_2.png') ;
-  background-color: #ffffff;
+  z-index: 10; 
+  margin-top: -50px; // Solapamiento con sección 1
+  min-height: 100vh;
+  overflow: visible;
+  
+   // 1. CONFIGURACIÓN DE LA IMAGEN EN EL CUERPO
+  background-image: url('../../assets/home_s1_s2_fondo_blanco_perritos.png'); 
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
   width: 100%;
-  height: 100vh;
-  //padding: 120px 20px 80px 20px;
+  
+  // Cambiamos height: 100vh por min-height para que si hay muchas tarjetas, el fondo crezca
+  min-height: 100vh; 
 
-  //clip-path: ellipse(150% 190% at 50% 100%); 
-  overflow: hidden; // 🔥 clave
+  // 2. SOLAPAMIENTO SUPERIOR
+  // Subimos la sección para que la curva tape a la sección 1
+  margin-top: -50px; 
+  
+  // 3. IMPORTANTE: Permitir que las curvas sobresalgan
+  overflow: visible; 
 
   @include para-escritorio {
-    //padding: 150px 5% 100px 5%;
-    //clip-path: ellipse(80% 100% at 50% 100%);
+    margin-top: -80px; // Un solapamiento más profundo en PC
     margin-bottom: 100px;
-   
   } 
 
-  @include para-tablet {
-    padding: 150px 5% 80px 5%;
-    clip-path: ellipse(130% 90% at 50% 100%);
+  // ELIMINAMOS los clip-path de los media queries porque ahora usamos los divs curvos
+}
+
+/* --- CURVA SUPERIOR (Tapa del cilindro) --- */
+.seccion_dos_fondo_curvo_uno {
+  position: absolute;
+  top: -50px;           // La mitad del height para que sea el arco superior
+  left: 0;
+  width: 100%;
+  height: 100px;        
+  background-color: #eacc08; // MISMO AMARILLO
+  border-radius: 50% / 100%; 
+  z-index: -1;
+
+  @include para-escritorio {
+    height: 160px;      // Curva más pronunciada en PC si lo deseas
+    top: -50px;
   }
 }
 
-//estilos fondo
-.seccion_dos_fondo_curvo_uno{
-  background: blue;
-  width: 100vw;
-}
-.seccion_dos_fondo_curvo_dos{
-  background: blue;
+
+// --- CURVA INFERIOR (Base del cilindro) ---
+.seccion_dos_fondo_curvo_dos {
+  position: absolute;
+  // CAMBIO CLAVE: Usamos 'bottom' en lugar de 'top' para que siempre esté al final
+  bottom: -50px;        
+  left: 0;
+  width: 100%;
+  height: 100px;        
+  background-color: #eacc08; // MISMO AMARILLO
+  border-radius: 50% / 100%; 
+  z-index: -1;
+
+  @include para-escritorio {
+    height: 160px;
+    bottom: -80px;
+  }
+} 
+
+// --- ESTILO COMPARTIDO PARA LAS CURVAS ---
+.seccion_dos_fondo_curvo_uno,
+.seccion_dos_fondo_curvo_dos {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 100px;
+  border-radius: 50% / 100%;
+  z-index: -1;
+
+  // 2. HERENCIA DE IMAGEN
+  background-image: inherit; // Toma la misma imagen del padre
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 
 
