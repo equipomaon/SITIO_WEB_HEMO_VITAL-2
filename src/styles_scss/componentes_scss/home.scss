@@ -580,3 +580,129 @@
     width: 300px;
   }
 }
+
+
+// ==========================================================================
+// HOME — SECCIÓN 5
+// ==========================================================================
+.home_s5 {
+  padding: 80px 20px;
+  background-color: #ffffff;
+
+  @include para-escritorio {
+    padding: 100px 0;
+  }
+}
+
+.padre_contendor_home_seccion_5 {
+  max-width: 1400px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 48px;
+
+  @include para-escritorio {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+}
+
+// --- Info Izquierda ---
+.home_s5__info {
+  @include para-escritorio {
+    width: 35%;
+    position: sticky; // El texto se queda fijo mientras haces scroll en las preguntas
+    top: 100px;
+  }
+}
+
+.home_s5__titulo {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 24px;
+}
+
+.home_s5__descripcion {
+  font-size: 1.1rem;
+  line-height: 1.5;
+  color: #333;
+  margin-bottom: 32px;
+}
+
+.home_s5__btn-contacto {
+  padding: 12px 28px;
+  border: 1px solid #000;
+  background: transparent;
+  cursor: pointer;
+  font-weight: 500;
+  transition: 0.3s;
+
+  &:hover {
+    background: #000;
+    color: #fff;
+  }
+}
+
+// --- Acordeón Derecha ---
+.home_s5__acordeon {
+  @include para-escritorio {
+    width: 55%;
+  }
+}
+
+.home_s5__faq-item {
+  border-top: 1px solid #000; // Línea superior como en la imagen
+  
+  &:last-child {
+    border-bottom: 1px solid #000; // Línea final
+  }
+}
+
+.home_s5__faq-header {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 24px 0;
+  background: none;
+  border: none;
+  cursor: pointer;
+  text-align: left;
+}
+
+.home_s5__faq-pregunta {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #000;
+}
+
+.home_s5__faq-icono {
+  transition: transform 0.3s ease;
+  display: flex;
+  align-items: center;
+}
+
+// --- Animación del contenido ---
+.home_s5__faq-contenido {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease-out, padding 0.3s ease;
+}
+
+.home_s5__faq-texto {
+  padding-bottom: 24px;
+  color: #555;
+  line-height: 1.6;
+}
+
+// --- Estado Activo ---
+.home_s5__faq-item.active {
+  .home_s5__faq-icono {
+    transform: rotate(180deg); // La flecha gira hacia arriba
+  }
+  
+  .home_s5__faq-contenido {
+    max-height: 200px; // Altura suficiente para el texto
+  }
+}

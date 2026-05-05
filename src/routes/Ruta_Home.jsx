@@ -1,3 +1,5 @@
+import { useState } from 'react';
+
 import '../styles_scss/componentes_scss/home.scss';
 
 // ASSETS
@@ -8,6 +10,23 @@ import home_header from '../assets/home_header.png';
 
 
 export const Ruta_Home = () => {
+
+   // Estado para controlar qué pregunta está abierta
+  const [preguntaActiva, setPreguntaActiva] = useState(null);
+
+  const togglePregunta = (index) => {
+    setPreguntaActiva(preguntaActiva === index ? null : index);
+  };
+
+  const faqs = [
+    { q: "Question text goes here", a: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique." },
+    { q: "Question text goes here", a: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique." },
+    { q: "Question text goes here", a: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique." },
+    { q: "Question text goes here", a: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique." },
+    { q: "Question text goes here", a: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique." },
+  ];
+
+
   return (
     <> 
       {/* ---------------- HOME SECCIÓN 1 HEADER (HERO) ---------------- */}    
@@ -180,58 +199,108 @@ export const Ruta_Home = () => {
 
       
      {/* ---------------- HOME SECCIÓN 4  ---------------- */}
-<div className="layout-pagina__seccion layout-pagina__seccion--media home_s4">
-  <div className="padre_contendor padre_contendor_home_seccion_4">
-    
-    {/* ÁREA DE TEXTO / ENCABEZADO */}
-    <header className="home_s4__header">
-      <div className="home_s4__header-col-izq">
-        <span className="home_s4__tagline">Tagline</span>
-        <h2 className="home_s4__titulo">Medium length section heading goes here</h2>
+    <div className="layout-pagina__seccion layout-pagina__seccion--media home_s4">
+      <div className="padre_contendor padre_contendor_home_seccion_4">
+        
+        {/* ÁREA DE TEXTO / ENCABEZADO */}
+        <header className="home_s4__header">
+          <div className="home_s4__header-col-izq">
+            <span className="home_s4__tagline">Tagline</span>
+            <h2 className="home_s4__titulo">Medium length section heading goes here</h2>
+          </div>
+          
+          <div className="home_s4__header-col-der">
+            <p className="home_s4__descripcion">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare, eros dolor interdum nulla, ut commodo diam libero vitae erat. Suspendisse varius enim in eros elementum tristique.
+            </p>
+            <div className="home_s4__acciones">
+              <button className="home_s4__btn-principal">Button</button>
+              <button className="home_s4__btn-secundario">Button &rsaquo;</button>
+            </div>
+          </div>
+        </header>
+
+        {/* ÁREA DE GALERÍA CON MOVIMIENTO HORIZONTAL */}
+        <div className="home_s4__galeria-container">
+          <div className="home_s4__galeria-track">
+            
+            {/* PRIMER SET DE IMÁGENES */}
+            {[1, 2, 3, 4, 5, 6, 7, 8].map((item) => (
+              <div key={`set1-${item}`} className="home_s4__galeria-item">
+                <div className="home_s4__placeholder-img">
+                    {/* <img src="..." alt="galeria" /> */}
+                    <svg viewBox="0 0 24 24" fill="none"><path d="M21 19V5C21 3.9 20.1 3 19 3H5C3.9 3 3 3.9 3 5V19C3 20.1 3.9 21 5 21H19C20.1 21 21 20.1 21 19ZM8.5 13.5L11 16.51L14.5 12L19 18H5L8.5 13.5Z" fill="#ccc"/></svg>
+                </div>
+              </div>
+            ))}
+
+            {/* SEGUNDO SET (Duplicado para el loop infinito) */}
+            {[1, 2, 3, 4, 5, 6, 7, 8].map((item) => (
+              <div key={`set2-${item}`} className="home_s4__galeria-item">
+                <div className="home_s4__placeholder-img">
+                    <svg viewBox="0 0 24 24" fill="none"><path d="M21 19V5C21 3.9 20.1 3 19 3H5C3.9 3 3 3.9 3 5V19C3 20.1 3.9 21 5 21H19C20.1 21 21 20.1 21 19ZM8.5 13.5L11 16.51L14.5 12L19 18H5L8.5 13.5Z" fill="#ccc"/></svg>
+                </div>
+              </div>
+            ))}
+
+          </div>
+        </div>
+
       </div>
+    </div>
       
-      <div className="home_s4__header-col-der">
-        <p className="home_s4__descripcion">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare, eros dolor interdum nulla, ut commodo diam libero vitae erat. Suspendisse varius enim in eros elementum tristique.
-        </p>
-        <div className="home_s4__acciones">
-          <button className="home_s4__btn-principal">Button</button>
-          <button className="home_s4__btn-secundario">Button &rsaquo;</button>
+      {/* ---------------- HOME SECCIÓN 5  ---------------- */}
+      <div className="layout-pagina__seccion layout-pagina__seccion--media">
+
+        <div className='padre_contendor padre_contendor_home_seccion_5' >
+
+             {/* ---------------- HOME SECCIÓN 5 (FAQs) ---------------- */}
+      <div className="layout-pagina__seccion layout-pagina__seccion--media home_s5">
+        <div className='padre_contendor padre_contendor_home_seccion_5'>
+          
+          {/* COLUMNA IZQUIERDA: TEXTO */}
+          <div className="home_s5__info">
+            <h2 className="home_s5__titulo">FAQs</h2>
+            <p className="home_s5__descripcion">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+              Suspendisse varius enim in eros elementum tristique.
+            </p>
+            <button className="home_s5__btn-contacto">Contact</button>
+          </div>
+
+          {/* COLUMNA DERECHA: ACORDEÓN */}
+          <div className="home_s5__acordeon">
+            {faqs.map((faq, index) => (
+              <div 
+                key={index} 
+                className={`home_s5__faq-item ${preguntaActiva === index ? 'active' : ''}`}
+              >
+                <button 
+                  className="home_s5__faq-header" 
+                  onClick={() => togglePregunta(index)}
+                >
+                  <span className="home_s5__faq-pregunta">{faq.q}</span>
+                  <span className="home_s5__faq-icono">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M6 9L12 15L18 9" stroke="black" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                    </svg>
+                  </span>
+                </button>
+                
+                <div className="home_s5__faq-contenido">
+                  <div className="home_s5__faq-texto">
+                    {faq.a}
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+
         </div>
       </div>
-    </header>
 
-    {/* ÁREA DE GALERÍA */}
-    {/* ÁREA DE GALERÍA CON MOVIMIENTO HORIZONTAL */}
-<div className="home_s4__galeria-container">
-  <div className="home_s4__galeria-track">
-    
-    {/* PRIMER SET DE IMÁGENES */}
-    {[1, 2, 3, 4, 5, 6, 7, 8].map((item) => (
-      <div key={`set1-${item}`} className="home_s4__galeria-item">
-        <div className="home_s4__placeholder-img">
-            {/* <img src="..." alt="galeria" /> */}
-            <svg viewBox="0 0 24 24" fill="none"><path d="M21 19V5C21 3.9 20.1 3 19 3H5C3.9 3 3 3.9 3 5V19C3 20.1 3.9 21 5 21H19C20.1 21 21 20.1 21 19ZM8.5 13.5L11 16.51L14.5 12L19 18H5L8.5 13.5Z" fill="#ccc"/></svg>
         </div>
       </div>
-    ))}
-
-    {/* SEGUNDO SET (Duplicado para el loop infinito) */}
-    {[1, 2, 3, 4, 5, 6, 7, 8].map((item) => (
-      <div key={`set2-${item}`} className="home_s4__galeria-item">
-        <div className="home_s4__placeholder-img">
-            <svg viewBox="0 0 24 24" fill="none"><path d="M21 19V5C21 3.9 20.1 3 19 3H5C3.9 3 3 3.9 3 5V19C3 20.1 3.9 21 5 21H19C20.1 21 21 20.1 21 19ZM8.5 13.5L11 16.51L14.5 12L19 18H5L8.5 13.5Z" fill="#ccc"/></svg>
-        </div>
-      </div>
-    ))}
-
-  </div>
-</div>
-
-  </div>
-</div>
-
-      <div className="layout-pagina__seccion layout-pagina__seccion--media"></div>
       <div className="layout-pagina__seccion layout-pagina__seccion--media seccion_faq"></div>
     </> 
   );
