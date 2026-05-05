@@ -230,10 +230,11 @@
   background-size: cover;
   background-position: center center;
   background-repeat: no-repeat;
+
   width: 100%;
   
   // Cambiamos height: 100vh por min-height para que si hay muchas tarjetas, el fondo crezca
-  min-height: 100vh; 
+  min-height: auto; 
 
   // 2. SOLAPAMIENTO SUPERIOR
   // Subimos la sección para que la curva tape a la sección 1
@@ -305,17 +306,14 @@
 
 //estilos de las tarjetas
 
-// Estilos de las tarjetas (corregidos para que se vean bien)
-// --- Grid de las tarjetas ---
+// --- GRID DE TARJETAS (CENTRADO) ---
 .home_s2__grid {
   display: grid;
-  gap: 24px;
+  gap: 30px;
+  width: 100%;
+  
+  // Responsive: 1 columna móvil, 2 tablet, 3 escritorio
   grid-template-columns: 1fr;
-  // Esto asegura que todas las tarjetas de una fila se estiren para medir lo mismo
-  align-items: stretch; 
-
-  border: 1px solid red; // 🔥 para visualizar el grid
-  margin-right: 50px;
 
   @include para-tablet {
     grid-template-columns: repeat(2, 1fr);
@@ -323,67 +321,142 @@
 
   @include para-escritorio {
     grid-template-columns: repeat(3, 1fr);
-    margin-right: 100px;
-    margin-left: -65px; // eliminamos margen en escritorio para aprovechar todo el ancho
+  }
+
+  // Eliminamos los márgenes negativos/extraños anteriores para asegurar el centrado
+  margin: 0 auto; 
+  justify-items: center; // Centra las tarjetas si el grid es más ancho
+}
+
+// --- LA TARJETA (HOVER Y ESTILO) ---
+.home_s2__card {
+  background: #fd504d; // Fondo rojo
+  border: 10px solid rgba(0,0,0,0.05);
+  border-radius: 24px;
+  padding: 40px 30px;
+  width: 326px;
+  max-width: 400px;
+  min-height: 320px;
+  
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  text-align: left;
+
+  transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+  box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+  cursor: pointer;
+
+  // EFECTO HOVER DE LA TARJETA
+  &:hover {
+    transform: translateY(-12px);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.12);
+    background: #fd504d; // Se mantiene el mismo rojo
+    
+    .home_s2__card-link {
+      // CORRECCIÓN: Cambiamos #ff4d4d (que es rojo) por black o white 
+      // para que sea visible sobre el fondo rojo.
+      color: black; 
+      padding-left: 8px; 
+      opacity: 1; // Asegura visibilidad
+    }
   }
 }
 
-// --- La Tarjeta ---
-.home_s2__card {
-  background: #fd504d;
-  border: 1px solid #e0e0e0;
-  border-radius: 30px;
-  padding: 32px;
-  height: 300px;
-  
-  // Usamos Flexbox internamente
-  display: flex;
-  flex-direction: column;
-  height: 100%; // Ocupa todo el alto que le asigne el Grid
-  box-sizing: border-box;
-  text-align: left;
-}
-
-// --- Cuerpo de la tarjeta para sincronizar contenido ---
 .home_s2__card-body {
   display: flex;
   flex-direction: column;
-  flex-grow: 1; // Este contenedor ocupa todo el espacio sobrante
-  gap: 16px;
+  height: 100%;
+  gap: 20px;
+}
+
+.home_s2__card-icono {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+  width: 
+  
+  // Si pusiste una imagen dentro como hablamos antes:
+  img {
+    width: 150px;
+    height: 150px;
+    object-fit: contain;
+  }
 }
 
 .home_s2__card-titulo {
-  font-size: 1.25rem;
-  font-weight: 600;
-  color: #000;
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #fbe2c6; // Color crema (contrasta bien con rojo)
   margin: 0;
-  line-height: 1.3;
+  line-height: 1.2;
 }
 
 .home_s2__card-descripcion {
   font-size: 1rem;
-  color: #555;
-  line-height: 1.5;
+  color: black; // Texto negro sobre rojo (es visible)
+  line-height: 1.6;
   margin: 0;
-  
-  /* 
-     Hacemos que la descripción crezca para empujar 
-     el botón hacia abajo independientemente del texto.
-  */
-  flex-grow: 1; 
+  flex-grow: 1;
 }
 
 .home_s2__card-link {
-  align-self: flex-start; // Evita que el link se estire a todo el ancho
-  margin-top: auto;       // Refuerza que el botón siempre esté al final
-  color: #0000ff;
+  display: inline-block;
+  margin-top: auto;
+  color: black; // Color inicial negro
   text-decoration: none;
-  font-weight: 500;
-  padding-top: 12px;
+  font-weight: 600;
+  font-size: 1.1rem;
+  transition: all 0.3s ease;
 
   &:hover {
     text-decoration: underline;
+    color: black; // Se mantiene negro al poner el mouse encima
   }
+}
+
+.atencion_inmediata{
+    background-color: #ff9d96;
+    border-radius: 50px;
+    text-align: center;
+    height: 36px;
+    width: 193px;
+
+     // --- EL TRUCO PARA CENTRAR ---
+  display: flex;            // Activa el modo flexible
+  align-items: center;      // Centra verticalmente
+  justify-content: center;  // Centra horizontalmente (reemplaza a text-align)
+  
+ 
+  }
+
+// --- REUTILIZACIÓN DE CURVAS (SINCRO DE IMAGEN) ---
+.seccion_dos_fondo_curvo_uno,
+.seccion_dos_fondo_curvo_dos {
+  background-image: inherit; 
+  background-size: cover;
+  background-repeat: no-repeat;
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 100px;
+  border-radius: 50% / 100%;
+  z-index: -1;
+
+  @include para-escritorio {
+    height: 160px;
+  }
+}
+
+.seccion_dos_fondo_curvo_uno {
+  top: -50px;
+  background-position: center top;
+  @include para-escritorio { top: -80px; }
+}
+
+.seccion_dos_fondo_curvo_dos {
+  bottom: -50px;
+  background-position: center bottom;
+  @include para-escritorio { bottom: -80px; }
 }
 // ==========================================================================
 // HOME — SECCIÓN 3

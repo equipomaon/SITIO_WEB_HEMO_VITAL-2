@@ -6,6 +6,9 @@ import '../styles_scss/componentes_scss/home.scss';
 import imgFestival from '../assets/testeo_festival.png';
 import iconHuella from '../assets/icon_huella.png';
 import home_header from '../assets/home_header.png';
+import iconSangre from '../assets/icono-card1.png';
+import iconTransfusion from '../assets/icono-card2.png';
+import iconBlood from '../assets/icono-card3.png';
 
 
 
@@ -120,10 +123,12 @@ export const Ruta_Home = () => {
               <div className="home_s2__card">
                 
                 <div className="home_s2__card-body">
-                  <span className="home_s2__card-icono">🐾</span>
-                  <h3 className="home_s2__card-titulo">Medium length section heading goes here</h3>
-                  <p className="home_s2__card-descripcion">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                  <a className="home_s2__card-link" href="#">Button &rsaquo;</a>
+                  <span className="home_s2__card-icono">
+                    <img src={iconSangre} alt="Icono" />
+                  </span>
+                  <h3 className="home_s2__card-titulo">¿Eres veterinario?</h3>
+                  <p className="home_s2__card-descripcion">Accede a nuestras unidades de sangre de forma rápida y segura</p>
+                  <a className="home_s2__card-link" href="#"> Registrarme &rsaquo;</a>
                 </div>
               </div>
 
@@ -131,10 +136,12 @@ export const Ruta_Home = () => {
               <div className="home_s2__card">
                 
                 <div className="home_s2__card-body">
-                  <span className="home_s2__card-icono">🐾</span>
-                  <h3 className="home_s2__card-titulo">Medium length section heading goes here</h3>
-                  <p className="home_s2__card-descripcion">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                  <a className="home_s2__card-link" href="#">Button &rsaquo;</a>
+                  <span className="home_s2__card-icono">
+                    <img src={iconTransfusion} alt="Icono" />
+                  </span>
+                  <h3 className="home_s2__card-titulo"> ¿Necesitas sangre urgente? </h3>
+                 
+                  <a className="home_s2__card-link atencion_inmediata" href="#">Atención inmediata &rsaquo;</a>
                 </div>
               </div>
 
@@ -142,10 +149,12 @@ export const Ruta_Home = () => {
               <div className="home_s2__card">
                 
                 <div className="home_s2__card-body">
-                  <span className="home_s2__card-icono">🐾</span>
-                  <h3 className="home_s2__card-titulo">Medium length section heading goes here</h3>
-                  <p className="home_s2__card-descripcion">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                  <a className="home_s2__card-link" href="#">Button &rsaquo;</a>
+                    <span className="home_s2__card-icono">
+                    <img src={iconBlood} alt="Icono" />
+                  </span>
+                  <h3 className="home_s2__card-titulo">¿Quieres ser donante?</h3>
+                  <p className="home_s2__card-descripcion">Tu mascota le puede dar una segunda oportunidad a otros peluditos.</p>
+                  <a className="home_s2__card-link" href="#">Si quiero &rsaquo;</a>
                 </div>
               </div>
 
