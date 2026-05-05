@@ -2,7 +2,7 @@
 @use '../base_scss/responsive' as *;
 
 // ==========================================================================
-// 1. ESTILOS BASE (MOBILE FIRST)
+// 1.HOME - SECCIÓN 1 - ESTILOS BASE (MOBILE FIRST)
 // ==========================================================================
 
 .layout-pagina__seccion{
@@ -10,14 +10,29 @@
 }
 
 .layout-pagina__seccion--superior {
-  background-color: #ffffff;
+  background-image: url('../../assets/home_fondo_seccion_1_imagen-de-fondo-principal-web-.png');
+  
+  // 1. Evita que la imagen se duplique
+  background-repeat: no-repeat;
+  
+  // 2. Hace que la imagen cubra todo el ancho y alto sin deformarse
+  background-size: cover;
+  
+  // 3. Centra la imagen para que el foco esté siempre en el medio
+  background-position: center;
+
+  // 4. (Opcional) Altura mínima para que luzca como un Hero real
+  min-height: 80vh; 
+  display: flex;
+  align-items: center;
+
   padding: 100px 20px; 
   width: 100%;
   box-sizing: border-box;
 
-  // Ajuste de aire en escritorio
   @include para-escritorio {
     padding: 80px 5%;
+    min-height: 90vh; // Un poco más alto en PC
   }
 }
 
@@ -27,6 +42,7 @@
   gap: 24px;
   max-width: 1400px;
   margin: 0 auto;
+  color: #FFFFFF;
   
 
   
@@ -38,6 +54,8 @@
     justify-content: space-between;
     gap: 60px;
 
+    height: 90vh;
+
     margin-top: 30px;
   }
 }
@@ -47,7 +65,8 @@
   display: flex;
   flex-direction: column;
   text-align: left; 
-  gap: 16px;
+  gap: 16px; 
+  color: #FFFFFF;
 
    
 
@@ -59,7 +78,7 @@
     font-size: 2.5rem; 
     line-height: 1.1;
     font-weight: 500;
-    color: #000000;
+    
     margin: 0;
 
    
@@ -72,7 +91,7 @@
   .seccion-principal__descripcion {
     font-size: 1rem;
     line-height: 1.5;
-    color: #000000;
+     color: #FFFFFF;
     margin: 0;
     max-width: 550px;
 
@@ -704,5 +723,167 @@
   
   .home_s5__faq-contenido {
     max-height: 200px; // Altura suficiente para el texto
+  }
+}
+
+
+// ==========================================================================
+// HOME — SECCIÓN 6
+// ==========================================================================
+.home_s6 {
+  padding: 80px 20px;
+  background-color: #fff;
+
+  @include para-escritorio {
+    padding: 100px 0;
+  }
+}
+
+.home_s6__header {
+  margin-bottom: 48px;
+  .home_s6__titulo {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 8px;
+  }
+  .home_s6__descripcion {
+    font-size: 1.1rem;
+    color: #000;
+  }
+}
+
+// Ventana del slider
+.home_s6__slider-container {
+  width: 100%;
+  overflow: hidden;
+}
+
+// Riel que se desplaza
+.home_s6__track {
+  display: flex;
+  transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+// Envoltorio para generar el espacio (gap) entre tarjetas
+.home_s6__card-wrapper {
+  flex: 0 0 100%; // 1 en móvil
+  padding: 0 10px; // Espacio lateral (gap simétrico)
+  box-sizing: border-box;
+
+  @include para-tablet {
+    flex: 0 0 50%; // 2 en tablet
+  }
+
+  @include para-escritorio {
+    flex: 0 0 33.333%; // 3 en escritorio
+  }
+}
+
+// La tarjeta propiamente dicha (Esquinas rectas según imagen)
+.home_s6__card {
+  border: 1px solid #000;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  background-color: #fff;
+}
+
+.home_s6__card-img {
+  width: 100%;
+  aspect-ratio: 1 / 1; // Cuadrada como en el diseño
+  background-color: #e5e5e5;
+  border-bottom: 1px solid #000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  svg {
+    width: 80px;
+  }
+}
+
+.home_s6__card-content {
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  text-align: left;
+}
+
+.home_s6__stars {
+  font-size: 1.2rem;
+  color: #000;
+}
+
+.home_s6__quote {
+  font-size: 0.95rem;
+  line-height: 1.5;
+  font-weight: 500;
+  margin: 0;
+  flex-grow: 1;
+}
+
+.home_s6__author-name {
+  font-weight: 700;
+  margin: 0;
+}
+
+.home_s6__author-info {
+  font-size: 0.85rem;
+  color: #000;
+  margin: 0;
+}
+
+// --- Controles ---
+.home_s6__controls {
+  margin-top: 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.home_s6__pagination {
+  display: flex;
+  gap: 8px;
+
+  .dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background-color: #cccccc;
+    cursor: pointer;
+    transition: background 0.3s;
+
+    &.active {
+      background-color: #000000;
+    }
+  }
+}
+
+.home_s6__arrows {
+  display: flex;
+  gap: 12px;
+}
+
+.home_s6__arrow-btn {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 1px solid #000;
+  background: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s;
+
+  &:hover:not(:disabled) {
+    background-color: #000;
+    color: #fff;
+  }
+
+  &:disabled {
+    opacity: 0.2;
+    cursor: not-allowed;
   }
 }

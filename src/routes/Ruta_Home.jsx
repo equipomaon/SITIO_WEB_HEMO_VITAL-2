@@ -11,13 +11,36 @@ import home_header from '../assets/home_header.png';
 
 export const Ruta_Home = () => {
 
-   // Estado para controlar qué pregunta está abierta
-  const [preguntaActiva, setPreguntaActiva] = useState(null);
+
+  //HOOKS PARA INTERACTIVIDAD DE LA PÁGINA (Ej: FAQs, Carrusel, etc)
+
+    // Estado para controlar qué pregunta está abierta
+    const [preguntaActiva, setPreguntaActiva] = useState(null);
+
+    const [currentIndex, setCurrentIndex] = useState(0);
+
+    const testimonios = [1, 2, 3, 4, 5, 6]; // Simulemos 6 para que se note el movimiento
+
+    const itemsVisibles = 3; // Cuántos vemos en pantalla en desktop
+    const maxIndex = testimonios.length - itemsVisibles;
+
+  const siguiente = () => {
+    if (currentIndex < maxIndex) {
+      setCurrentIndex(currentIndex + 1);
+    }
+  };
+
+  const anterior = () => {
+    if (currentIndex > 0) {
+      setCurrentIndex(currentIndex - 1);
+    }
+  };
 
   const togglePregunta = (index) => {
     setPreguntaActiva(preguntaActiva === index ? null : index);
   };
 
+  //FAQS DE RESPUESTAS PREDEFINIDAS
   const faqs = [
     { q: "Question text goes here", a: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique." },
     { q: "Question text goes here", a: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique." },
@@ -37,29 +60,27 @@ export const Ruta_Home = () => {
           {/* PARTE IZQUIERDA: TEXTO */}
           <section className='home_seccion_header__texto-infromativo'>
              <h1 className="seccion-principal__titulo">
-                H1: TITULO PRINCIPAL HEMO VITAL
+                Primer banco de sangre animal de Colombia
              </h1>
+             
              <p className="seccion-principal__descripcion">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare, eros dolor interdum nulla.
-             </p>
+                Llevamos más de 15 años salvando vidas con transfusiones seguras, disponibilidad inmediata, envíos nacionales y acompañamiento veterinario especializado.           
+            </p>
 
              <div className="home_seccion_header__botones">
-                <button className="btn-negro">Button</button>
-                <button className="btn-outline">Button</button>
+                { /*<button className="btn-negro">Button</button> */}
+                
+                <button className="btn-outline">Quiero saber más</button>
              </div>
           </section>
 
-          {/* PARTE DERECHA: IMAGEN / VISUAL */}
-          <div className="home_seccion_header__visual">
-             <div className="placeholder-imagen">
-                {/* Icono de montaña representativo */}
-                <img
-                    src={home_header}
-                    alt="Imagen principal Hero"
-                    className="home_seccion_header__img"
-                  />
-             </div>
-          </div>
+          {/* PARTE IZQUIERDA: TEXTO */}
+          <section className='home_seccion_header__texto-infromativo'>
+             
+          </section>
+
+         
+            
 
         </div>
 
@@ -69,9 +90,7 @@ export const Ruta_Home = () => {
       <div className="layout-pagina__seccion layout-pagina__seccion--media  layout-pagina__seccion--dos">
 
         <div className='seccion_dos_fondo_curvo_uno'>
-           <svg width="1440" height="171" viewBox="0 0 1440 171" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M719.995 80.01C984.836 80.01 1231.79 113.36 1440 170.93V0H0V170.93C208.209 113.36 455.163 80.01 719.995 80.01Z" fill="white"/>
-          </svg>
+          
 
         </div>
         
@@ -153,9 +172,7 @@ export const Ruta_Home = () => {
           </div>
 
           <div className='seccion_dos_fondo_curvo_dos'>
-           <svg width="1440" height="171" viewBox="0 0 1440 171" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M719.995 80.01C984.836 80.01 1231.79 113.36 1440 170.93V0H0V170.93C208.209 113.36 455.163 80.01 719.995 80.01Z" fill="white"/>
-          </svg>
+          
 
         </div>
       </div>
@@ -300,8 +317,78 @@ export const Ruta_Home = () => {
       </div>
 
         </div>
+
       </div>
       <div className="layout-pagina__seccion layout-pagina__seccion--media seccion_faq"></div>
+
+    
+
+     
+      {/* ---------------- HOME SECCIÓN 6 (Testimonios) ---------------- */}
+       <div className="layout-pagina__seccion layout-pagina__seccion--media home_s6">
+      <div className="padre_contendor padre_contendor_home_seccion_6">
+        
+        <header className="home_s6__header">
+          <h2 className="home_s6__titulo">Customer testimonials</h2>
+          <p className="home_s6__descripcion">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+        </header>
+
+        {/* CONTENEDOR DEL CARRUSEL (Máscara) */}
+        <div className="home_s6__slider-wrapper">
+          {/* El "Riel" que se mueve */}
+          <div 
+            className="home_s6__track" 
+            style={{ transform: `translateX(-${currentIndex * (100 / itemsVisibles)}%)` }}
+          >
+            {testimonios.map((item, index) => (
+              <article key={index} className="home_s6__card">
+                <div className="home_s6__card-img">
+                   <svg viewBox="0 0 24 24" fill="none"><path d="M21 19V5C21 3.9 20.1 3 19 3H5C3.9 3 3 3.9 3 5V19C3 20.1 3.9 21 5 21H19C20.1 21 21 20.1 21 19ZM8.5 13.5L11 16.51L14.5 12L19 18H5L8.5 13.5Z" fill="#ccc"/></svg>
+                </div>
+                <div className="home_s6__card-content">
+                  <div className="home_s6__stars">★★★★★</div>
+                  <blockquote className="home_s6__quote">"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis cursus, mi quis viverra ornare."</blockquote>
+                  <div className="home_s6__author">
+                    <p className="home_s6__author-name">Name Surname {item}</p>
+                    <p className="home_s6__author-info">Position, Company name</p>
+                  </div>
+                </div>
+              </article>
+            ))}
+          </div>
+        </div>
+
+        {/* CONTROLES */}
+        <footer className="home_s6__controls">
+          <div className="home_s6__pagination">
+            {/* Generamos puntos según los testimonios */}
+            {testimonios.slice(0, maxIndex + 1).map((_, i) => (
+              <span 
+                key={i} 
+                className={`dot ${currentIndex === i ? 'active' : ''}`}
+                onClick={() => setCurrentIndex(i)}
+              ></span>
+            ))}
+          </div>
+          <div className="home_s6__arrows">
+            <button 
+              className="home_s6__arrow-btn" 
+              onClick={anterior} 
+              disabled={currentIndex === 0}
+            >
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M19 12H5M5 12L12 19M5 12L12 5"/></svg>
+            </button>
+            <button 
+              className="home_s6__arrow-btn" 
+              onClick={siguiente}
+              disabled={currentIndex >= maxIndex}
+            >
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M5 12H19M19 12L12 5M19 12L12 19"/></svg>
+            </button>
+          </div>
+        </footer>
+      </div>
+    </div>
     </> 
   );
 };
