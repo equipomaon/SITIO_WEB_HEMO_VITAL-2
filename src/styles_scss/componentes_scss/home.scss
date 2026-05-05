@@ -40,9 +40,11 @@
   display: flex;
   flex-direction: column; // Apilado vertical para móvil
   gap: 24px;
-  max-width: 1400px;
+  width: 100%;
   margin: 0 auto;
   color: #FFFFFF;
+
+  border: 1px solid rgb(190, 248, 17); // 🔥 para visualizar el contenedor principa  l
   
 
   
@@ -68,10 +70,17 @@
   gap: 16px; 
   color: #FFFFFF;
 
+ 
+
    
 
   @include para-escritorio {
     flex: 1; // Ocupa el 50% del ancho
+
+    
+      max-width: 700px; // Limita el ancho del texto para mejor legibilidad
+      border: 1px solid rgb(33, 13, 247); // 🔥 para visualizar el bloque de texto
+    
   }
 
   .seccion-principal__titulo {
