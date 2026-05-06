@@ -95,11 +95,11 @@ export const Ruta_Home = () => {
 
   //FAQS DE RESPUESTAS PREDEFINIDAS
   const faqs = [
-    { q: "Question text goes here", a: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique." },
-    { q: "Question text goes here", a: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique." },
-    { q: "Question text goes here", a: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique." },
-    { q: "Question text goes here", a: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique." },
-    { q: "Question text goes here", a: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique." },
+    { q: "¿Qué requisitos debe cumplir mi mascota para ser donante?", a: "Debe tener entre 1 y 8 años, tener buen estado de salud, las vacunas y desparasitación al día, no deben tener sobrepeso, enfermedades previas, ni transfusiones. Así mismo, los gatos deben pesar desde 3.5 kg y deben tener una vida 100% indoor; los perros deben pesar 20 kg y que no hayan tenido hemoparasitos." },
+    { q: "¿Mi mascota sentirá dolor durante la donación?", a: "No, no sentirá ninguna molestia, el proceso se realiza con sedación controlada y bajo estrictos protocolos médicos, tu mascota estará monitoreada en todo momento y al despertar recibirá muchos mimos, regalos y cuidados. Este es un procedimiento completamente seguro, tranquilo y bien tolerado por las mascotas." },
+    { q: "¿Cómo sé si mi mascota necesita una transfusión de sangre?", a: "Signos como debilidad, encías pálidas, respiración agitada o decaimiento pueden indicar anemia, así mismo, tu mascota puede requerir una tranfución de sangre en casos de accidentes, cirugías o enfermedades graves. Es importante que tengas presente que la indicación siempre la realiza un médico veterinario tras una evaluación clínica." },
+    { q: "¿Cómo garantizan la seguridad y compatibilidad de la sangre?", a: "En Hemovital evaluamos previamente a cada donante: Su historia clínica, que el esquema de vacunación esté al día y el estado general de la mascota, además, realizamos tipificación sanguínea y pruebas de compatibilidad para asegurar que todas las transfusiones sean seguras, confiables y adaptadas a cada peludito." },
+    { q: "¿Tienen disponibilidad de sangre las 24 horas?", a: "Claro que sí, contamos con disponibilidad permanente, durante el día realizamos envíos y, durante la noche o domingos y festivos puedes recoger la sangre directamente en nuestro punto físico para atención inmediata." },
   ];
 
 
@@ -323,10 +323,8 @@ export const Ruta_Home = () => {
           
           {/* Cambiado de <header> a <div> para evitar duplicidad semántica */}
           <div className="home_s6__header">
-            <h2 className="home_s6__titulo">Testimonios de nuestra comunidad</h2>
-            <p className="home_s6__descripcion">
-              Veterinarios y familias que confían en nuestra labor para salvar vidas.
-            </p>
+            <h2 className="home_s6__titulo">Lo que dicen quienes ya vivieron la experiencia Hemovital</h2>
+            
           </div>
 
           {/* CONTENEDOR DEL CARRUSEL (Máscara) */}
@@ -338,10 +336,7 @@ export const Ruta_Home = () => {
             >
               {testimonios.map((item, index) => (
                 <article key={index} className="home_s6__card">
-                  <div className="home_s6__card-img">
-                     {/* Icono de huella o avatar por defecto */}
-                     <svg viewBox="0 0 24 24" fill="none"><path d="M12 2C6.48 2 2 6.48 2 12C2 17.52 6.48 22 12 22C17.52 22 22 17.52 22 12C22 6.48 17.52 2 12 2ZM12 5C13.66 5 15 6.34 15 8C15 9.66 13.66 11 12 11C10.34 11 9 9.66 9 8C9 6.34 10.34 5 12 5ZM12 19.2C9.5 19.2 7.29 17.92 6 15.98C6.03 13.99 10 12.9 12 12.9C13.99 12.9 17.97 13.99 18 15.98C16.71 17.92 14.5 19.2 12 19.2Z" fill="#E63946"/></svg>
-                  </div>
+      
                   <div className="home_s6__card-content">
                     <div className="home_s6__stars">
                       {"★".repeat(item.estrellas)}
@@ -390,10 +385,11 @@ export const Ruta_Home = () => {
               </button>
             </div>
           </div>
+
         </div>
       </section>
 
-      
+
       {/* ---------------- HOME SECCIÓN 5  ---------------- */}
       <div className="layout-pagina__seccion layout-pagina__seccion--media">
 
@@ -405,12 +401,8 @@ export const Ruta_Home = () => {
           
           {/* COLUMNA IZQUIERDA: TEXTO */}
           <div className="home_s5__info">
-            <h2 className="home_s5__titulo">FAQs</h2>
-            <p className="home_s5__descripcion">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
-              Suspendisse varius enim in eros elementum tristique.
-            </p>
-            <button className="home_s5__btn-contacto">Contact</button>
+            <h2 className="home_s5__titulo">Preguntas frecuentes</h2>
+            
           </div>
 
           {/* COLUMNA DERECHA: ACORDEÓN */}

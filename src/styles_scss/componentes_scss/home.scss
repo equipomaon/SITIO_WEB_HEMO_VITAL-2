@@ -806,6 +806,8 @@
 // ==========================================================================
 // HOME — SECCIÓN 5
 // ==========================================================================
+
+
 .home_s5 {
   padding: 80px 20px;
   background-color: #ffffff;
@@ -931,7 +933,40 @@
 // HOME — SECCIÓN 6 (Testimonios) - REFACTORED
 // ==========================================================================
 
+.layout-pagina__seccion--media{
+
+  //height: 741px;
+  
+}
+
+.home_s6{
+   // 1. CONFIGURACIÓN DE LA IMAGEN EN EL CUERPO
+  background-image: url('../../assets/home_s1_s2_fondo_blanco_perritos.png'); 
+  background-size: 40%;
+  background-position: center center;
+  background-repeat: repeat;
+
+  width: 100%;
+  
+  // Cambiamos height: 100vh por min-height para que si hay muchas tarjetas, el fondo crezca
+  min-height: 30vh; 
+
+  // 2. SOLAPAMIENTO SUPERIOR
+  // Subimos la sección para que la curva tape a la sección 1
+  margin-top: -50px; 
+  
+  // 3. IMPORTANTE: Permitir que las curvas sobresalgan
+  overflow: visible; 
+
+  @include para-escritorio {
+    margin-top: -80px; // Un solapamiento más profundo en PC
+    margin-bottom: 100px;
+    ;
+  } 
+}
+
 .padre_contendor_home_seccion_6{
+
   @include para-escritorio {
     margin-left: 64px;
   }
@@ -982,7 +1017,7 @@
 .home_s6__card {
   // Medidas solicitadas
   width: 405px;
-  height: 670px;
+  height: 260px;
   flex: 0 0 405px; // No permite que el ancho cambie
   
   // Espaciado para el desplazamiento (30px totales entre tarjetas)
@@ -991,6 +1026,7 @@
   display: flex;
   flex-direction: column;
   border: 1px solid #000;
+  border-radius: 35px;
   background-color: #fff;
   box-sizing: border-box;
   text-align: left;
@@ -1014,6 +1050,9 @@
 
 .home_s6__card-content {
   padding: 30px;
+  height: 265px;
+
+  //border: 1px dashed rgb(33, 13, 247); // 🔥 para visualizar el bloque de texto dentro de la tarjeta
   display: flex;
   flex-direction: column;
   flex-grow: 1; 
