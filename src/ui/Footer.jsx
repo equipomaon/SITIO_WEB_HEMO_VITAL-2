@@ -2,7 +2,7 @@ import React from "react";
 import '../styles_scss/componentes_scss/footer_component.scss';
 
 // Importación correcta de imágenes (sin llaves {})
-import logo from '../assets/src/assets/imagotipo_hemovital_horizontal_1.png'; 
+import logo from '../assets/imagotipo_hemovital_horizontal_1.png'; 
 import iconFacebook from '../assets/facebook.png';
 import iconInstagram from '../assets/instagram.png';
 import iconLinkedin from '../assets/linkedin.png';
