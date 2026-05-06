@@ -317,65 +317,7 @@ export const Ruta_Home = () => {
       </div>
     </div>
       
-      {/* ---------------- HOME SECCIÓN 5  ---------------- */}
-      <div className="layout-pagina__seccion layout-pagina__seccion--media">
-
-        <div className='padre_contendor padre_contendor_home_seccion_5' >
-
-             {/* ---------------- HOME SECCIÓN 5 (FAQs) ---------------- */}
-      <div className="layout-pagina__seccion layout-pagina__seccion--media home_s5">
-        <div className='padre_contendor padre_contendor_home_seccion_5'>
-          
-          {/* COLUMNA IZQUIERDA: TEXTO */}
-          <div className="home_s5__info">
-            <h2 className="home_s5__titulo">FAQs</h2>
-            <p className="home_s5__descripcion">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
-              Suspendisse varius enim in eros elementum tristique.
-            </p>
-            <button className="home_s5__btn-contacto">Contact</button>
-          </div>
-
-          {/* COLUMNA DERECHA: ACORDEÓN */}
-          <div className="home_s5__acordeon">
-            {faqs.map((faq, index) => (
-              <div 
-                key={index} 
-                className={`home_s5__faq-item ${preguntaActiva === index ? 'active' : ''}`}
-              >
-                <button 
-                  className="home_s5__faq-header" 
-                  onClick={() => togglePregunta(index)}
-                >
-                  <span className="home_s5__faq-pregunta">{faq.q}</span>
-                  <span className="home_s5__faq-icono">
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                      <path d="M6 9L12 15L18 9" stroke="black" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                    </svg>
-                  </span>
-                </button>
-                
-                <div className="home_s5__faq-contenido">
-                  <div className="home_s5__faq-texto">
-                    {faq.a}
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
-
-        </div>
-      </div>
-
-        </div>
-
-      </div>
-      <div className="layout-pagina__seccion layout-pagina__seccion--media seccion_faq"></div>
-
-    
-
-    
-       {/* ---------------- HOME SECCIÓN 6 (Testimonios) ---------------- */}
+      {/* ---------------- HOME SECCIÓN 6 (Testimonios) ---------------- */}
       <section className="layout-pagina__seccion layout-pagina__seccion--media home_s6">
         <div className="padre_contendor padre_contendor_home_seccion_6">
           
@@ -450,6 +392,67 @@ export const Ruta_Home = () => {
           </div>
         </div>
       </section>
+
+      
+      {/* ---------------- HOME SECCIÓN 5  ---------------- */}
+      <div className="layout-pagina__seccion layout-pagina__seccion--media">
+
+        <div className='padre_contendor padre_contendor_home_seccion_5' >
+
+             {/* ---------------- HOME SECCIÓN 5 (FAQs) ---------------- */}
+      <div className="layout-pagina__seccion layout-pagina__seccion--media home_s5">
+        <div className='padre_contendor padre_contendor_home_seccion_5'>
+          
+          {/* COLUMNA IZQUIERDA: TEXTO */}
+          <div className="home_s5__info">
+            <h2 className="home_s5__titulo">FAQs</h2>
+            <p className="home_s5__descripcion">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+              Suspendisse varius enim in eros elementum tristique.
+            </p>
+            <button className="home_s5__btn-contacto">Contact</button>
+          </div>
+
+          {/* COLUMNA DERECHA: ACORDEÓN */}
+          <div className="home_s5__acordeon">
+            {faqs.map((faq, index) => (
+              <div 
+                key={index} 
+                className={`home_s5__faq-item ${preguntaActiva === index ? 'active' : ''}`}
+              >
+                <button 
+                  className="home_s5__faq-header" 
+                  onClick={() => togglePregunta(index)}
+                >
+                  <span className="home_s5__faq-pregunta">{faq.q}</span>
+                  <span className="home_s5__faq-icono">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M6 9L12 15L18 9" stroke="black" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                    </svg>
+                  </span>
+                </button>
+                
+                <div className="home_s5__faq-contenido">
+                  <div className="home_s5__faq-texto">
+                    {faq.a}
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+
+        </div>
+      </div>
+
+        </div>
+
+      </div>
+      <div className="layout-pagina__seccion layout-pagina__seccion--media seccion_faq"></div>
+
+    
+
+    
+       
     </> 
   );
 };
