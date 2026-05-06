@@ -180,10 +180,7 @@ export const Ruta_Home = () => {
 
           </div>
 
-          <div className='seccion_dos_fondo_curvo_dos'>
-          
-
-        </div>
+          <div className='seccion_dos_fondo_curvo_dos'></div>
       </div>
 
       {/* ---------------- HOME SECCIÓN 3  ---------------- */}
@@ -192,23 +189,11 @@ export const Ruta_Home = () => {
           <div className="padre_contendor padre_contendor_home_seccion_3">
 
               {/* BLOQUE SUPERIOR: Tarjeta centrada */}
-              <div className="home_s3__tarjeta-encabezado">
-                  <img
-                className="home_s3__icono"
-                src={imgFestival}
-                alt="Descripción de la imagen"
-              />
-                  <span className="home_s3__tagline">Tagline</span>
-                  <h2 className="home_s3__titulo">Medium length section heading goes here</h2>
-                  <p className="home_s3__descripcion">
-                      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros
-                      elementum tristique. Duis cursus, mi quis viverra ornare, eros dolor interdum nulla, ut commodo
-                      diam libero vitae erat.
-                  </p>
-                  <div className="home_s3__botones">
-                      <button className="btn-negro">Button</button>
-                      <button className="btn-outline">Button &rsaquo;</button>
-                  </div>
+              
+                  
+                  <h2 className="home_s3__titulo">Así cuidamos a cada donante durante el proceso</h2>
+                  
+                  
               </div>
 
               {/* BLOQUE INFERIOR: Placeholder de video */}
@@ -220,8 +205,13 @@ export const Ruta_Home = () => {
                   </button>
               </div>
 
+              <div className="home_s3__botones">
+                      
+                      <button className="btn-outline">Button &rsaquo;</button>
+                  </div>
+
           </div>
-      </div>
+      
 
       
      {/* ---------------- HOME SECCIÓN 4  ---------------- */}

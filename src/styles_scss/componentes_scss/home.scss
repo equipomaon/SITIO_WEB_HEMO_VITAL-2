@@ -10,7 +10,7 @@
 }
 
 .layout-pagina__seccion--superior {
-  background-image: url('../../assets/home_fondo_seccion_1_imagen-de-fondo-principal-web-.png');  
+ background-image: url('../../assets/home_fondo_seccion_1_imagen-de-fondo-principal-web-.png');  
    
   // 1. Evita que la imagen se duplique
   background-repeat: no-repeat;
@@ -50,7 +50,7 @@
   border: 1px solid rgb(190, 248, 17); // 🔥 para visualizar el contenedor principa  l
 
 
-  background-image: url('../../assets/home_fondo_seccion_1.png');
+  //background-image: url('../../assets/home_fondo_seccion_1.png');
   
   // 1. Evita que la imagen se duplique
   background-repeat: no-repeat;
@@ -225,6 +225,7 @@
   min-height: 100vh;
   overflow: visible;
   
+  
    // 1. CONFIGURACIÓN DE LA IMAGEN EN EL CUERPO
   background-image: url('../../assets/home_s1_s2_fondo_blanco_perritos.png'); 
   background-size: cover;
@@ -248,7 +249,7 @@
     margin-bottom: 100px;
   } 
 
-  // ELIMINAMOS los clip-path de los media queries porque ahora usamos los divs curvos
+  
 }
 
 /* --- CURVA SUPERIOR (Tapa del cilindro) --- */
@@ -310,7 +311,7 @@
 .home_s2__grid {
   display: grid;
   gap: 30px;
-  width: 100%;
+  
   
   // Responsive: 1 columna móvil, 2 tablet, 3 escritorio
   grid-template-columns: 1fr;
@@ -321,6 +322,8 @@
 
   @include para-escritorio {
     grid-template-columns: repeat(3, 1fr);
+    width: 1440px;
+    
   }
 
   // Eliminamos los márgenes negativos/extraños anteriores para asegurar el centrado
@@ -456,6 +459,7 @@
 .seccion_dos_fondo_curvo_dos {
   bottom: -50px;
   background-position: center bottom;
+     box-shadow: 0 20px 20px -25px rgba(0, 0, 0, 0.5);
   @include para-escritorio { bottom: -80px; }
 }
 // ==========================================================================
@@ -564,13 +568,17 @@
 //      según el ancho. Puedes cambiarlo a 4/3, 21/9, etc.
 //    - Si prefieres alto fijo, reemplaza aspect-ratio por: height: 500px;
 .home_s3__video-wrapper {
-  width: 100%;
+
+  width: 1092px;
+  height: 658px;
   aspect-ratio: 16 / 9;
   background-color: #757575;
   display: flex;
   align-items: center;
   justify-content: center;
   box-sizing: border-box;
+
+  margin: 0 auto;
 }
 
 .home_s3__play-btn {
