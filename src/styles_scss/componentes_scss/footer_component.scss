@@ -1,76 +1,106 @@
 @use '../base_scss/variables' as *;
 @use '../base_scss/responsive' as *;
 
+// ─────────────────────────────────────────────
+// 🎨 TOKENS LOCALES (AJUSTADOS A TEMA CLARO)
+// ─────────────────────────────────────────────
+$footer-bg-light:     #ffffff;        // Fondo blanco como la imagen
+$footer-border-top:   #c0392b;        // Rojo corporativo
+$footer-text-black:   #000000;        // Negro absoluto pedido
+$footer-font-contact: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+
 .footer {
-  border: 2px solid red;
-  padding: 15px;
-  min-height: 100px;
+  background-color: $footer-bg-light;
+  //border-top: 2px solid $footer-border-top;
+  padding: 20px 40px;
+  width: 100%;
+  box-sizing: border-box;
+  font-family: $footer-font-contact;
+  color: $footer-text-black; // Texto negro para todo el footer
 
   display: flex;
-  gap: 10px;
+  align-items: center;
 
-  // 🔥 protección base contra overflow
-  width: 100%;
-  max-width: 100%;
-  box-sizing: border-box;
-  overflow: hidden;
-
-  // 📱 MOBILE: todo en columna
   @include para-movil {
     flex-direction: column;
-    align-items: center;
-  }
-
-  // 📱➡️ TABLET: también columna pero más ordenada
-  @include para-tablet {
-    flex-direction: column;
-    align-items: stretch;
-  }
-
-  // 💻 ESCRITORIO: fila normal
-  @include para-escritorio {
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-  }
-
-  // 🖥️ ESCRITORIO GRANDE: más espacio visual
-  @include para-escritorio-grande {
-    flex-direction: row;
-    justify-content: space-around;
+    padding: 20px;
+    gap: 20px;
   }
 
   &__seccion {
-    border: 1px dashed blue;
-    padding: 10px;
     flex: 1;
-    text-align: center;
-
-    // 🔥 CRÍTICO: evita overflow en flexbox
-    min-width: 0;
-    max-width: 100%;
-    box-sizing: border-box;
-
-    // 📱 ajustes en móvil
-    @include para-movil {
-      width: 100%;
-    }
-
-    // 📱 tablet: ocupa todo pero con separación
-    @include para-tablet {
-      width: 100%;
-    }
+    display: flex;
+    align-items: center;
   }
 
+  // 🔴 LOGO
   &__seccion--uno {
-    background: rgba(0, 255, 0, 0.05);
+    justify-content: flex-start;
+    img {
+      height: 60px; // Ajusta según tu logo
+      width: auto;
+    }
+    @include para-movil { justify-content: center; }
   }
 
+  // 📋 CONTACTO (CENTRO)
   &__seccion--dos {
-    background: rgba(0, 0, 255, 0.05);
+    flex: 2;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    
+    @include para-movil { width: 100%; }
   }
 
+  // 📲 REDES (DERECHA)
   &__seccion--tres {
-    background: rgba(255, 0, 0, 0.05);
+    justify-content: flex-end;
+    @include para-movil { justify-content: center; }
+  }
+}
+
+.footer__contacto {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+
+  .footer__telefono {
+    font-size: 0.9rem;
+    margin: 0;
+    color: $footer-text-black; // Negro
+    
+    strong {
+      font-weight: 700;
+    }
+  }
+
+  .footer__direccion {
+    font-size: 0.85rem;
+    margin: 0;
+    font-weight: 600;
+    color: $footer-text-black; // Negro
+  }
+}
+
+.footer__redes {
+  display: flex;
+  gap: 15px;
+  align-items: center;
+}
+
+.footer__red-icono {
+  text-decoration: none;
+  transition: transform 0.2s ease;
+
+  img {
+    width: 24px; // Tamaño similar al de la imagen
+    height: 24px;
+    display: block;
+    object-fit: contain;
+  }
+
+  &:hover {
+    transform: scale(1.1);
   }
 }
