@@ -29,7 +29,7 @@ export const Footer = () => {
                   Atención nocturna, domingos y festivos  +57 3137008497
               </p>
               <p className="footer__direccion">
-                Av. Nutibara #71-109 Laureles, Medellín
+                Av. Nutibara #71-109 Laureles, Medellín, Colombia
               </p>
 
             </strong>
