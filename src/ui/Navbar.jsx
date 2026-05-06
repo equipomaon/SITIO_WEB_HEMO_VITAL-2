@@ -27,12 +27,11 @@ export const Navbar = () => {
         {/* 🔹 LINKS PARA ESCRITORIO (Se ocultan en móvil) */}
         <div className="navbar__desktop-content">
           <div className="navbar__desktop-links">
-            <NavLink className="nav-item" to="/">Link One</NavLink>
-            <NavLink className="nav-item" to="/ruta-2">Link Two</NavLink>
-            <NavLink className="nav-item" to="/ruta-3">Link Three</NavLink>
-            <NavLink className="nav-item nav-item--dropdown" to="/ruta-4">
-              Link Four <span>⌵</span>
-            </NavLink>
+            <NavLink className="nav-item" to="/">Veterinarios</NavLink>
+            <NavLink className="nav-item" to="/ruta-2">Donantes</NavLink>
+            <NavLink className="nav-item" to="/ruta-3">Distribuidores</NavLink>
+            <NavLink className="nav-item" to="/ruta-3">Productos</NavLink>
+            
           </div>
 
           {/* 🔹 ACCIONES PARA ESCRITORIO (Se ocultan en móvil)

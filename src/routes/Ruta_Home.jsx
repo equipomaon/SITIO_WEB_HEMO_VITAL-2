@@ -73,7 +73,7 @@ export const Ruta_Home = () => {
              <div className="home_seccion_header__botones">
                 { /*<button className="btn-negro">Button</button> */}
                 
-                <button className="btn-outline">Quiero saber más</button>
+                <button className="btn-outline">¿Quieres ser donante?</button>
              </div>
           </section>
 
@@ -133,7 +133,7 @@ export const Ruta_Home = () => {
               </div>
 
               {/* TARJETA 2 */}
-              <div className="home_s2__card">
+              <div className="home_s2__card card_centrado">
                 
                 <div className="home_s2__card-body">
                   <span className="home_s2__card-icono">
@@ -192,23 +192,27 @@ export const Ruta_Home = () => {
               
                   
                   <h2 className="home_s3__titulo">Así cuidamos a cada donante durante el proceso</h2>
-                  
-                  
-              </div>
 
-              {/* BLOQUE INFERIOR: Placeholder de video */}
-              <div className="home_s3__video-wrapper">
-                  <button className="home_s3__play-btn" aria-label="Reproducir video">
-                      <svg width="28" height="28" viewBox="0 0 24 24" fill="white">
-                          <polygon points="5,3 19,12 5,21"/>
-                      </svg>
-                  </button>
-              </div>
-
-              <div className="home_s3__botones">
-                      
-                      <button className="btn-outline">Button &rsaquo;</button>
+                   {/* BLOQUE INFERIOR: Placeholder de video */}
+                  <div className="home_s3__video-wrapper">
+                      <button className="home_s3__play-btn" aria-label="Reproducir video">
+                          <svg width="28" height="28" viewBox="0 0 24 24" fill="white">
+                              <polygon points="5,3 19,12 5,21"/>
+                          </svg>
+                      </button>
                   </div>
+
+                  <div className="home_s3__botones">
+                      
+                      <button className="btn-outline">Quiero saber más &rsaquo;</button>
+                  </div>
+                  
+                  
+              </div>
+
+             
+
+         
 
           </div>
       
@@ -221,18 +225,16 @@ export const Ruta_Home = () => {
         {/* ÁREA DE TEXTO / ENCABEZADO */}
         <header className="home_s4__header">
           <div className="home_s4__header-col-izq">
-            <span className="home_s4__tagline">Tagline</span>
-            <h2 className="home_s4__titulo">Medium length section heading goes here</h2>
+            
+            <h2 className="home_s4__titulo">Ellos ya están salvando vidas</h2>
           </div>
           
           <div className="home_s4__header-col-der">
-            <p className="home_s4__descripcion">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare, eros dolor interdum nulla, ut commodo diam libero vitae erat. Suspendisse varius enim in eros elementum tristique.
+            <p>
+              Estos son algunos de los peluditos que ha ayudado a salvar vidas con su donación de sangre en Hemovital; Gracias a ellos, muchos perritos y gatitos han tenido una segunda oportunidad cuando más lo necesitaban. 
+              <strong>Tu mascota también puede estar aquí</strong>
             </p>
-            <div className="home_s4__acciones">
-              <button className="home_s4__btn-principal">Button</button>
-              <button className="home_s4__btn-secundario">Button &rsaquo;</button>
-            </div>
+           
           </div>
         </header>
 

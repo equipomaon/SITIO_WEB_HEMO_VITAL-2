@@ -93,11 +93,13 @@
 
 // --- 1.1 Bloque de Texto ---
 .home_seccion_header__texto-infromativo {
+
   display: flex;
   flex-direction: column;
   text-align: left; 
   gap: 16px; 
   color: #FFFFFF;
+  
 
  
 
@@ -109,6 +111,7 @@
     
       max-width: 700px; // Limita el ancho del texto para mejor legibilidad
       border: 1px solid rgb(33, 13, 247); // 🔥 para visualizar el bloque de texto
+      margin-left: 64px;
     
   }
 
@@ -146,6 +149,7 @@
 
 
   button {
+
     flex: 1; // Botones anchos en móvil
     padding: 12px 20px;
     font-size: 1rem;
@@ -168,10 +172,11 @@
   }
 
   .btn-outline {
-    background-color: #ffffff;
-    color: #000000;
+    background-color: #fd504d;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    color: #ffffff;
     border-radius: 50px; 
-    &:hover { background-color: #ff9d96 ; }
+    &:hover { background-color:  #fd504d; }
   }
 }
 
@@ -212,7 +217,7 @@
   width: 100%;
   display: flex;
   flex-direction: column;
-  gap: 48px;
+  gap: 32px;
   box-sizing: border-box;
   padding: 60px 20px; // Espacio interno para que el texto no toque las curvas
  
@@ -228,9 +233,9 @@
   
    // 1. CONFIGURACIÓN DE LA IMAGEN EN EL CUERPO
   background-image: url('../../assets/home_s1_s2_fondo_blanco_perritos.png'); 
-  background-size: cover;
+  background-size: 60%;
   background-position: center center;
-  background-repeat: no-repeat;
+  background-repeat: repeat;
 
   width: 100%;
   
@@ -259,7 +264,8 @@
   left: 0;
   width: 100%;
   height: 100px;        
-  background-color: #eacc08; // MISMO AMARILLO
+  background-size: 10%;
+  background-repeat: repeat;
   border-radius: 50% / 100%; 
   z-index: -1;
 
@@ -278,7 +284,7 @@
   left: 0;
   width: 100%;
   height: 100px;        
-  background-color: #eacc08; // MISMO AMARILLO
+  
   border-radius: 50% / 100%; 
   z-index: -1;
 
@@ -300,160 +306,14 @@
 
   // 2. HERENCIA DE IMAGEN
   background-image: inherit; // Toma la misma imagen del padre
-  background-size: cover;
-  background-repeat: no-repeat;
-}
-
-
-//estilos de las tarjetas
-
-// --- GRID DE TARJETAS (CENTRADO) ---
-.home_s2__grid {
-  display: grid;
-  gap: 30px;
-  
-  
-  // Responsive: 1 columna móvil, 2 tablet, 3 escritorio
-  grid-template-columns: 1fr;
-
-  @include para-tablet {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  @include para-escritorio {
-    grid-template-columns: repeat(3, 1fr);
-    width: 1440px;
-    
-  }
-
-  // Eliminamos los márgenes negativos/extraños anteriores para asegurar el centrado
-  margin: 0 auto; 
-  justify-items: center; // Centra las tarjetas si el grid es más ancho
-}
-
-// --- LA TARJETA (HOVER Y ESTILO) ---
-.home_s2__card {
-  background: #fd504d; // Fondo rojo
-  border: 10px solid rgba(0,0,0,0.05);
-  border-radius: 24px;
-  padding: 40px 30px;
-  width: 326px;
-  max-width: 400px;
-  min-height: 320px;
-  
-  display: flex;
-  flex-direction: column;
-  box-sizing: border-box;
-  text-align: left;
-
-  transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
-  box-shadow: 0 4px 15px rgba(0,0,0,0.05);
-  cursor: pointer;
-
-  // EFECTO HOVER DE LA TARJETA
-  &:hover {
-    transform: translateY(-12px);
-    box-shadow: 0 20px 40px rgba(0,0,0,0.12);
-    background: #fd504d; // Se mantiene el mismo rojo
-    
-    .home_s2__card-link {
-      // CORRECCIÓN: Cambiamos #ff4d4d (que es rojo) por black o white 
-      // para que sea visible sobre el fondo rojo.
-      color: black; 
-      padding-left: 8px; 
-      opacity: 1; // Asegura visibilidad
-    }
-  }
-}
-
-.home_s2__card-body {
-  display: flex;
-  flex-direction: column;
-  height: 100%;
-  gap: 20px;
-}
-
-.home_s2__card-icono {
-  font-size: 2.5rem;
-  margin-bottom: 10px;
-  width: 
-  
-  // Si pusiste una imagen dentro como hablamos antes:
-  img {
-    width: 150px;
-    height: 150px;
-    object-fit: contain;
-  }
-}
-
-.home_s2__card-titulo {
-  font-size: 1.4rem;
-  font-weight: 700;
-  color: #fbe2c6; // Color crema (contrasta bien con rojo)
-  margin: 0;
-  line-height: 1.2;
-}
-
-.home_s2__card-descripcion {
-  font-size: 1rem;
-  color: black; // Texto negro sobre rojo (es visible)
-  line-height: 1.6;
-  margin: 0;
-  flex-grow: 1;
-}
-
-.home_s2__card-link {
-  display: inline-block;
-  margin-top: auto;
-  color: black; // Color inicial negro
-  text-decoration: none;
-  font-weight: 600;
-  font-size: 1.1rem;
-  transition: all 0.3s ease;
-
-  &:hover {
-    text-decoration: underline;
-    color: black; // Se mantiene negro al poner el mouse encima
-  }
-}
-
-.atencion_inmediata{
-    background-color: #ff9d96;
-    border-radius: 50px;
-    text-align: center;
-    height: 36px;
-    width: 193px;
-
-     // --- EL TRUCO PARA CENTRAR ---
-  display: flex;            // Activa el modo flexible
-  align-items: center;      // Centra verticalmente
-  justify-content: center;  // Centra horizontalmente (reemplaza a text-align)
-  
- 
-  }
-
-// --- REUTILIZACIÓN DE CURVAS (SINCRO DE IMAGEN) ---
-.seccion_dos_fondo_curvo_uno,
-.seccion_dos_fondo_curvo_dos {
-  background-image: inherit; 
-  background-size: cover;
-  background-repeat: no-repeat;
-  position: absolute;
-  left: 0;
-  width: 100%;
-  height: 100px;
-  border-radius: 50% / 100%;
-  z-index: -1;
-
-  @include para-escritorio {
-    height: 160px;
-  }
+  background-size: 60%;
+   background-repeat: repeat;
 }
 
 .seccion_dos_fondo_curvo_uno {
   top: -50px;
   background-position: center top;
-  @include para-escritorio { top: -80px; }
+  @include para-escritorio { top: -50px; }
 }
 
 .seccion_dos_fondo_curvo_dos {
@@ -462,16 +322,167 @@
      box-shadow: 0 20px 20px -25px rgba(0, 0, 0, 0.5);
   @include para-escritorio { bottom: -80px; }
 }
+
+
+//estilos de las tarjetas
+
+// --- GRID DE TARJETAS (CENTRADO) ---
+// --- GRID ---
+.home_s2__grid {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+  margin: 0 auto;
+
+  @include para-escritorio {
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center; // ← tarjetas laterales centradas verticalmente
+    gap: 32px;
+    width: 100%;
+    max-width: 1200px;
+  }
+}
+
+// --- TARJETA BASE (laterales) ---
+.home_s2__card {
+  background: #fd504d;
+  
+  border-radius: 35px;
+  padding: 32px 24px;
+  width: 326px;        // ← más angosta
+  min-height: 340px;   // ← más baja
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  gap: 16px;
+  box-sizing: border-box;
+  flex-shrink: 0;
+
+  transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+  cursor: pointer;
+
+  &:hover {
+    transform: translateY(-12px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12);
+    background: #fd504d;
+
+    .home_s2__card-link {
+      color: black;
+      padding-left: 8px;
+      opacity: 1;
+    }
+  }
+}
+
+// --- TARJETA CENTRAL: más grande ---
+.home_s2__card.card_centrado {
+  width: 326px;        // ← más ancha
+  min-height: 500px;   // ← más alta
+  padding: 40px 30px;
+ 
+
+  .home_s2__card-body {
+    align-items: center;
+    justify-content: center;
+  }
+
+  .atencion_inmediata {
+    margin: 0 auto;
+  }
+}
+
+// --- BODY ---
+.home_s2__card-body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  gap: 16px;
+  width: 100%;
+}
+
+// --- ÍCONO ---
+.home_s2__card-icono {
+  img {
+    width: 100px;
+    height: 100px;
+    object-fit: contain;
+  }
+}
+
+// --- TÍTULO ---
+.home_s2__card-titulo {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #fbe2c6;
+  margin: 0;
+  line-height: 1.2;
+  text-align: center;
+}
+
+// --- DESCRIPCIÓN ---
+.home_s2__card-descripcion {
+  font-size: 0.95rem;
+  color: black;
+  line-height: 1.6;
+  margin: 0;
+  text-align: center;
+}
+
+// --- LINK ---
+.home_s2__card-link {
+  display: inline-block;
+  color: black;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+
+  &:hover {
+    text-decoration: underline;
+    color: black;
+  }
+}
+
+// --- BOTÓN ATENCIÓN INMEDIATA ---
+.atencion_inmediata {
+  background-color: #ff9d96;
+  border-radius: 50px;
+  height: 44px;
+  width: 210px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  margin-top: 8px;
+}
 // ==========================================================================
 // HOME — SECCIÓN 3
 // ==========================================================================
 
 .padre_contendor_home_seccion_3 {
-  max-width: 1400px;
-  margin: 0 auto;
+  max-width: 100%;
+  margin-top: 112px;
   display: flex;
   flex-direction: column;
-  gap: 40px;
+  gap: 40px; 
+  text-align: center;
+
+  border: 1px solid rgb(190, 248, 17); // 🔥 para visualizar el contenedor principal
+
+  @include para-escritorio {
+    margin-top: 200px;
+  }
+
+  
 }
 
 // --- 3.1 Tarjeta encabezado centrada ---
@@ -554,10 +565,16 @@
     &:hover { background-color: #333; }
   }
 
+  
   .btn-outline {
-    background-color: #fff;
-    color: #000;
-    &:hover { background-color: #f5f5f5; }
+    background-color: #fd504d;
+    width: 232px;
+    height: 60px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    color: #ffffff;
+    border-radius: 50px; 
+    border: none;
+    &:hover { background-color:  #fd504d; } 
   }
 }
 
@@ -661,6 +678,7 @@
   line-height: 1.2;
   font-weight: 700;
   margin: 0;
+  color: #fd504d;
 
   @include para-escritorio {
     font-size: 3rem;
