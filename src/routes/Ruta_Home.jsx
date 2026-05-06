@@ -22,7 +22,57 @@ export const Ruta_Home = () => {
 
     const [currentIndex, setCurrentIndex] = useState(0);
 
-    const testimonios = [1, 2, 3, 4, 5, 6]; // Simulemos 6 para que se note el movimiento
+    // 1. Reemplaza el antiguo array por este:
+ const testimonios = [
+    {
+      nombre: "Camila Osorio",
+      //cargo: "Dueña de mascota",
+      cita: "El proceso de donación fue seguro, claro y lleno de muchos mimos. Mi mascota salió feliz… y yo aún más.",
+      estrellas: 5
+    },
+    {
+      nombre: "Andres Lopez",
+      //cargo: "Veterinario",
+      cita: "Como veterinario, confío en Hemovital por su rapidez, calidad y respaldo en cada transfusión. Son un aliado clave en momentos críticos.",
+      estrellas: 5
+    },
+    {
+      nombre: "Sara Pardo",
+      cargo: "Dueña de Lupe",
+      cita: "Mi gatita Lupe necesitó una transfusión tras una cirugía, hicimos la solicitud de sangre en Hemovital y todo fue rápido y seguro; hoy está sana gracias a ellos.",
+      estrellas: 5
+    },
+    {
+      nombre: "Valentina Ruiz",
+      //cargo: "Dueña de Lukas",
+      cita: "Nuestro perro Lukas empezó a donar con Hemovital y estamos demasiado felices porque siempre lo tratan con mucho amor y lo cuidan, además, saber que ayuda a otros peluditos nos llena el corazón.",
+      estrellas: 5
+    },
+    {
+      nombre: "Dr. Felipe Gómez",
+      //cargo: "Clínica Veterinaria",
+      cita: "Tuvimos una urgencia en nuestra clínica y conseguimos sangre en tiempo récord, el proceso fue ágil y confiable, claro, justo lo que necesitábamos.",
+      estrellas: 5
+    },
+    {
+      nombre: "Juan Pablo Restrepo",
+      //cargo: "Dueño de Roberta",
+      cita: "El acompañamiento fue excelente desde el primer momento, todo el proceso es seguro y muy bien explicado, mi gatita Roberta volvió tranquila a casa.",
+      estrellas: 5
+    },
+    {
+      nombre: "Mariana Torres",
+      //cargo: "Dueña de Nala",
+      cita: "Gracias a una donación, mi perrita tuvo una segunda oportunidad, nunca imaginé lo importante que puede ser este proceso, los recomiendo muchísimo con todos lo que conozco y son amiguitos de Nala.",
+      estrellas: 5
+    },
+    {
+      nombre: "Dra. Carolina Mejía",
+      //cargo: "Médico Veterinaria",
+      cita: "Ser aliados de Hemovital nos da tranquilidad, sabemos que contamos con productos seguros y una respuesta rápida para nuestros pacientes, muchas gracias y muchas felicidades por su compromiso.",
+      estrellas: 5
+    }
+  ];
 
     const itemsVisibles = 3; // Cuántos vemos en pantalla en desktop
     const maxIndex = testimonios.length - itemsVisibles;
@@ -324,72 +374,82 @@ export const Ruta_Home = () => {
 
     
 
-     
-      {/* ---------------- HOME SECCIÓN 6 (Testimonios) ---------------- */}
-       <div className="layout-pagina__seccion layout-pagina__seccion--media home_s6">
-      <div className="padre_contendor padre_contendor_home_seccion_6">
-        
-        <header className="home_s6__header">
-          <h2 className="home_s6__titulo">Customer testimonials</h2>
-          <p className="home_s6__descripcion">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-        </header>
+    
+       {/* ---------------- HOME SECCIÓN 6 (Testimonios) ---------------- */}
+      <section className="layout-pagina__seccion layout-pagina__seccion--media home_s6">
+        <div className="padre_contendor padre_contendor_home_seccion_6">
+          
+          {/* Cambiado de <header> a <div> para evitar duplicidad semántica */}
+          <div className="home_s6__header">
+            <h2 className="home_s6__titulo">Testimonios de nuestra comunidad</h2>
+            <p className="home_s6__descripcion">
+              Veterinarios y familias que confían en nuestra labor para salvar vidas.
+            </p>
+          </div>
 
-        {/* CONTENEDOR DEL CARRUSEL (Máscara) */}
-        <div className="home_s6__slider-wrapper">
-          {/* El "Riel" que se mueve */}
-          <div 
-            className="home_s6__track" 
-            style={{ transform: `translateX(-${currentIndex * (100 / itemsVisibles)}%)` }}
-          >
-            {testimonios.map((item, index) => (
-              <article key={index} className="home_s6__card">
-                <div className="home_s6__card-img">
-                   <svg viewBox="0 0 24 24" fill="none"><path d="M21 19V5C21 3.9 20.1 3 19 3H5C3.9 3 3 3.9 3 5V19C3 20.1 3.9 21 5 21H19C20.1 21 21 20.1 21 19ZM8.5 13.5L11 16.51L14.5 12L19 18H5L8.5 13.5Z" fill="#ccc"/></svg>
-                </div>
-                <div className="home_s6__card-content">
-                  <div className="home_s6__stars">★★★★★</div>
-                  <blockquote className="home_s6__quote">"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis cursus, mi quis viverra ornare."</blockquote>
-                  <div className="home_s6__author">
-                    <p className="home_s6__author-name">Name Surname {item}</p>
-                    <p className="home_s6__author-info">Position, Company name</p>
+          {/* CONTENEDOR DEL CARRUSEL (Máscara) */}
+          <div className="home_s6__slider-wrapper">
+            {/* El "Riel" que se mueve */}
+            <div 
+              className="home_s6__track" 
+              style={{ transform: `translateX(-${currentIndex * (100 / itemsVisibles)}%)` }}
+            >
+              {testimonios.map((item, index) => (
+                <article key={index} className="home_s6__card">
+                  <div className="home_s6__card-img">
+                     {/* Icono de huella o avatar por defecto */}
+                     <svg viewBox="0 0 24 24" fill="none"><path d="M12 2C6.48 2 2 6.48 2 12C2 17.52 6.48 22 12 22C17.52 22 22 17.52 22 12C22 6.48 17.52 2 12 2ZM12 5C13.66 5 15 6.34 15 8C15 9.66 13.66 11 12 11C10.34 11 9 9.66 9 8C9 6.34 10.34 5 12 5ZM12 19.2C9.5 19.2 7.29 17.92 6 15.98C6.03 13.99 10 12.9 12 12.9C13.99 12.9 17.97 13.99 18 15.98C16.71 17.92 14.5 19.2 12 19.2Z" fill="#E63946"/></svg>
                   </div>
-                </div>
-              </article>
-            ))}
+                  <div className="home_s6__card-content">
+                    <div className="home_s6__stars">
+                      {"★".repeat(item.estrellas)}
+                    </div>
+                    <blockquote className="home_s6__quote">
+                      "{item.cita}"
+                    </blockquote>
+                    <div className="home_s6__author">
+                      <p className="home_s6__author-name">{item.nombre}</p>
+                      <p className="home_s6__author-info">{item.cargo}</p>
+                    </div>
+                  </div>
+                </article>
+              ))}
+            </div>
+          </div>
+
+          {/* CONTROLES - Cambiado de <footer> a <div> */}
+          <div className="home_s6__controls">
+            <div className="home_s6__pagination">
+              {/* Generamos puntos según el índice máximo alcanzable */}
+              {testimonios.slice(0, maxIndex + 1).map((_, i) => (
+                <span 
+                  key={i} 
+                  className={`dot ${currentIndex === i ? 'active' : ''}`}
+                  onClick={() => setCurrentIndex(i)}
+                ></span>
+              ))}
+            </div>
+            <div className="home_s6__arrows">
+              <button 
+                className="home_s6__arrow-btn" 
+                onClick={anterior} 
+                disabled={currentIndex === 0}
+                aria-label="Anterior testimonio"
+              >
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M19 12H5M5 12L12 19M5 12L12 5"/></svg>
+              </button>
+              <button 
+                className="home_s6__arrow-btn" 
+                onClick={siguiente}
+                disabled={currentIndex >= maxIndex}
+                aria-label="Siguiente testimonio"
+              >
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M5 12H19M19 12L12 5M19 12L12 19"/></svg>
+              </button>
+            </div>
           </div>
         </div>
-
-        {/* CONTROLES */}
-        <footer className="home_s6__controls">
-          <div className="home_s6__pagination">
-            {/* Generamos puntos según los testimonios */}
-            {testimonios.slice(0, maxIndex + 1).map((_, i) => (
-              <span 
-                key={i} 
-                className={`dot ${currentIndex === i ? 'active' : ''}`}
-                onClick={() => setCurrentIndex(i)}
-              ></span>
-            ))}
-          </div>
-          <div className="home_s6__arrows">
-            <button 
-              className="home_s6__arrow-btn" 
-              onClick={anterior} 
-              disabled={currentIndex === 0}
-            >
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M19 12H5M5 12L12 19M5 12L12 5"/></svg>
-            </button>
-            <button 
-              className="home_s6__arrow-btn" 
-              onClick={siguiente}
-              disabled={currentIndex >= maxIndex}
-            >
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M5 12H19M19 12L12 5M19 12L12 19"/></svg>
-            </button>
-          </div>
-        </footer>
-      </div>
-    </div>
+      </section>
     </> 
   );
 };

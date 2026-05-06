@@ -927,14 +927,19 @@
     max-height: 200px; // Altura suficiente para el texto
   }
 }
-
-
 // ==========================================================================
-// HOME — SECCIÓN 6
+// HOME — SECCIÓN 6 (Testimonios) - REFACTORED
 // ==========================================================================
+
+.padre_contendor_home_seccion_6{
+  @include para-escritorio {
+    margin-left: 64px;
+  }
+}
 .home_s6 {
   padding: 80px 20px;
   background-color: #fff;
+  overflow: hidden; // Evita scroll horizontal en el body
 
   @include para-escritorio {
     padding: 100px 0;
@@ -943,100 +948,115 @@
 
 .home_s6__header {
   margin-bottom: 48px;
+  text-align: left;
+
   .home_s6__titulo {
     font-size: 2.5rem;
     font-weight: 700;
-    margin-bottom: 8px;
+    margin-bottom: 12px;
+    color: #000;
   }
   .home_s6__descripcion {
     font-size: 1.1rem;
-    color: #000;
+    color: #333;
+    max-width: 700px;
   }
 }
 
-// Ventana del slider
-.home_s6__slider-container {
+// Ventana del slider (Mascara)
+.home_s6__slider-wrapper {
   width: 100%;
-  overflow: hidden;
+  overflow: hidden; // Recorta las tarjetas que salen del contenedor
+  padding: 10px 0; 
 }
 
-// Riel que se desplaza
+// Riel que contiene las tarjetas
 .home_s6__track {
   display: flex;
+  flex-direction: row; // Asegura que las tarjetas estén una al lado de otra
   transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+  will-change: transform;
 }
 
-// Envoltorio para generar el espacio (gap) entre tarjetas
-.home_s6__card-wrapper {
-  flex: 0 0 100%; // 1 en móvil
-  padding: 0 10px; // Espacio lateral (gap simétrico)
-  box-sizing: border-box;
-
-  @include para-tablet {
-    flex: 0 0 50%; // 2 en tablet
-  }
-
-  @include para-escritorio {
-    flex: 0 0 33.333%; // 3 en escritorio
-  }
-}
-
-// La tarjeta propiamente dicha (Esquinas rectas según imagen)
+// Tarjeta individual con medidas exactas
 .home_s6__card {
-  border: 1px solid #000;
-  height: 100%;
+  // Medidas solicitadas
+  width: 405px;
+  height: 670px;
+  flex: 0 0 405px; // No permite que el ancho cambie
+  
+  // Espaciado para el desplazamiento (30px totales entre tarjetas)
+  margin-right: 30px; 
+
   display: flex;
   flex-direction: column;
+  border: 1px solid #000;
   background-color: #fff;
+  box-sizing: border-box;
+  text-align: left;
 }
 
 .home_s6__card-img {
   width: 100%;
-  aspect-ratio: 1 / 1; // Cuadrada como en el diseño
-  background-color: #e5e5e5;
+  height: 380px; // Altura fija para la imagen
+  flex-shrink: 0;
+  background-color: #f8f8f8;
   border-bottom: 1px solid #000;
   display: flex;
   align-items: center;
   justify-content: center;
 
   svg {
-    width: 80px;
+    width: 100px;
+    height: 100px;
   }
 }
 
 .home_s6__card-content {
-  padding: 24px;
+  padding: 30px;
   display: flex;
   flex-direction: column;
-  gap: 16px;
-  text-align: left;
+  flex-grow: 1; 
+  justify-content: space-between; // Empuja el autor al final
 }
 
 .home_s6__stars {
   font-size: 1.2rem;
-  color: #000;
+  color: #E63946; // Color rojo marca para destacar
+  margin-bottom: 5px;
 }
 
 .home_s6__quote {
-  font-size: 0.95rem;
-  line-height: 1.5;
+  font-size: 1.05rem;
+  line-height: 1.6;
   font-weight: 500;
   margin: 0;
-  flex-grow: 1;
-}
-
-.home_s6__author-name {
-  font-weight: 700;
-  margin: 0;
-}
-
-.home_s6__author-info {
-  font-size: 0.85rem;
   color: #000;
-  margin: 0;
+  font-style: normal;
+  
+  // Control de exceso de texto
+  display: -webkit-box;
+  -webkit-line-clamp: 6;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
 }
 
-// --- Controles ---
+.home_s6__author {
+  .home_s6__author-name {
+    font-weight: 700;
+    font-size: 1.1rem;
+    margin: 0;
+    color: #000;
+  }
+  .home_s6__author-info {
+    font-size: 0.9rem;
+    color: #666;
+    margin-top: 4px;
+    text-transform: uppercase;
+  }
+}
+
+// Controles (Puntos y Flechas)
 .home_s6__controls {
   margin-top: 40px;
   display: flex;
@@ -1046,30 +1066,31 @@
 
 .home_s6__pagination {
   display: flex;
-  gap: 8px;
+  gap: 10px;
 
   .dot {
-    width: 6px;
-    height: 6px;
+    width: 10px;
+    height: 10px;
     border-radius: 50%;
-    background-color: #cccccc;
+    background-color: #ccc;
     cursor: pointer;
-    transition: background 0.3s;
+    transition: all 0.3s;
 
     &.active {
-      background-color: #000000;
+      background-color: #000;
+      transform: scale(1.2);
     }
   }
 }
 
 .home_s6__arrows {
   display: flex;
-  gap: 12px;
+  gap: 15px;
 }
 
 .home_s6__arrow-btn {
-  width: 40px;
-  height: 40px;
+  width: 50px;
+  height: 50px;
   border-radius: 50%;
   border: 1px solid #000;
   background: #fff;
@@ -1077,7 +1098,7 @@
   align-items: center;
   justify-content: center;
   cursor: pointer;
-  transition: all 0.3s;
+  transition: 0.3s;
 
   &:hover:not(:disabled) {
     background-color: #000;
