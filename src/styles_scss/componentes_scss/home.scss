@@ -327,7 +327,7 @@
 //estilos de las tarjetas
 
 // --- GRID DE TARJETAS (CENTRADO) ---
-// --- GRID ---
+
 .home_s2__grid {
   display: flex;
   flex-direction: column;
@@ -351,7 +351,7 @@
   background: #fd504d;
   
   border-radius: 35px;
-  padding: 32px 24px;
+  padding: 32px 32px;
   width: 326px;        // ← más angosta
   min-height: 340px;   // ← más baja
 
@@ -384,7 +384,7 @@
 // --- TARJETA CENTRAL: más grande ---
 .home_s2__card.card_centrado {
   width: 326px;        // ← más ancha
-  min-height: 500px;   // ← más alta
+  min-height: 400px;   // ← más alta
   padding: 40px 30px;
  
 
