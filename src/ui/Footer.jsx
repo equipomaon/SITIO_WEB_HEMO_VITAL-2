@@ -3,10 +3,10 @@ import '../styles_scss/componentes_scss/footer_component.scss';
 
 // Importación correcta de imágenes (sin llaves {})
 import logo from '../assets/imagotipo_hemovital_horizontal_1.png'; 
-import iconFacebook from '../assets/facebook.png';
-import iconInstagram from '../assets/instagram.png';
-import iconLinkedin from '../assets/linkedin.png';
-import iconEmail from '../assets/email.png';
+import icon_facebook from '../assets/facebook.png';
+import icon_instagram from '../assets/instagram.png';
+import icon_linkedin from '../assets/linkedin.png';
+import icon_email from '../assets/email.png';
 
 export const Footer = () => {
   return (
@@ -43,16 +43,16 @@ export const Footer = () => {
       <section className="footer__seccion footer__seccion--tres">
         <div className="footer__redes">
           <a href="https://facebook.com" className="footer__red-icono" target="_blank" rel="noopener noreferrer">
-            <img src={iconFacebook} alt="Facebook" />
+            <img src={icon_facebook} alt="Facebook" />
           </a>
           <a href="https://instagram.com" className="footer__red-icono" target="_blank" rel="noopener noreferrer">
-            <img src={iconInstagram} alt="Instagram" />
+            <img src={icon_instagram} alt="Instagram" />
           </a>
           <a href="https://linkedin.com" className="footer__red-icono" target="_blank" rel="noopener noreferrer">
-            <img src={iconLinkedin} alt="LinkedIn" />
+            <img src={icon_linkedin} alt="LinkedIn" />
           </a>
           <a href="mailto:contacto@hemovital.com" className="footer__red-icono">
-            <img src={iconEmail} alt="Email" />
+            <img src={icon_email} alt="Email" />
           </a>
         </div>
       </section>
