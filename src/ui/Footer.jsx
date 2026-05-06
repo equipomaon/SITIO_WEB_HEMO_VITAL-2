@@ -2,11 +2,11 @@ import React from "react";
 import '../styles_scss/componentes_scss/footer_component.scss';
 
 // Importación correcta de imágenes (sin llaves {})
-import logo from '../assets/imagotipo_hemovital_horizontal_1.png'; 
-import icon_facebook from '../assets/facebook.png';
-import icon_instagram from '../assets/instagram.png';
-import icon_linkedin from '../assets/linkedin.png';
-import icon_email from '../assets/email.png';
+import logo from '../assets/imagotipo_hemovital_horizontal_1.png'; // Asegúrate de que esta ruta sea la correcta para tu logo
+import icon_facebook from '../assets/facebook.png'; // Asegúrate de que esta ruta sea la correcta para tu ícono de Facebook
+import icon_instagram from '../assets/instagram.png'; // Asegúrate de que esta ruta sea la correcta para tu ícono de Instagram
+import icon_linkedin from '../assets/linkedin.png'; // Asegúrate de que esta ruta sea la correcta para tu ícono de LinkedIn
+import icon_email from '../assets/email.png'; // Asegúrate de que esta ruta sea la correcta para tu ícono de Email
 
 export const Footer = () => {
   return (
