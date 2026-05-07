@@ -27,7 +27,7 @@ export const Navbar = () => {
         {/* 🔹 LINKS PARA ESCRITORIO (Se ocultan en móvil) */}
         <div className="navbar__desktop-content">
           <div className="navbar__desktop-links">
-            <NavLink className="nav-item" to="/">Veterinarios</NavLink>
+            <NavLink className="nav-item" to="/soy-veterinario">Veterinarios</NavLink>
             <NavLink className="nav-item" to="/ruta-2">Donantes</NavLink>
             <NavLink className="nav-item" to="/ruta-3">Distribuidores</NavLink>
             <NavLink className="nav-item" to="/ruta-3">Productos</NavLink>

@@ -21,7 +21,7 @@ export const AppRoutes = () => {
 
                 <Route element={<MainLayout />}>
                     <Route path="/home" element={<Ruta_Home />} /> 
-                    <Route path="/ruta-dos" element={<Ruta_Eresveterinario />} />
+                    <Route path="/soy-veterinario" element={<Ruta_Eresveterinario />} />
                     <Route path="/ruta-tres" element={<RutaTres />} />
                 </Route>
 
