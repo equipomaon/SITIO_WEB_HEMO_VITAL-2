@@ -1,6 +1,11 @@
 import React from 'react';
 import '../styles_scss/componentes_scss/ruta_veterinario.scss'; // Asegúrate de importar el CSS
 
+import globulos_rojos from '../assets/globulos_rojos.png'; // Asegúrate de que esta ruta sea la correcta para tu imagen de glóbulos rojos
+import plaquetas from '../assets/plaquetas_dos.png'; // Asegúrate de que esta ruta sea la correcta para tu imagen de plaquetas
+
+
+
 export const Ruta_Eresveterinario = () => {
   return (
     <>
@@ -23,7 +28,7 @@ export const Ruta_Eresveterinario = () => {
             {/* Tarjeta 1: Eritrocitos (416x290) */}
             <div className="hemo-card hemo-card--eritrocitos">
               <div className="hemo-card__img-container">
-                {/* <img src="..." alt="Eritrocitos" /> */}
+                <img src={globulos_rojos} alt="Eritrocitos" /> 
               </div>
               <div className="hemo-card__info">
                 <h3>Eritrocitos</h3>
@@ -34,7 +39,7 @@ export const Ruta_Eresveterinario = () => {
             {/* Tarjeta 2: Plaquetas (416x290) */}
             <div className="hemo-card hemo-card--plaquetas">
               <div className="hemo-card__img-container">
-                {/* <img src="..." alt="Plaquetas" /> */}
+                <img src={plaquetas} alt="Plaquetas" />
               </div>
               <div className="hemo-card__info">
                 <h3>Plaquetas</h3>
