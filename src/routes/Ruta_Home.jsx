@@ -9,6 +9,7 @@ import home_header from '../assets/home_header.png';
 import iconSangre from '../assets/icono-card1.png';
 import iconTransfusion from '../assets/icono-card2.png';
 import iconBlood from '../assets/icono-card3.png';
+import fondo_imagen_blanco_perritos from '../assets/home_s1_s2_fondo_blanco_perritos.png';
 
 
 
@@ -110,6 +111,7 @@ export const Ruta_Home = () => {
 
         <div className="padre_contendor padre_contendor_home_seccion_header">
 
+         
           {/* PARTE IZQUIERDA: TEXTO */}
           <section className='home_seccion_header__texto-infromativo'>
              <h1 className="seccion-principal__titulo">
@@ -127,116 +129,70 @@ export const Ruta_Home = () => {
              </div>
           </section>
 
-          {/* PARTE IZQUIERDA: TEXTO */}
-          <section className='home_seccion_header__texto-infromativo'>
-             
-          </section>
-
-         
-            
+            {/* PARTE IZQUIERDA: TEXTO */}
+            <section className='home_seccion_header__texto-infromativo'>
+              
+            </section>
 
         </div>
 
       </div>
 
-      {/* ---------------- HOME SECCIÓN 2  ---------------- */}
-      <div className="layout-pagina__seccion layout-pagina__seccion--media  layout-pagina__seccion--dos">
+     {/* ---------------- HOME SECCIÓN 2  ---------------- */}
+    <div className="layout-pagina__seccion--media layout-pagina__seccion--dos">
 
-        <div className='seccion_dos_fondo_curvo_uno'>
-          
+      <div className="padre_contendor_home_seccion_dos">
 
-        </div>
-        
+        <section className="home_s2_ellipse home_s2_ellipse--clipped">
 
-          <div className="padre_contendor padre_contendor_home_seccion_2">
+          {/* SVG PARA EL CLIP PATH */}
+          <svg viewBox="0 0 1 1" className="home_s2_ellipse__vector">
+            <clipPath
+              id="relativeClip_home_s2"
+              clipPathUnits="objectBoundingBox"
+            >
+              <path d="M 0,0.1 A 1.4,1.4 0,0,1 0.5,0 A 1.4,1.4 0,0,1 1,0.1 L 1,0.9 A 1.4,1.4 0,0,1 0.5,1 A 1.4,1.4 0,0,1 0,0.9 Z"></path>
+            </clipPath>
+          </svg>
 
-            {/* ENCABEZADO DE LA SECCIÓN 
-              <div className="home_s2__encabezado">
-                <span className="home_s2__tagline">Tagline</span>
-                <h2 className="home_s2__titulo">Short heading goes here</h2>
-                <p className="home_s2__descripcion">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                </p>
-              </div>
+          {/* CONTENIDO */}
+          <div className="home_s2_ellipse__content">
 
-            */}
+            <h2 className="home_s2_ellipse__titulo">
+              Primer banco de sangre animal
+            </h2>
 
-            
-           
-
-            
-
-            {/* GRID DE TARJETAS */}
-            <div className="home_s2__grid">
-
-              {/* TARJETA 1 */}
-              <div className="home_s2__card">
-                
-                <div className="home_s2__card-body">
-                  <span className="home_s2__card-icono">
-                    <img src={iconSangre} alt="Icono" />
-                  </span>
-                  <h3 className="home_s2__card-titulo">¿Eres veterinario?</h3>
-                  <p className="home_s2__card-descripcion">Accede a nuestras unidades de sangre de forma rápida y segura</p>
-                  <a className="home_s2__card-link" href="#"> Registrarme &rsaquo;</a>
-                </div>
-              </div>
-
-              {/* TARJETA 2 */}
-              <div className="home_s2__card card_centrado">
-                
-                <div className="home_s2__card-body">
-                  <span className="home_s2__card-icono">
-                    <img src={iconTransfusion} alt="Icono" />
-                  </span>
-                  <h3 className="home_s2__card-titulo"> ¿Necesitas sangre urgente? </h3>
-                 
-                  <a className="home_s2__card-link atencion_inmediata" href="#">Atención inmediata &rsaquo;</a>
-                </div>
-              </div>
-
-              {/* TARJETA 3 */}
-              <div className="home_s2__card">
-                
-                <div className="home_s2__card-body">
-                    <span className="home_s2__card-icono">
-                    <img src={iconBlood} alt="Icono" />
-                  </span>
-                  <h3 className="home_s2__card-titulo">¿Quieres ser donante?</h3>
-                  <p className="home_s2__card-descripcion">Tu mascota le puede dar una segunda oportunidad a otros peluditos.</p>
-                  <a className="home_s2__card-link" href="#">Si quiero &rsaquo;</a>
-                </div>
-              </div>
-
-
-             
-              
-
-              {/* TARJETA 6  base
-              <div className="home_s2__card">
-                <div className="home_s2__card-img-wrapper">
-                  <img src={imgFestival} alt="Imagen tarjeta 6" className="home_s2__card-img" />
-                </div>
-                <div className="home_s2__card-body">
-                  <span className="home_s2__card-icono">🐾</span>
-                  <h3 className="home_s2__card-titulo">Medium length section heading goes here</h3>
-                  <p className="home_s2__card-descripcion">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                  <a className="home_s2__card-link" href="#">Button &rsaquo;</a>
-                </div>
-              </div>
-              */}
-
-            </div>
+            <p className="home_s2_ellipse__descripcion">
+              Llevamos más de 15 años salvando vidas con transfusiones seguras,
+              disponibilidad inmediata y acompañamiento veterinario especializado.
+            </p>
 
           </div>
 
-          <div className='seccion_dos_fondo_curvo_dos'></div>
+          {/* IMAGEN DE FONDO */}
+          <div className="home_s2_ellipse__placeholder"   style={{ backgroundImage: `url(${fondo_imagen_blanco_perritos})` }} >
+
+            {/* 
+            <img
+              src={fondo_imagen_blanco_perritos}
+              alt="Hemovital"
+            />
+            */}
+
+            <div className="home_s2_ellipse__overlay"></div>
+
+          </div>
+
+        </section>
+
       </div>
+
+    </div>
 
       {/* ---------------- HOME SECCIÓN 3  ---------------- */}
 
       <div className="layout-pagina__seccion layout-pagina__seccion--media">
-          <div className="padre_contendor padre_contendor_home_seccion_3">
+          <div className="padre_contendor_home_seccion_3">
 
               {/* BLOQUE SUPERIOR: Tarjeta centrada */}
               
@@ -447,4 +403,4 @@ export const Ruta_Home = () => {
        
     </> 
   );
-};
+}
