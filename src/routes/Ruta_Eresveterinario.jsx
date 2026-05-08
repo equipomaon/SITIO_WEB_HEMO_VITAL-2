@@ -2,9 +2,9 @@ import React from 'react';
 import '../styles_scss/componentes_scss/ruta_veterinario.scss'; // Asegúrate de importar el CSS
 
 import globulos_rojos from '../assets/globulos_rojos.png'; // Asegúrate de que esta ruta sea la correcta para tu imagen de glóbulos rojos
-import plaquetas from '../assets/plaquetas_dos.png'; // Asegúrate de que esta ruta sea la correcta para tu imagen de plaquetas
-
-
+import plaquetas from '../assets/plaquetas_dos.png'; 
+import bolsa_sangre from '../assets/bolsa_sangre.png';
+import plasma from '../assets/plasma.png';
 
 export const Ruta_Eresveterinario = () => {
   return (
@@ -50,7 +50,7 @@ export const Ruta_Eresveterinario = () => {
             {/* Tarjeta 3: Plasma (864x264 - Abajo) */}
             <div className="hemo-card hemo-card--plasma">
               <div className="hemo-card__img-container">
-                {/* <img src="..." alt="Plasma" /> */}
+                <img src={plasma} alt="Plasma" /> 
               </div>
               <div className="hemo-card__info">
                 <h3>Plasma</h3>
@@ -61,7 +61,7 @@ export const Ruta_Eresveterinario = () => {
             {/* Tarjeta 4: Sangre Entera (Vertical derecha) */}
             <div className="hemo-card hemo-card--sangre">
               <div className="hemo-card__img-container">
-                {/* <img src="..." alt="Sangre Entera" /> */}
+                 <img src = {bolsa_sangre} alt="Sangre Entera" /> 
               </div>
               <div className="hemo-card__info">
                 <h3>Sangre entera</h3>
