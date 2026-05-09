@@ -1,11 +1,30 @@
-/* 1. REGISTRO DE LA FUENTE */
-/* Lo ponemos al principio para que esté disponible desde el segundo 0 */
+ /* 1. REGISTRO DE LA FAMILIA ARLON */
+
+/* Versión Regular (Peso 400) */
+@font-face {
+  font-family: 'Arlon';
+  src: url('/src/assets/fonts/arlon-regular.ttf') format('truetype');
+  font-weight: 400; /* Regular */
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Versión Medium (Peso 500) */
+@font-face {
+  font-family: 'Arlon';
+  src: url('/src/assets/fonts/arlon-medium.ttf') format('truetype');
+  font-weight: 500; /* Medium */
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Versión Bold (Peso 700) */
 @font-face {
   font-family: 'Arlon';
   src: url('/src/assets/fonts/arlon-bold.ttf') format('truetype');
-  font-weight: bold;
+  font-weight: 700; /* Bold */
   font-style: normal;
-  font-display: swap; /* Evita que el texto desaparezca mientras carga la fuente */
+  font-display: swap;
 }
 
 /* 2. RESET BÁSICO */
@@ -15,27 +34,27 @@
   box-sizing: border-box;
 }
 
-/* 3. ESTILOS GLOBALES (Root, Html, Body) */
+/* 3. ESTILOS GLOBALES */
 html, 
 body, 
 #root {
-  /* Dimensiones base */
   width: 100%;
   height: 100%;
   
-  /* Tipografía */
+  /* Aplicamos la fuente base */
   font-family: 'Arlon', sans-serif;
-  -webkit-font-smoothing: antialiased; /* Suaviza la fuente en Mac/Chrome */
-  -moz-osx-font-smoothing: grayscale;   /* Suaviza la fuente en Firefox */
+  font-weight: 400; /* Por defecto los párrafos serán Regular */
   
-  /* Comportamiento de scroll */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  
   overflow-x: hidden; 
-  background-color: #f4f4f4; /* O el color de fondo que prefieras */
-  
-  /* Configuración de texto base */
+  background-color: #f4f4f4;
   line-height: 1.5;
-  color: #333; /* Un gris oscuro para legibilidad general */
+  color: #333;
 }
+
+
 
 /* 4. REGLA PARA TÍTULOS (Opcional pero recomendado) */
 h1, h2, h3, h4, h5, h6 {
@@ -43,4 +62,13 @@ h1, h2, h3, h4, h5, h6 {
   font-weight: bold;
   line-height: 1.1;
   letter-spacing: -0.02em; /* Arlon luce mejor con las letras ligeramente juntas */
+}
+
+/* 5 Clases de utilidad si necesitas forzar el Medium o Regular en otros elementos */
+.text-medium {
+  font-weight: 500; /* Esto llamará a arlon-medium.ttf */
+}
+
+.text-regular {
+  font-weight: 400; /* Esto llamará a arlon-regular.ttf */
 }

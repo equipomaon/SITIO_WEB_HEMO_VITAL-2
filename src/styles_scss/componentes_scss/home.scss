@@ -94,6 +94,33 @@
   
 }
 
+
+// SECCIÓN HEADER — TÍTULO (H1)
+  
+
+.seccion-principal__titulo {
+  /* Aplicamos Arlon */
+  font-family: 'Arlon', sans-serif;
+  font-weight: bold;
+  
+  /* Valores exactos de tu Figma */
+  font-size: 65px;
+  line-height: 67.2px; /* Altura de línea del 103% aprox */
+  
+  /* Color blanco como se ve en la imagen */
+  color: #ffffff;
+  
+  /* Ajustes de estilo */
+  margin-bottom: 20px;
+  max-width: 800px; /* Para que el texto rompa igual que en el diseño */
+  
+  /* El toque de Arlon: letras ligeramente juntas para estilo moderno */
+  letter-spacing: -0.01em;
+  
+  /* Suavizado para fondos oscuros */
+  -webkit-font-smoothing: antialiased;
+}
+
 // --- 1.1 Bloque de Texto ---
 .home_seccion_header__texto-infromativo {
 
