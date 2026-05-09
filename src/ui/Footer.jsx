@@ -2,7 +2,7 @@ import React from "react";
 import '../styles_scss/componentes_scss/footer_component.scss';
 
 // COMENTAMOS TODAS LAS IMPORTACIONES PARA QUE EL COMPILADOR NO BUSQUE LOS ARCHIVOS
-import logo from '../assets/imagotipo_hemovital_horizontal_1.png'; 
+import logo from '../assets/imagotipo_hemovital_horizontal.png'; // Asegúrate de que esta ruta sea la correcta para tu logo
 import icon_facebook from '../assets/logotipo-de-la-aplicacion-de-facebook.png'; 
 //import icon_instagram from '../assets/instagram.png';  
 //import icon_linkedin from '../assets/linkedin.png'; 
@@ -64,7 +64,7 @@ export const Footer = () => {
             </span>
           </a>
           */}
-          
+
         </div>
       </section>
 

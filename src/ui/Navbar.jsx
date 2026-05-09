@@ -2,7 +2,7 @@ import { NavLink, Link } from 'react-router-dom';
 import { useState } from 'react';
 
 // ASSETS - Asegúrate de que esta ruta sea la de tu logo nuevo con letras
-import logo_tipo from '../assets/Imagotipo_Hemovital_Horizontal_1.png'; 
+import logo_tipo from '../assets/imagotipo_hemovital_horizontal.png'; 
 
 // ESTILOS
 import '../styles_scss/componentes_scss/navbar_component.scss';
