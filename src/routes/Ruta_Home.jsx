@@ -10,6 +10,7 @@ import iconSangre from '../assets/icono-card1.png';
 import iconTransfusion from '../assets/icono-card2.png';
 import iconBlood from '../assets/icono-card3.png';
 import fondo_imagen_blanco_perritos from '../assets/home_s1_s2_fondo_blanco_perritos.png';
+import video_placeholder from '../assets/imagen_fondo_s3_home.png';
 
 
 
@@ -138,89 +139,83 @@ export const Ruta_Home = () => {
 
       </div>
 
-     {/* ---------------- HOME SECCIÓN 2  ---------------- */}
-    <div className="layout-pagina__seccion--media layout-pagina__seccion--dos">
+    {/* ---------------- HOME SECCIÓN 2  ---------------- */}
+<div className="layout-pagina__seccion--media layout-pagina__seccion--dos">
+  <div className="padre_contendor_home_seccion_dos">
+    
+    <section className="home_s2_ellipse home_s2_ellipse--clipped">
+      
+      {/* SVG PARA EL CLIP PATH (Invisible) */}
+      <svg viewBox="0 0 1 1" className="home_s2_ellipse__vector">
+        <clipPath id="relativeClip_home_s2" clipPathUnits="objectBoundingBox">
+          <path d="M 0,0.1 A 1.4,1.4 0,0,1 0.5,0 A 1.4,1.4 0,0,1 1,0.1 L 1,0.9 A 1.4,1.4 0,0,1 0.5,1 A 1.4,1.4 0,0,1 0,0.9 Z"></path>
+        </clipPath>
+      </svg>
 
-      <div className="padre_contendor_home_seccion_dos">
+      {/* SVG PARA EL BORDE INFERIOR */}
+      <svg viewBox="0 0 1 1" preserveAspectRatio="none" className="home_s2_ellipse__border">
+        <path d="M 1,0.9 A 1.4,1.4 0,0,1 0.5,1 A 1.4,1.4 0,0,1 0,0.9" fill="none" vectorEffect="non-scaling-stroke" />
+      </svg>
 
-        <section className="home_s2_ellipse home_s2_ellipse--clipped">
-
-          {/* SVG PARA EL CLIP PATH */}
-          <svg viewBox="0 0 1 1" className="home_s2_ellipse__vector">
-            <clipPath
-              id="relativeClip_home_s2"
-              clipPathUnits="objectBoundingBox"
-            >
-              <path d="M 0,0.1 A 1.4,1.4 0,0,1 0.5,0 A 1.4,1.4 0,0,1 1,0.1 L 1,0.9 A 1.4,1.4 0,0,1 0.5,1 A 1.4,1.4 0,0,1 0,0.9 Z"></path>
-            </clipPath>
-          </svg>
-
-          {/* CONTENIDO */}
-          <div className="home_s2_ellipse__content">
-
-            <h2 className="home_s2_ellipse__titulo">
-              Primer banco de sangre animal
-            </h2>
-
-            <p className="home_s2_ellipse__descripcion">
-              Llevamos más de 15 años salvando vidas con transfusiones seguras,
-              disponibilidad inmediata y acompañamiento veterinario especializado.
-            </p>
-
+      {/* CONTENIDO: GRILLA DE TARJETAS */}
+      <div className="home_s2_ellipse__content">
+        <div className="home_s2_cards_container">
+          
+          {/* Tarjeta 1 */}
+          <div className="home_s2_card">
+            <div className="home_s2_card__icon"> <img src= "" alt="Veterinario" /> </div>
+            <h3 className="home_s2_card__title">¿Eres veterinario?</h3>
+            <p className="home_s2_card__text">Accede a nuestras unidades de sangre de forma rápida y segura.</p>
+            <a href="#" className="home_s2_card__link">Más información &rsaquo;</a>
           </div>
 
-          {/* IMAGEN DE FONDO */}
-          <div className="home_s2_ellipse__placeholder"   style={{ backgroundImage: `url(${fondo_imagen_blanco_perritos})` }} >
-
-            {/* 
-            <img
-              src={fondo_imagen_blanco_perritos}
-              alt="Hemovital"
-            />
-            */}
-
-            <div className="home_s2_ellipse__overlay"></div>
-
+          {/* Tarjeta 2 - DESTACADA (CENTRAL) */}
+          <div className="home_s2_card home_s2_card--featured">
+            <div className="home_s2_card__icon"> <img src= "" alt="Urgente" /> </div>
+            <h3 className="home_s2_card__title">¿Necesitas sangre urgente?</h3>
+            <button className="home_s2_card__btn">Atención inmediata</button>
           </div>
 
-        </section>
+          {/* Tarjeta 3 */}
+          <div className="home_s2_card">
+            <div className="home_s2_card__icon"> <img src= "" alt="Productos" /> </div>
+            <h3 className="home_s2_card__title">Nuestros productos</h3>
+            <p className="home_s2_card__text">Contamos con diferentes tamaños de plasma y sangre entera.</p>
+            <a href="#" className="home_s2_card__link">Más información &rsaquo;</a>
+          </div>
 
+        </div>
       </div>
 
-    </div>
+      {/* IMAGEN DE FONDO (Perritos) */}
+      <div className="home_s2_ellipse__placeholder" style={{ backgroundImage: `url(${fondo_imagen_blanco_perritos})` }}>
+        <div className="home_s2_ellipse__overlay"></div>
+      </div>
+
+    </section>
+  </div>
+</div>
 
       {/* ---------------- HOME SECCIÓN 3  ---------------- */}
 
       <div className="layout-pagina__seccion layout-pagina__seccion--media">
-          <div className="padre_contendor_home_seccion_3">
+  <div className="padre_contendor_home_seccion_3">
+    
+    <h2 className="home_s3__titulo">
+      Así cuidamos a cada donante durante el proceso
+    </h2>
 
-              {/* BLOQUE SUPERIOR: Tarjeta centrada */}
-              
-                  
-                  <h2 className="home_s3__titulo">Así cuidamos a cada donante durante el proceso</h2>
+    {/* Contenedor con tamaño controlado */}
+    <div className="home_s3__video-wrapper">
+      <img src={video_placeholder} alt="Proceso de donación Hemovital" />
+    </div>
 
-                   {/* BLOQUE INFERIOR: Placeholder de video */}
-                  <div className="home_s3__video-wrapper">
-                      <button className="home_s3__play-btn" aria-label="Reproducir video">
-                          <svg width="28" height="28" viewBox="0 0 24 24" fill="white">
-                              <polygon points="5,3 19,12 5,21"/>
-                          </svg>
-                      </button>
-                  </div>
+    <div className="home_s3__botones">
+      <button className="btn-outline">Quiero saber más &rsaquo;</button>
+    </div>
 
-                  <div className="home_s3__botones">
-                      
-                      <button className="btn-outline">Quiero saber más &rsaquo;</button>
-                  </div>
-                  
-                  
-              </div>
-
-             
-
-         
-
-          </div>
+  </div>
+</div>
       
 
       

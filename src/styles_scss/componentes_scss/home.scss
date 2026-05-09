@@ -207,12 +207,9 @@
   }
 }
 
-
- 
 // ==========================================================================
 // HOME — SECCIÓN 2
 // ==========================================================================
-
 
 * {
   margin: 0;
@@ -223,477 +220,201 @@
 body {
   background: #f4f4f4;
   font-family: Arial, sans-serif;
-  //padding: 40px;
 }
 
-.eg {
-  width: 100%;
-  display: flex;
-  justify-content: center;
-}
-
-.layout_cards__container {
-  position: relative;
-  width: 100%;
-  height: 500px;
-  overflow: hidden;
-  border-radius: 40px;
-}
-
-.vector__container {
-  position: absolute;
-  width: 0;
-  height: 0;
-}
-
-.layout-pagina__seccion--dos{
-  height: auto;
-}
-
-/* 1. El contenedor principal con el recorte */
-.home_s2_ellipse--clipped {
-  position: relative;
-
-  width: 100%;
-  height: 10px; /* Ajusta la altura a tu gusto */
-  margin-top: -30px;
-  //border: 1px solid rgb(33, 13, 247); // 🔥 para visualizar el contenedor principal
-
-  overflow: hidden;
-  /* Conectamos el ID del SVG con el CSS */
-  //clip-path: url(#relativeClip_home_s2);
-  //-webkit-clip-path: url(#relativeClip_home_s2);
-  //background-color: red; /* Color de respaldo */
-}
-
-/* 2. Ocultar el SVG para que no cree espacios en blanco */
-.home_s2_ellipse__vector {
-  position: absolute;
-  width: 0;
-  height: 0;
-  pointer-events: none;
-}
-
-/* 3. El contenedor de la imagen */
-.home_s2_ellipse__placeholder {
-  position: absolute;
-  inset: 0; /* Ocupa todo el espacio */
-  z-index: 1;
-
-   /* --- AJUSTES DE FONDO --- */
-  background-repeat: repeat;
-  background-position: center; /* Centra la imagen */
-  
-  /* --- CONTROL DE ZOOM --- */
-  /* cover: zoom automático para llenar todo (lo que tienes ahora) */
-  /* contain: aleja la imagen hasta que se vea completa */
-  /* 120%, 100%, 80%: aquí controlas el zoom manualmente */
-  
-  background-size: 60%; /* <--- Prueba con 110%, 100% o 90% para alejar */
-}
-
-.home_s2_ellipse__placeholder img {
-  width: 100%;
-  height: 100%;
-  //object-fit: cover;
-    object-fit: contain; 
-  display: block;
-
-  /* --- REDUCIR ZOOM --- */
-
-}
-
-
-
-/* 5. El texto (Contenido) */
-.home_s2_ellipse__content {
-  position: relative;
-  z-index: 3; /* Por encima del overlay y la imagen */
-  color: white;
-  text-align: center;
-  padding-top: 150px; /* Para bajar el texto al centro */
-  max-width: 800px;
-  margin: 0 auto;
-}
-
-.home_s2_ellipse__titulo {
-  font-size: 3rem;
-  margin-bottom: 20px;
-}
-
-.home_s2_ellipse__descripcion {
-  font-size: 1.2rem;
-  line-height: 1.6;
-}
-
-/* 4. LA CAPA OSCURA (El Overlay) */
-.home_s2_ellipse__overlay {
-  position: absolute; 
-  inset: 0; 
-  //background: rgb(241, 6, 6); /* Oscurece la imagen un 40% */
-  background: transparent !important;
-  z-index: 2;
-}
-
-// --- Arco superior sección 2 ---
-
-
-// --- Arco superior sección 2 ---
-
-
-/* --- CURVA SUPERIOR (Tapa del cilindro) --- 
-.seccion_dos_fondo_curvo_uno {
-  position: absolute;
-  top: -50px;           // La mitad del height para que sea el arco superior
-  left: 0;
-  width: 100%;
-  height: 100px;        
-  background-size: 10%;
-  background-repeat: repeat;
-  border-radius: 50% / 100%; 
-  z-index: -1;
-
-  @include para-escritorio {
-    height: 160px;      // Curva más pronunciada en PC si lo deseas
-    top: -50px;
-  }
-}
-
-
-// --- CURVA INFERIOR (Base del cilindro) ---
-.seccion_dos_fondo_curvo_dos {
-  position: absolute;
-  // CAMBIO CLAVE: Usamos 'bottom' en lugar de 'top' para que siempre esté al final
-  bottom: -50px;        
-  left: 0;
-  width: 100%;
-  height: 100px;        
-  
-  border-radius: 50% / 100%; 
-  z-index: -1;
-
-  @include para-escritorio {
-    height: 160px;
-    bottom: -80px;
-  }
-} 
-
-// --- ESTILO COMPARTIDO PARA LAS CURVAS ---
-.seccion_dos_fondo_curvo_uno,
-.seccion_dos_fondo_curvo_dos {
-  position: absolute;
-  left: 0;
-  width: 100%;
-  height: 100px;
-  border-radius: 50% / 100%;
-  z-index: -1;
-
-  // 2. HERENCIA DE IMAGEN
-  background-image: inherit; // Toma la misma imagen del padre
-  background-size: 60%;
-   background-repeat: repeat;
-}
-
-.seccion_dos_fondo_curvo_uno {
-  top: -50px;
-  background-position: center top;
-  @include para-escritorio { top: -50px; }
-}
-
-.seccion_dos_fondo_curvo_dos {
-  bottom: -50px;
-  background-position: center bottom;
-     box-shadow: 0 20px 20px -25px rgba(0, 0, 0, 0.5);
-  @include para-escritorio { bottom: -80px; }
-}
-
-
-//estilos de las tarjetas
-
-// --- GRID DE TARJETAS (CENTRADO) ---
-
-.home_s2__grid {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 24px;
-  margin: 0 auto;
-
-  @include para-escritorio {
-    flex-direction: row;
-    flex-wrap: nowrap;
-    justify-content: center;
-    align-items: center; // ← tarjetas laterales centradas verticalmente
-    gap: 32px;
-    width: 100%;
-    max-width: 1200px;
-  }
-}
-
-// --- TARJETA BASE (laterales) ---
-.home_s2__card {
-  background: #fd504d;
-  
-  border-radius: 35px;
-  padding: 32px 32px;
-  width: 326px;        // ← más angosta
-  min-height: 340px;   // ← más baja
-
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  gap: 16px;
-  box-sizing: border-box;
-  flex-shrink: 0;
-
-  transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
-  cursor: pointer;
-
-  &:hover {
-    transform: translateY(-12px);
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12);
-    background: #fd504d;
-
-    .home_s2__card-link {
-      color: black;
-      padding-left: 8px;
-      opacity: 1;
-    }
-  }
-}
-
-// --- TARJETA CENTRAL: más grande ---
-.home_s2__card.card_centrado {
-  width: 326px;        // ← más ancha
-  min-height: 400px;   // ← más alta
-  padding: 40px 30px;
- 
-
-  .home_s2__card-body {
-    align-items: center;
-    justify-content: center;
-  }
-
-  .atencion_inmediata {
-    margin: 0 auto;
-  }
-}
-
-// --- BODY ---
-.home_s2__card-body {
-
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  height: 262px;
-  gap: 16px;
-  width: 100%;
-
-  border: 1px dashed rgb(33, 13, 247); // 🔥 para visualizar el bloque de texto dentro de la tarjeta
-}
-
-// --- ÍCONO ---
-.home_s2__card-icono {
-  img {
-    width: 100px;
-    height: 100px;
-    object-fit: contain;
-  }
-}
-
-// --- TÍTULO ---
-.home_s2__card-titulo {
-  font-size: 1.4rem;
-  font-weight: 700;
-  color: #fbe2c6;
-  margin: 0;
-  line-height: 1.2;
-  text-align: center;
-}
-
-// --- DESCRIPCIÓN ---
-.home_s2__card-descripcion {
-  font-size: 0.95rem;
-  color: black;
-  line-height: 1.6;
-  margin: 0;
-  text-align: center;
-}
-
-// --- LINK ---
-.home_s2__card-link {
-  display: inline-block;
-  color: black;
-  text-decoration: none;
-  font-weight: 600;
-  font-size: 1rem;
-  transition: all 0.3s ease;
-
-  &:hover {
-    text-decoration: underline;
-    color: black;
-  }
-}
-
-// --- BOTÓN ATENCIÓN INMEDIATA ---
-.atencion_inmediata {
-  background-color: #ff9d96;
-  border-radius: 50px;
-  height: 44px;
-  width: 210px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  margin-top: 8px;
-} 
-*/
 
 // ==========================================================================
-// HOME SECCIÓN 2 — ELLIPSE
+// LAYOUT BASE
 // ==========================================================================
 
-.layout-pagina__seccion--dos{
+.layout-pagina__seccion--dos {
   background-color: white;
-  padding: 0;;
+  height: auto;
+  padding: 0;
 }
+
+
+// ==========================================================================
+// CONTENEDOR PRINCIPAL
+// ==========================================================================
 
 .padre_contendor_home_seccion_dos {
 
-  //width: 100%;
-  padding: 0;
-
-  display: flex;
-
-  justify-content: center;
-
   position: relative;
 
-  transform: translateY(-120px);
+  display: flex;
+  justify-content: center;
+
+  width: 100%;
+
+  max-width: none !important;
+
+  padding: 0 !important;
+
+  transform: translateY(-108px); 
 
   z-index: 20;
 
-  
-
-  //estilos de testeo
-  max-width: none !important;
-   padding-left: 0 !important;
-  padding-right: 0 !important;
-  width: 100%;
-
-  //border: 1px solid rgb(190, 248, 17); // 🔥 para visualizar el contenedor principal
+  //border: 1px solid rgb(190, 248, 17);
 }
 
 
-// CONTENEDOR PRINCIPAL
+// ==========================================================================
+// ELLIPSE PRINCIPAL
+// ==========================================================================
+
 .home_s2_ellipse {
 
   position: relative;
 
   width: 100%;
-
-  //max-width: 1400px;
   max-width: none;
 
-  height: 550px;
+  height: 650px;
 
   overflow: hidden;
 
   border-radius: 40px;
-
-
 }
 
 
-// SVG INVISIBLE
-.home_s2_ellipse__vector {
-
-  position: absolute;
-
-  width: 0;
-
-  height: 0;
-
-  
-}
-
-
+// ==========================================================================
 // CLIP PATH
+// ==========================================================================
+
 .home_s2_ellipse--clipped {
 
   clip-path: url(#relativeClip_home_s2);
 
   -webkit-clip-path: url(#relativeClip_home_s2);
-
- 
-
 }
 
 
-// PLACEHOLDER
+// ==========================================================================
+// SVG INVISIBLE
+// ==========================================================================
+
+.home_s2_ellipse__vector {
+
+  position: absolute;
+
+  width: 0;
+  height: 0;
+
+  pointer-events: none;
+}
+
+
+// ==========================================================================
+// PLACEHOLDER / FONDO
+// ==========================================================================
+
 .home_s2_ellipse__placeholder {
-
-  width: 100%;
-
-  height: 100%;
-
-  position: relative;
-}
-
-
-// IMAGEN
-.home_s2_ellipse__placeholder img {
-
-  width: 100%;
-
-  height: 100%;
-
-  object-fit: cover;
-
-  display: block;
-}
-
-
-// OVERLAY
-.home_s2_ellipse__overlay {
 
   position: absolute;
 
   inset: 0;
 
-  //background: rgba(167, 31, 31, 0.5) !important; 
-    
+  z-index: 1;
 
-  //top: 900;
+  width: 100%;
+  height: 100%;
+
+  background-repeat: repeat;
+
+  background-position: center;
+
+  background-size: 60%;
+}
+
+
+// ==========================================================================
+// IMAGEN
+// ==========================================================================
+
+.home_s2_ellipse__placeholder img {
+
+  width: 100%;
+  height: 100%;
+
+  object-fit: contain;
+
+  display: block;
+}
+
+
+// ==========================================================================
+// OVERLAY
+// ==========================================================================
+
+.home_s2_ellipse__overlay {
+
+  position: absolute;
+
+  top: 0;
   left: 0;
 
   width: 100%;
   height: 100%;
+
+  z-index: 2;
+
+  background: transparent !important;
 }
 
 
-// CONTENIDO
+// ==========================================================================
+// BORDE SVG
+// ==========================================================================
+
+.home_s2_ellipse__border {
+
+  position: absolute;
+
+  top: 0;
+  left: 0;
+
+  width: 100%;
+  height: 100%;
+
+  z-index: 10;
+
+  pointer-events: none;
+
+  path {
+    stroke: rgba(0, 0, 0, 0.05);
+    stroke-width: 15px;
+    stroke-linecap: round;
+  }
+}
+
+
+// ==========================================================================
+// CONTENIDO PRINCIPAL
+// ==========================================================================
+
 .home_s2_ellipse__content {
 
   position: absolute;
 
-  z-index: 2;
+  inset: 0;
 
-  color: white;
+  z-index: 5;
 
-  left: 80px;
+  display: flex;
 
-  top: 80px;
+  align-items: center;
 
-  max-width: 500px;
+  justify-content: center;
+
+  padding-top: 50px;
 }
 
 
-// TITULO
+// ==========================================================================
+// TITULOS Y TEXTO
+// ==========================================================================
+
 .home_s2_ellipse__titulo {
 
   font-size: 4rem;
@@ -703,8 +424,6 @@ body {
   margin-bottom: 24px;
 }
 
-
-// TEXTO
 .home_s2_ellipse__descripcion {
 
   font-size: 1.1rem;
@@ -713,7 +432,194 @@ body {
 }
 
 
+// ==========================================================================
+// CONTENEDOR DE TARJETAS
+// ==========================================================================
 
+.home_s2_cards_container {
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap: 30px;
+
+  width: 100%;
+  padding: 90px;
+  
+
+  //border: 1px solid blue; // 🔥 para visualizar el contenedor de tarjetas
+}
+
+
+// ==========================================================================
+// TARJETAS
+// ==========================================================================
+
+.home_s2_card {
+
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+
+  justify-content: center;
+
+  text-align: center;
+
+  width: 300px;
+  height: 350px;
+
+  padding: 40px 30px;
+
+  border-radius: 40px;
+
+  background-color: #ff5a50;
+
+  color: white;
+
+  transition: all 0.4s ease;
+
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+
+  &:hover {
+
+    transform: translateY(-10px);
+
+    background-color: #ff453a;
+
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+  }
+}
+
+
+// ==========================================================================
+// TARJETA DESTACADA
+// ==========================================================================
+
+.home_s2_card--featured {
+
+  width: 300px;
+
+  height: 400px;
+
+  padding: 60px 40px;
+
+  z-index: 2;
+
+  background-color: #ff5a50;
+
+  &:hover {
+
+    transform: scale(1.02) translateY(-10px);
+
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.3);
+  }
+
+  .home_s2_card__icon {
+
+    width: 110px;
+
+    height: 110px;
+
+    margin-bottom: 30px;
+  }
+
+  .home_s2_card__title {
+
+    font-size: 2.2rem;
+
+    margin-bottom: 25px;
+  }
+}
+
+
+// ==========================================================================
+// ELEMENTOS INTERNOS TARJETAS
+// ==========================================================================
+
+.home_s2_card__icon {
+
+  width: 80px;
+
+  height: 80px;
+
+  margin-bottom: 20px;
+
+  img {
+
+    width: 100%;
+
+    height: 100%;
+
+    object-fit: contain;
+  }
+}
+
+.home_s2_card__title {
+
+  font-size: 1.7rem;
+
+  font-weight: 700;
+
+  line-height: 1.2;
+
+  margin-bottom: 15px;
+}
+
+.home_s2_card__text {
+
+  font-size: 1rem;
+
+  line-height: 1.4;
+
+  margin-bottom: 20px;
+}
+
+.home_s2_card__link {
+
+  color: white;
+
+  text-decoration: none;
+
+  font-size: 1.1rem;
+
+  font-weight: bold;
+
+  &:hover {
+
+    text-decoration: underline;
+  }
+}
+
+.home_s2_card__btn {
+
+  padding: 14px 28px;
+
+  border: 1px solid white;
+
+  border-radius: 50px;
+
+  background-color: rgba(255, 255, 255, 0.2);
+
+  color: white;
+
+  font-weight: bold;
+
+  cursor: pointer;
+
+  transition: 0.3s;
+
+  &:hover {
+
+    background-color: white;
+
+    color: #ff5a50;
+  }
+}
 
 
 
@@ -725,8 +631,10 @@ body {
 .padre_contendor_home_seccion_3 {
   max-width: 100%;
   //margin-top: 112px;
+  padding: 60px 20px; 
   display: flex;
   flex-direction: column;
+  align-items: center;
   gap: 40px; 
   text-align: center;
 
@@ -842,20 +750,33 @@ body {
 //    - aspect-ratio: 16 / 9 → el ALTO se calcula automáticamente
 //      según el ancho. Puedes cambiarlo a 4/3, 21/9, etc.
 //    - Si prefieres alto fijo, reemplaza aspect-ratio por: height: 500px;
+
+
+// --- 3.2 Contenedor de la Imagen (Video Placeholder) ---
 .home_s3__video-wrapper {
+  width: 90%;           // Ocupa el 90% del ancho móvil
+  max-width: 850px;     // Tamaño máximo para que no se vea gigante en PC
+  margin: 0 auto;       // Centra el bloque
+  line-height: 0;       // Quita espacios residuales inferiores
+  
+  img {
+    width: 100%;        // Se adapta al ancho del wrapper
+    height: auto;       // Mantiene la proporción
+    display: block;
+    
+    // PERSPECTIVA Y ACABADO
+    border-radius: 24px; // Bordes redondeados como en la imagen
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1); // Sombra suave para darle profundidad
+    
+    // Opcional: si quieres que la imagen se vea un poco más "recortada"
+    object-fit: cover; 
+  }
 
-  width: 1092px;
-  height: 658px;
-  aspect-ratio: 16 / 9;
-  background-color: #757575;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  box-sizing: border-box;
-
-  margin: 0 auto;
+  @include para-escritorio {
+    width: 80%;         // Un poco más pequeña en monitores grandes
+    max-width: 900px;
+  }
 }
-
 .home_s3__play-btn {
   width: 72px;
   height: 72px;
