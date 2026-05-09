@@ -13,6 +13,19 @@
     @content;
   }
 }
+// MIXINS ACTUALIZADOS CON TUS NOMBRES DE VARIABLES
+@mixin para-tablet-vertical {
+  // Usamos $ancho-maximo-tablet que es la que definiste (768px)
+  @media (min-width: #{$ancho-maximo-tablet}) and (max-width: #{$ancho-minimo-escritorio - 1px}) and (orientation: portrait) {
+    @content;
+  }
+}
+
+@mixin para-tablet-horizontal {
+  @media (min-width: #{$ancho-maximo-tablet}) and (max-width: #{$ancho-minimo-escritorio}) and (orientation: landscape) {
+    @content;
+  }
+}
 
 @mixin para-escritorio {
   @media (min-width: $ancho-minimo-escritorio) {

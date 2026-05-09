@@ -41,9 +41,20 @@
     min-height: 105vh; // Un poco más alto en PC
   }
 
-    @include para-tablet {
-      margin: 0 auto;
-    }
+     @include para-tablet-vertical {
+    min-height: 70vh; // No tan alto como en PC para que no tape todo
+    padding: 80px 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start; // Alineado a la izquierda como el diseño
+    margin: 0 auto;
+    
+    // Si quieres que el fondo rojo se vea para probar:
+    // background-image: none; 
+    // background-color: red; 
+  }
+
 }
 
 .padre_contendor_home_seccion_header {
@@ -92,9 +103,19 @@
     margin-top: 30px;
   }
 
-   @include para-tablet {
-      margin: 0 auto;
-    }
+     @include para-tablet-vertical {
+    min-height: 70vh; // No tan alto como en PC para que no tape todo
+    padding: 80px 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start; // Alineado a la izquierda como el diseño
+    margin: 0 auto;
+    
+    // Si quieres que el fondo rojo se vea para probar:
+    // background-image: none; 
+    // background-color: red; 
+  }
   
 
   
