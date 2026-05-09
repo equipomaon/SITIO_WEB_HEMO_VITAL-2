@@ -64,6 +64,34 @@
   }
 }
 
+.nav-item {
+  text-decoration: none;
+  color: #333; // O el color exacto de tu diseño
+  
+  /* --- CONFIGURACIÓN FIGMA --- */
+  font-family: 'Arlon', sans-serif; // Asegura que use la fuente que descargamos
+  font-size: 16px;                 // "16" en Figma
+  line-height: 24px;               // "24" en Figma (interlineado)
+  font-weight: 400;                // "Regular" en Figma
+  /* --------------------------- */
+
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  transition: color 0.3s ease;
+
+  &:hover { 
+    color: #000; 
+  }
+  
+  &.active { 
+    // Si quieres que el link activo se vea igual pero más grueso
+    font-weight: 600; 
+  }
+
+  span { font-size: 0.8rem; } 
+}
+
 .navbar__desktop-actions {
   display: flex;
   gap: 12px;

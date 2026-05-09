@@ -40,6 +40,10 @@
     padding: 0;
     min-height: 105vh; // Un poco más alto en PC
   }
+
+    @include para-tablet {
+      margin: 0 auto;
+    }
 }
 
 .padre_contendor_home_seccion_header {
@@ -87,6 +91,10 @@
 
     margin-top: 30px;
   }
+
+   @include para-tablet {
+      margin: 0 auto;
+    }
   
 
   
@@ -136,12 +144,14 @@
    
 
   @include para-escritorio {
-    flex: 1; // Ocupa el 50% del ancho
+      flex: 1; // Ocupa el 50% del ancho
 
     
       max-width: 700px; // Limita el ancho del texto para mejor legibilidad
      // border: 1px solid rgb(33, 13, 247); // 🔥 para visualizar el bloque de texto
       margin-left: 64px;
+
+       font-size: 4rem; // Título más grande en PC
     
   }
 
@@ -154,8 +164,8 @@
 
    
 
-    @include para-escritorio {
-      font-size: 4rem; // Título más grande en PC
+    @include para-tablet {
+      margin: 0 auto;
     }
   }
 
@@ -170,46 +180,84 @@
   }
 }
 
+.seccion-principal__descripcion {
+  // 1. Tipografía (Según Figma: 18/27)
+  font-family: 'Arlon', sans-serif;
+  font-size: 18px;          // El primer número de 18/27
+  line-height: 1.5;         // El segundo número 27 / 18 = 1.5 (o puedes poner 27px)
+  
+  // 2. Peso de la fuente
+  // En Figma dice "Medium/Regular". Para que tenga presencia sobre el fondo, 
+  // usamos el peso 500 (Medium) que registramos antes.
+  font-weight: 500; 
+  
+  // 3. Color y legibilidad
+  color: #FFFFFF;
+  text-align: left;
+  -webkit-font-smoothing: antialiased; // Mejora la nitidez en fondos oscuros
+  
+  // 4. Dimensiones y Espaciado
+  margin: 0;
+  margin-bottom: 32px;      // Espacio hacia el botón "Quiero ser donante"
+  max-width: 100%;          // En móvil ocupa todo el ancho
+
+  @include para-escritorio {
+    // En Figma el ancho del cuadro de texto es de 629px
+    max-width: 630px; 
+    //font-size: 18px;
+    font-size: 20px;      // Mantenemos el tamaño de la guía
+    line-height: 27px;
+  }
+}
+
 // --- 1.2 Bloque de Botones ---
 .home_seccion_header__botones {
   display: flex;
   gap: 12px; 
-  margin-top: 8px;
-
-
+  margin-top: 15px;
 
   button {
-
-    flex: 1; // Botones anchos en móvil
-    padding: 12px 20px;
-    font-size: 1rem;
-    border: 1px solid #000000;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
     cursor: pointer;
-    background: none;
-    transition: 0.3s;
-
+    border: none; // Eliminamos bordes innecesarios
+    transition: all 0.3s ease;
+    
+    // Tipografía Arlon Bold
+     font-family: 'Arlon', sans-serif;
+    font-weight: 500;            // <--- Bajamos de Bold a Medium
+    font-size: 17px;             // <--- Un punto menos para que no se vea gigante
+    line-height: 1;              // <--- Centrado más limpio
+    letter-spacing: 0.3px;       // <--- Un poquito de espacio entre letras
+    
+    // Padding más balanceado (arriba/abajo - derecha/izquierda)
+    padding: 14px 35px; 
+    border-radius: 50px; // Forma redondeada "píldora"
+      
     @include para-escritorio {
-      flex: none; // Ancho automático en PC
-      padding: 12px 35px;
+      padding: 14px 45px; // Un poco más largo en PC para que destaque
     }
   }
 
-  .btn-negro {
-    background-color: #000000;
-    color: #ffffff;
-    border-radius: 50px; 
-    &:hover { background-color: #333; }
-  }
-
   .btn-outline {
-    background-color: #fd504d;
-    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    background-color: #FD504D; // Color coral del diseño
     color: #ffffff;
-    border-radius: 50px; 
-    &:hover { background-color:  #fd504d; }
+    
+    // Sombra sutil para darle profundidad
+    box-shadow: 0 4px 10px rgba(253, 80, 77, 0.2);
+
+    &:hover { 
+      background-color: #E64542; // Oscurece un poco al pasar el mouse
+      transform: translateY(-2px); // Efecto de elevación
+      box-shadow: 0 6px 15px rgba(253, 80, 77, 0.4);
+    }
+    
+    &:active {
+      transform: translateY(0);
+    }
   }
 }
-
 // --- 1.3 Bloque Visual (Imagen Gris) ---
 .home_seccion_header__visual {
   width: 100%;

@@ -157,10 +157,11 @@ export const Ruta_Home = () => {
              </div>
           </section>
 
-            {/* PARTE IZQUIERDA: TEXTO */}
+            {/* PARTE IZQUIERDA: TEXTO 
             <section className='home_seccion_header__texto-infromativo'>
               
             </section>
+          */}
 
         </div>
 

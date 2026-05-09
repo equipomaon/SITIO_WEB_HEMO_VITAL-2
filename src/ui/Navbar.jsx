@@ -62,16 +62,20 @@ export const Navbar = () => {
         </div>
 
         <div className="navbar__links-container">
-          <NavLink className="navbar__link" to="/" onClick={cerrarMenu}>Link One</NavLink>
-          <NavLink className="navbar__link" to="/ruta-2" onClick={cerrarMenu}>Link Two</NavLink>
-          <NavLink className="navbar__link" to="/ruta-3" onClick={cerrarMenu}>Link Three</NavLink>
-          <NavLink className="navbar__link" to="/ruta-4" onClick={cerrarMenu}>Link Four ⌵</NavLink>
+          <NavLink className="navbar__link" to="/" onClick={cerrarMenu}>Veterinarios</NavLink>
+          <NavLink className="navbar__link" to="/ruta-2" onClick={cerrarMenu}>Donantes</NavLink>
+          <NavLink className="navbar__link" to="/ruta-3" onClick={cerrarMenu}>Distribuidores</NavLink>
+          <NavLink className="navbar__link" to="/ruta-4" onClick={cerrarMenu}>Productos</NavLink>
         </div>
 
+        {/* Opcional: acciones en el menú móvil (puedes personalizar o eliminar) 
         <div className="navbar__actions">
           <button className="btn-menu-outline">Button</button>
           <button className="btn-menu-solid">Button</button>
         </div>
+        */} 
+
+
       </div>
 
     </nav>
