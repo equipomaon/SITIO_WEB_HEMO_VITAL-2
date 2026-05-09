@@ -46,6 +46,8 @@ export const Footer = () => {
               <img src={icon_facebook} alt="Facebook" />
             </span>
           </a>
+
+          {/*}
           <a href="#" className="footer__red-icono">
             <span style={{fontSize: '10px'}}>
               <img src={icon_instagram} alt="Instagram" />
@@ -61,6 +63,8 @@ export const Footer = () => {
               <img src={icon_email} alt="Email" />
             </span>
           </a>
+          */}
+          
         </div>
       </section>
 
