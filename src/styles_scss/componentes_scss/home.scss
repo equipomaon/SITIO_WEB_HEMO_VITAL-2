@@ -814,6 +814,8 @@ body {
   display: flex;
   flex-direction: column;
   gap: 60px; // Espacio entre el texto y la galería
+
+  height: 900px;
 }
 
 // --- Encabezado ---
@@ -1060,6 +1062,9 @@ body {
 // HOME — SECCIÓN 5
 // ==========================================================================
 
+.layout-pagina__seccion--cinco{
+  background: white;
+}
 
 .home_s5 {
   padding: 80px 20px;
@@ -1076,6 +1081,12 @@ body {
   display: flex;
   flex-direction: column;
   gap: 48px;
+  background-color: white;
+
+    /* top | right | bottom */
+  padding: 80px 40px 60px;
+
+  height: 741px;
 
   @include para-escritorio {
     flex-direction: row;
@@ -1219,6 +1230,9 @@ body {
 }
 
 .padre_contendor_home_seccion_6{
+
+  height: 600px;
+  margin-top: 112px;
 
   @include para-escritorio {
     margin-left: 64px;

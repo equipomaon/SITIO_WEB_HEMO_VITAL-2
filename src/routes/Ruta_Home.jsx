@@ -36,56 +36,56 @@ export const Ruta_Home = () => {
     const [currentIndex, setCurrentIndex] = useState(0);
 
     // 1. Reemplaza el antiguo array por este:
- const testimonios = [
-    {
-      nombre: "Camila Osorio",
-      //cargo: "Dueña de mascota",
-      cita: "El proceso de donación fue seguro, claro y lleno de muchos mimos. Mi mascota salió feliz… y yo aún más.",
-      estrellas: 5
-    },
-    {
-      nombre: "Andres Lopez",
-      //cargo: "Veterinario",
-      cita: "Como veterinario, confío en Hemovital por su rapidez, calidad y respaldo en cada transfusión. Son un aliado clave en momentos críticos.",
-      estrellas: 5
-    },
-    {
-      nombre: "Sara Pardo",
-      cargo: "Dueña de Lupe",
-      cita: "Mi gatita Lupe necesitó una transfusión tras una cirugía, hicimos la solicitud de sangre en Hemovital y todo fue rápido y seguro; hoy está sana gracias a ellos.",
-      estrellas: 5
-    },
-    {
-      nombre: "Valentina Ruiz",
-      //cargo: "Dueña de Lukas",
-      cita: "Nuestro perro Lukas empezó a donar con Hemovital y estamos demasiado felices porque siempre lo tratan con mucho amor y lo cuidan, además, saber que ayuda a otros peluditos nos llena el corazón.",
-      estrellas: 5
-    },
-    {
-      nombre: "Dr. Felipe Gómez",
-      //cargo: "Clínica Veterinaria",
-      cita: "Tuvimos una urgencia en nuestra clínica y conseguimos sangre en tiempo récord, el proceso fue ágil y confiable, claro, justo lo que necesitábamos.",
-      estrellas: 5
-    },
-    {
-      nombre: "Juan Pablo Restrepo",
-      //cargo: "Dueño de Roberta",
-      cita: "El acompañamiento fue excelente desde el primer momento, todo el proceso es seguro y muy bien explicado, mi gatita Roberta volvió tranquila a casa.",
-      estrellas: 5
-    },
-    {
-      nombre: "Mariana Torres",
-      //cargo: "Dueña de Nala",
-      cita: "Gracias a una donación, mi perrita tuvo una segunda oportunidad, nunca imaginé lo importante que puede ser este proceso, los recomiendo muchísimo con todos lo que conozco y son amiguitos de Nala.",
-      estrellas: 5
-    },
-    {
-      nombre: "Dra. Carolina Mejía",
-      //cargo: "Médico Veterinaria",
-      cita: "Ser aliados de Hemovital nos da tranquilidad, sabemos que contamos con productos seguros y una respuesta rápida para nuestros pacientes, muchas gracias y muchas felicidades por su compromiso.",
-      estrellas: 5
-    }
-  ];
+    const testimonios = [
+        {
+          nombre: "Camila Osorio",
+          //cargo: "Dueña de mascota",
+          cita: "El proceso de donación fue seguro, claro y lleno de muchos mimos. Mi mascota salió feliz… y yo aún más.",
+          estrellas: 5
+        },
+        {
+          nombre: "Andres Lopez",
+          //cargo: "Veterinario",
+          cita: "Como veterinario, confío en Hemovital por su rapidez, calidad y respaldo en cada transfusión. Son un aliado clave en momentos críticos.",
+          estrellas: 5
+        },
+        {
+          nombre: "Sara Pardo",
+          //cargo: "Dueña de Lupe",
+          cita: "Mi gatita Lupe necesitó una transfusión tras una cirugía, hicimos la solicitud de sangre en Hemovital y todo fue rápido y seguro; hoy está sana gracias a ellos.",
+          estrellas: 5
+        },
+        {
+          nombre: "Valentina Ruiz",
+          //cargo: "Dueña de Lukas",
+          cita: "Nuestro perro Lukas empezó a donar con Hemovital y estamos demasiado felices porque siempre lo tratan con mucho amor y lo cuidan, además, saber que ayuda a otros peluditos nos llena el corazón.",
+          estrellas: 5
+        },
+        {
+          nombre: "Dr. Felipe Gómez",
+          //cargo: "Clínica Veterinaria",
+          cita: "Tuvimos una urgencia en nuestra clínica y conseguimos sangre en tiempo récord, el proceso fue ágil y confiable, claro, justo lo que necesitábamos.",
+          estrellas: 5
+        },
+        {
+          nombre: "Juan Pablo Restrepo",
+          //cargo: "Dueño de Roberta",
+          cita: "El acompañamiento fue excelente desde el primer momento, todo el proceso es seguro y muy bien explicado, mi gatita Roberta volvió tranquila a casa.",
+          estrellas: 5
+        },
+        {
+          nombre: "Mariana Torres",
+          //cargo: "Dueña de Nala",
+          cita: "Gracias a una donación, mi perrita tuvo una segunda oportunidad, nunca imaginé lo importante que puede ser este proceso, los recomiendo muchísimo con todos lo que conozco y son amiguitos de Nala.",
+          estrellas: 5
+        },
+        {
+          nombre: "Dra. Carolina Mejía",
+          //cargo: "Médico Veterinaria",
+          cita: "Ser aliados de Hemovital nos da tranquilidad, sabemos que contamos con productos seguros y una respuesta rápida para nuestros pacientes, muchas gracias y muchas felicidades por su compromiso.",
+          estrellas: 5
+        }
+      ];
 
     const itemsVisibles = 3; // Cuántos vemos en pantalla en desktop
     const maxIndex = testimonios.length - itemsVisibles;
@@ -226,70 +226,70 @@ export const Ruta_Home = () => {
       {/* ---------------- HOME SECCIÓN 3  ---------------- */}
 
       <div className="layout-pagina__seccion layout-pagina__seccion--media">
-  <div className="padre_contendor_home_seccion_3">
-    
-    <h2 className="home_s3__titulo">
-      Así cuidamos a cada donante durante el proceso
-    </h2>
+        <div className="padre_contendor_home_seccion_3">
+          
+          <h2 className="home_s3__titulo">
+            Así cuidamos a cada donante durante el proceso
+          </h2>
 
-    {/* Contenedor con tamaño controlado */}
-    <div className="home_s3__video-wrapper">
-      <img src={video_placeholder} alt="Proceso de donación Hemovital" />
-    </div>
-
-    <div className="home_s3__botones">
-      <button className="btn-outline">Quiero saber más &rsaquo;</button>
-    </div>
-
-  </div>
-</div>
-      
-
-      
-   {/* ---------------- HOME SECCIÓN 4  ---------------- */}
-<div className="layout-pagina__seccion layout-pagina__seccion--media home_s4">
-  <div className="padre_contendor padre_contendor_home_seccion_4">
-    
-    <header className="home_s4__header">
-      <div className="home_s4__header-col-izq">
-        <h2 className="home_s4__titulo">Ellos ya están salvando vidas</h2>
-      </div>
-      <div className="home_s4__header-col-der">
-        <p>
-          Estos son algunos de los peluditos que ha ayudado a salvar vidas con su donación de sangre en Hemovital; Gracias a ellos, muchos perritos y gatitos han tenido una segunda oportunidad cuando más lo necesitaban. 
-          <strong>Tu mascota también puede estar aquí</strong>
-        </p>
-      </div>
-    </header>
-
-    <div className="home_s4__galeria-container">
-      
-      {/* FILA 1: Derecha a Izquierda */}
-      <div className="home_s4__galeria-track">
-        {[...fotosFila1, ...fotosFila1].map((foto, index) => (
-          <div key={`track1-${index}`} className="home_s4__galeria-item">
-            <div className="home_s4__placeholder-img">
-                <img src={foto.url} alt={foto.alt} className="home_s4__imagen" />
-            </div>
+          {/* Contenedor con tamaño controlado */}
+          <div className="home_s3__video-wrapper">
+            <img src={video_placeholder} alt="Proceso de donación Hemovital" />
           </div>
-        ))}
-      </div>
 
-      {/* FILA 2: Izquierda a Derecha */}
-      <div className="home_s4__galeria-track home_s4__galeria-track--reversa">
-        {[...fotosFila2, ...fotosFila2].map((foto, index) => (
-          <div key={`track2-${index}`} className="home_s4__galeria-item">
-            <div className="home_s4__placeholder-img">
-                <img src={foto.url} alt={foto.alt} className="home_s4__imagen" />
-            </div>
+          <div className="home_s3__botones">
+            <button className="btn-outline">Quiero saber más &rsaquo;</button>
           </div>
-        ))}
+
+        </div>
       </div>
+      
 
-    </div>
+      
+        {/* ---------------- HOME SECCIÓN 4  ---------------- */}
+      <div className="layout-pagina__seccion layout-pagina__seccion--media home_s4">
+        <div className="padre_contendor padre_contendor_home_seccion_4">
+          
+          <header className="home_s4__header">
+            <div className="home_s4__header-col-izq">
+              <h2 className="home_s4__titulo">Ellos ya están salvando vidas</h2>
+            </div>
+            <div className="home_s4__header-col-der">
+              <p>
+                Estos son algunos de los peluditos que ha ayudado a salvar vidas con su donación de sangre en Hemovital; Gracias a ellos, muchos perritos y gatitos han tenido una segunda oportunidad cuando más lo necesitaban. 
+                <strong>Tu mascota también puede estar aquí</strong>
+              </p>
+            </div>
+          </header>
 
-  </div>
-</div>
+          <div className="home_s4__galeria-container">
+            
+            {/* FILA 1: Derecha a Izquierda */}
+            <div className="home_s4__galeria-track">
+              {[...fotosFila1, ...fotosFila1].map((foto, index) => (
+                <div key={`track1-${index}`} className="home_s4__galeria-item">
+                  <div className="home_s4__placeholder-img">
+                      <img src={foto.url} alt={foto.alt} className="home_s4__imagen" />
+                  </div>
+                </div>
+              ))}
+            </div>
+
+            {/* FILA 2: Izquierda a Derecha */}
+            <div className="home_s4__galeria-track home_s4__galeria-track--reversa">
+              {[...fotosFila2, ...fotosFila2].map((foto, index) => (
+                <div key={`track2-${index}`} className="home_s4__galeria-item">
+                  <div className="home_s4__placeholder-img">
+                      <img src={foto.url} alt={foto.alt} className="home_s4__imagen" />
+                  </div>
+                </div>
+              ))}
+            </div>
+
+          </div>
+
+        </div>
+      </div>
       
       {/* ---------------- HOME SECCIÓN 6 (Testimonios) ---------------- */}
       <section className="layout-pagina__seccion layout-pagina__seccion--media home_s6">
@@ -365,50 +365,43 @@ export const Ruta_Home = () => {
 
 
       {/* ---------------- HOME SECCIÓN 5  ---------------- */}
-      <div className="layout-pagina__seccion layout-pagina__seccion--media">
+      <div className="layout-pagina__seccion layout-pagina__seccion--cinco">
 
         <div className='padre_contendor padre_contendor_home_seccion_5' >
 
-             {/* ---------------- HOME SECCIÓN 5 (FAQs) ---------------- */}
-      <div className="layout-pagina__seccion layout-pagina__seccion--media home_s5">
-        <div className='padre_contendor padre_contendor_home_seccion_5'>
-          
-          {/* COLUMNA IZQUIERDA: TEXTO */}
-          <div className="home_s5__info">
-            <h2 className="home_s5__titulo">Preguntas frecuentes</h2>
-            
-          </div>
-
-          {/* COLUMNA DERECHA: ACORDEÓN */}
-          <div className="home_s5__acordeon">
-            {faqs.map((faq, index) => (
-              <div 
-                key={index} 
-                className={`home_s5__faq-item ${preguntaActiva === index ? 'active' : ''}`}
-              >
-                <button 
-                  className="home_s5__faq-header" 
-                  onClick={() => togglePregunta(index)}
-                >
-                  <span className="home_s5__faq-pregunta">{faq.q}</span>
-                  <span className="home_s5__faq-icono">
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                      <path d="M6 9L12 15L18 9" stroke="black" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                    </svg>
-                  </span>
-                </button>
-                
-                <div className="home_s5__faq-contenido">
-                  <div className="home_s5__faq-texto">
-                    {faq.a}
-                  </div>
+            {/* COLUMNA IZQUIERDA: TEXTO */}
+                <div className="home_s5__info">
+                  <h2 className="home_s5__titulo">Preguntas frecuentes</h2>
+                  
                 </div>
-              </div>
-            ))}
-          </div>
 
-        </div>
-      </div>
+                {/* COLUMNA DERECHA: ACORDEÓN */}
+                <div className="home_s5__acordeon">
+                  {faqs.map((faq, index) => (
+                    <div 
+                      key={index} 
+                      className={`home_s5__faq-item ${preguntaActiva === index ? 'active' : ''}`}
+                    >
+                      <button 
+                        className="home_s5__faq-header" 
+                        onClick={() => togglePregunta(index)}
+                      >
+                        <span className="home_s5__faq-pregunta">{faq.q}</span>
+                        <span className="home_s5__faq-icono">
+                          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M6 9L12 15L18 9" stroke="black" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                          </svg>
+                        </span>
+                      </button>
+                      
+                      <div className="home_s5__faq-contenido">
+                        <div className="home_s5__faq-texto">
+                          {faq.a}
+                        </div>
+                      </div>
+                    </div>
+                  ))}
+                </div>
 
         </div>
 

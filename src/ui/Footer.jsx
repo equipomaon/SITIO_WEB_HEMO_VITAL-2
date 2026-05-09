@@ -2,11 +2,11 @@ import React from "react";
 import '../styles_scss/componentes_scss/footer_component.scss';
 
 // COMENTAMOS TODAS LAS IMPORTACIONES PARA QUE EL COMPILADOR NO BUSQUE LOS ARCHIVOS
-// import logo from '../assets/imagotipo_hemovital_horizontal_1.png'; 
-// import icon_facebook from '../assets/facebook.png'; 
-// import icon_instagram from '../assets/instagram.png'; 
-// import icon_linkedin from '../assets/linkedin.png'; 
-// import icon_email from '../assets/email.png';
+import logo from '../assets/imagotipo_hemovital_horizontal_1.png'; 
+import icon_facebook from '../assets/facebook.png'; 
+import icon_instagram from '../assets/instagram.png'; 
+import icon_linkedin from '../assets/linkedin.png'; 
+import icon_email from '../assets/email.png';
 
 export const Footer = () => {
   return (
@@ -15,8 +15,8 @@ export const Footer = () => {
       {/* SECCIÓN 1: LOGO - Sin imagen para probar build */}
       <section className="footer__seccion footer__seccion--uno">
         <a href="/" className="footer__logo">
-          <div style={{fontWeight: 'bold', border: '1px dashed black', padding: '5px'}}>
-            [LOGO HEMOVITAL]
+          <div style={{fontWeight: 'bold', padding: '5px'}}>
+          <img src={logo} alt="Logo Hemovital" />
           </div>
         </a>
       </section>
@@ -38,18 +38,28 @@ export const Footer = () => {
 
       {/* SECCIÓN 3: REDES SOCIALES - Con src vacíos para probar build */}
       <section className="footer__seccion footer__seccion--tres">
+
         <div className="footer__redes">
+
           <a href="#" className="footer__red-icono">
-            <span style={{fontSize: '10px'}}>FB</span>
+            <span style={{fontSize: '10px'}}>
+              <img src={icon_facebook} alt="Facebook" />
+            </span>
           </a>
           <a href="#" className="footer__red-icono">
-            <span style={{fontSize: '10px'}}>IG</span>
+            <span style={{fontSize: '10px'}}>
+              <img src={icon_instagram} alt="Instagram" />
+            </span>
           </a>
           <a href="#" className="footer__red-icono">
-            <span style={{fontSize: '10px'}}>IN</span>
+            <span style={{fontSize: '10px'}}>
+              <img src={icon_linkedin} alt="LinkedIn" />
+            </span>
           </a>
           <a href="#" className="footer__red-icono">
-            <span style={{fontSize: '10px'}}>EM</span>
+            <span style={{fontSize: '10px'}}>
+              <img src={icon_email} alt="Email" />
+            </span>
           </a>
         </div>
       </section>
