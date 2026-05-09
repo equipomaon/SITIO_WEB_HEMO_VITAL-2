@@ -652,7 +652,7 @@ body {
     background-size: 100px; // Ajusta el tamaño del patrón de perritos para móvil
     background-repeat: repeat;
     // Si quieres que el fondo sea un poco más sutil al ser plano:
-    opacity: 0.8; 
+    //opacity: 0.8; 
   }
 
   // 5. Ajustamos el desplazamiento para que no se vea cortado arriba
@@ -660,11 +660,46 @@ body {
     transform: translateY(-20px); // Menos desplazamiento para que la línea plana no tape el contenido de arriba
     margin-bottom: -20px; 
   }
+   // 6. Sombreado sutil solo en la parte inferior para móvil
+  .home_s2_ellipse__overlay {
+    display: block !important;
+    background: transparent !important; // Mantenemos el fondo transparente
+    
+    // Creamos el efecto de sombreado en la base
+    // El 'inset' con valores negativos de Y hace que la sombra suba desde abajo
+    box-shadow: inset 0 -30px 30px -20px rgba(0, 0, 0, 0.1); 
+    
+    // Opcional: una línea muy fina para definir el final de la sección
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+
+    position: absolute;
+    inset: 0;
+    z-index: 2;
+    pointer-events: none;
+  }
 
   .home_s2_ellipse__content {
     position: relative; // Para que el contenido empuje la altura de la sección
     padding: 60px 20px;
   }
+
+  .home_s2_ellipse__placeholder {
+
+  position: absolute;
+
+  inset: 0;
+
+  z-index: 1;
+
+  width: 100%;
+  height: 100%;
+
+  background-repeat: repeat;
+
+  background-position: center;
+
+  background-size: 100%;
+}
 }
 // Opcional: Ajuste para tablets (si el ancho es intermedio)
 @include para-tablet {
