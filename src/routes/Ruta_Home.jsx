@@ -3,12 +3,12 @@ import { useState } from 'react';
 import '../styles_scss/componentes_scss/home.scss';
 
 // ASSETS
-import imgFestival from '../assets/testeo_festival.png';
 import iconHuella from '../assets/icon_huella.png';
-import home_header from '../assets/home_header.png';
 import iconSangre from '../assets/icono-card1.png';
 import iconTransfusion from '../assets/icono-card2.png';
 import iconBlood from '../assets/icono-card3.png';
+import imgFestival from '../assets/testeo_festival.png';
+import home_header from '../assets/home_header.png';
 import fondo_imagen_blanco_perritos from '../assets/home_s1_s2_fondo_blanco_perritos.png';
 import video_placeholder from '../assets/imagen_fondo_s3_home.png';
 
@@ -190,7 +190,7 @@ export const Ruta_Home = () => {
               
               {/* Tarjeta 1 */}
               <div className="home_s2_card">
-                <div className="home_s2_card__icon"> <img src= "" alt="Veterinario" /> </div>
+                <div className="home_s2_card__icon"> <img src= {iconSangre} alt="Veterinario" /> </div>
                 <h3 className="home_s2_card__title">¿Eres veterinario?</h3>
                 <p className="home_s2_card__text">Accede a nuestras unidades de sangre de forma rápida y segura.</p>
                 <a href="#" className="home_s2_card__link">Más información &rsaquo;</a>
@@ -198,14 +198,14 @@ export const Ruta_Home = () => {
 
               {/* Tarjeta 2 - DESTACADA (CENTRAL) */}
               <div className="home_s2_card home_s2_card--featured">
-                <div className="home_s2_card__icon"> <img src= "" alt="Urgente" /> </div>
+                <div className="home_s2_card__icon"> <img src= {iconTransfusion} alt="Urgente" /> </div>
                 <h3 className="home_s2_card__title">¿Necesitas sangre urgente?</h3>
                 <button className="home_s2_card__btn">Atención inmediata</button>
               </div>
 
               {/* Tarjeta 3 */}
               <div className="home_s2_card">
-                <div className="home_s2_card__icon"> <img src= "" alt="Productos" /> </div>
+                <div className="home_s2_card__icon"> <img src= {iconBlood} alt="Productos" /> </div>
                 <h3 className="home_s2_card__title">Nuestros productos</h3>
                 <p className="home_s2_card__text">Contamos con diferentes tamaños de plasma y sangre entera.</p>
                 <a href="#" className="home_s2_card__link">Más información &rsaquo;</a>

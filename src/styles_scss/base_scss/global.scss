@@ -1,8 +1,46 @@
-html, body, #root {
-  height: 100%;
-  margin: 0;
-  
-  
-  overflow-x: hidden;
+/* 1. REGISTRO DE LA FUENTE */
+/* Lo ponemos al principio para que esté disponible desde el segundo 0 */
+@font-face {
+  font-family: 'Arlon';
+  src: url('/src/assets/fonts/arlon-bold.ttf') format('truetype');
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap; /* Evita que el texto desaparezca mientras carga la fuente */
+}
 
+/* 2. RESET BÁSICO */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* 3. ESTILOS GLOBALES (Root, Html, Body) */
+html, 
+body, 
+#root {
+  /* Dimensiones base */
+  width: 100%;
+  height: 100%;
+  
+  /* Tipografía */
+  font-family: 'Arlon', sans-serif;
+  -webkit-font-smoothing: antialiased; /* Suaviza la fuente en Mac/Chrome */
+  -moz-osx-font-smoothing: grayscale;   /* Suaviza la fuente en Firefox */
+  
+  /* Comportamiento de scroll */
+  overflow-x: hidden; 
+  background-color: #f4f4f4; /* O el color de fondo que prefieras */
+  
+  /* Configuración de texto base */
+  line-height: 1.5;
+  color: #333; /* Un gris oscuro para legibilidad general */
+}
+
+/* 4. REGLA PARA TÍTULOS (Opcional pero recomendado) */
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Arlon', sans-serif;
+  font-weight: bold;
+  line-height: 1.1;
+  letter-spacing: -0.02em; /* Arlon luce mejor con las letras ligeramente juntas */
 }
