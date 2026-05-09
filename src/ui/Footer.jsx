@@ -3,10 +3,10 @@ import '../styles_scss/componentes_scss/footer_component.scss';
 
 // COMENTAMOS TODAS LAS IMPORTACIONES PARA QUE EL COMPILADOR NO BUSQUE LOS ARCHIVOS
 import logo from '../assets/imagotipo_hemovital_horizontal_1.png'; 
-import icon_facebook from '../assets/facebook.png'; 
-import icon_instagram from '../assets/instagram.png';  
-import icon_linkedin from '../assets/linkedin.png'; 
-import icon_email from '../assets/email.png';
+import icon_facebook from '../assets/logotipo-de-la-aplicacion-de-facebook.png'; 
+//import icon_instagram from '../assets/instagram.png';  
+//import icon_linkedin from '../assets/linkedin.png'; 
+//import icon_email from '../assets/email.png';
 
 export const Footer = () => {
   return (
