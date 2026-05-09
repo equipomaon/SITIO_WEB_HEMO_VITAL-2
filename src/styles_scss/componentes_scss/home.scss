@@ -621,6 +621,64 @@ body {
   }
 }
 
+// ==========================================================================
+// RESPONSIVO — HOME SECCIÓN 2
+// ==========================================================================
+
+@include para-movil {
+  
+  // 1. Quitamos el clip-path para que el contenedor vuelva a ser rectangular
+  .home_s2_ellipse--clipped {
+    clip-path: none !important;
+    -webkit-clip-path: none !important;
+  }
+
+  // 2. Ocultamos el borde SVG que dibujaba la curva
+  .home_s2_ellipse__border {
+    display: none !important;
+  }
+
+  // 3. Ajustamos el contenedor principal
+  .home_s2_ellipse {
+    height: auto; 
+    border-radius: 0; // Opcional: pon 20px si quieres esquinas apenas redondeadas
+    overflow: visible; // Permite que el contenido fluya bien
+  }
+
+  // 4. Ajustamos el fondo de los perritos
+  .home_s2_ellipse__placeholder {
+    position: absolute;
+    inset: 0;
+    background-size: 100px; // Ajusta el tamaño del patrón de perritos para móvil
+    background-repeat: repeat;
+    // Si quieres que el fondo sea un poco más sutil al ser plano:
+    opacity: 0.8; 
+  }
+
+  // 5. Ajustamos el desplazamiento para que no se vea cortado arriba
+  .padre_contendor_home_seccion_dos {
+    transform: translateY(-20px); // Menos desplazamiento para que la línea plana no tape el contenido de arriba
+    margin-bottom: -20px; 
+  }
+
+  .home_s2_ellipse__content {
+    position: relative; // Para que el contenido empuje la altura de la sección
+    padding: 60px 20px;
+  }
+}
+// Opcional: Ajuste para tablets (si el ancho es intermedio)
+@include para-tablet {
+  .home_s2_cards_container {
+    flex-wrap: wrap; // Permite que las tarjetas bajen si no caben
+    padding: 40px;
+  }
+  
+  .home_s2_ellipse {
+    height: auto;
+    padding: 100px 0;
+  }
+}
+
 
 
 
