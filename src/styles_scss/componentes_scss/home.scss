@@ -948,15 +948,20 @@ body {
 }
 
 .home_s4__galeria-item {
-  width: 250px; // Ancho fijo para cada imagen en el carrusel
-  flex-shrink: 0; // Evita que se encojan
+  width: 260px;            // Aumentamos un poquito el cuadro para dar aire
+  height: 260px;
+  flex-shrink: 0;
   aspect-ratio: 1 / 1;
-  background-color: #f5f5f5;
-  border-radius: 8px;
+  background-color: #fcfcfc; // Un blanco roto o gris muy claro de fondo
+  border-radius: 16px;      // Bordes más redondeados para un look más moderno
   overflow: hidden;
   display: flex;
   align-items: center;
   justify-content: center;
+  
+  // --- EL TRUCO PARA QUITAR EL ZOOM ---
+  padding: 25px;            // Aumentamos el padding para "empujar" la foto hacia adentro
+  border: 1px solid #eee;   // Un borde sutil para definir el cuadro
 }
 
 // ANIMACIÓN
@@ -977,6 +982,79 @@ body {
   }
 }
 
+.home_s4__galeria-container {
+  width: 100%;
+  overflow: hidden;
+  padding: 20px 0;
+  position: relative;
+  display: flex;       // Añadido para organizar las filas
+  flex-direction: column; 
+  gap: 30px;           // Espacio entre la fila 1 y la fila 2
+  
+  &::before, &::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    width: 100px;
+    height: 100%;
+    z-index: 2;
+  }
+  &::before { left: 0; background: linear-gradient(to right, #ffffff, transparent); }
+  &::after { right: 0; background: linear-gradient(to left, #ffffff, transparent); }
+}
+
+.home_s4__galeria-track {
+  display: flex;
+  width: max-content;
+  gap: 20px;
+  animation: scroll-horizontal 30s linear infinite;
+
+  &:hover {
+    animation-play-state: paused;
+  }
+
+  // ESTA ES LA CLASE CLAVE PARA EL SENTIDO CONTRARIO
+  &--reversa {
+    animation-direction: reverse; // Invierte el sentido de la animación existente
+  }
+}
+
+.home_s4__galeria-item {
+  width: 250px;
+  flex-shrink: 0;
+  aspect-ratio: 1 / 1;
+  background-color: transparent;
+  border: none;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.home_s4__imagen {
+  width: 100%;
+  height: 100%;
+  
+  // Cambiamos 'cover' por 'contain' para que la foto se vea COMPLETA
+  // sin importar si es horizontal o vertical.
+  object-fit: contain; 
+  
+  // Si prefieres que sigan llenando el espacio pero con menos zoom, 
+  // usa 'cover' pero añade esta línea:
+  // transform: scale(0.9); // Esto reduce la imagen un 10% adicional
+  
+  border-radius: 8px;      // Redondeamos la foto interna también
+  display: block;
+}
+// La animación se mantiene igual
+@keyframes scroll-horizontal {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(calc(-50% - 10px)); // 10px es la mitad del gap
+  }
+}
 
 // ==========================================================================
 // HOME — SECCIÓN 5

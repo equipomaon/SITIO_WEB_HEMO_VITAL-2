@@ -12,6 +12,17 @@ import iconBlood from '../assets/icono-card3.png';
 import fondo_imagen_blanco_perritos from '../assets/home_s1_s2_fondo_blanco_perritos.png';
 import video_placeholder from '../assets/imagen_fondo_s3_home.png';
 
+// ... otros imports
+import g_uno from '../assets/g_uno.jpg';
+import g_dos from '../assets/g_dos.jpg';
+import g_tres from '../assets/g_tres.jpg';
+import g_cuatro from '../assets/g_cuatro.jpg';
+import g_cinco from '../assets/g_cinco.jpg';
+import g_seis from '../assets/g_seis.jpg';
+import g_siete from '../assets/g_siete.jpg';
+import g_ocho from '../assets/g_ocho.jpg';
+import g_nueve from '../assets/g_nueve.jpg';
+import g_diez from '../assets/g_diez.jpg';
 
 
 export const Ruta_Home = () => {
@@ -102,6 +113,22 @@ export const Ruta_Home = () => {
     { q: "¿Cómo sé si mi mascota necesita una transfusión de sangre?", a: "Signos como debilidad, encías pálidas, respiración agitada o decaimiento pueden indicar anemia, así mismo, tu mascota puede requerir una tranfución de sangre en casos de accidentes, cirugías o enfermedades graves. Es importante que tengas presente que la indicación siempre la realiza un médico veterinario tras una evaluación clínica." },
     { q: "¿Cómo garantizan la seguridad y compatibilidad de la sangre?", a: "En Hemovital evaluamos previamente a cada donante: Su historia clínica, que el esquema de vacunación esté al día y el estado general de la mascota, además, realizamos tipificación sanguínea y pruebas de compatibilidad para asegurar que todas las transfusiones sean seguras, confiables y adaptadas a cada peludito." },
     { q: "¿Tienen disponibilidad de sangre las 24 horas?", a: "Claro que sí, contamos con disponibilidad permanente, durante el día realizamos envíos y, durante la noche o domingos y festivos puedes recoger la sangre directamente en nuestro punto físico para atención inmediata." },
+  ];
+
+ const fotosFila1 = [
+    { id: 1, url: g_uno, alt: "Perro donante" },
+    { id: 2, url: g_dos, alt: "Gato salvando vidas" },
+    { id: 3, url: g_tres, alt: "Perrito Hemovital" },
+    { id: 4, url: g_cuatro, alt: "Donante feliz" },
+    { id: 5, url: g_cinco, alt: "Mascota héroe" },
+  ];
+
+  const fotosFila2 = [
+    { id: 6, url: g_seis, alt: "Gatito valiente" },
+    { id: 7, url: g_siete, alt: "Perrito recuperado" },
+    { id: 8, url: g_ocho, alt: "Héroe Hemovital" },
+    { id: 9, url: g_nueve, alt: "Mascota donante" },
+    { id: 10, url: g_diez, alt: "Héroe de cuatro patas" },
   ];
 
 
@@ -219,54 +246,50 @@ export const Ruta_Home = () => {
       
 
       
-     {/* ---------------- HOME SECCIÓN 4  ---------------- */}
-    <div className="layout-pagina__seccion layout-pagina__seccion--media home_s4">
-      <div className="padre_contendor padre_contendor_home_seccion_4">
-        
-        {/* ÁREA DE TEXTO / ENCABEZADO */}
-        <header className="home_s4__header">
-          <div className="home_s4__header-col-izq">
-            
-            <h2 className="home_s4__titulo">Ellos ya están salvando vidas</h2>
-          </div>
-          
-          <div className="home_s4__header-col-der">
-            <p>
-              Estos son algunos de los peluditos que ha ayudado a salvar vidas con su donación de sangre en Hemovital; Gracias a ellos, muchos perritos y gatitos han tenido una segunda oportunidad cuando más lo necesitaban. 
-              <strong>Tu mascota también puede estar aquí</strong>
-            </p>
-           
-          </div>
-        </header>
-
-        {/* ÁREA DE GALERÍA CON MOVIMIENTO HORIZONTAL */}
-        <div className="home_s4__galeria-container">
-          <div className="home_s4__galeria-track">
-            
-            {/* PRIMER SET DE IMÁGENES */}
-            {[1, 2, 3, 4, 5, 6, 7, 8].map((item) => (
-              <div key={`set1-${item}`} className="home_s4__galeria-item">
-                <div className="home_s4__placeholder-img">
-                    {/* <img src="..." alt="galeria" /> */}
-                    <svg viewBox="0 0 24 24" fill="none"><path d="M21 19V5C21 3.9 20.1 3 19 3H5C3.9 3 3 3.9 3 5V19C3 20.1 3.9 21 5 21H19C20.1 21 21 20.1 21 19ZM8.5 13.5L11 16.51L14.5 12L19 18H5L8.5 13.5Z" fill="#ccc"/></svg>
-                </div>
-              </div>
-            ))}
-
-            {/* SEGUNDO SET (Duplicado para el loop infinito) */}
-            {[1, 2, 3, 4, 5, 6, 7, 8].map((item) => (
-              <div key={`set2-${item}`} className="home_s4__galeria-item">
-                <div className="home_s4__placeholder-img">
-                    <svg viewBox="0 0 24 24" fill="none"><path d="M21 19V5C21 3.9 20.1 3 19 3H5C3.9 3 3 3.9 3 5V19C3 20.1 3.9 21 5 21H19C20.1 21 21 20.1 21 19ZM8.5 13.5L11 16.51L14.5 12L19 18H5L8.5 13.5Z" fill="#ccc"/></svg>
-                </div>
-              </div>
-            ))}
-
-          </div>
-        </div>
-
+   {/* ---------------- HOME SECCIÓN 4  ---------------- */}
+<div className="layout-pagina__seccion layout-pagina__seccion--media home_s4">
+  <div className="padre_contendor padre_contendor_home_seccion_4">
+    
+    <header className="home_s4__header">
+      <div className="home_s4__header-col-izq">
+        <h2 className="home_s4__titulo">Ellos ya están salvando vidas</h2>
       </div>
+      <div className="home_s4__header-col-der">
+        <p>
+          Estos son algunos de los peluditos que ha ayudado a salvar vidas con su donación de sangre en Hemovital; Gracias a ellos, muchos perritos y gatitos han tenido una segunda oportunidad cuando más lo necesitaban. 
+          <strong>Tu mascota también puede estar aquí</strong>
+        </p>
+      </div>
+    </header>
+
+    <div className="home_s4__galeria-container">
+      
+      {/* FILA 1: Derecha a Izquierda */}
+      <div className="home_s4__galeria-track">
+        {[...fotosFila1, ...fotosFila1].map((foto, index) => (
+          <div key={`track1-${index}`} className="home_s4__galeria-item">
+            <div className="home_s4__placeholder-img">
+                <img src={foto.url} alt={foto.alt} className="home_s4__imagen" />
+            </div>
+          </div>
+        ))}
+      </div>
+
+      {/* FILA 2: Izquierda a Derecha */}
+      <div className="home_s4__galeria-track home_s4__galeria-track--reversa">
+        {[...fotosFila2, ...fotosFila2].map((foto, index) => (
+          <div key={`track2-${index}`} className="home_s4__galeria-item">
+            <div className="home_s4__placeholder-img">
+                <img src={foto.url} alt={foto.alt} className="home_s4__imagen" />
+            </div>
+          </div>
+        ))}
+      </div>
+
     </div>
+
+  </div>
+</div>
       
       {/* ---------------- HOME SECCIÓN 6 (Testimonios) ---------------- */}
       <section className="layout-pagina__seccion layout-pagina__seccion--media home_s6">
