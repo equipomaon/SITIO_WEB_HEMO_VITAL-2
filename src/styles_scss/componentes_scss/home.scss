@@ -897,57 +897,94 @@ body {
   background-size: 100%;
 }
 }
-
 @include para-tablet-vertical {
+
+  // 1. Limpiamos la sección exterior
+  .layout-pagina__seccion--dos {
+    background-color: white; 
+    padding: 0 !important;
+  }
+
+  // 2. Ajustamos el padre (el que envuelve todo)
+  .padre_contendor_home_seccion_dos {
+    transform: translateY(-50px); // Menos solapamiento para tablet
+    width: 100%;
+    display: block;
+    border: none; // Quitamos bordes de prueba
+    background-color: white; 
+    position: relative;
+  }
   
+  // 3. TRANSFORMACIÓN DE LA ELIPSE A RECTÁNGULO
   .home_s2_ellipse {
     height: auto; 
-    min-height: auto; // Dejamos que el contenido (las tarjetas en columna) dicte la altura
-    padding: 150px 0; // Aumentamos padding para dar espacio a la curva arriba y abajo
-    overflow: hidden;
+    min-height: auto;
+    clip-path: none !important;        // ❌ Eliminamos el recorte
+    -webkit-clip-path: none !important;
+    border-radius: 0;                  // ❌ Quitamos bordes redondeados
+    background: transparent !important;
+    overflow: visible;
+    padding: 100px 0;                  // Espacio para las tarjetas
+  }
+
+  // 4. EL FONDO DE PERRITOS (Placeholder)
+  // No lo ocultamos, lo rediseñamos para que sea el fondo total
+  .home_s2_ellipse__placeholder {
+    display: block !important; 
+    position: absolute;
+    inset: 0;               // Ocupa todo el tamaño del padre
+    z-index: 1;             // Al fondo
+    
+    // Forzamos el comportamiento de patrón
+    background-repeat: repeat !important;
+    background-position: center !important;
+    background-size: 500px !important; // Tamaño de los perritos para que se vean nítidos
+    
+    // IMPORTANTE: Quitar el clip-path también aquí por si acaso
+    clip-path: none !important;
+    -webkit-clip-path: none !important;
+  }
+
+  // 5. OCULTAR ELEMENTOS INNECESARIOS
+  .home_s2_ellipse__border, 
+  .home_s2_ellipse__vector,
+  .home_s2_ellipse__overlay {
+    display: none !important; 
+  }
+
+  // 6. CONTENIDO Y TARJETAS EN COLUMNA
+  .home_s2_ellipse__content {
+    position: relative;
+    inset: auto;
+    z-index: 5; // Por encima de los perritos
+    display: block; // Flujo normal para que el padding funcione
   }
 
   .home_s2_cards_container {
     display: flex;
-    flex-direction: column; // <--- Cambio a COLUMNA
-    align-items: center;    // Centra las tarjetas horizontalmente
-    gap: 40px;              // Espacio vertical entre cada tarjeta
+    flex-direction: column; 
+    align-items: center;    
+    gap: 40px; 
     padding: 20px;
     width: 100%;
   }
 
+  // 7. DISEÑO DE TARJETAS PARA TABLET
   .home_s2_card {
-    width: 90%;             // Las tarjetas ocuparán casi todo el ancho disponible
-    max-width: 450px;       // Pero con un límite para que no se vean demasiado estiradas
+    width: 85%;
+    max-width: 350px;
+    height: auto;
+    min-height: 320px;
+    margin: 0 auto;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
   }
 
-  // --- FONDO DE PERRITOS MÁS GRANDE/ANCHO ---
-  .home_s2_ellipse__placeholder {
-    position: absolute;
-    inset: 0;
-    z-index: 1;
-    width: 100%;
-    height: 100%;
-    
-    background-repeat: repeat;
-    background-position: center;
-
-    /* 
-       Aumentamos el tamaño al 200% o incluso 250% 
-       para que el patrón de perritos se vea mucho más grande en tablets
-    */
-    background-size: 200%; 
-    
-    // Si prefieres que se vea exacto, puedes usar píxeles:
-    // background-size: 800px; 
-  }
-
-  .home_s2_ellipse__content {
-    position: relative;
-    z-index: 3;
+  .home_s2_card--featured {
+    width: 90%;
+    max-width: 380px;
+    min-height: 380px;
   }
 }
-
 
 
 
