@@ -204,7 +204,7 @@
 
     
       max-width: 700px; // Limita el ancho del texto para mejor legibilidad
-      border: 1px solid rgb(33, 13, 247); // 🔥 para visualizar el bloque de texto
+      //border: 1px solid rgb(33, 13, 247); // 🔥 para visualizar el bloque de texto
       
       padding: 39px;
 
@@ -1253,7 +1253,14 @@ body {
     flex-direction: row;
     justify-content: space-between;
     align-items: flex-start;
+    padding: 0;
   }
+
+   @include para-tablet-vertical {
+    display: flex;
+    flex-direction: column;
+    padding: 80px 40px;
+  } 
 }
 
 .home_s4__header-col-izq {
