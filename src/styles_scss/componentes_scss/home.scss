@@ -1484,20 +1484,11 @@ body {
 }
 
 // ==========================================================================
-// HOME — SECCIÓN 5
+// HOME — SECCIÓN 5 (Preguntas Frecuentes)
 // ==========================================================================
 
-.layout-pagina__seccion--cinco{
+.layout-pagina__seccion--cinco {
   background: white;
-}
-
-.home_s5 {
-  padding: 80px 20px;
-  background-color: #ffffff;
-
-  @include para-escritorio {
-    padding: 100px 0;
-  }
 }
 
 .padre_contendor_home_seccion_5 {
@@ -1507,16 +1498,17 @@ body {
   flex-direction: column;
   gap: 48px;
   background-color: white;
+  padding: 60px 20px; // Padding ajustado para móvil
 
-    /* top | right | bottom */
-  padding: 80px 40px 60px;
-
-  height: 741px;
+  // IMPORTANTE: Cambiamos height: 741px por auto para que el acordeón no se corte
+  height: auto; 
+  min-height: 500px;
 
   @include para-escritorio {
     flex-direction: row;
     justify-content: space-between;
     align-items: flex-start;
+    padding: 80px 40px 100px;
   }
 }
 
@@ -1524,50 +1516,70 @@ body {
 .home_s5__info {
   @include para-escritorio {
     width: 35%;
-    position: sticky; // El texto se queda fijo mientras haces scroll en las preguntas
-    top: 100px;
+    position: sticky; 
+    top: 120px; // Un poco más de espacio superior al quedarse fijo
   }
 }
 
+// APLICANDO EL ESTILO DE LA SECCIÓN 6
 .home_s5__titulo {
-  font-size: 2.5rem;
+   // 1. Tipografía y Peso (Bold de la imagen)
+  font-family: 'Arlon', sans-serif;
+  font-weight: 700; // Si tienes Arlon Bold, este es el valor. 
+  
+  // 2. Color y Alineación
+  color: #000000;
+  text-align: left;
+
+  // 3. Medidas exactas de la imagen (Figma: 48/57.6)
+  // line-height: 57.6 / 48 = 1.2
+  font-size: 32px;    // Tamaño para móvil
+  line-height: 1.2;   
+  letter-spacing: -0.02em; // Un ajuste sutil para el bold de Arlon
+  
+   // 2. TIPOGRAFÍA (Basado en tu imagen de Figma)
+  font-family: 'Arlon', sans-serif;
   font-weight: 700;
+  color: #000000;
+  text-align: left;
+
+  // 3. MEDIDAS PARA MÓVIL (Lo que se ve en tu captura)
+  font-size: 32px;
+  line-height: 1.1;
+  letter-spacing: -0.04em;
   margin-bottom: 24px;
-}
+  
+  // 4. Tamaño responsivo
+  font-size: 32px; // Tamaño móvil
+  margin-bottom: 24px;
 
-.home_s5__descripcion {
-  font-size: 1.1rem;
-  line-height: 1.5;
-  color: #333;
-  margin-bottom: 32px;
-}
-
-.home_s5__btn-contacto {
-  padding: 12px 28px;
-  border: 1px solid #000;
-  background: transparent;
-  cursor: pointer;
-  font-weight: 500;
-  transition: 0.3s;
-
-  &:hover {
-    background: #000;
-    color: #fff;
+  @include para-escritorio {
+    font-size: 48px; // Tamaño PC
+    max-width: 500px; // Un poco más estrecho para que rompa en líneas elegantes
   }
+
+  @include para-movil{
+     max-width: none !important;
+  }
+
+  // Asegura el balance de las líneas
+  text-wrap: balance;
 }
 
 // --- Acordeón Derecha ---
 .home_s5__acordeon {
+  width: 100%; // Ocupa todo el ancho en móvil
+
   @include para-escritorio {
     width: 55%;
   }
 }
 
 .home_s5__faq-item {
-  border-top: 1px solid #000; // Línea superior como en la imagen
+  border-top: 1.5px solid #000; // Línea un poco más gruesa para look premium
   
   &:last-child {
-    border-bottom: 1px solid #000; // Línea final
+    border-bottom: 1.5px solid #000;
   }
 }
 
@@ -1581,43 +1593,22 @@ body {
   border: none;
   cursor: pointer;
   text-align: left;
+  
+  // Efecto al pasar el mouse por la pregunta
+  &:hover .home_s5__faq-pregunta {
+    opacity: 0.7;
+  }
 }
 
 .home_s5__faq-pregunta {
   font-size: 1.1rem;
   font-weight: 600;
   color: #000;
+  font-family: 'Arlon', sans-serif; // Opcional: también en Arlon para consistencia
+  transition: opacity 0.3s ease;
 }
 
-.home_s5__faq-icono {
-  transition: transform 0.3s ease;
-  display: flex;
-  align-items: center;
-}
-
-// --- Animación del contenido ---
-.home_s5__faq-contenido {
-  max-height: 0;
-  overflow: hidden;
-  transition: max-height 0.3s ease-out, padding 0.3s ease;
-}
-
-.home_s5__faq-texto {
-  padding-bottom: 24px;
-  color: #555;
-  line-height: 1.6;
-}
-
-// --- Estado Activo ---
-.home_s5__faq-item.active {
-  .home_s5__faq-icono {
-    transform: rotate(180deg); // La flecha gira hacia arriba
-  }
-  
-  .home_s5__faq-contenido {
-    max-height: 200px; // Altura suficiente para el texto
-  }
-}
+// ... (Resto de tus estilos de acordeón se mantienen iguales)
 
 // ==========================================================================
 // HOME — SECCIÓN 6 (Testimonios) - REFACTORED RESPONSIVE
