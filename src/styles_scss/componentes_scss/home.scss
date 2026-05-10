@@ -302,6 +302,18 @@
   gap: 12px; 
   margin-top: 15px;
 
+  //border: 1px solid rgb(190, 248, 17); // 🔥 para visualizar el contenedor de botones en móvil
+
+   @include para-escritorio {
+    margin-top: 0;
+  }
+  @include para-tablet-vertical {
+    margin: 0 auto;
+  }
+  @include para-movil {
+    margin: 0 auto;
+  }
+
   button {
     display: inline-flex;
     align-items: center;
