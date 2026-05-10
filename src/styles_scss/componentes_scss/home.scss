@@ -410,7 +410,7 @@ body {
 
 .layout-pagina__seccion--dos {
 
-  background-color: transparent !important;
+  background-color: white;
   height: auto;
   padding: 0;
 }
@@ -1503,7 +1503,7 @@ body {
   flex-direction: column;
   gap: 40px;
   background-color: #ffffff;
-  padding: 60px 20px;
+  //padding: 60px 20px;
   height: auto; // Dinámico para que no se corte el contenido
   min-height: 500px;
 
@@ -1511,7 +1511,13 @@ body {
     flex-direction: row;
     justify-content: space-between;
     align-items: flex-start;
-    padding: 100px 40px;
+     padding: 64px 10px;
+    
+  }
+
+  @include para-tablet-vertical {
+
+    padding: 64px 10px;
   }
 
   @include para-movil {
@@ -1671,18 +1677,23 @@ body {
 .padre_contendor_home_seccion_6 {
   // Quitamos el height fijo de 600px para que no corte el contenido en móviles
   height: auto; 
-  margin-top: 50px;
+  //margin-top: 50px;
+
+  padding: 0;
 
   @include para-escritorio {
-    height: 600px; // Se mantiene en escritorio si es necesario
-    margin-top: 112px;
+    height: 700px; // Se mantiene en escritorio si es necesario
+    //margin-top: 112px;
     margin-left: 64px;
+    padding-top: 112px;
   }
 
   @include para-movil {
     margin-top: 30px; // Menos espacio en móvil
     margin-left: 20px;   // Sin margen lateral en móvil
   }
+
+
 }
 
 .home_s6__header {
