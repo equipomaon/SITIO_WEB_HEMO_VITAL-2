@@ -41,7 +41,7 @@
     min-height: 105vh; // Un poco más alto en PC
   }
 
-     @include para-tablet-vertical {
+  @include para-tablet-vertical {
     min-height: 70vh; // No tan alto como en PC para que no tape todo
     padding: 80px 40px;
     display: flex;
@@ -55,9 +55,24 @@
     // background-color: red; 
   }
 
+  @include para-movil {
+    min-height: 60vh; // Menos alto en móvil para que no tape todo
+    
+    margin:  0 auto;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center; // Centrado para móvil
+    text-align: center; // Texto centrado para móvil
+
+    // border: 1px solid rgb(190, 248, 17); // 🔥 para visualizar el contenedor principal en móvil
+  }
+
 }
 
 .padre_contendor_home_seccion_header {
+
   display: flex;
   flex-direction: column; // Apilado vertical para móvil
   gap: 24px;
@@ -84,11 +99,12 @@
   display: flex;
   align-items: center;
 
-  padding: 100px 20px; 
+  //padding: 100px 20px; 
   width: 100%;
   box-sizing: border-box;
 
   @include para-escritorio {
+
     padding: 0;
     min-height: 90vh; // Un poco más alto en PC
 
@@ -104,6 +120,7 @@
   }
 
   @include para-tablet-vertical {
+
     min-height: 70vh; // No tan alto como en PC para que no tape todo
     padding: 80px 40px;
     display: flex;
@@ -186,7 +203,8 @@
     
       max-width: 700px; // Limita el ancho del texto para mejor legibilidad
      // border: 1px solid rgb(33, 13, 247); // 🔥 para visualizar el bloque de texto
-      margin-left: 64px;
+      margin-left: 0 auto;
+      padding: 39px;
 
        font-size: 4rem; // Título más grande en PC
     
@@ -196,24 +214,29 @@
     flex: 1; // Ocupa el 100% del ancho en móvil
     max-width: none; // Sin límite de ancho en móvil
     text-align: center; // Centrado en móvil
-     font-size: 2.5rem; // Título más pequeño en móvil para que no se vea gigante
-     line-height: 1.1; // Altura de línea más ajustada para móvil
-     font-weight: 500; // Peso Medium para que tenga presencia sobre el fondo
-     margin-top: 180px; // Espacio debajo del título en móvil
+    font-size: 2.5rem; // Título más pequeño en móvil para que no se vea gigante
+    line-height: 1.1; // Altura de línea más ajustada para móvil
+    font-weight: 500; // Peso Medium para que tenga presencia sobre el fondo
+    margin-top: 180px; // Espacio debajo del título en móvil
 
-     border: 1px solid rgb(190, 248, 17); // 🔥 para visualizar el bloque de texto en móvi  l 
+    //border: 1px solid rgb(190, 248, 17); // 🔥 para visualizar el bloque de texto en móvi  l 
   }
 
   @include para-movil{
+
     flex: 1; // Ocupa el 100% del ancho en móvil
     max-width: none; // Sin límite de ancho en móvil
     text-align: center; // Centrado en móvil
-     font-size: 2.5rem; // Título más pequeño en móvil para que no se vea gigante
-     line-height: 1.1; // Altura de línea más ajustada para móvil
-     font-weight: 500; // Peso Medium para que tenga presencia sobre el fondo
-     margin-top: 50px; // Espacio debajo del título en móvil
+    font-size: 2.5rem; // Título más pequeño en móvil para que no se vea gigante
+    line-height: 1.1; // Altura de línea más ajustada para móvil
+    font-weight: 500; // Peso Medium para que tenga presencia sobre el fondo
+    //margin-top: 50px; // Espacio debajo del título en móvil
 
-     border: 1px solid rgb(190, 248, 17); // 🔥 para visualizar el bloque de texto en móvi  l
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    // border: 1px solid rgb(190, 248, 17); // 🔥 para visualizar el bloque de texto en móvi  l
   }
 
 
