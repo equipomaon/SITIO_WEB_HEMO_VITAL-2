@@ -201,9 +201,21 @@ export const Ruta_Home = () => {
 
               {/* Tarjeta 2 - DESTACADA (CENTRAL) */}
               <div className="home_s2_card home_s2_card--featured">
+
                 <div className="home_s2_card__icon"> <img src= {iconTransfusion} alt="Urgente" /> </div>
+
                 <h3 className="home_s2_card__title">¿Necesitas sangre urgente?</h3>
-                <button className="home_s2_card__btn">Atención inmediata</button>
+
+                <a 
+                     href="https://wa.me/573007202428?text=Hola,%20necesito%20sangre%20de%20forma%20urgente.%20%C2%BFMe%20podr%C3%ADan%20dar%20m%C3%A1s%20informaci%C3%B3n%3F"  
+                    target="_blank" 
+                    rel="noopener noreferrer" 
+                    className="home_s2_card__btn"
+                    style={{ textDecoration: 'none', display: 'inline-block' }} 
+                  >
+                    Atención inmediata
+                </a>
+
               </div>
 
               {/* Tarjeta 3 */}

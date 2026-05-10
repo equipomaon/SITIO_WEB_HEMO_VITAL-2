@@ -3,10 +3,11 @@ import '../styles_scss/componentes_scss/footer_component.scss';
 
 // COMENTAMOS TODAS LAS IMPORTACIONES PARA QUE EL COMPILADOR NO BUSQUE LOS ARCHIVOS
 import logo from '../assets/imagotipo_hemovital_horizontal.png'; // Asegúrate de que esta ruta sea la correcta para tu logo
-import icon_facebook from '../assets/logotipo-de-la-aplicacion-de-facebook.png'; 
-//import icon_instagram from '../assets/instagram.png';  
-//import icon_linkedin from '../assets/linkedin.png'; 
-//import icon_email from '../assets/email.png';
+import icon_facebook from '../assets/facebook.png'; 
+import icon_instagram from '../assets/logotipo-de-instagram.png';  
+import icon_tik_tok from '../assets/tik-tok.png'; 
+import icon_email from '../assets/carta.png';
+
 
 export const Footer = () => {
   return (
@@ -41,29 +42,53 @@ export const Footer = () => {
 
         <div className="footer__redes">
 
-          <a href="#" className="footer__red-icono">
+          <a  
+              href="https://www.facebook.com/hemovitalvet" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="footer__red-icono"
+              >
+              
             <span style={{fontSize: '10px'}}>
               <img src={icon_facebook} alt="Facebook" />
             </span>
           </a>
 
-          {/*}
-          <a href="#" className="footer__red-icono">
+          
+          <a 
+            href="https://www.instagram.com/hemovital_vet/" 
+            target="_blank" 
+            rel="noopener noreferrer" 
+            className="footer__red-icono"
+          >
             <span style={{fontSize: '10px'}}>
               <img src={icon_instagram} alt="Instagram" />
             </span>
           </a>
-          <a href="#" className="footer__red-icono">
-            <span style={{fontSize: '10px'}}>
-              <img src={icon_linkedin} alt="LinkedIn" />
-            </span>
-          </a>
-          <a href="#" className="footer__red-icono">
-            <span style={{fontSize: '10px'}}>
-              <img src={icon_email} alt="Email" />
-            </span>
-          </a>
-          */}
+
+
+           
+        <a 
+          href="https://www.tiktok.com/@hemovital_vet" 
+          target="_blank" 
+          rel="noopener noreferrer" 
+          className="footer__red-icono"
+        >
+          <span style={{fontSize: '10px'}}>
+            <img src={icon_tik_tok} alt="TikTok" />
+          </span>
+        </a>
+
+           
+          <a 
+              href="mailto:donantes@hemovital.com" 
+              className="footer__red-icono"
+            >
+              <span style={{fontSize: '10px'}}>
+                <img src={icon_email} alt="Email" />
+              </span>
+        </a>
+          
 
         </div>
       </section>

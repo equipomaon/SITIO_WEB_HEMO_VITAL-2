@@ -410,7 +410,7 @@ body {
 
 .layout-pagina__seccion--dos {
 
-  background-color: white;
+  background-color: transparent !important;
   height: auto;
   padding: 0;
 }
@@ -801,13 +801,13 @@ body {
 
 .home_s2_card__link {
 
-  color: white;
+  color: rgb(7, 7, 7);
 
   text-decoration: none;
 
   font-size: 1.1rem;
 
-  font-weight: bold;
+  //font-weight: bold;
 
   &:hover {
 
@@ -819,13 +819,13 @@ body {
 
   padding: 14px 28px;
 
-  border: 1px solid white;
+  border: none;
 
   border-radius: 50px;
 
-  background-color: rgba(255, 255, 255, 0.2);
+  background-color: #ff9d96;
 
-  color: white;
+  color: #fd504d;
 
   font-weight: bold;
 
@@ -855,7 +855,7 @@ body {
 
   // 2. Ocultamos el borde SVG que dibujaba la curva
   .home_s2_ellipse__border {
-    //display: none !important;
+    display: none !important;
   }
 
   // 3. Ajustamos el contenedor principal
@@ -1505,6 +1505,10 @@ body {
     justify-content: space-between;
     align-items: flex-start;
     padding: 100px 40px;
+  }
+
+  @include para-movil {
+    display: none !important; // Oculta toda la sección en móviles
   }
 }
 
