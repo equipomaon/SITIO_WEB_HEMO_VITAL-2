@@ -5,16 +5,28 @@ import globulos_rojos from '../assets/globulos_rojos.png'; // Asegúrate de que 
 import plaquetas from '../assets/plaquetas_dos.png'; 
 import bolsa_sangre from '../assets/bolsa_sangre.png';
 import plasma from '../assets/plasma.png';
+import imagen_fondo_s_uno from '../assets/veterinario_fondo.png'; 
 
 export const Ruta_Eresveterinario = () => {
   return (
     <>
-      {/*  ruta eres veterinario SECCIÓN 1:  */}
-      <div className="layout-pagina__seccion eres_veterinario__seccion--header">
-        <div className="padre_contendor padre_contendor_home_seccion_header">
-            {/* Contenido sección 1 */}
-        </div>
-      </div>
+      {/* SECCIÓN 1: Header con imagen de fondo */}
+      <div 
+          className="layout-pagina__seccion eres_veterinario__seccion--header"
+          style={{ 
+              backgroundImage: `url(${imagen_fondo_s_uno})`,
+              backgroundSize: '75%', // <--- Baja este número para "alejar" la imagen (Zoom out)
+              backgroundPosition: 'center 20px', // Centrado horizontal, y 20px de margen arriba
+              backgroundRepeat: 'no-repeat',
+              backgroundColor: '#ffffff' // Color de fondo para que coincida con la imagen
+              
+          }}
+      >
+          <div className="padre_contendor padre_contendor_home_seccion_header">
+              {/* Contenido sección 1 */}
+              {/* Aquí puedes poner tus títulos o botones que irán sobre la imagen */}
+          </div>
+      </div> 
 
        {/*  ruta eres veterinario SECCIÓN 2:  */}
       <div className="layout-pagina__seccion eres_veterinario__seccion--superior">

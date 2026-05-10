@@ -3,10 +3,15 @@
 
 // SECCIÓN 2: Hemocomponentes
 .padre_contendor_home_seccion_dos {
-    padding: 52px 82px; // Medidas solicitadas
+
+    //padding: 52px 82px; // Medidas solicitadas
     display: flex;
     flex-direction: column;
     align-items: center;
+
+    background-color: white;
+
+    border: 1px solid blue; // Solo para visualizar el contenedor, eliminar después
 
     @include para-tablet-vertical {
         padding: 40px 30px;
@@ -14,6 +19,64 @@
 
     @include para-movil {
         padding: 30px 15px;
+    }
+
+    @include para-escritorio {
+
+        margin-top: 90px; 
+        
+    }
+
+}
+
+.padre_contendor_home_seccion_header{
+    
+    @include para-movil{
+        border: 1px solid red($color: #000000);
+        padding: 0;
+    };
+}
+
+// SECCIÓN 1: Header
+.eres_veterinario__seccion--header {
+
+    width: 100%;
+    min-height: 130vh; // Ajusta según qué tan alta quieras la sección
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+
+    border: 1px solid red; // Solo para visualizar el contenedor, eliminar después
+    
+    background-color: white;
+
+    // Opcional: Añadir un overlay oscuro si el texto es blanco para que resalte
+    &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        //background: rgba(0, 0, 0, 0.2); // Capa de oscuridad al 20%
+        z-index: 1;
+    }
+
+    .padre_contendor_home_seccion_header {
+
+        position: relative;
+        z-index: 2; // Para que el contenido quede arriba del overlay
+        color: white; // Si el fondo es oscuro
+        width: 100%;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 20px;
+    }
+
+    @include para-movil {
+        min-height: 300px; // Más pequeña en móviles
+        background-position: 70% center; // Ajustar el foco de la imagen en móvil
     }
 }
 
