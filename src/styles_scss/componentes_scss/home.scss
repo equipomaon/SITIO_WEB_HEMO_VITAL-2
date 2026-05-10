@@ -269,6 +269,7 @@
 }
 
 .seccion-principal__descripcion {
+
   // 1. Tipografía (Según Figma: 18/27)
   font-family: 'Arlon', sans-serif;
   font-size: 18px;          // El primer número de 18/27
@@ -436,7 +437,28 @@ body {
 
   z-index: 20;
 
-  border: 1px solid rgb(234, 70, 5);
+  // border: 1px solid rgb(234, 70, 5);
+
+  @include para-movil{
+     position: relative;
+
+  display: flex;
+  justify-content: center;
+
+  width: 100%;
+
+  max-width: none !important;
+
+  padding: 0 !important;
+
+  transform: translateY(18px); 
+
+  z-index: 20;
+
+  // border: 1px solid rgb(234, 70, 5);
+  }
+
+  
 }
 
 
@@ -833,7 +855,7 @@ body {
 
   // 2. Ocultamos el borde SVG que dibujaba la curva
   .home_s2_ellipse__border {
-    display: none !important;
+    //display: none !important;
   }
 
   // 3. Ajustamos el contenedor principal
@@ -861,7 +883,7 @@ body {
    // 6. Sombreado sutil solo en la parte inferior para móvil
   .home_s2_ellipse__overlay {
     display: block !important;
-    background: transparent !important; // Mantenemos el fondo transparente
+    //background: transparent !important; // Mantenemos el fondo transparente
     
     // Creamos el efecto de sombreado en la base
     // El 'inset' con valores negativos de Y hace que la sombra suba desde abajo
@@ -909,7 +931,7 @@ body {
 
   // 2. Ajustamos el padre (el que envuelve todo)
   .padre_contendor_home_seccion_dos {
-    transform: translateY(-50px); // Menos solapamiento para tablet
+    transform: translateY(-20px); // Menos solapamiento para tablet
     width: 100%;
     display: block;
     border: none; // Quitamos bordes de prueba
@@ -919,12 +941,13 @@ body {
   
   // 3. TRANSFORMACIÓN DE LA ELIPSE A RECTÁNGULO
   .home_s2_ellipse {
+
     height: auto; 
     min-height: auto;
-    clip-path: none !important;        // ❌ Eliminamos el recorte
-    -webkit-clip-path: none !important;
-    border-radius: 0;                  // ❌ Quitamos bordes redondeados
-    background: transparent !important;
+    // clip-path: none !important;        // ❌ Eliminamos el recorte
+    // -webkit-clip-path: none !important;
+    // border-radius: 0;                  // ❌ Quitamos bordes redondeados
+    //background: transparent !important;
     overflow: visible;
     padding: 100px 0;                  // Espacio para las tarjetas
   }
@@ -932,6 +955,7 @@ body {
   // 4. EL FONDO DE PERRITOS (Placeholder)
   // No lo ocultamos, lo rediseñamos para que sea el fondo total
   .home_s2_ellipse__placeholder {
+
     display: block !important; 
     position: absolute;
     inset: 0;               // Ocupa todo el tamaño del padre
@@ -943,8 +967,8 @@ body {
     background-size: 500px !important; // Tamaño de los perritos para que se vean nítidos
     
     // IMPORTANTE: Quitar el clip-path también aquí por si acaso
-    clip-path: none !important;
-    -webkit-clip-path: none !important;
+    // clip-path: none !important;
+    // -webkit-clip-path: none !important;
   }
 
   // 5. OCULTAR ELEMENTOS INNECESARIOS
@@ -986,6 +1010,8 @@ body {
     max-width: 380px;
     min-height: 380px;
   }
+
+   
 }
 
 
@@ -1011,6 +1037,11 @@ body {
 
   @include para-escritorio {
     //margin-top: 10px;
+  }
+
+  // 🔴 DESAPARECER ÚNICAMENTE EN TELÉFONOS
+  @include para-movil {
+    display: none !important;
   }
 
   
@@ -1055,16 +1086,33 @@ body {
 }
 
 .home_s3__titulo {
-  font-size: 1.8rem;
-  font-weight: 700;
+  //tipografia Arlon Bold según la imagen de Figma
+  font-family: 'Arlon', sans-serif; 
+  font-weight: 400 !important; 
   color: #000;
   margin: 0;
-  line-height: 1.2;
+  text-align: center;
 
-  @include para-escritorio {
-    font-size: 2.2rem;
+  // --- MÓVIL (Escalado para que no sea tan gigante en pantallas pequeñas) ---
+  font-size: 26px; 
+  line-height: 34px;
+
+  
+
+   @include para-escritorio {
+    font-size: 40px;        // "40" en la imagen
+    line-height: 57.6px;    // "57.6" en la imagen
+    max-width: 1162px;      // "W 1162" en la imagen
+    letter-spacing: 0px;    // "0px" en la imagen
+    
+    // Un poco de margen inferior para separarlo del video
+    margin-bottom: 20px; 
+
+    
   }
 }
+
+
 
 .home_s3__descripcion {
   font-size: 0.95rem;
@@ -1081,6 +1129,11 @@ body {
   margin-top: 8px;
   flex-wrap: wrap;
   justify-content: center;
+
+  background-color: #FD504D;
+  color: #ffffff;
+  border-radius: 50px;
+  box-shadow: 0 4px 10px rgba(253, 80, 77, 0.2);
 
 
   button {
@@ -1100,11 +1153,11 @@ body {
 
   
   .btn-outline {
-    background-color: #ff9d96;
+   // background-color: #ff9d96;
     width: 232px;
     height: 60px;
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-    color: #8B0202;;
+    color: #ffffff;
     border-radius: 50px; 
     border: none;
     &:hover { background-color:  #fd504d; } 
@@ -1112,7 +1165,7 @@ body {
 }
 
 // --- 3.3 Placeholder de video ---
-// 👇 AQUÍ se controla el tamaño del video:
+//  AQUÍ se controla el tamaño del video:
 //    - width: 100% → ocupa todo el ancho del contenedor padre
 //    - aspect-ratio: 16 / 9 → el ALTO se calcula automáticamente
 //      según el ancho. Puedes cambiarlo a 4/3, 21/9, etc.
@@ -1172,6 +1225,11 @@ body {
 
   @include para-escritorio {
     padding: 100px 0;
+  }
+
+   // 🔴 DESAPARECER ÚNICAMENTE EN TELÉFONOS
+  @include para-movil {
+    display: none !important;
   }
 }
 
@@ -1560,226 +1618,284 @@ body {
     max-height: 200px; // Altura suficiente para el texto
   }
 }
+
 // ==========================================================================
-// HOME — SECCIÓN 6 (Testimonios) - REFACTORED
+// HOME — SECCIÓN 6 (Testimonios) - REFACTORED RESPONSIVE
 // ==========================================================================
 
-.layout-pagina__seccion--media{
-
-  //height: 741px;
-  
+.layout-pagina__seccion--media {
+  // Ajustes base
 }
 
-.home_s6{
-   // 1. CONFIGURACIÓN DE LA IMAGEN EN EL CUERPO
+.home_s6 {
+  // 1. CONFIGURACIÓN DEL FONDO
   background-image: url('../../assets/home_s1_s2_fondo_blanco_perritos.png'); 
-  background-size: 40%;
+  background-size: 80%; // Más grande en móvil para que se vea
   background-position: center center;
   background-repeat: repeat;
-
   width: 100%;
-  
-  // Cambiamos height: 100vh por min-height para que si hay muchas tarjetas, el fondo crezca
   min-height: 30vh; 
-
-  // 2. SOLAPAMIENTO SUPERIOR
-  // Subimos la sección para que la curva tape a la sección 1
-  margin-top: -50px; 
-  
-  // 3. IMPORTANTE: Permitir que las curvas sobresalgan
+  margin-top: -30px; // Solapamiento menor en móvil
   overflow: visible; 
+  padding: 40px 15px; // Padding reducido para móviles
+  background-color: #fff;
+
+  // MIXIN PARA TELÉFONO (Asumiendo nombre estándar)
+  @include para-movil {
+    padding: 60px 20px;
+    background-size: 60%;
+
+     width: 100% !important;   // La tarjeta ocupa todo el ancho visible
+    flex: 0 0 100% !important;
+    margin-right: 20px;       // Espacio fijo entre tarjetas en móvil
+    height: auto;             // Permite que crezca según el texto
+    min-height: 250px;
+  }
 
   @include para-escritorio {
-    margin-top: -80px; // Un solapamiento más profundo en PC
+    margin-top: -80px; 
     margin-bottom: 100px;
-    ;
+    padding: 100px 0;
+    background-size: 40%;
   } 
 }
 
-.padre_contendor_home_seccion_6{
-
-  height: 600px;
-  margin-top: 112px;
+.padre_contendor_home_seccion_6 {
+  // Quitamos el height fijo de 600px para que no corte el contenido en móviles
+  height: auto; 
+  margin-top: 50px;
 
   @include para-escritorio {
+    height: 600px; // Se mantiene en escritorio si es necesario
+    margin-top: 112px;
     margin-left: 64px;
   }
-}
-.home_s6 {
-  padding: 80px 20px;
-  background-color: #fff;
-  overflow: hidden; // Evita scroll horizontal en el body
 
-  @include para-escritorio {
-    padding: 100px 0;
+  @include para-movil {
+    margin-top: 30px; // Menos espacio en móvil
+    margin-left: 20px;   // Sin margen lateral en móvil
   }
 }
 
 .home_s6__header {
-  margin-bottom: 48px;
+  margin-bottom: 30px;
   text-align: left;
 
   .home_s6__titulo {
-    font-size: 2.5rem;
+    font-size: 1.8rem; // Más pequeño en móvil
     font-weight: 700;
     margin-bottom: 12px;
     color: #000;
-  }
-  .home_s6__descripcion {
-    font-size: 1.1rem;
-    color: #333;
-    max-width: 700px;
+
+    @include para-escritorio {
+      font-size: 2.5rem;
+    }
   }
 }
 
-// Ventana del slider (Mascara)
+// Ventana del slider
 .home_s6__slider-wrapper {
   width: 100%;
-  overflow: hidden; // Recorta las tarjetas que salen del contenedor
+  overflow: hidden; 
   padding: 10px 0; 
 }
 
-// Riel que contiene las tarjetas
 .home_s6__track {
   display: flex;
-  flex-direction: row; // Asegura que las tarjetas estén una al lado de otra
+  flex-direction: row;
   transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1);
   will-change: transform;
 }
 
-// Tarjeta individual con medidas exactas
+// Tarjeta individual
 .home_s6__card {
-  // Medidas solicitadas
-  width: 405px;
-  height: 260px;
-  flex: 0 0 405px; // No permite que el ancho cambie
-  
-  // Espaciado para el desplazamiento (30px totales entre tarjetas)
-  margin-right: 30px; 
+  // RESPONSIVE: En móvil ocupará casi todo el ancho de la pantalla
+  width: 280px; 
+  flex: 0 0 280px;
+  margin-right: 20px; 
 
+  height: auto; // Que crezca según el texto
+  min-height: 300px;
+  
   display: flex;
   flex-direction: column;
   border: 1px solid #000;
-  border-radius: 35px;
+  border-radius: 25px; // Un poco menos curvo en móvil
   background-color: #fff;
   box-sizing: border-box;
-  text-align: left;
-}
 
-.home_s6__card-img {
-  width: 100%;
-  height: 380px; // Altura fija para la imagen
-  flex-shrink: 0;
-  background-color: #f8f8f8;
-  border-bottom: 1px solid #000;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  svg {
-    width: 100px;
-    height: 100px;
+  @include para-escritorio {
+    width: 405px;
+    flex: 0 0 405px;
+    height: 260px;
+    margin-right: 30px; 
+    border-radius: 35px;
   }
 }
 
 .home_s6__card-content {
-  padding: 30px;
-  height: 265px;
-
-  //border: 1px dashed rgb(33, 13, 247); // 🔥 para visualizar el bloque de texto dentro de la tarjeta
+  padding: 20px;
   display: flex;
   flex-direction: column;
-  flex-grow: 1; 
-  justify-content: space-between; // Empuja el autor al final
-}
+  justify-content: space-between;
+  height: 100%;
 
-.home_s6__stars {
-  font-size: 1.2rem;
-  color: #E63946; // Color rojo marca para destacar
-  margin-bottom: 5px;
+  @include para-escritorio {
+    padding: 30px;
+  }
 }
 
 .home_s6__quote {
-  font-size: 1.05rem;
-  line-height: 1.6;
-  font-weight: 500;
-  margin: 0;
-  color: #000;
-  font-style: normal;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  margin-bottom: 20px;
   
-  // Control de exceso de texto
-  display: -webkit-box;
-  -webkit-line-clamp: 6;
-  -webkit-box-orient: vertical;
-  overflow: hidden;
-}
-
-.home_s6__author {
-  .home_s6__author-name {
-    font-weight: 700;
-    font-size: 1.1rem;
-    margin: 0;
-    color: #000;
-  }
-  .home_s6__author-info {
-    font-size: 0.9rem;
-    color: #666;
-    margin-top: 4px;
-    text-transform: uppercase;
+  @include para-escritorio {
+    font-size: 1.05rem;
+    -webkit-line-clamp: 6;
   }
 }
 
-// Controles (Puntos y Flechas)
+// ==========================================================================
+// CONTROLES DEL SLIDER (Paginación y Flechas)
+// ==========================================================================
+
 .home_s6__controls {
-  margin-top: 40px;
   display: flex;
-  justify-content: space-between;
+  flex-direction: column; // En móvil: Puntos arriba, flechas abajo
   align-items: center;
+  gap: 24px;
+  margin-top: 40px;
+  width: 100%;
+
+  @include para-escritorio {
+    flex-direction: row; // En escritorio: Una sola línea
+    justify-content: space-between;
+    margin-top: 50px;
+  }
 }
 
+// Contenedor de las flechas
+.home_s6__arrows {
+  display: flex;
+  gap: 16px; // Espacio entre las dos flechas
+  
+  @include para-escritorio {
+    gap: 12px;
+  }
+}
+
+// El botón circular
+.home_s6__arrow-btn {
+  // Reset de estilos de botón
+  appearance: none;
+  background-color: #ffffff;
+  border: 1.5px solid #000000;
+  border-radius: 50%;
+  cursor: pointer;
+  
+  // Tamaño óptimo para móvil (Touch target)
+  width: 50px;
+  height: 50px;
+  
+  // Centrado del SVG
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
+  // Transiciones suaves
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  padding: 0;
+
+  svg {
+    width: 24px;
+    height: 24px;
+    stroke: #000000; // Color de la flecha
+    transition: stroke 0.3s ease;
+  }
+
+  // Estado Hover (Solo en dispositivos que permiten hover)
+  @media (hover: hover) {
+    &:hover:not(:disabled) {
+      background-color: #000000;
+      transform: scale(1.05);
+      
+      svg {
+        stroke: #ffffff; // La flecha se vuelve blanca
+      }
+    }
+  }
+
+  // Estado Activo (Cuando se presiona)
+  &:active:not(:disabled) {
+    transform: scale(0.95);
+    background-color: #333;
+  }
+
+  // Estado Deshabilitado (Cuando llegas al final o inicio)
+  &:disabled {
+    opacity: 0.15;
+    cursor: not-allowed;
+    border-color: #999;
+    
+    svg {
+      stroke: #999;
+    }
+  }
+
+  @include para-escritorio {
+    width: 56px;
+    height: 56px;
+  }
+}
+
+// Estilo para los Puntos (Pagination dots) para que combinen
 .home_s6__pagination {
   display: flex;
-  gap: 10px;
+  gap: 12px;
+  align-items: center;
 
   .dot {
     width: 10px;
     height: 10px;
     border-radius: 50%;
-    background-color: #ccc;
+    background-color: #e0e0e0;
     cursor: pointer;
-    transition: all 0.3s;
+    transition: all 0.3s ease;
+    border: none;
 
     &.active {
-      background-color: #000;
-      transform: scale(1.2);
+      background-color: #000000;
+      width: 25px; // Efecto de pastilla para el punto activo
+      border-radius: 10px;
+    }
+    
+    &:hover:not(.active) {
+      background-color: #bbb;
     }
   }
 }
 
-.home_s6__arrows {
-  display: flex;
-  gap: 15px;
-}
+.home_s6__titulo {
+    // 1. Fuente y Grosor
+    font-family: 'Arlon', sans-serif;
+    font-weight: 700; // 'Bold' según tu configuración
+    
+    // 2. Color (en la imagen se ve un negro puro o casi puro)
+    color: #000000;
 
-.home_s6__arrow-btn {
-  width: 50px;
-  height: 50px;
-  border-radius: 50%;
-  border: 1px solid #000;
-  background: #fff;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-  transition: 0.3s;
+    // 3. Ajustes de la tipografía (Clave para que se vea como la imagen)
+    line-height: 1.1;       // Interlineado muy cerrado como en la captura
+    letter-spacing: -0.04em; // Letras más juntas para ese look premium
+    
+    // 4. Tamaño responsivo
+    font-size: 32px; // Tamaño para móvil
+    
+    @include para-escritorio {
+      font-size: 48px; // Tamaño para PC
+      max-width: 800px; // Limitamos el ancho para que el texto rompa en 2 o 3 líneas
+    }
 
-  &:hover:not(:disabled) {
-    background-color: #000;
-    color: #fff;
-  }
-
-  &:disabled {
-    opacity: 0.2;
-    cursor: not-allowed;
-  }
-}
+    // Opcional: Si quieres que "Hemovital" o el final no quede huérfano
+    text-wrap: balance; 
+  } 
