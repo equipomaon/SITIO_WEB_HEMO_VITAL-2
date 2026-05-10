@@ -5,7 +5,8 @@ import { Route, Routes, Navigate } from 'react-router-dom';
 
 import { Ruta_Home } from './Ruta_Home.jsx';
 import { Ruta_Eresveterinario } from './Ruta_Eresveterinario.jsx';
-import { RutaTres } from './Ruta_tres.jsx';   
+import { Ruta_Donantes } from './Ruta_Donantes.jsx';
+import { Ruta_Distribuidores } from './Ruta_Distribuidores.jsx';   
 
 
 // COMPONENTES UI
@@ -22,7 +23,12 @@ export const AppRoutes = () => {
                 <Route element={<MainLayout />}>
                     <Route path="/home" element={<Ruta_Home />} /> 
                     <Route path="/soy-veterinario" element={<Ruta_Eresveterinario />} />
-                    <Route path="/ruta-tres" element={<RutaTres />} />
+                   
+                    
+
+                    <Route path="/donantes" element={<Ruta_Donantes />} />
+                    <Route path="/distribuidores" element={<Ruta_Distribuidores />} />
+                    
                 </Route>
 
                 <Route path="/" element={<Navigate to="/home" />} />

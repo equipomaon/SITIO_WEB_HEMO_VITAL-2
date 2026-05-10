@@ -28,9 +28,9 @@ export const Navbar = () => {
         <div className="navbar__desktop-content">
           <div className="navbar__desktop-links">
             <NavLink className="nav-item" to="/soy-veterinario">Veterinarios</NavLink>
-            <NavLink className="nav-item" to="/ruta-2">Donantes</NavLink>
-            <NavLink className="nav-item" to="/ruta-3">Distribuidores</NavLink>
-            <NavLink className="nav-item" to="/ruta-3">Productos</NavLink>
+            <NavLink className="nav-item" to="/donantes">Donantes</NavLink>
+            <NavLink className="nav-item" to="/distribuidores">Distribuidores</NavLink>
+          
             
           </div>
 
@@ -62,10 +62,10 @@ export const Navbar = () => {
         </div>
 
         <div className="navbar__links-container">
-          <NavLink className="navbar__link" to="/" onClick={cerrarMenu}>Veterinarios</NavLink>
-          <NavLink className="navbar__link" to="/ruta-2" onClick={cerrarMenu}>Donantes</NavLink>
-          <NavLink className="navbar__link" to="/ruta-3" onClick={cerrarMenu}>Distribuidores</NavLink>
-          <NavLink className="navbar__link" to="/ruta-4" onClick={cerrarMenu}>Productos</NavLink>
+          <NavLink className="navbar__link" to="/soy-veterinario" onClick={cerrarMenu}>Veterinarios</NavLink>
+          <NavLink className="navbar__link" to="/donantes" onClick={cerrarMenu}>Donantes</NavLink>
+          <NavLink className="navbar__link" to="/distribuidores" onClick={cerrarMenu}>Distribuidores</NavLink>
+          { /* <NavLink className="navbar__link" to="/ruta-4" onClick={cerrarMenu}>Productos</NavLink> */}
         </div>
 
         {/* Opcional: acciones en el menú móvil (puedes personalizar o eliminar) 

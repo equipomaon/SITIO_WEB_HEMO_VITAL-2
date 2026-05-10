@@ -22,7 +22,7 @@ export const Ruta_Eresveterinario = () => {
               
           }}
       >
-          <div className="padre_contendor padre_contendor_home_seccion_header">
+          <div className="padre_contendor padre_contendor_eres_veterinario">
               {/* Contenido sección 1 */}
               {/* Aquí puedes poner tus títulos o botones que irán sobre la imagen */}
           </div>
