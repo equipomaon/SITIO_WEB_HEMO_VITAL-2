@@ -68,6 +68,7 @@ export const Ruta_Eresveterinario = () => {
                 <p>Aporta volumen, oxígeno y coagulación en emergencias veterinarias graves.</p>
               </div>
             </div>
+            
           </div>
 
         </div>

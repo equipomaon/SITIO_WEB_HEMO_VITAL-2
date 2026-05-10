@@ -142,6 +142,7 @@ export const Ruta_Home = () => {
          
           {/* PARTE IZQUIERDA: TEXTO */}
           <section className='home_seccion_header__texto-infromativo'>
+            
              <h1 className="seccion-principal__titulo">
                 Primer banco de sangre animal de Colombia
              </h1>

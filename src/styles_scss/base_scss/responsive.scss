@@ -8,39 +8,16 @@
   }
 }
 
-@mixin para-tablet {
-  @media (max-width: $ancho-maximo-tablet) {
-    @content;
-  }
-}
-// MIXINS ACTUALIZADOS CON TUS NOMBRES DE VARIABLES
 @mixin para-tablet-vertical {
-  // Usamos $ancho-maximo-tablet que es la que definiste (768px)
-  @media (min-width: #{$ancho-maximo-tablet}) and (max-width: #{$ancho-minimo-escritorio - 1px}) and (orientation: portrait) {
-    @content;
-  }
-}
-
-@mixin para-tablet-horizontal {
-  @media (min-width: #{$ancho-maximo-tablet}) and (max-width: #{$ancho-minimo-escritorio}) and (orientation: landscape) {
+  // Desde 551px hasta 712px
+  @media (min-width: #{$ancho-maximo-movil + 1px}) and (max-width: #{$ancho-maximo-tablet}) {
     @content;
   }
 }
 
 @mixin para-escritorio {
+  // Desde 713px en adelante
   @media (min-width: $ancho-minimo-escritorio) {
-    @content;
-  }
-}
-
-@mixin para-escritorio-grande {
-  @media (min-width: $ancho-minimo-escritorio-grande) {
-    @content;
-  }
-}
-
-@mixin desde-hasta($min, $max) {
-  @media (min-width: $min) and (max-width: $max) {
     @content;
   }
 }
