@@ -142,7 +142,7 @@ export const Ruta_Home = () => {
          
           {/* PARTE IZQUIERDA: TEXTO */}
           <section className='home_seccion_header__texto-infromativo'>
-            
+
              <h1 className="seccion-principal__titulo">
                 Primer banco de sangre animal de Colombia
              </h1>
@@ -170,6 +170,7 @@ export const Ruta_Home = () => {
 
     {/* ---------------- HOME SECCIÓN 2  ---------------- */}
     <div className="layout-pagina__seccion--media layout-pagina__seccion--dos">
+      
       <div className="padre_contendor_home_seccion_dos">
         
         <section className="home_s2_ellipse home_s2_ellipse--clipped">
@@ -222,6 +223,7 @@ export const Ruta_Home = () => {
           </div>
 
         </section>
+
       </div>
     </div>
 
