@@ -311,7 +311,12 @@
     margin: 0 auto;
   }
   @include para-movil {
-    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    margin-top: 100px;
+   // border: 1px solid rgb(190, 248, 17); // 🔥 para visualizar el contenedor de botones en móvil
   }
 
   button {
