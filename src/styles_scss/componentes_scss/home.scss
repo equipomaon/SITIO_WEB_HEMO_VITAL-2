@@ -1481,14 +1481,12 @@ body {
   100% {
     transform: translateX(calc(-50% - 10px)); // 10px es la mitad del gap
   }
-}
-
-// ==========================================================================
-// HOME — SECCIÓN 5 (Preguntas Frecuentes)
+}// ==========================================================================
+// HOME — SECCIÓN 5 (Preguntas Frecuentes) - CLEAN VERSION
 // ==========================================================================
 
 .layout-pagina__seccion--cinco {
-  background: white;
+  background: #ffffff;
 }
 
 .padre_contendor_home_seccion_5 {
@@ -1496,79 +1494,60 @@ body {
   margin: 0 auto;
   display: flex;
   flex-direction: column;
-  gap: 48px;
-  background-color: white;
-  padding: 60px 20px; // Padding ajustado para móvil
-
-  // IMPORTANTE: Cambiamos height: 741px por auto para que el acordeón no se corte
-  height: auto; 
+  gap: 40px;
+  background-color: #ffffff;
+  padding: 60px 20px;
+  height: auto; // Dinámico para que no se corte el contenido
   min-height: 500px;
 
   @include para-escritorio {
     flex-direction: row;
     justify-content: space-between;
     align-items: flex-start;
-    padding: 80px 40px 100px;
+    padding: 100px 40px;
   }
 }
 
-// --- Info Izquierda ---
+// --- Columna Izquierda ---
 .home_s5__info {
+  width: 100%; // Ocupa todo el ancho en móvil
+
   @include para-escritorio {
     width: 35%;
     position: sticky; 
-    top: 120px; // Un poco más de espacio superior al quedarse fijo
+    top: 120px;
   }
 }
 
-// APLICANDO EL ESTILO DE LA SECCIÓN 6
 .home_s5__titulo {
-   // 1. Tipografía y Peso (Bold de la imagen)
-  font-family: 'Arlon', sans-serif;
-  font-weight: 700; // Si tienes Arlon Bold, este es el valor. 
-  
-  // 2. Color y Alineación
-  color: #000000;
-  text-align: left;
-
-  // 3. Medidas exactas de la imagen (Figma: 48/57.6)
-  // line-height: 57.6 / 48 = 1.2
-  font-size: 32px;    // Tamaño para móvil
-  line-height: 1.2;   
-  letter-spacing: -0.02em; // Un ajuste sutil para el bold de Arlon
-  
-   // 2. TIPOGRAFÍA (Basado en tu imagen de Figma)
+  // 1. Estilo de Fuente (Arlon Bold)
   font-family: 'Arlon', sans-serif;
   font-weight: 700;
   color: #000000;
   text-align: left;
 
-  // 3. MEDIDAS PARA MÓVIL (Lo que se ve en tu captura)
+  // 2. Ocupar todo el ancho (Prioridad)
+  width: 100% !important;
+  max-width: none !important;
+  display: block;
+
+  // 3. Medidas para Móvil
   font-size: 32px;
   line-height: 1.1;
   letter-spacing: -0.04em;
   margin-bottom: 24px;
-  
-  // 4. Tamaño responsivo
-  font-size: 32px; // Tamaño móvil
-  margin-bottom: 24px;
-
-  @include para-escritorio {
-    font-size: 48px; // Tamaño PC
-    max-width: 500px; // Un poco más estrecho para que rompa en líneas elegantes
-  }
-
-  @include para-movil{
-     max-width: none !important;
-  }
-
-  // Asegura el balance de las líneas
   text-wrap: balance;
+
+  // 4. Medidas para Escritorio
+  @include para-escritorio {
+    font-size: 48px;
+    line-height: 1.2;
+  }
 }
 
-// --- Acordeón Derecha ---
+// --- Columna Derecha (Acordeón) ---
 .home_s5__acordeon {
-  width: 100%; // Ocupa todo el ancho en móvil
+  width: 100%;
 
   @include para-escritorio {
     width: 55%;
@@ -1576,10 +1555,21 @@ body {
 }
 
 .home_s5__faq-item {
-  border-top: 1.5px solid #000; // Línea un poco más gruesa para look premium
+  border-top: 1.5px solid #000; 
   
   &:last-child {
     border-bottom: 1.5px solid #000;
+  }
+
+  // --- EFECTO DE APERTURA (Funcionamiento Prioritario) ---
+  &.active {
+    .home_s5__faq-icono {
+      transform: rotate(180deg); // Gira la flecha
+    }
+    .home_s5__faq-contenido {
+      grid-template-rows: 1fr; // Abre el contenido suavemente
+      padding-bottom: 24px;
+    }
   }
 }
 
@@ -1593,21 +1583,37 @@ body {
   border: none;
   cursor: pointer;
   text-align: left;
-  
-  // Efecto al pasar el mouse por la pregunta
-  &:hover .home_s5__faq-pregunta {
-    opacity: 0.7;
-  }
 }
 
 .home_s5__faq-pregunta {
+  font-family: 'Arlon', sans-serif;
   font-size: 1.1rem;
-  font-weight: 600;
+  font-weight: 700; // Bold para la pregunta
   color: #000;
-  font-family: 'Arlon', sans-serif; // Opcional: también en Arlon para consistencia
-  transition: opacity 0.3s ease;
+  line-height: 1.3;
 }
 
+.home_s5__faq-icono {
+  transition: transform 0.4s ease;
+  display: flex;
+  align-items: center;
+  margin-left: 15px;
+}
+
+// --- Animación Fluida del Texto ---
+.home_s5__faq-contenido {
+  display: grid;
+  grid-template-rows: 0fr; // Cerrado por defecto
+  transition: grid-template-rows 0.4s ease, padding 0.4s ease;
+  overflow: hidden;
+}
+
+.home_s5__faq-texto {
+  min-height: 0; // Necesario para que el efecto grid funcione
+  color: #555;
+  line-height: 1.6;
+  font-size: 1rem;
+}
 // ... (Resto de tus estilos de acordeón se mantienen iguales)
 
 // ==========================================================================
