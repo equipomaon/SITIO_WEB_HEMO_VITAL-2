@@ -3,7 +3,7 @@ import '../styles_scss/componentes_scss/footer_component.scss';
 
 // COMENTAMOS TODAS LAS IMPORTACIONES PARA QUE EL COMPILADOR NO BUSQUE LOS ARCHIVOS
 import logo from '../assets/imagotipo_hemovital_horizontal.png'; // Asegúrate de que esta ruta sea la correcta para tu logo
-import icon_facebook from '../assets/facebook.png';   
+//import icon_facebook from '../assets/facebook.png';   
 import icon_instagram from '../assets/logotipo-de-instagram.png';  
 import icon_tik_tok from '../assets/tik-tok.png'; 
 import icon_email from '../assets/carta.png';
@@ -42,6 +42,7 @@ export const Footer = () => {
 
         <div className="footer__redes">
 
+          {/* }
           <a  
               href="https://www.facebook.com/hemovitalvet" 
               target="_blank" 
@@ -53,6 +54,7 @@ export const Footer = () => {
               <img src={icon_facebook} alt="Facebook" />
             </span>
           </a>
+          */}
 
           
           <a 
