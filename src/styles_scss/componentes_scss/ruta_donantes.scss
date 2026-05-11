@@ -76,6 +76,15 @@ $color-texto-oscuro: #111111;
 
 .home_seccion_header__texto-infromativo {
     flex: 1;
+
+    @include para-movil{
+        
+        margin-top: -10px;
+    }
+
+    @include para-tablet-vertical{
+        margin-top: -20px;
+    }
     .donantes_contenido_texto {
         display: flex;
         flex-direction: column;
