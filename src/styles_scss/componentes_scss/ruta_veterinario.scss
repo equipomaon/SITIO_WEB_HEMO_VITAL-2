@@ -21,31 +21,37 @@
     background-repeat: no-repeat;
 
     @include para-movil {
+
         margin-top: 70px;
         height: 70vh; 
         background-size: 95%;
     }
 
     .padre_contendor_eres_veterinario {
+
         width: 100%;
         display: flex;
         justify-content: center;
         align-items: center;
         text-align: center;
+        
     }
 
     // NUEVO: Contenido central (Título y Botón)
     .veterinario_header__contenido {
+
         display: flex;
         flex-direction: column;
         align-items: center;
         gap: 30px;
         max-width: 600px;
 
+      
+
         .veterinario_header__titulo {
             font-size: 48px;
             font-weight: 700;
-            color: #f2514d; // Color rojo/coral de la imagen
+            color: #f2514d !important; // Color rojo/coral de la imagen
             line-height: 1.1;
             margin: 0;
             
@@ -59,8 +65,9 @@
         }
 
         .veterinario_header__boton {
+
             background-color: #ff5a5a;
-            color: #fff;
+            color:#e04a4a; 
             border: none;
             padding: 18px 45px;
             font-size: 18px;
@@ -87,12 +94,14 @@
 // SECCIÓN 2: Hemocomponentes
 // ==========================================
 .eres_veterinario__seccion--superior {
+
     padding: 60px 20px;
     background-color: #ffffff;
     display: flex;
     justify-content: center;
 
     .padre_contendor_home_seccion_dos_eres_veterinario {
+
         width: 100%;
         max-width: 1200px;
         padding: 40px 0;
@@ -103,15 +112,18 @@
 }
 
 .hemo-titulo {
+
     font-size: 42px;
     font-weight: 700;
     margin-bottom: 50px;
     text-align: center;
-    color: #000;
+    color: #e04a4a;
 
     @include para-movil {
         font-size: 28px;
     }
+
+    
 }
 
 .hemo-grid {
