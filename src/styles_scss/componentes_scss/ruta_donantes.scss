@@ -1,119 +1,399 @@
-/* ------------------------------------------------------------------------------
-DONANTES SECCION 1
+@use '../base_scss/variables' as *;
+@use '../base_scss/responsive.scss' as *;
 
---------------------------------------------------------------------------------- */
+// Colores de la paleta de tu imagen
+$color-perro-fondo: #f6ddc1; // Beige suave
+$color-gato-fondo: #fca198;  // Salmón/Coral pastel
+$color-texto-oscuro: #111111;
 
-/* Contenedor Principal de la Sección */
+
 .donantes_layout-pagina__seccion_uno {
     width: 100%;
-    padding: 60px 0;
+    padding: 60px 0 0 0; // Padding 0 abajo para que el banner toque el fondo
+    background-color: #ffffff;
+    display: flex;
+    flex-direction: column; // Cambiamos a columna para apilar el contenido y el banner
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+
+    .padre_contendor_home_seccion_header {
+        max-width: 1200px;
+        width: 90%;
+        display: flex;
+        align-items: center;
+        gap: 50px;
+        margin-bottom: 60px; // Espacio entre el contenido y el banner animado
+
+        @include para-movil {
+            flex-direction: column;
+            text-align: center;
+            gap: 30px;
+        }
+    }
+}
+
+/* --- BANNER ANIMADO (PARTE INFERIOR) --- */
+.donantes_banner_infinito {
+    width: 100%;
+    background-color: #ffffff;
+    border-top: 1px solid #f0f0f0;
+    overflow: hidden;
+    padding: 30px 0;
+    display: flex;
+
+    .donantes_banner_track {
+        display: flex;
+        gap: 60px;
+        animation: scrollIzquierda 25s linear infinite;
+        
+        span {
+            font-size: 3rem;
+            font-weight: 500;
+            color: #f2514d; // Color coral de la imagen
+            white-space: nowrap;
+            font-family: 'Montserrat', sans-serif;
+        }
+    }
+}
+
+// Keyframes para el movimiento infinito
+@keyframes scrollIzquierda {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); } 
+}
+
+/* --- ESTILOS DE CONTENIDO --- */
+.home_seccion_header__imagen-contenedor {
+    flex: 1;
+    .donantes_imagen_principal {
+        width: 100%;
+        height: auto;
+        border-radius: 8px;
+    }
+}
+
+.home_seccion_header__texto-infromativo {
+    flex: 1;
+    .donantes_contenido_texto {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+
+        .donantes_titulo_principal {
+            font-size: 2.5rem;
+            font-weight: 700;
+            line-height: 1.2;
+            color: #000;
+        }
+
+        .donantes_descripcion {
+            font-size: 1rem;
+            line-height: 1.6;
+            color: #333;
+        }
+    }
+}
+
+.donantes_stats_contenedor {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+
+    @include para-movil {
+        grid-template-columns: 1fr;
+    }
+
+    .donantes_stat_numero {
+        display: flex;
+        flex-direction: column;
+        strong { font-size: 3rem; font-weight: 700; }
+        span { font-size: 1.8rem; }
+    }
+
+    .donantes_stat_descripcion {
+        font-size: 0.85rem;
+        color: #666;
+    }
+}
+
+// Ajustes responsivos finales para el banner
+@include para-movil {
+    .donantes_banner_infinito {
+        padding: 15px 0;
+        .donantes_banner_track span {
+            font-size: 1.8rem;
+        }
+    }
+}
+
+
+.donantes_layout-pagina__seccion_dos {
+    width: 100%;
+    padding: 80px 0;
     background-color: #ffffff;
     display: flex;
     justify-content: center;
+
+    .padre_contenedor_donantes_seccion_dos {
+        max-width: 1200px;
+        width: 90%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
 }
 
-.padre_contendor_home_seccion_header {
-    max-width: 1200px;
-    width: 90%;
-    display: flex;
-    align-items: center; /* Alineación vertical al centro */
-    gap: 50px; /* Espacio entre imagen y texto */
-}
-
-/* --- PARTE IZQUIERDA: IMAGEN --- */
-.home_seccion_header__imagen-contenedor {
-    flex: 1; /* Toma el 50% del espacio */
-}
-
-.donantes_imagen_principal {
-    width: 100%;
-    height: auto;
-    border-radius: 8px; /* Opcional: un ligero redondeado si lo deseas */
-    display: block;
-}
-
-/* --- PARTE DERECHA: TEXTO --- */
-.home_seccion_header__texto-infromativo {
-    flex: 1; /* Toma el otro 50% */
-}
-
-.donantes_contenido_texto {
+/* --- ENCABEZADO --- */
+.donantes_seccion_dos__header {
     display: flex;
     flex-direction: column;
-    gap: 20px;
+    align-items: center;
+    margin-bottom: 50px;
+    text-align: center;
+
+    .donantes_seccion_dos__icono-decorativo {
+        width: 60px;
+        height: 60px;
+        background-color: #d1c4e9; // Tono morado pastel de la referencia
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.8rem;
+        margin-bottom: 15px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    }
+
+    .donantes_seccion_dos__titulo {
+        font-size: 2.8rem;
+        font-weight: 700;
+        color: $color-texto-oscuro;
+        margin: 0;
+        font-family: 'Montserrat', sans-serif;
+    }
 }
 
-.donantes_titulo_principal {
-    font-size: 2.5rem; /* 40px aprox */
-    color: #000;
-    font-weight: 600;
-    line-height: 1.2;
-    margin: 0;
-    font-family: 'Montserrat', sans-serif; /* O la fuente que uses en tu proyecto */
-}
-
-.donantes_descripcion {
-    font-size: 1rem;
-    color: #333;
-    line-height: 1.6;
-    margin-bottom: 20px;
-}
-
-/* --- SECCIÓN DE ESTADÍSTICAS (LOS NÚMEROS) --- */
-.donantes_stats_contenedor {
+/* --- GRID DE TARJETAS --- */
+.donantes_cards_grid {
     display: grid;
-    grid-template-columns: 1fr 1fr; /* Dos columnas iguales */
-    gap: 30px;
+    grid-template-columns: 1fr 1fr; // Dos columnas a los lados
+    gap: 40px;
+    width: 100%;
+
+    @include para-movil {
+        grid-template-columns: 1fr; // Una sola columna en móvil
+        gap: 30px;
+    }
 }
 
-.donantes_stat_item {
+/* --- ESTILO BASE TARJETAS --- */
+.donantes_card {
+    background-color: #ffffff;
+    border-radius: 32px; // Súper redondeado como en la imagen
+    overflow: hidden;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.04);
     display: flex;
     flex-direction: column;
-    gap: 10px;
-}
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 
-.donantes_stat_numero {
-    display: flex;
-    flex-direction: column;
-    line-height: 1;
-}
-
-.donantes_stat_numero strong {
-    font-size: 3rem; /* 48px */
-    font-weight: 700;
-    color: #000;
-}
-
-.donantes_stat_numero span {
-    font-size: 2rem; /* 32px */
-    font-weight: 400;
-    color: #000;
-}
-
-.donantes_stat_descripcion {
-    font-size: 0.85rem;
-    color: #666;
-    line-height: 1.4;
-    margin: 0;
-}
-
-/* --- RESPONSIVE: MÓVILES --- */
-@media (max-width: 992px) {
-    .padre_contendor_home_seccion_header {
-        flex-direction: column; /* Apila imagen arriba y texto abajo */
-        text-align: center;
+    &:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 20px 45px rgba(0, 0, 0, 0.08);
     }
 
-    .donantes_titulo_principal {
+    // Parte Superior (Contenedor Silueta)
+    &__top {
+        height: 240px;
+        background-color: #ffffff;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 30px;
+
+        @include para-movil {
+            height: 180px;
+        }
+    }
+
+    &__silueta {
+        height: 100%;
+        max-width: 100%;
+        transition: transform 0.3s ease;
+    }
+
+    &:hover .donantes_card__silueta {
+        transform: scale(1.05);
+    }
+
+    // Parte Inferior (Contenido y Botón)
+    &__bottom {
+        padding: 40px;
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+        flex-grow: 1;
+
+        h3 {
+            font-size: 2.2rem;
+            font-weight: 700;
+            color: $color-texto-oscuro;
+            margin: 0;
+        }
+
+        p {
+            font-size: 1rem;
+            line-height: 1.5;
+            color: rgba(0, 0, 0, 0.7);
+            margin: 0;
+            min-height: 70px; // Alineación de párrafos
+        }
+    }
+
+    &__btn {
+        background-color: #ffffff;
+        color: $color-texto-oscuro;
+        border: none;
+        padding: 12px 30px;
+        font-size: 1rem;
+        font-weight: 600;
+        border-radius: 50px;
+        align-self: flex-start;
+        cursor: pointer;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+        transition: background-color 0.2s ease, transform 0.2s ease;
+
+        &:hover {
+            background-color: #f7f7f7;
+            transform: scale(1.05);
+        }
+    }
+
+    /* --- VARIACIONES DE COLOR --- */
+    &--perro {
+        .donantes_card__silueta { color: $color-perro-fondo; }
+        .donantes_card__bottom { background-color: $color-perro-fondo; }
+    }
+
+    &--gato {
+        .donantes_card__silueta { color: $color-gato-fondo; }
+        .donantes_card__bottom { background-color: $color-gato-fondo; }
+    }
+}
+
+/* --- VENTANA MODAL (ANIMADA) --- */
+.donantes_modal_overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(8px); // Desenfoque de fondo moderno
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+    animation: fadeInOverlay 0.25s ease-out forwards;
+}
+
+.donantes_modal_content {
+    background-color: #ffffff;
+    border-radius: 32px;
+    width: 90%;
+    max-width: 550px;
+    padding: 50px 40px;
+    position: relative;
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15);
+    transform: scale(0.8);
+    opacity: 0;
+    animation: scaleInModal 0.3s cubic-bezier(0.34, 1.56, 0.64, 1) forwards; // Efecto bounce elástico
+
+    // Variaciones sutiles de borde superior según la mascota
+    &--perro { border-top: 8px solid $color-perro-fondo; }
+    &--gato { border-top: 8px solid $color-gato-fondo; }
+
+    .donantes_modal__close {
+        position: absolute;
+        top: 20px;
+        right: 25px;
+        background: none;
+        border: none;
         font-size: 2rem;
+        cursor: pointer;
+        color: #999;
+        transition: color 0.2s ease;
+
+        &:hover { color: $color-texto-oscuro; }
     }
 
-    .donantes_stats_contenedor {
-        grid-template-columns: 1fr; /* Una sola columna en móvil */
-        gap: 40px;
+    .donantes_modal__body {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+
+        .donantes_modal__badge {
+            font-size: 3rem;
+            margin-bottom: 15px;
+        }
+
+        h2 {
+            font-size: 2rem;
+            color: $color-texto-oscuro;
+            margin-bottom: 30px;
+        }
     }
 
-    .donantes_stat_numero strong {
-        font-size: 2.5rem;
+    /* Lista estilizada de requisitos */
+    .donantes_modal__list {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        width: 100%;
+        text-align: left;
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+
+        li {
+            font-size: 1.1rem;
+            color: #333;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            padding-bottom: 10px;
+            border-bottom: 1px dashed #eee;
+
+            &::before {
+                content: "✓";
+                color: #2e7d32; // Checkmark verde para éxito
+                font-weight: bold;
+                font-size: 1.2rem;
+            }
+
+            strong {
+                font-weight: 600;
+                color: #000;
+            }
+        }
+    }
+}
+
+/* --- KEYFRAMES ANIMACIONES --- */
+@keyframes fadeInOverlay {
+    from { background-color: rgba(0, 0, 0, 0); }
+    to { background-color: rgba(0, 0, 0, 0.4); }
+}
+
+@keyframes scaleInModal {
+    from {
+        transform: scale(0.85);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1);
+        opacity: 1;
     }
 }
