@@ -10,8 +10,14 @@ import imagen_fondo_s_uno from '../assets/veterinario_fondo.png';
 
 export const Ruta_Eresveterinario = () => {
 
-   // Estado para controlar qué pregunta está abierta
-      const [preguntaActiva, setPreguntaActiva] = useState(null);
+   // 1. Estado para controlar qué pregunta está abierta
+  const [preguntaActiva, setPreguntaActiva] = useState(null);
+
+  // 2. Función para abrir/cerrar
+  const togglePregunta = (index) => {
+    // Si la pregunta clicada ya está activa, la cerramos (null), si no, la activamos
+    setPreguntaActiva(preguntaActiva === index ? null : index);
+  };
   
 
   //FAQS DE RESPUESTAS PREDEFINIDAS
