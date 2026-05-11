@@ -1683,6 +1683,8 @@ body {
 
   @include para-tablet-vertical{
      background-size: 50%;
+
+   
   }
 }
 
@@ -1705,6 +1707,10 @@ body {
     margin-left: 20px;   // Sin margen lateral en móvil
 
     padding-top: 50px;
+  }
+
+  @include para-tablet-vertical{
+     padding: 20px;
   }
 
 
