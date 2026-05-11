@@ -33,7 +33,7 @@
   width: 100%;
   box-sizing: border-box;
 
-  position: relative;
+  position: relative; 
   z-index: 1; // Un nivel abajo
 
   @include para-escritorio {
