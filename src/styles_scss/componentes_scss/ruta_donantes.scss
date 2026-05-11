@@ -201,11 +201,18 @@ $color-texto-oscuro: #111111;
     }
 
     .donantes_seccion_dos__titulo {
-        font-size: 2.8rem;
-        font-weight: 700;
-        color: $color-texto-oscuro;
-        margin: 0;
-        font-family: 'Montserrat', sans-serif;
+        //font-size: 2.8rem;
+        //font-weight: 700;
+        //color: $color-texto-oscuro;
+        //margin: 0;
+
+         margin: 0;
+        font-family: 'Arlon', sans-serif;
+        font-size: 2.5rem;   // Los 40px del diseño
+        font-weight: 40;     // Usa arlon-bold.ttf
+        line-height: 1.2;
+        letter-spacing: -0.02em; // Sugerencia de tu reset para Arlon
+        color: #000;
     }
 }
 
@@ -216,6 +223,14 @@ $color-texto-oscuro: #111111;
     gap: 40px;
     width: 100%;
 
+    
+    font-family: 'Arlon', sans-serif;
+    font-size: 2.5rem;   // Los 40px del diseño
+    font-weight: 40;     // Usa arlon-bold.ttf
+    line-height: 1.2;
+    letter-spacing: -0.02em; // Sugerencia de tu reset para Arlon
+    color: #000;
+
     @include para-movil {
         grid-template-columns: 1fr; // Una sola columna en móvil
         gap: 30px;
@@ -225,13 +240,24 @@ $color-texto-oscuro: #111111;
 /* --- ESTILO BASE TARJETAS --- */
 .donantes_card {
     background-color: #ffffff;
-    border-radius: 32px; // Súper redondeado como en la imagen
+    border-radius: 32px;
     overflow: hidden;
-    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.04);
     display: flex;
     flex-direction: column;
     cursor: pointer;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+    // BORDE: Cambiado a un gris muy suave o transparente para que luzca la sombra
+    border: 1px solid rgba(0, 0, 0, 0.05); 
+
+    // SOMBRA: Más visible pero suave (multi-capa)
+    box-shadow: 
+    0 1px 2px rgba(0,0,0,0.05), 
+    0 4px 8px rgba(0,0,0,0.05), 
+    0 16px 32px rgba(0,0,0,0.05), 
+    0 32px 64px rgba(0,0,0,0.05);
+
+    
 
     &:hover {
         transform: translateY(-8px);
@@ -245,7 +271,9 @@ $color-texto-oscuro: #111111;
         display: flex;
         align-items: center;
         justify-content: center;
-        padding: 30px;
+        border-radius: 50px ;
+        
+        padding: 5px;
 
         @include para-movil {
             height: 180px;
@@ -270,11 +298,19 @@ $color-texto-oscuro: #111111;
         gap: 15px;
         flex-grow: 1;
 
+        font-size: 18px;
+
         h3 {
-            font-size: 2.2rem;
-            font-weight: 700;
-            color: $color-texto-oscuro;
+           // font-size: 2.2rem;
+            //font-weight: 700;
+            //color: $color-texto-oscuro;
             margin: 0;
+            font-family: 'Arlon', sans-serif;
+            font-size: 2.5rem;   // Los 40px del diseño
+            font-weight: 40;     // Usa arlon-bold.ttf
+            line-height: 1.2;
+            letter-spacing: -0.02em; // Sugerencia de tu reset para Arlon
+            color: #000;
         }
 
         p {
