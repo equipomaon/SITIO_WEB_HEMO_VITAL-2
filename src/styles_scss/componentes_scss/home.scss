@@ -1240,7 +1240,11 @@ body {
   flex-direction: column;
   gap: 60px; // Espacio entre el texto y la galería
 
-  height: 900px;
+ // height: 900px;
+
+  @include para-tablet-vertical{
+    height: auto ;
+  }
 }
 
 // --- Encabezado ---
