@@ -1229,7 +1229,7 @@ body {
 
    // 🔴 DESAPARECER ÚNICAMENTE EN TELÉFONOS
   @include para-movil {
-    display: none !important;
+    padding: 20px; 
   }
 }
 
@@ -1264,7 +1264,11 @@ body {
     display: flex;
     flex-direction: column;
     padding: 80px 40px;
-  } 
+  }
+  
+  @include para-movil{
+    padding: 20px;
+  }
 }
 
 .home_s4__header-col-izq {
@@ -1525,7 +1529,7 @@ body {
   }
 
   @include para-movil {
-    display: none !important; // Oculta toda la sección en móviles
+    padding: 20px;
   }
 }
 
