@@ -30,7 +30,7 @@ export const Ruta_Eresveterinario = () => {
 
        {/*  ruta eres veterinario SECCIÓN 2:  */}
       <div className="layout-pagina__seccion eres_veterinario__seccion--superior">
-        <div className="padre_contendor_eres_veterinario padre_contendor_home_seccion_dos">
+        <div className="padre_contendor_eres_veterinario padre_contendor_home_seccion_dos_eres_veterinario">
           
           <h2 className="hemo-titulo">
             Elige el hemocomponente adecuado para cada situación
