@@ -35,6 +35,27 @@ export const Ruta_Home = () => {
 
     const [currentIndex, setCurrentIndex] = useState(0);
 
+    
+
+    const itemsVisibles = 3; // Cuántos vemos en pantalla en desktop
+    const maxIndex = testimonios.length - itemsVisibles;
+
+    const siguiente = () => {
+      if (currentIndex < maxIndex) {
+        setCurrentIndex(currentIndex + 1);
+      }
+    };
+
+    const anterior = () => {
+      if (currentIndex > 0) {
+        setCurrentIndex(currentIndex - 1);
+      }
+    };
+
+    const togglePregunta = (index) => {
+      setPreguntaActiva(preguntaActiva === index ? null : index);
+    };
+
     // 1. Reemplaza el antiguo array por este:
     const testimonios = [
         {
@@ -87,49 +108,30 @@ export const Ruta_Home = () => {
         }
       ];
 
-    const itemsVisibles = 3; // Cuántos vemos en pantalla en desktop
-    const maxIndex = testimonios.length - itemsVisibles;
+    //FAQS DE RESPUESTAS PREDEFINIDAS
+    const faqs = [
+      { q: "¿Qué requisitos debe cumplir mi mascota para ser donante?", a: "Debe tener entre 1 y 8 años, tener buen estado de salud, las vacunas y desparasitación al día, no deben tener sobrepeso, enfermedades previas, ni transfusiones. Así mismo, los gatos deben pesar desde 3.5 kg y deben tener una vida 100% indoor; los perros deben pesar 20 kg y que no hayan tenido hemoparasitos." },
+      { q: "¿Mi mascota sentirá dolor durante la donación?", a: "No, no sentirá ninguna molestia, el proceso se realiza con sedación controlada y bajo estrictos protocolos médicos, tu mascota estará monitoreada en todo momento y al despertar recibirá muchos mimos, regalos y cuidados. Este es un procedimiento completamente seguro, tranquilo y bien tolerado por las mascotas." },
+      { q: "¿Cómo sé si mi mascota necesita una transfusión de sangre?", a: "Signos como debilidad, encías pálidas, respiración agitada o decaimiento pueden indicar anemia, así mismo, tu mascota puede requerir una tranfución de sangre en casos de accidentes, cirugías o enfermedades graves. Es importante que tengas presente que la indicación siempre la realiza un médico veterinario tras una evaluación clínica." },
+      { q: "¿Cómo garantizan la seguridad y compatibilidad de la sangre?", a: "En Hemovital evaluamos previamente a cada donante: Su historia clínica, que el esquema de vacunación esté al día y el estado general de la mascota, además, realizamos tipificación sanguínea y pruebas de compatibilidad para asegurar que todas las transfusiones sean seguras, confiables y adaptadas a cada peludito." },
+      { q: "¿Tienen disponibilidad de sangre las 24 horas?", a: "Claro que sí, contamos con disponibilidad permanente, durante el día realizamos envíos y, durante la noche o domingos y festivos puedes recoger la sangre directamente en nuestro punto físico para atención inmediata." },
+    ];
 
-  const siguiente = () => {
-    if (currentIndex < maxIndex) {
-      setCurrentIndex(currentIndex + 1);
-    }
-  };
+    const fotosFila1 = [
+        { id: 1, url: g_uno, alt: "Perro donante" },
+        { id: 2, url: g_dos, alt: "Gato salvando vidas" },
+        { id: 3, url: g_tres, alt: "Perrito Hemovital" },
+        { id: 4, url: g_cuatro, alt: "Donante feliz" },
+        { id: 5, url: g_cinco, alt: "Mascota héroe" },
+      ];
 
-  const anterior = () => {
-    if (currentIndex > 0) {
-      setCurrentIndex(currentIndex - 1);
-    }
-  };
-
-  const togglePregunta = (index) => {
-    setPreguntaActiva(preguntaActiva === index ? null : index);
-  };
-
-  //FAQS DE RESPUESTAS PREDEFINIDAS
-  const faqs = [
-    { q: "¿Qué requisitos debe cumplir mi mascota para ser donante?", a: "Debe tener entre 1 y 8 años, tener buen estado de salud, las vacunas y desparasitación al día, no deben tener sobrepeso, enfermedades previas, ni transfusiones. Así mismo, los gatos deben pesar desde 3.5 kg y deben tener una vida 100% indoor; los perros deben pesar 20 kg y que no hayan tenido hemoparasitos." },
-    { q: "¿Mi mascota sentirá dolor durante la donación?", a: "No, no sentirá ninguna molestia, el proceso se realiza con sedación controlada y bajo estrictos protocolos médicos, tu mascota estará monitoreada en todo momento y al despertar recibirá muchos mimos, regalos y cuidados. Este es un procedimiento completamente seguro, tranquilo y bien tolerado por las mascotas." },
-    { q: "¿Cómo sé si mi mascota necesita una transfusión de sangre?", a: "Signos como debilidad, encías pálidas, respiración agitada o decaimiento pueden indicar anemia, así mismo, tu mascota puede requerir una tranfución de sangre en casos de accidentes, cirugías o enfermedades graves. Es importante que tengas presente que la indicación siempre la realiza un médico veterinario tras una evaluación clínica." },
-    { q: "¿Cómo garantizan la seguridad y compatibilidad de la sangre?", a: "En Hemovital evaluamos previamente a cada donante: Su historia clínica, que el esquema de vacunación esté al día y el estado general de la mascota, además, realizamos tipificación sanguínea y pruebas de compatibilidad para asegurar que todas las transfusiones sean seguras, confiables y adaptadas a cada peludito." },
-    { q: "¿Tienen disponibilidad de sangre las 24 horas?", a: "Claro que sí, contamos con disponibilidad permanente, durante el día realizamos envíos y, durante la noche o domingos y festivos puedes recoger la sangre directamente en nuestro punto físico para atención inmediata." },
-  ];
-
- const fotosFila1 = [
-    { id: 1, url: g_uno, alt: "Perro donante" },
-    { id: 2, url: g_dos, alt: "Gato salvando vidas" },
-    { id: 3, url: g_tres, alt: "Perrito Hemovital" },
-    { id: 4, url: g_cuatro, alt: "Donante feliz" },
-    { id: 5, url: g_cinco, alt: "Mascota héroe" },
-  ];
-
-  const fotosFila2 = [
-    { id: 6, url: g_seis, alt: "Gatito valiente" },
-    { id: 7, url: g_siete, alt: "Perrito recuperado" },
-    { id: 8, url: g_ocho, alt: "Héroe Hemovital" },
-    { id: 9, url: g_nueve, alt: "Mascota donante" },
-    { id: 10, url: g_diez, alt: "Héroe de cuatro patas" },
-  ];
+    const fotosFila2 = [
+      { id: 6, url: g_seis, alt: "Gatito valiente" },
+      { id: 7, url: g_siete, alt: "Perrito recuperado" },
+      { id: 8, url: g_ocho, alt: "Héroe Hemovital" },
+      { id: 9, url: g_nueve, alt: "Mascota donante" },
+      { id: 10, url: g_diez, alt: "Héroe de cuatro patas" },
+    ];
 
 
   return (
