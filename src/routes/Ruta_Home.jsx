@@ -8,7 +8,7 @@ import iconSangre from '../assets/icono-card1.png';
 import iconTransfusion from '../assets/icono-card2.png';
 import iconBlood from '../assets/icono-card3.png';
 import imgFestival from '../assets/testeo_festival.png';
-import home_header from '../assets/home_header.png';
+//import home_header from '../assets/home_header.png';
 import fondo_imagen_blanco_perritos from '../assets/home_s1_s2_fondo_blanco_perritos.png';
 import video_placeholder from '../assets/imagen_fondo_s3_home.png';
 
@@ -35,28 +35,7 @@ export const Ruta_Home = () => {
 
     const [currentIndex, setCurrentIndex] = useState(0);
 
-    
-
-    const itemsVisibles = 3; // Cuántos vemos en pantalla en desktop
-    const maxIndex = testimonios.length - itemsVisibles;
-
-    const siguiente = () => {
-      if (currentIndex < maxIndex) {
-        setCurrentIndex(currentIndex + 1);
-      }
-    };
-
-    const anterior = () => {
-      if (currentIndex > 0) {
-        setCurrentIndex(currentIndex - 1);
-      }
-    };
-
-    const togglePregunta = (index) => {
-      setPreguntaActiva(preguntaActiva === index ? null : index);
-    };
-
-    // 1. Reemplaza el antiguo array por este:
+     // 1. Reemplaza el antiguo array por este:
     const testimonios = [
         {
           nombre: "Camila Osorio",
@@ -108,7 +87,7 @@ export const Ruta_Home = () => {
         }
       ];
 
-    //FAQS DE RESPUESTAS PREDEFINIDAS
+     //FAQS DE RESPUESTAS PREDEFINIDAS
     const faqs = [
       { q: "¿Qué requisitos debe cumplir mi mascota para ser donante?", a: "Debe tener entre 1 y 8 años, tener buen estado de salud, las vacunas y desparasitación al día, no deben tener sobrepeso, enfermedades previas, ni transfusiones. Así mismo, los gatos deben pesar desde 3.5 kg y deben tener una vida 100% indoor; los perros deben pesar 20 kg y que no hayan tenido hemoparasitos." },
       { q: "¿Mi mascota sentirá dolor durante la donación?", a: "No, no sentirá ninguna molestia, el proceso se realiza con sedación controlada y bajo estrictos protocolos médicos, tu mascota estará monitoreada en todo momento y al despertar recibirá muchos mimos, regalos y cuidados. Este es un procedimiento completamente seguro, tranquilo y bien tolerado por las mascotas." },
@@ -132,6 +111,31 @@ export const Ruta_Home = () => {
       { id: 9, url: g_nueve, alt: "Mascota donante" },
       { id: 10, url: g_diez, alt: "Héroe de cuatro patas" },
     ];
+
+    
+
+    const itemsVisibles = 3; // Cuántos vemos en pantalla en desktop
+    const maxIndex = testimonios.length - itemsVisibles;
+
+    const siguiente = () => {
+      if (currentIndex < maxIndex) {
+        setCurrentIndex(currentIndex + 1);
+      }
+    };
+
+    const anterior = () => {
+      if (currentIndex > 0) {
+        setCurrentIndex(currentIndex - 1);
+      }
+    };
+
+    const togglePregunta = (index) => {
+      setPreguntaActiva(preguntaActiva === index ? null : index);
+    };
+
+   
+
+   
 
 
   return (

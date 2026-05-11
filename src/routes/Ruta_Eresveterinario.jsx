@@ -35,8 +35,18 @@ export const Ruta_Eresveterinario = () => {
       <div  className="layout-pagina__seccion  eres_veterinario__seccion_uno">
 
           <div className="padre_contendor padre_contendor_eres_veterinario">
-              {/* Contenido sección 1 */}
-              {/* Aquí puedes poner tus títulos o botones que irán sobre la imagen */}
+               {/* Contenido central que aparece en la imagen */}
+              <div className="veterinario_header__contenido-central">
+                  <h1 className="veterinario_header__titulo">
+                      Procesos seguros <br /> 
+                      que garantizan <br /> 
+                      cada transfusión
+                  </h1>
+                  
+                  <button className="veterinario_header__boton">
+                      Quiero solicitar sangre
+                  </button>
+              </div>
           </div>
       </div> 
 

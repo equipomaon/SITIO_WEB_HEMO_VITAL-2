@@ -1,38 +1,91 @@
 @use '../base_scss/variables' as *;
-@use '../base_scss/responsive.scss' as *; // Asumiendo que los mixins están aquí
+@use '../base_scss/responsive.scss' as *;
 
-// SECCIÓN 1: Header (La ilustración)
+// ==========================================
+// SECCIÓN 1: Header (La ilustración con texto)
+// ==========================================
 .eres_veterinario__seccion_uno {
     width: 100%;
-    // margin-top: Ajusta este valor según el alto de tu Navbar (ejemplo 80px o 90px)
     margin-top: 90px; 
-    
-    // Altura de la sección
-    height: 100vh; // 130vh era mucho, 100vh ocupa exactamente la pantalla.
-    
+    height: 100vh; 
     display: flex;
     align-items: center;
     justify-content: center;
     position: relative;
     background-color: #ffffff;
 
-    // Estilos de Fondo
+    // Fondo: Ilustración circular
     background-image: url('../../assets/veterinario_fondo.png');  
-    background-size: contain; // 'contain' asegura que toda la ilustración se vea sin cortarse
+    background-size: contain; 
     background-position: center center; 
     background-repeat: no-repeat;
 
-    // border: 1px solid red; // Opcional para depurar
-
     @include para-movil {
-        margin-top: 70px; // Menos margen en móvil
-        height: 60vh;    // Menos altura en móvil
-        background-size: 90%; // Un poco más grande en móviles
+        margin-top: 70px;
+        height: 70vh; 
+        background-size: 95%;
+    }
+
+    .padre_contendor_eres_veterinario {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+    }
+
+    // NUEVO: Contenido central (Título y Botón)
+    .veterinario_header__contenido {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 30px;
+        max-width: 600px;
+
+        .veterinario_header__titulo {
+            font-size: 48px;
+            font-weight: 700;
+            color: #f2514d; // Color rojo/coral de la imagen
+            line-height: 1.1;
+            margin: 0;
+            
+            @include para-tablet-vertical {
+                font-size: 36px;
+            }
+
+            @include para-movil {
+                font-size: 24px;
+            }
+        }
+
+        .veterinario_header__boton {
+            background-color: #ff5a5a;
+            color: #fff;
+            border: none;
+            padding: 18px 45px;
+            font-size: 18px;
+            font-weight: 600;
+            border-radius: 50px;
+            cursor: pointer;
+            box-shadow: 0 10px 20px rgba(255, 90, 90, 0.2);
+            transition: all 0.3s ease;
+
+            &:hover {
+                background-color: #e04a4a;
+                transform: translateY(-3px);
+            }
+
+            @include para-movil {
+                padding: 12px 25px;
+                font-size: 14px;
+            }
+        }
     }
 }
 
-// SECCIÓN 2: Contenedor de Hemocomponentes (Título y Cards)
-// SECCIÓN CONTENEDORA
+// ==========================================
+// SECCIÓN 2: Hemocomponentes
+// ==========================================
 .eres_veterinario__seccion--superior {
     padding: 60px 20px;
     background-color: #ffffff;
@@ -41,13 +94,11 @@
 
     .padre_contendor_home_seccion_dos_eres_veterinario {
         width: 100%;
-        // max-width: 1280px; // Ancho máximo para que se vea como en la imagen
-
-        padding: 85px 52px;
+        max-width: 1200px;
+        padding: 40px 0;
         display: flex;
         flex-direction: column;
         align-items: center;
-
     }
 }
 
@@ -57,58 +108,36 @@
     margin-bottom: 50px;
     text-align: center;
     color: #000;
-    letter-spacing: -0.5px;
 
     @include para-movil {
         font-size: 28px;
     }
 }
 
-// GRID PRINCIPAL (Aquí ocurre la magia)
 .hemo-grid {
     display: grid;
-    gap: 25px; // Espacio entre tarjetas
+    gap: 25px;
     width: 100%;
 
-
     @include para-escritorio {
-        grid-template-columns: 1fr 1fr 1fr; // 3 columnas iguales
-        grid-template-rows: auto auto;      // 2 filas
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-rows: auto auto;
 
+        .hemo-card--eritrocitos { grid-column: 1; grid-row: 1; }
+        .hemo-card--plaquetas { grid-column: 2; grid-row: 1; }
+        .hemo-card--sangre { grid-column: 3; grid-row: 1 / span 2; }
         
-        //padding: 85px 52px;
-
-   
-
-
-        
-        // Posicionamiento exacto
-        .hemo-card--eritrocitos { 
-            grid-column: 1; 
-            grid-row: 1; 
-        }
-        .hemo-card--plaquetas { 
-            grid-column: 2; 
-            grid-row: 1; 
-        }
         .hemo-card--plasma { 
-            grid-column: 1 / span 2; // Ocupa columna 1 y 2
-            grid-row: 2;             // En la fila de abajo
-            flex-direction: row !important; // Se vuelve horizontal
-            
-            .hemo-card__img-container { flex: 1; }
-            .hemo-card__info { flex: 1; }
-        }
-        .hemo-card--sangre { 
-            grid-column: 3; 
-            grid-row: 1 / span 2; // Ocupa las dos filas hacia abajo
+            grid-column: 1 / span 2; 
+            grid-row: 2; 
+            flex-direction: row !important;
+            .hemo-card__img-container, .hemo-card__info { flex: 1; }
         }
     }
 
     @include para-tablet-vertical {
         grid-template-columns: 1fr 1fr;
-        .hemo-card--plasma { grid-column: 1 / span 2; }
-        .hemo-card--sangre { grid-column: 1 / span 2; }
+        .hemo-card--plasma, .hemo-card--sangre { grid-column: 1 / span 2; }
     }
 
     @include para-movil {
@@ -117,36 +146,34 @@
     }
 }
 
-// ESTILO BASE DE LAS TARJETAS
 .hemo-card {
     background: #ffffff;
-    border-radius: 40px; // Bordes muy redondeados como la imagen
+    border-radius: 40px;
     overflow: hidden;
     display: flex;
     flex-direction: column;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
-    height: 100%;
     border: 1px solid #f0f0f0;
+    height: 100%;
 
     &__img-container {
         flex: 1;
-        background-color: #fff;
         display: flex;
         align-items: center;
         justify-content: center;
         padding: 20px;
         min-height: 200px;
+        overflow: hidden;
 
         img {
-            max-width: 90%;
+            max-width: 100%;
             height: auto;
-            max-height: 100%;
             object-fit: contain;
         }
     }
 
     &__info {
-        background-color: #ff9a90; // El color Salmón/Rosado de tu imagen
+        background-color: #ff9a90;
         padding: 30px 25px;
         display: flex;
         flex-direction: column;
@@ -154,76 +181,31 @@
         min-height: 160px;
 
         h3 {
-            font-size: 32px;
+            font-size: 28px;
             font-weight: 800;
-            margin: 0 0 15px 0;
+            margin-bottom: 10px;
             color: #000;
         }
-
         p {
             font-size: 16px;
             line-height: 1.4;
             color: #222;
             margin: 0;
-            font-weight: 500;
         }
     }
 
-    // Ajuste para SANGRE ENTERA (Vertical larga)
-    &--sangre {
-        .hemo-card__img-container {
-            flex: 3; // Más espacio para la bolsa grande
-        }
-    }
+    &--sangre .hemo-card__img-container { flex: 3; }
 }
 
-
-
-.hemo-card--plaquetas {
-    .hemo-card__img-container {
-        padding: 0; // Eliminamos el padding para que la imagen toque los bordes
-        overflow: hidden; // Evita que la imagen se salga de las esquinas redondeadas
-
-        img {
-            max-width: 100%; // Permitimos que ocupe todo el ancho
-            width: 100%;
-            height: 100%;
-            
-            // EL ZOOM:
-            // 'cover' hace que la imagen llene el contenedor (zoom automático)
-            object-fit: cover; 
-            
-            // 'scale' te permite ajustar el zoom manualmente
-            // 1.2 = 20% más de zoom. Puedes probar con 1.3, 1.4, etc.
-            transform: scale(1.2); 
-            
-            // Opcional: ajustar qué parte de la imagen se ve
-            object-position: center; 
-        }
-    }
-}
-
-// También asegúrate de que eritrocitos tenga su imagen configurada si la vas a usar
-.hemo-card--eritrocitos {
+// Estilos específicos para imágenes con zoom (Plaquetas y Eritrocitos)
+.hemo-card--plaquetas, .hemo-card--eritrocitos {
     .hemo-card__img-container {
         padding: 0;
-        overflow: hidden;
         img {
             width: 100%;
             height: 100%;
             object-fit: cover;
-        }
-    }
-}
-
-.hemo-card--plaquetas {
-    .hemo-card__img-container {
-        padding: 0;
-        overflow: hidden;
-        img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
+            transform: scale(1.1); // Pequeño zoom para llenar el card
         }
     }
 }

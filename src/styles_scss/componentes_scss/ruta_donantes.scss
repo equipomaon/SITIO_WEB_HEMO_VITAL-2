@@ -1,0 +1,119 @@
+/* ------------------------------------------------------------------------------
+DONANTES SECCION 1
+
+--------------------------------------------------------------------------------- */
+
+/* Contenedor Principal de la Sección */
+.donantes_layout-pagina__seccion_uno {
+    width: 100%;
+    padding: 60px 0;
+    background-color: #ffffff;
+    display: flex;
+    justify-content: center;
+}
+
+.padre_contendor_home_seccion_header {
+    max-width: 1200px;
+    width: 90%;
+    display: flex;
+    align-items: center; /* Alineación vertical al centro */
+    gap: 50px; /* Espacio entre imagen y texto */
+}
+
+/* --- PARTE IZQUIERDA: IMAGEN --- */
+.home_seccion_header__imagen-contenedor {
+    flex: 1; /* Toma el 50% del espacio */
+}
+
+.donantes_imagen_principal {
+    width: 100%;
+    height: auto;
+    border-radius: 8px; /* Opcional: un ligero redondeado si lo deseas */
+    display: block;
+}
+
+/* --- PARTE DERECHA: TEXTO --- */
+.home_seccion_header__texto-infromativo {
+    flex: 1; /* Toma el otro 50% */
+}
+
+.donantes_contenido_texto {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.donantes_titulo_principal {
+    font-size: 2.5rem; /* 40px aprox */
+    color: #000;
+    font-weight: 600;
+    line-height: 1.2;
+    margin: 0;
+    font-family: 'Montserrat', sans-serif; /* O la fuente que uses en tu proyecto */
+}
+
+.donantes_descripcion {
+    font-size: 1rem;
+    color: #333;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+/* --- SECCIÓN DE ESTADÍSTICAS (LOS NÚMEROS) --- */
+.donantes_stats_contenedor {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Dos columnas iguales */
+    gap: 30px;
+}
+
+.donantes_stat_item {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.donantes_stat_numero {
+    display: flex;
+    flex-direction: column;
+    line-height: 1;
+}
+
+.donantes_stat_numero strong {
+    font-size: 3rem; /* 48px */
+    font-weight: 700;
+    color: #000;
+}
+
+.donantes_stat_numero span {
+    font-size: 2rem; /* 32px */
+    font-weight: 400;
+    color: #000;
+}
+
+.donantes_stat_descripcion {
+    font-size: 0.85rem;
+    color: #666;
+    line-height: 1.4;
+    margin: 0;
+}
+
+/* --- RESPONSIVE: MÓVILES --- */
+@media (max-width: 992px) {
+    .padre_contendor_home_seccion_header {
+        flex-direction: column; /* Apila imagen arriba y texto abajo */
+        text-align: center;
+    }
+
+    .donantes_titulo_principal {
+        font-size: 2rem;
+    }
+
+    .donantes_stats_contenedor {
+        grid-template-columns: 1fr; /* Una sola columna en móvil */
+        gap: 40px;
+    }
+
+    .donantes_stat_numero strong {
+        font-size: 2.5rem;
+    }
+}
