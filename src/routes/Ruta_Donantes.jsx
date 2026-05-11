@@ -6,6 +6,19 @@ import imagen_derecha from '../assets/donantes_seccion_uno.png';
 import perro_amarillo from '../assets/perro_amarillo.png';
 import gato_rojo from '../assets/gato_rojo.png';
 
+//galeria de fotos
+import g_uno from '../assets/g_uno.jpg';
+import g_dos from '../assets/g_dos.jpg';
+import g_tres from '../assets/g_tres.jpg';
+import g_cuatro from '../assets/g_cuatro.jpg';
+import g_cinco from '../assets/g_cinco.jpg';
+import g_seis from '../assets/g_seis.jpg';
+import g_siete from '../assets/g_siete.jpg';
+import g_ocho from '../assets/g_ocho.jpg';
+import g_nueve from '../assets/g_nueve.jpg';
+import g_diez from '../assets/g_diez.jpg';
+
+
 
 export const Ruta_Donantes = () => { 
   const [activeModal, setActiveModal] = useState(null); // 'perro' | 'gato' | null
@@ -17,6 +30,26 @@ export const Ruta_Donantes = () => {
   const closeModal = () => {
     setActiveModal(null);
   };
+
+
+  const fotosFila1 = [
+        { id: 1, url: g_uno, alt: "Perro donante" },
+        { id: 2, url: g_dos, alt: "Gato salvando vidas" },
+        { id: 3, url: g_tres, alt: "Perrito Hemovital" },
+        { id: 4, url: g_cuatro, alt: "Donante feliz" },
+        { id: 5, url: g_cinco, alt: "Mascota héroe" },
+      ];
+
+  const fotosFila2 = [
+    { id: 6, url: g_seis, alt: "Gatito valiente" },
+    { id: 7, url: g_siete, alt: "Perrito recuperado" },
+    { id: 8, url: g_ocho, alt: "Héroe Hemovital" },
+    { id: 9, url: g_nueve, alt: "Mascota donante" },
+    { id: 10, url: g_diez, alt: "Héroe de cuatro patas" },
+  ];
+
+
+  
   return (
 
     <>
@@ -169,10 +202,7 @@ export const Ruta_Donantes = () => {
           {/* PARTE IZQUIERDA: VIDEO / IMAGEN */}
           <div className="donantes_seccion_tres__video-contenedor">
             <div className="video_placeholder">
-              {/* Aquí puedes integrar un <iframe> de YouTube o un video nativo */}
-              <div className="play_icon">
-                <svg viewBox="0 0 24 24" fill="white"><path d="M8 5v14l11-7z"/></svg>
-              </div>
+              video
             </div>
           </div>
 
@@ -215,6 +245,51 @@ export const Ruta_Donantes = () => {
             <button className="donantes_seccion_tres__btn">
               Quiero ser donante
             </button>
+          </div>
+
+        </div>
+      </div>
+
+        {/* ---------------- HOME SECCIÓN 4  ---------------- */}
+      <div className="layout-pagina__seccion layout-pagina__seccion--media home_s4">
+        <div className="padre_contendor padre_contendor_home_seccion_4">
+          
+          <header className="home_s4__header">
+            <div className="home_s4__header-col-izq">
+              <h2 className="home_s4__titulo">Ellos ya están salvando vidas</h2>
+            </div>
+            <div className="home_s4__header-col-der">
+              <p>
+                Estos son algunos de los peluditos que ha ayudado a salvar vidas con su donación de sangre en Hemovital; Gracias a ellos, muchos perritos y gatitos han tenido una segunda oportunidad cuando más lo necesitaban. 
+                <strong>Tu mascota también puede estar aquí</strong>
+              </p>
+            </div>
+          </header>
+
+          <div className="home_s4__galeria-container">
+            
+            {/* FILA 1: Derecha a Izquierda */}
+            <div className="home_s4__galeria-track">
+              {[...fotosFila1, ...fotosFila1].map((foto, index) => (
+                <div key={`track1-${index}`} className="home_s4__galeria-item">
+                  <div className="home_s4__placeholder-img">
+                      <img src={foto.url} alt={foto.alt} className="home_s4__imagen" />
+                  </div>
+                </div>
+              ))}
+            </div>
+
+            {/* FILA 2: Izquierda a Derecha */}
+            <div className="home_s4__galeria-track home_s4__galeria-track--reversa">
+              {[...fotosFila2, ...fotosFila2].map((foto, index) => (
+                <div key={`track2-${index}`} className="home_s4__galeria-item">
+                  <div className="home_s4__placeholder-img">
+                      <img src={foto.url} alt={foto.alt} className="home_s4__imagen" />
+                  </div>
+                </div>
+              ))}
+            </div>
+
           </div>
 
         </div>
