@@ -40,7 +40,20 @@ export const Ruta_Distribuidores = () => {
       {/* Sección dos si la necesitas después */}
       <div className="layout-pagina__seccion distribuidores_layout-pagina__seccion_dos">
         <div className="padre_contenedor_distribuidores_seccion_dos" >
-          {/* Contenido extra */}
+          {/* SECCIÓN INFERIOR: BANNER ANIMADO */}
+        <div className="donantes_banner_infinito">
+          <div className="donantes_banner_track">
+            <span>Hacemos envíos nacionales</span>
+            <span>Hacemos envíos nacionales</span>
+            <span>Hacemos envíos nacionales</span>
+            <span>Hacemos envíos nacionales</span>
+            <span>Hacemos envíos nacionales</span>
+            <span>Hacemos envíos nacionales</span>
+            {/* Duplicados para el efecto infinito */}
+            <span>Hacemos envíos nacionales</span>
+            <span>Hacemos envíos nacionales</span>
+          </div>
+        </div>
         </div>
       </div>
     </> 
