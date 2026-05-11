@@ -1665,7 +1665,7 @@ body {
   // MIXIN PARA TELÉFONO (Asumiendo nombre estándar)
   @include para-movil {
     padding: 60px 20px;
-    background-size: 110%;
+    background-size: 10%;
 
      width: 100% !important;   // La tarjeta ocupa todo el ancho visible
     flex: 0 0 100% !important;
