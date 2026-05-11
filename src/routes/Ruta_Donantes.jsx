@@ -160,10 +160,63 @@ export const Ruta_Donantes = () => {
         )}
       </div>
 
+     
+
       {/* DONANTES SECCION 3 BENEFICIOS */}
-      <div  className="layout-pagina__seccion donantes_layout-pagina__seccion_tres">
-        <div className="padre_contendor padre_contenedor_donantes_seccion_tres" >
+      <div className="layout-pagina__seccion donantes_layout-pagina__seccion_tres">
+        <div className="padre_contendor padre_contenedor_donantes_seccion_tres">
           
+          {/* PARTE IZQUIERDA: VIDEO / IMAGEN */}
+          <div className="donantes_seccion_tres__video-contenedor">
+            <div className="video_placeholder">
+              {/* Aquí puedes integrar un <iframe> de YouTube o un video nativo */}
+              <div className="play_icon">
+                <svg viewBox="0 0 24 24" fill="white"><path d="M8 5v14l11-7z"/></svg>
+              </div>
+            </div>
+          </div>
+
+          {/* PARTE DERECHA: TEXTO INFORMATIVO */}
+          <div className="donantes_seccion_tres__texto-contenedor">
+            <h2 className="donantes_seccion_tres__titulo">Beneficios y ventajas</h2>
+            
+            <p className="donantes_seccion_tres__descripcion">
+              Además de ayudar a salvar vidas, tu mascota tendrá diferentes beneficios fisiológicos, 
+              como la renovación del tejido sanguíneo, así mismo, recibirá de parte nuestra:
+            </p>
+
+            <ul className="donantes_seccion_tres__lista">
+              <li>
+                <span className="paw_icon">🐾</span>
+                Asesoría médica en cada donación.
+              </li>
+              <li>
+                <span className="paw_icon">🐾</span>
+                Exámenes de laboratorio específicos.
+              </li>
+              <li>
+                <span className="paw_icon">🐾</span>
+                Dosis de antiparasitario después de cada donación.
+              </li>
+              <li>
+                <span className="paw_icon">🐾</span>
+                Prioridad en caso de necesitar una unidad de sangre (aplican TyC)
+              </li>
+              <li>
+                <span className="paw_icon">🐾</span>
+                Regalos y Snacks
+              </li>
+              <li>
+                <span className="paw_icon">🐾</span>
+                Diferentes descuentos
+              </li>
+            </ul>
+
+            <button className="donantes_seccion_tres__btn">
+              Quiero ser donante
+            </button>
+          </div>
+
         </div>
       </div>
     </>

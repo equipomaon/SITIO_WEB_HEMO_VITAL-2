@@ -397,3 +397,137 @@ $color-texto-oscuro: #111111;
         opacity: 1;
     }
 }
+
+/* --- DONANTES SECCION 3: BENEFICIOS --- */
+
+.donantes_layout-pagina__seccion_tres {
+    width: 100%;
+    padding: 100px 0;
+    height: auto;
+    background-color: #ffffff;
+    display: flex;
+    justify-content: center;
+
+    .padre_contenedor_donantes_seccion_tres {
+        max-width: 1200px;
+        width: 90%;
+        display: flex;
+        align-items: center;
+        gap: 60px;
+
+        @include para-movil {
+            margin-top: 20px;
+            margin-bottom: 120px; 
+            height: auto;
+            flex-direction: column; // Video arriba, texto abajo
+            gap: 40px;
+        }
+    }
+}
+
+// Contenedor del Video (Izquierda)
+.donantes_seccion_tres__video-contenedor {
+    flex: 1;
+    width: 100%;
+
+    .video_placeholder {
+        width: 100%;
+        aspect-ratio: 16 / 12; // Formato más cuadrado como en la imagen
+        background-color: #888888; // Gris de la imagen
+        border-radius: 8px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+        cursor: pointer;
+
+        .play_icon {
+            width: 80px;
+            height: 80px;
+            background-color: rgba(0, 0, 0, 0.2);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            
+            svg {
+                width: 40px;
+            }
+        }
+    }
+}
+
+// Contenedor del Texto (Derecha)
+.donantes_seccion_tres__texto-contenedor {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+
+    .donantes_seccion_tres__titulo {
+        font-size: 3rem;
+        font-weight: 700;
+        color: #000;
+        margin: 0;
+
+        @include para-movil {
+            font-size: 2.2rem;
+            text-align: center;
+        }
+    }
+
+    .donantes_seccion_tres__descripcion {
+        font-size: 1.1rem;
+        line-height: 1.6;
+        color: #333;
+    }
+
+    // Lista de Beneficios
+    .donantes_seccion_tres__lista {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+
+        li {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            font-size: 1rem;
+            color: #333;
+            font-weight: 500;
+
+            .paw_icon {
+                font-size: 1.2rem;
+                display: flex;
+                align-items: center;
+            }
+        }
+    }
+
+    // Botón Coral
+    .donantes_seccion_tres__btn {
+        background-color: #ff5a5a; // Color coral del botón
+        color: white;
+        border: none;
+        padding: 15px 40px;
+        font-size: 1.1rem;
+        font-weight: 600;
+        border-radius: 50px;
+        align-self: flex-start;
+        cursor: pointer;
+        transition: transform 0.3s ease, background-color 0.3s ease;
+        margin-top: 10px;
+
+        &:hover {
+            background-color: darken(#ff5a5a, 5%);
+            transform: scale(1.05);
+        }
+
+        @include para-movil {
+            align-self: center; // Centrado en móvil
+        }
+    }
+}
