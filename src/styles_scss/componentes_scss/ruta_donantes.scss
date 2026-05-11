@@ -77,6 +77,9 @@ $color-texto-oscuro: #111111;
 .home_seccion_header__texto-infromativo {
     flex: 1;
 
+    font-family: 'Arlon', sans-serif;
+
+
     @include para-movil{
         
         margin-top: -10px;
@@ -90,25 +93,46 @@ $color-texto-oscuro: #111111;
         flex-direction: column;
         gap: 20px;
 
-        .donantes_titulo_principal {
-            font-size: 2.5rem;
-            font-weight: 700;
-            line-height: 1.2;
-            color: #000;
+        @include para-escritorio{
+            width: 600px;
         }
 
+        @include para-tablet-vertical{
+            width: 100%;
+        }
+
+        //border: 1px solid red;
+
+        .donantes_titulo_principal {
+            
+
+            font-family: 'Arlon', sans-serif;
+            font-size: 2.5rem;   // Los 40px del diseño
+            font-weight: 40;     // Usa arlon-bold.ttf
+            line-height: 1.2;
+            letter-spacing: -0.02em; // Sugerencia de tu reset para Arlon
+            color: #000;
+            margin: 0;
+
+        } 
+
         .donantes_descripcion {
-            font-size: 1rem;
+            font-family: 'Arlon', sans-serif;
+            font-size: 1.3rem;
             line-height: 1.6;
+            font-weight: 140;     // Usa arlon-bold.ttf
             color: #333;
         }
     }
 }
 
 .donantes_stats_contenedor {
+    font-family: 'Arlon', sans-serif;
+     font-size: 1.3rem;
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 30px;
+    color: #333;
 
     @include para-movil {
         grid-template-columns: 1fr;
@@ -123,7 +147,8 @@ $color-texto-oscuro: #111111;
 
     .donantes_stat_descripcion {
         font-size: 0.85rem;
-        color: #666;
+        color: #333;
+         font-size: 1.1rem;
     }
 }
 
