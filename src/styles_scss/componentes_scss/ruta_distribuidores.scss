@@ -1,0 +1,117 @@
+@use '../base_scss/variables' as *;
+@use '../base_scss/responsive' as *;
+
+// Variables de color (ajustar según tu paleta)
+$color-rojo-boton: #ff5252; // El color coral/rojo del botón
+$color-texto-oscuro: #1a1a1a;
+$font-family: 'Montserrat', sans-serif; // O la que uses
+
+.distribuidores_layout-pagina__seccion_uno {
+  padding: 40px 40px;
+  background-color: #ffffff;
+
+  .padre_contenedor_distribuidores_seccion_uno {
+    width: 100%; // O el ancho de tu diseño
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    //gap: 40px;
+
+    height: auto;
+
+    //border: 1px solid red;
+
+
+
+    // Grid superior
+    .distribuidores_header_grid {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      border-bottom: 1px dotted #ccc; // Línea divisoria opcional como se ve en tu guía
+      padding: 65px; 
+      //gap: 40px;
+
+      margin-top: 100px;
+
+      //border: 1px solid red;
+
+      @include para-tablet-vertical{
+        flex-direction: column;
+        gap: 20px;
+      }
+
+      @include para-movil{
+        padding-top: 100px;
+
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+
+        margin: 0 auto;
+      }
+
+       
+
+      .col_izquierda {
+        flex: 1.2;
+        h1 {
+          font-family: $font-family;
+          font-size: 2.8rem;
+          font-weight: 500;
+          line-height: 1.1;
+          color: $color-texto-oscuro;
+          margin: 0;
+        }
+      }
+
+      .col_derecha {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+
+        p {
+          font-size: 1rem;
+          line-height: 1.5;
+          color: #444;
+          margin: 0;
+        }
+
+        .contenedor_boton {
+          .btn-solicitar {
+            background-color: $color-rojo-boton;
+            color: white;
+            border: none;
+            padding: 12px 30px;
+            border-radius: 50px; // Forma de píldora
+            font-weight: 500;
+            cursor: pointer;
+            transition: transform 0.2s ease;
+
+            &:hover {
+              transform: scale(1.05);
+              background-color: darken($color-rojo-boton, 5%);
+            }
+          }
+        }
+      }
+    }
+
+    // Contenedor de la imagen
+    .distribuidores_seccion_uno_imagen {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      padding: 20px 0;
+      border: 2px solid #8a2be2; // Solo para que veas el borde lila de tu guía, quitar después
+      border-radius: 10px;
+
+      img {
+        max-width: 100%;
+        height: auto;
+        object-fit: contain;
+      }
+    }
+  }
+}

@@ -555,15 +555,22 @@ $color-texto-oscuro: #111111;
     flex-direction: column;
     gap: 25px;
 
-    border: 1px solid blue;
+    //border: 1px solid blue;
+    
 
     //height: 300px;
 
     .donantes_seccion_tres__titulo {
-        font-size: 3rem;
-        font-weight: 700;
-        color: #000;
+        //font-size: 3rem;
+        //font-weight: 700;
+        //color: #000; 
         margin: 0;
+        font-family: "Arlon", sans-serif;
+        font-size: 2.5rem;
+        font-weight: 40;
+        line-height: 1.2;
+        letter-spacing: -0.02em;
+        color: #000;
 
         @include para-movil {
             font-size: 2.2rem;
@@ -606,15 +613,24 @@ $color-texto-oscuro: #111111;
     .donantes_seccion_tres__btn {
         background-color: #ff5a5a; // Color coral del botón
         color: white;
+
         border: none;
+
         padding: 15px 40px;
         font-size: 1.1rem;
         font-weight: 600;
         border-radius: 50px;
         align-self: flex-start;
+
         cursor: pointer;
         transition: transform 0.3s ease, background-color 0.3s ease;
         margin-top: 10px;
+
+         font-family: "Arlon", sans-serif;
+        font-size: 1.5rem;
+        font-weight: 10;
+        line-height: 1.2;
+        letter-spacing: -0.02em;
 
         &:hover {
             background-color: darken(#ff5a5a, 5%);
