@@ -4,95 +4,148 @@
 // ==========================================
 // SECCIÓN 1: Header (La ilustración con texto)
 // ==========================================
+
+// ==========================================
+// SECCIÓN 1: Header (La ilustración con texto)
+// ==========================================
 .eres_veterinario__seccion_uno {
     width: 100%;
     margin-top: 90px; 
-    height: 100vh; 
+    //height: 100vh; 
     display: flex;
     align-items: center;
     justify-content: center;
     position: relative;
     background-color: #ffffff;
 
-    // Fondo: Ilustración circular
-    background-image: url('../../assets/veterinario_fondo.png');  
-    background-size: contain; 
+    background-image: url('../../assets/veterinario_fondo.jpeg');  
+    background-size: 75%; 
     background-position: center center; 
     background-repeat: no-repeat;
 
     @include para-movil {
-
-        margin-top: 70px;
-        height: 70vh; 
+        //margin-top: 70px;
+        height: 50vh; 
         background-size: 95%;
     }
 
-    .padre_contendor_eres_veterinario {
+    @include para-tablet-vertical {
 
+        height: 85vh;
+        background-size: 100%;
+
+        // border: 1px solid blue; 
+    }
+
+    @include para-escritorio {
+        background-size: 75%;
+        height: 100vh; 
+    }
+
+    .padre_contendor_eres_veterinario {
         width: 100%;
         display: flex;
         justify-content: center;
         align-items: center;
         text-align: center;
+
+       
+
+        .veterinario_header__contenido-central {
+            display: flex;
+            flex-direction: column;
+            align-items: center; // Cambia a flex-start si quieres todo alineado a la izquierda
+            gap: 30px;
+            max-width: 700px;
+            padding: 0 20px;
+
+            @include para-escritorio{}
+
+            @include para-tablet-vertical{}
+
+            @include para-movil{
+
+                margin-top: 30px;
+              
+            }
+
+
+
+            .veterinario_header__titulo {
+                font-family: 'Arlon', sans-serif;
+                font-size: 48px;
+                font-weight: 500 !important; 
+                line-height: 1.1;
+                margin: 0;
+                color: #fd504d; 
+                text-align: center; // En la imagen se ve centrado
+
+                @include para-escritorio{
+
+                }
+
+                @include para-tablet-vertical {
+                    font-size: 36px;
+                } 
+
+                 // AQUÍ DEBES PEGARLO (Reemplazando el anterior):
+                @include para-movil {
+                    font-size: 18px;
+                    max-width: 130px; // Esto es lo que fuerza los 4 renglones
+                    width: 90%; 
+                    margin: 0 auto; 
+                    line-height: 1.3; 
+                    text-align: center;
+
+                    br {
+                        display: none; // Esto anula los saltos de línea del HTML
+                    }
+                }
+            }
+
+            .veterinario_header__boton {
+                display: inline-block; // Asegura que tome el padding
+                background-color: #ff5a5a;
+                color: #ffffff; // Texto en blanco para que se lea
+                border: none;
+                padding: 18px 45px;
+                font-size: 18px;
+                font-weight: 600;
+                border-radius: 50px;
+                cursor: pointer;
+                box-shadow: 0 10px 20px rgba(255, 90, 90, 0.2);
+                transition: all 0.3s ease;
+                text-decoration: none; // Por si es un <a>
+
+                &:hover {
+                    background-color: #e04a4a;
+                    transform: translateY(-3px);
+                } 
+@include para-movil {
+        // Mueve el botón 150px hacia abajo desde su lugar original
+        transform: translateY(90px); 
         
+        padding: 12px 25px;
+        font-size: 14px;
+        width: 250px;
     }
-
-    // NUEVO: Contenido central (Título y Botón)
-    .veterinario_header__contenido {
-
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        gap: 30px;
-        max-width: 600px;
-
-      
-
-        .veterinario_header__titulo {
-            font-size: 48px;
-            font-weight: 700;
-            color: #f2514d !important; // Color rojo/coral de la imagen
-            line-height: 1.1;
-            margin: 0;
-            
-            @include para-tablet-vertical {
-                font-size: 36px;
-            }
-
-            @include para-movil {
-                font-size: 24px;
-            }
-        }
-
-        .veterinario_header__boton {
-
-            background-color: #ff5a5a;
-            color:#e04a4a; 
-            border: none;
-            padding: 18px 45px;
-            font-size: 18px;
-            font-weight: 600;
-            border-radius: 50px;
-            cursor: pointer;
-            box-shadow: 0 10px 20px rgba(255, 90, 90, 0.2);
-            transition: all 0.3s ease;
-
-            &:hover {
-                background-color: #e04a4a;
-                transform: translateY(-3px);
-            }
-
-            @include para-movil {
-                padding: 12px 25px;
-                font-size: 14px;
+                 @include para-tablet-vertical {
+                // AJUSTE PARA QUE SEA MÁS DELGADO:
+                width: 200px;      // Un poco más ancho para que no se amontone el texto
+                height: 50px;     // Altura reducida (antes tenías 80px)
+                font-size: 16px;
+               
+                padding: 0;       // Al usar height fija, quitamos el padding vertical
+    }
             }
         }
     }
 }
 
-// ==========================================
+
+// ===========================================================================================================
 // SECCIÓN 2: Hemocomponentes
-// ==========================================
+// ============================================================================================================
 .eres_veterinario__seccion--superior {
 
     padding: 60px 20px;

@@ -6,7 +6,7 @@ import globulos_rojos from '../assets/globulos_rojos.png'; // Asegúrate de que 
 import plaquetas from '../assets/blog_Plaquetas.jpg'; 
 import bolsa_sangre from '../assets/bolsa_sangre.png';
 import plasma from '../assets/plasma.png';
-import imagen_fondo_s_uno from '../assets/veterinario_fondo.png'; 
+import imagen_fondo_s_uno from '../assets/veterinario_fondo.jpeg'; 
 
 export const Ruta_Eresveterinario = () => {
 
