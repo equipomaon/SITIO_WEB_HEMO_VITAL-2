@@ -150,7 +150,7 @@ export const Ruta_Home = () => {
           <section className='home_seccion_header__texto-infromativo'>
 
              <h1 className="seccion-principal__titulo">
-                Primer banco de sangre animal de Colombia
+                Primer banco de sangre animal en Colombia
              </h1>
              
              <p className="seccion-principal__descripcion">
@@ -279,8 +279,9 @@ export const Ruta_Home = () => {
             <div className="home_s4__header-col-der">
               <p>
                 Estos son algunos de los peluditos que ha ayudado a salvar vidas con su donación de sangre en Hemovital; Gracias a ellos, muchos perritos y gatitos han tenido una segunda oportunidad cuando más lo necesitaban. 
-                <strong>Tu mascota también puede estar aquí</strong>
+               
               </p>
+              <strong>Tu mascota también puede estar aquí</strong>
             </div>
           </header>
 

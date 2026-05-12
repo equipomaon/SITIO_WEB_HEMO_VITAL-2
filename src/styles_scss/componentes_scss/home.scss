@@ -117,17 +117,22 @@
     width: 100%;
 
     margin-top: 30px;
+
+   
+
+    
   }
 
   @include para-tablet-vertical {
 
-    min-height: 70vh; // No tan alto como en PC para que no tape todo
-    padding: 80px 40px;
+    // min-height: 70vh; // No tan alto como en PC para que no tape todo
+    padding: 250px 64px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: flex-start; // Alineado a la izquierda como el diseño
     margin: 0 auto;
+
     
     // Si quieres que el fondo rojo se vea para probar:
     // background-image: none; 
@@ -135,10 +140,10 @@
   }
 
   @include para-movil {
-   min-height: 780px; // Menos alto en móvil para que no tape todo
+    min-height: 780px; // Menos alto en móvil para que no tape todo
     
     margin:  0 auto;
-    padding: 20px;
+    //padding: 20px;
 
     display: flex;
     flex-direction: column;
@@ -181,6 +186,11 @@
   /* Suavizado para fondos oscuros */
   -webkit-font-smoothing: antialiased;
 
+  @include para-tablet-vertical{
+   
+    margin: 0 auto !important;
+  }
+
   @include para-movil{
     font-size: 36px; // Título más pequeño en móvil para que no se vea gigante
     line-height: 1.2; // Altura de línea más ajustada para móvil
@@ -198,64 +208,224 @@
   gap: 16px; 
   color: #FFFFFF;
   
-
+  
   @include para-escritorio {
-      flex: 1; // Ocupa el 50% del ancho
 
+    flex: 1;
+    max-width: 700px; // Ancho del contenedor oscuro
+    padding-left: 64px;
+    //background-color: rgba(0, 0, 0, 0.4); // Fondo semi-transparente
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
     
-      max-width: 700px; // Limita el ancho del texto para mejor legibilidad
-      //border: 1px solid rgb(33, 13, 247); // 🔥 para visualizar el bloque de texto
-      
-      padding: 39px;
+    // border: 1px solid blue;
 
-       font-size: 4rem; // Título más grande en PC
+    h1 {
+    font-family: 'Comfortaa', sans-serif; // Asegúrate de tenerla importada de Google Fonts
+    font-weight: 700;       // Corresponde a "Bold"
+    font-size: 65px;        // Tamaño exacto de tu captura
+    line-height: 67.2px;    // Altura de línea exacta
+    letter-spacing: 0px;    // Espacio entre letras
+    color: #FFFFFF;         // Relleno blanco
+    text-align: left;       // Alineación izquierda
     
+    // PARA LOGRAR EL SALTO DE LÍNEA:
+    // "Primer banco de" tiene aprox 16 caracteres. 
+    // Con 65px de tamaño, un ancho de ~500px forzará el salto justo después de "de".
+    max-width: 500px; 
+  }
+
+    p {
+          font-family: 'Arlon', sans-serif;
+          font-size: 7.5rem;   // Los 40px del diseño
+          font-weight: 10;     // Usa arlon-bold.ttf
+          line-height: 3.2;
+          letter-spacing: -0.02em; // Sugerencia de tu reset para Arlon
+          color: #FFFFFF;
+          margin: 0;
+    }
+
+    // Estilo del botón para que coincida con la imagen
+    .btn-donante {
+      display: inline-block;
+      background-color: #ff5a50; 
+      color: white;
+      padding: 15px 35px;
+      border-radius: 50px;
+      text-decoration: none;
+      font-weight: bold;
+      width: fit-content;
+      box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+    }
   }
 
   @include para-tablet-vertical {
     flex: 1; // Ocupa el 100% del ancho en móvil
-    max-width: none; // Sin límite de ancho en móvil
-    text-align: center; // Centrado en móvil
-    font-size: 2.5rem; // Título más pequeño en móvil para que no se vea gigante
-    line-height: 1.1; // Altura de línea más ajustada para móvil
-    font-weight: 500; // Peso Medium para que tenga presencia sobre el fondo
-    margin-top: 140px !important; // Espacio debajo del título en móvil
 
-    //border: 1px solid rgb(190, 248, 17); // 🔥 para visualizar el bloque de texto en móvi  l 
-  }
+    
+ 
 
-  @include para-movil{
+    margin-top: 120px;
 
-    flex: 1; // Ocupa el 100% del ancho en móvil
-    max-width: none; // Sin límite de ancho en móvil
-    text-align: center; // Centrado en móvil
-    font-size: 2.5rem; // Título más pequeño en móvil para que no se vea gigante
-    line-height: 1.1; // Altura de línea más ajustada para móvil
-    font-weight: 500; // Peso Medium para que tenga presencia sobre el fondo
-    margin-top: 100px !important ; // Espacio debajo del título en móvil 
-
+     
+    // Reducimos un poco el ancho total para que no ocupe toda la pantalla
+    //max-width: 500px; 
+    //padding: 40px; // Menos padding que en escritorio para ganar espacio
+    //background-color: rgba(0, 0, 0, 0.4);
+    
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    gap: 20px;
 
-    // border: 1px solid rgb(190, 248, 17); // 🔥 para visualizar el bloque de texto en móvi  l
-  }
-
-
-
-  .seccion-principal__titulo {
-    font-size: 2.5rem; 
-    line-height: 1.1;
-    font-weight: 500;
     
-    margin: 0;
 
-   
+    h1 {
+      font-family: 'Comfortaa', sans-serif;
+      font-weight: 700;
+      // Bajamos el tamaño de 65px a 48px para que quepa bien en tablets
+      font-size: 48px; 
+      line-height: 52px; 
+      color: #FFFFFF;
+      margin: 0;
 
-    @include para-tablet-vertical {
-      margin: 0 auto;
+      // --- CLAVE PARA TABLET ---
+      // Como la fuente es más pequeña, necesitamos reducir el ancho máximo
+      // para forzar que "sangre" siga bajando al segundo renglón.
+      //max-width: 360px; 
     }
+
+    p {
+      
+      font-family: 'Arlon', sans-serif;
+      font-size: 16px; // Un poco más pequeño que en PC
+      line-height: 1.4;
+      color: #FFFFFF;
+      max-width: 400px;
+      margin: 0;
+      text-align: left;
+    }
+
+    .btn-donante {
+
+      display: inline-block;
+      background-color: #ff5a50;
+      color: white;
+      padding: 12px 30px; // Botón un poco más compacto
+      border-radius: 50px;
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 1rem;
+      width: fit-content;
+
+    }
+    
+   
   }
+
+  @include para-movil {
+  display: flex;
+  flex-direction: column;
+  align-items: center; // Centra los elementos horizontalmente
+  justify-content: flex-start; // Alinea al principio para que el padding top mande
+  text-align: center;
+  flex: 1;
+  width: 100%;
+
+  // PADDINGS EXACTOS DE FIGMA (Margen interior)
+  // Top: 120px, Right: 64px, Bottom: 0, Left: 39px
+  padding: 120px 64px 0px 39px; 
+  margin: 0; // Eliminamos el margin para usar el padding del contenedor
+
+  // ESPACIO ENTRE ELEMENTOS (El valor "80" que se ve en Figma)
+  gap: 80px;
+
+  h1 {
+    font-family: 'Comfortaa', sans-serif;
+    font-size: 2.5rem; // Aproximadamente 40px
+    line-height: 1.1;
+    font-weight: 700; // Bold, como indica tu Figma
+    color: #FFFFFF;
+    margin: 0;
+    
+    // SOMBRA PROYECTADA (Efecto que se ve en tu Figma para legibilidad)
+    text-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
+
+    /* 
+       Al tener un padding lateral total de 103px (39+64), 
+       en una pantalla de 320px el ancho útil es muy poco. 
+       Esto forzará automáticamente los saltos de línea:
+       "Primer" / "banco de" / "sangre" / "animal en" / "Colombia"
+    */
+  }
+
+  p {
+    font-family: 'Comfortaa', sans-serif;
+    font-size: 1.1rem;
+    line-height: 1.4;
+    color: #FFFFFF;
+    margin: 0;
+    font-weight: 400;
+    text-shadow: 0px 2px 5px rgba(0, 0, 0, 0.5);
+  }
+
+  .btn-donante {
+    display: inline-block;
+    background-color: #ff5a50; 
+    color: white;
+    padding: 16px 32px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 1.1rem;
+    width: fit-content;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.3);
+  }
+  }
+
+
+
+.seccion-principal__titulo {
+  font-size: 2.5rem; 
+  line-height: 1.1;
+  font-weight: 500;
+  
+  margin: 0;
+  
+
+    @include para-escritorio {
+      
+        .home_seccion_header__texto-infromativo h1.seccion-principal__titulo {
+            font-family: "Comfortaa", sans-serif;
+            font-weight: 700;
+            font-size: 65px;
+            line-height: 67.2px;
+            letter-spacing: 0px;
+            color: #FFFFFF;
+            text-align: left;
+            
+            /* --- CAMBIO CLAVE --- */
+            /* Aumentamos de 500px a 750px para que el título sea más largo 
+              y permita que "sangre animal en" se mantenga en una sola línea */
+            max-width: 750px; 
+            
+            display: block;
+            margin-bottom: 30px; /* Espacio con el párrafo */
+        }
+
+        /* Estilo para el párrafo (el recuadro rojo de tu imagen) */
+        .home_seccion_header__texto-infromativo p {
+            font-family: "Comfortaa", sans-serif;
+            font-size: 20px;
+            line-height: 1.5;
+            color: #FFFFFF;
+            max-width: 550px; /* El párrafo es más estrecho que el título en la imagen */
+            margin-bottom: 40px; /* Espacio con el botón */
+        }
+    }
+
+
+}
 
   .seccion-principal__descripcion {
     font-size: 1rem;
@@ -264,40 +434,43 @@
     margin: 0;
     max-width: 550px;
 
+
+    @include para-escritorio {
+      
+        .home_seccion_header__texto-infromativo h1.seccion-principal__titulo {
+            font-family: "Comfortaa", sans-serif;
+            font-weight: 700;
+            font-size: 65px;
+            line-height: 67.2px;
+            letter-spacing: 0px;
+            color: #FFFFFF;
+            text-align: left;
+            
+            /* --- CAMBIO CLAVE --- */
+            /* Aumentamos de 500px a 750px para que el título sea más largo 
+              y permita que "sangre animal en" se mantenga en una sola línea */
+            max-width: 750px; 
+            
+            display: block;
+            margin-bottom: 30px; /* Espacio con el párrafo */
+        }
+
+        /* Estilo para el párrafo (el recuadro rojo de tu imagen) */
+        .home_seccion_header__texto-infromativo p {
+            font-family: "Comfortaa", sans-serif;
+            font-size: 20px;
+            line-height: 1.5;
+            color: #FFFFFF;
+            max-width: 550px; /* El párrafo es más estrecho que el título en la imagen */
+            margin-bottom: 40px; /* Espacio con el botón */
+        }
+    }
+
    
   }
 }
 
-.seccion-principal__descripcion {
 
-  // 1. Tipografía (Según Figma: 18/27)
-  font-family: 'Arlon', sans-serif;
-  font-size: 18px;          // El primer número de 18/27
-  line-height: 1.5;         // El segundo número 27 / 18 = 1.5 (o puedes poner 27px)
-  
-  // 2. Peso de la fuente
-  // En Figma dice "Medium/Regular". Para que tenga presencia sobre el fondo, 
-  // usamos el peso 500 (Medium) que registramos antes.
-  font-weight: 500; 
-  
-  // 3. Color y legibilidad
-  color: #FFFFFF;
-  text-align: left;
-  -webkit-font-smoothing: antialiased; // Mejora la nitidez en fondos oscuros
-  
-  // 4. Dimensiones y Espaciado
-  margin: 0;
-  margin-bottom: 32px;      // Espacio hacia el botón "Quiero ser donante"
-  max-width: 100%;          // En móvil ocupa todo el ancho
-
-  @include para-escritorio {
-    // En Figma el ancho del cuadro de texto es de 629px
-    max-width: 630px; 
-    //font-size: 18px;
-    font-size: 20px;      // Mantenemos el tamaño de la guía
-    line-height: 27px;
-  }
-}
 
 // --- 1.2 Bloque de Botones ---
 .home_seccion_header__botones {
@@ -307,11 +480,11 @@
 
   //border: 1px solid rgb(190, 248, 17); // 🔥 para visualizar el contenedor de botones en móvil
 
-   @include para-escritorio {
+  @include para-escritorio {
     margin-top: 0;
   }
   @include para-tablet-vertical {
-    margin: 0 auto;
+    
   }
   @include para-movil {
     display: flex;
@@ -1039,7 +1212,7 @@ body {
     //margin-top: 10px;
   }
 
-  // 🔴 DESAPARECER ÚNICAMENTE EN TELÉFONOS
+  //  DESAPARECER ÚNICAMENTE EN TELÉFONOS
   @include para-movil {
     display: none !important;
   }
@@ -1224,16 +1397,17 @@ body {
   background-color: #ffffff;
 
   @include para-escritorio {
-    padding: 100px 0;
+    //padding: 100px 0;
   }
 
-   // 🔴 DESAPARECER ÚNICAMENTE EN TELÉFONOS
+   //  DESAPARECER ÚNICAMENTE EN TELÉFONOS
   @include para-movil {
     padding: 20px; 
   }
 }
 
 .padre_contendor_home_seccion_4 {
+
   max-width: 1400px;
   margin: 0 auto;
   display: flex;
@@ -1241,6 +1415,14 @@ body {
   gap: 60px; // Espacio entre el texto y la galería
 
  // height: 900px;
+
+ @include para-escritorio{
+
+  //padding: 64px;
+
+  border: 1px solid blue;
+
+ }
 
   @include para-tablet-vertical{
     height: auto ;
@@ -1278,9 +1460,10 @@ body {
 }
 
 .home_s4__header-col-der {
+
   display: flex;
   flex-direction: column;
-  gap: 24px;
+  // gap: 24px;
   font-size: 18px;
   line-height: 27px; /* También puedes usar 1.5 (27/18) */
   font-weight: 400;  /* "Regular" suele ser 400 */
@@ -1300,6 +1483,7 @@ body {
 }
 
 .home_s4__titulo {
+
  font-family: 'Comfortaa', sans-serif;
   font-size: 55px;
   font-weight: 700; /* Bold */
@@ -1309,7 +1493,8 @@ body {
   text-align: left;
 
   @include para-escritorio {
-    font-size: 3rem;
+    //font-size: 3rem;
+    //margin-left: 64px;
   }
 }
 
@@ -1380,7 +1565,7 @@ body {
 .home_s4__galeria-track {
   display: flex;
   width: max-content; // Importante para que no se aprieten
-  gap: 20px;
+  gap: 16px;
   animation: scroll-horizontal 30s linear infinite; // 30s controla la velocidad
 
   // Pausa la animación cuando el usuario pone el mouse encima
@@ -1426,12 +1611,15 @@ body {
 
 .home_s4__galeria-container {
   width: 100%;
+  margin-bottom: 120px;
   overflow: hidden;
-  padding: 20px 0;
+  //padding: 20px 0;
   position: relative;
   display: flex;       // Añadido para organizar las filas
   flex-direction: column; 
-  gap: 30px;           // Espacio entre la fila 1 y la fila 2
+  gap: 16px;           // Espacio entre la fila 1 y la fila 2
+
+  border: 1px solid blue;
   
   &::before, &::after {
     content: "";
@@ -1446,10 +1634,13 @@ body {
 }
 
 .home_s4__galeria-track {
+
   display: flex;
   width: max-content;
-  gap: 20px;
+  gap: 16px;
   animation: scroll-horizontal 30s linear infinite;
+
+  border: 1px solid blue;
 
   &:hover {
     animation-play-state: paused;
@@ -1462,15 +1653,28 @@ body {
 }
 
 .home_s4__galeria-item {
-  width: 250px;
+  // 1. Aumentamos el ancho (estaba en 250px)
+  width: 395px;          // Aumentamos el ancho
+  height: 292px;         // <--- AGREGAMOS UNA ALTURA FIJA GRANDE
+  
+  //width: 4%;
+  //height: 20%;
   flex-shrink: 0;
-  aspect-ratio: 1 / 1;
+
+  // 2. CAMBIO CLAVE: Cambiamos de 1/1 (cuadrado) a una proporción más vertical
+  // o simplemente definimos una altura fija.
+  // aspect-ratio: 355 / 292.82; // Esto las hace ligeramente más altas que anchas
+  aspect-ratio: auto;
+  
   background-color: transparent;
   border: none;
   overflow: hidden;
   display: flex;
   align-items: center;
   justify-content: center;
+  
+  // Asegúrate de que no haya padding que "empuje" la imagen hacia adentro
+  padding: 0; 
 }
 
 .home_s4__imagen {
@@ -1488,6 +1692,8 @@ body {
   border-radius: 8px;      // Redondeamos la foto interna también
   display: block;
 }
+
+
 // La animación se mantiene igual
 @keyframes scroll-horizontal {
   0% {
@@ -1496,6 +1702,9 @@ body {
   100% {
     transform: translateX(calc(-50% - 10px)); // 10px es la mitad del gap
   }
+
+
+
 }// ==========================================================================
 // HOME — SECCIÓN 5 (Preguntas Frecuentes) - CLEAN VERSION
 // ==========================================================================
@@ -1525,11 +1734,16 @@ body {
 
   @include para-tablet-vertical {
 
-    padding: 64px 10px;
+    padding: 10px 64px;
+
+    border: 1px solid red;
+
   }
 
   @include para-movil {
     padding: 20px;
+
+     
   }
 }
 
@@ -1547,9 +1761,16 @@ body {
 .home_s5__titulo {
   // 1. Estilo de Fuente (Arlon Bold)
   font-family: 'Arlon', sans-serif;
-  font-weight: 700;
+
   color: #000000;
   text-align: left;
+
+   font-family: 'Arlon', sans-serif; 
+    font-weight: 500 !important; 
+    
+    margin: 0;
+   
+
 
   // 2. Ocupar todo el ancho (Prioridad)
   width: 100% !important;
@@ -1695,11 +1916,17 @@ body {
 
   padding: 0;
 
+  
+
   @include para-escritorio {
     height: 700px; // Se mantiene en escritorio si es necesario
     //margin-top: 112px;
     margin-left: 64px;
     padding-top: 112px;
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
   } 
 
   @include para-movil {
@@ -1718,16 +1945,34 @@ body {
 
 .home_s6__header {
   margin-bottom: 30px;
-  text-align: left;
+  
 
   .home_s6__titulo {
-    font-size: 1.8rem; // Más pequeño en móvil
-    font-weight: 700;
-    margin-bottom: 12px;
-    color: #000;
 
+    font-family: 'Arlon', sans-serif; 
+    font-weight: 500 !important; 
+    color: #000;
+    margin: 0;
+    text-align: left;
+
+    
+
+  
+
+    border: 1px solid blue;
+
+    
     @include para-escritorio {
       font-size: 2.5rem;
+      width: 45%;
+    }
+
+    @include para-tablet-vertical{
+       font-size: 2.5rem;
+      width: 60%;
+
+      border: 1px solid red;
+      
     }
   }
 }
@@ -1798,19 +2043,50 @@ body {
 // ==========================================================================
 // CONTROLES DEL SLIDER (Paginación y Flechas)
 // ==========================================================================
-
 .home_s6__controls {
-  display: flex;
-  flex-direction: column; // En móvil: Puntos arriba, flechas abajo
-  align-items: center;
-  gap: 24px;
-  margin-top: 40px;
-  width: 100%;
+  @include para-movil {
+    display: none !important; // Desaparecen botones y paginación
+  }
+}
 
-  @include para-escritorio {
-    flex-direction: row; // En escritorio: Una sola línea
-    justify-content: space-between;
-    margin-top: 50px;
+// 2. Preparamos el contenedor para el scroll táctil
+.home_s6__slider-wrapper {
+  @include para-movil {
+    overflow-x: auto;         // Habilita el scroll horizontal
+    scroll-snap-type: x mandatory; // Hace que las tarjetas se "ajusten" al soltarlas
+    -webkit-overflow-scrolling: touch; // Suavidad en iOS
+    padding-bottom: 20px;     // Espacio para que no se corte la sombra
+    
+    // Ocultar la barra de scroll visualmente (opcional)
+    &::-webkit-scrollbar {
+      display: none;
+    }
+  }
+}
+
+// 3. Desactivamos el movimiento por JS en móvil para usar el dedo
+.home_s6__track {
+  @include para-movil {
+    // IMPORTANTE: El !important es necesario para anular el style inline de React
+    transform: none !important; 
+    width: auto;
+    display: flex;
+    gap: 15px; // Espacio entre tarjetas
+    padding-right: 20px; // Espacio al final del scroll
+  }
+}
+
+// 4. Ajustamos la tarjeta para que se vea bien al scrollear
+.home_s6__card {
+  @include para-movil {
+    // Hacemos que la tarjeta ocupe gran parte del ancho pero deje ver un pedazo de la siguiente
+    width: 85vw !important; 
+    flex: 0 0 85vw !important;
+    
+    scroll-snap-align: center; // La tarjeta se centra al deslizar
+    margin-right: 0; // Usamos el gap del track en su lugar
+    height: auto;
+    min-height: 280px;
   }
 }
 
@@ -1818,9 +2094,26 @@ body {
 .home_s6__arrows {
   display: flex;
   gap: 16px; // Espacio entre las dos flechas
+
+  // border: 1px solid blue;
   
   @include para-escritorio {
     gap: 12px;
+    display: flex;
+    justify-content: end;
+
+    margin-right: 70px;
+  }
+
+  @include para-tablet-vertical{
+    gap: 12px;
+    display: flex;
+    justify-content: end;
+
+    // margin-right: 10px;
+
+    //border: 1px solid blue;
+    
   }
 }
 
@@ -1915,6 +2208,7 @@ body {
   }
 }
 
+/* 
 .home_s6__titulo {
     // 1. Fuente y Grosor
     font-family: 'Arlon', sans-serif;
@@ -1938,3 +2232,4 @@ body {
     // Opcional: Si quieres que "Hemovital" o el final no quede huérfano
     text-wrap: balance; 
   } 
+*/
