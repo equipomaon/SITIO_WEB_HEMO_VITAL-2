@@ -11,52 +11,119 @@ $footer-font-contact: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
 
 .footer {
   background-color: $footer-bg-light;
-  //border-top: 2px solid $footer-border-top;
-  padding: 20px 40px;
   width: 100%;
   box-sizing: border-box;
   font-family: $footer-font-contact;
-  color: $footer-text-black; // Texto negro para todo el footer
-
+  color: $footer-text-black;
   display: flex;
   align-items: center;
+  padding: 20px 40px;
 
   @include para-movil {
     flex-direction: column;
-    padding: 20px;
     gap: 20px;
+    text-align: center;
+  }
+
+  // --- AJUSTE PARA TABLET VERTICAL ---
+  @include para-tablet-vertical {
+    flex-direction: row; // Asegura que sigan en línea
+    justify-content: space-between;
+    padding: 15px 20px;
+    gap: 10px;
   }
 
   &__seccion {
     flex: 1;
     display: flex;
     align-items: center;
+    min-width: 0; // Evita que el contenido desborde el flex
+
+    @include para-tablet-vertical {
+      // Forzamos a que las 3 columnas pesen lo mismo para un centrado perfecto
+      flex: 1 !important; 
+    }
   }
 
-  // 🔴 LOGO
   &__seccion--uno {
     justify-content: flex-start;
     img {
-      height: 60px; // Ajusta según tu logo
+      height: 50px; 
       width: auto;
+
+      @include para-tablet-vertical {
+        height: 30px; // <--- LOGO MÁS PEQUEÑO EN TABLET
+      }
     }
     @include para-movil { justify-content: center; }
   }
 
-  // 📋 CONTACTO (CENTRO)
   &__seccion--dos {
-    flex: 2;
+    flex: 2; // En escritorio el centro es más ancho
     flex-direction: column;
     justify-content: center;
     text-align: center;
+
+    @include para-tablet-vertical {
+      flex: 2 !important; // Le damos prioridad al texto largo pero controlado
+    }
     
     @include para-movil { width: 100%; }
   }
 
-  // 📲 REDES (DERECHA)
   &__seccion--tres {
     justify-content: flex-end;
+    
+    @include para-tablet-vertical {
+      justify-content: flex-end;
+      flex: 1 !important;
+    }
     @include para-movil { justify-content: center; }
+  }
+}
+
+.footer__contacto {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+
+  .footer__telefono {
+    font-size: 0.9rem;
+    margin: 0;
+
+    @include para-tablet-vertical {
+      font-size: 0.65rem; // <--- TEXTO MÁS PEQUEÑO para que quepa en tablet
+      line-height: 1.2;
+    }
+  }
+
+  .footer__direccion {
+    font-size: 0.85rem;
+    margin: 0;
+    font-weight: 600;
+
+    @include para-tablet-vertical {
+      font-size: 0.65rem;
+    }
+  }
+}
+
+.footer__redes {
+  display: flex;
+  gap: 15px;
+  align-items: center;
+  flex-shrink: 0; // <--- ESTO EVITA QUE LOS ICONOS DESAPAREZCAN
+}
+
+.footer__red-icono {
+  img {
+    width: 24px;
+    height: 24px;
+    
+    @include para-tablet-vertical {
+      width: 18px; // Iconos ligeramente más pequeños en tablet
+      height: 18px;
+    }
   }
 }
 
