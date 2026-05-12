@@ -1714,6 +1714,7 @@ body {
 }
 
 .padre_contendor_home_seccion_5 {
+
   max-width: 1400px;
   margin: 0 auto;
   display: flex;
@@ -1734,7 +1735,7 @@ body {
 
   @include para-tablet-vertical {
 
-    padding: 10px 64px;
+    padding: 5px 40px;
 
     // border: 1px solid red; 
 
@@ -1968,9 +1969,9 @@ body {
     }
 
     @include para-tablet-vertical{
-       font-size: 2.5rem;
+      font-size: 2.5rem;
       width: 60%;
-
+      margin-left: 20px;
       // border: 1px solid red;
       
     }
