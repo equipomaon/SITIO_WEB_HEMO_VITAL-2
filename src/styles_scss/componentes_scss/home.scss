@@ -961,6 +961,8 @@ body {
   line-height: 1.2;
 
   margin-bottom: 15px;
+
+  color: #fbe2c6;
 }
 
 .home_s2_card__text {
@@ -998,9 +1000,9 @@ body {
 
   background-color: #ff9d96;
 
-  color: #fd504d;
+  color: #890402;
 
-  font-weight: bold;
+  //font-weight: bold;
 
   cursor: pointer;
 
@@ -1386,327 +1388,196 @@ body {
     background-color: rgba(0, 0, 0, 0.65);
   }
 }
-
-
-
 // ==========================================================================
-// HOME — SECCIÓN 4
+// HOME — SECCIÓN 4 (GALERÍA VERTICAL)
 // ==========================================================================
 .home_s4 {
-  padding: 80px 20px;
+  padding: 80px 0;
   background-color: #ffffff;
-
-  @include para-escritorio {
-    //padding: 100px 0;
-  }
-
-   //  DESAPARECER ÚNICAMENTE EN TELÉFONOS
-  @include para-movil {
-    padding: 20px; 
-  }
+  overflow: hidden;
 }
 
-.padre_contendor_home_seccion_4 {
-
-  max-width: 1400px;
-  margin: 0 auto;
-  display: flex;
-  flex-direction: column;
-  gap: 60px; // Espacio entre el texto y la galería
-
- // height: 900px;
-
- @include para-escritorio{
-
-  //padding: 64px;
-
-  border: 1px solid blue;
-
- }
-
-  @include para-tablet-vertical{
-    height: auto ;
-  }
-}
-
-// --- Encabezado ---
 .home_s4__header {
-  display: flex;
-  flex-direction: column;
-  gap: 24px;
+  
 
-  @include para-escritorio {
-    flex-direction: row;
+  @include para-escritorio{
+    display: flex;
+    flex-direction: row; // Columnas una al lado de la otra
     justify-content: space-between;
     align-items: flex-start;
-    padding: 0;
+    
+    // Requisito: Espacio hacia la izquierda de 64px
+    padding-left: 64px; 
+    padding-right: 64px;
+    margin-bottom: 50px;
+    gap: 40px;
   }
 
-   @include para-tablet-vertical {
-    display: flex;
-    flex-direction: column;
-    padding: 80px 40px;
+  @include para-tablet-vertical {
+    flex-direction: column; // En tablets/móvil se apilan
+    padding-left: 20px;
+    padding-right: 20px;
   }
-  
+
   @include para-movil{
-    padding: 20px;
+      flex-direction: column; // En tablets/móvil se apilan
+      padding-left: 20px;
+      padding-right: 20px;
   }
 }
 
 .home_s4__header-col-izq {
-  @include para-escritorio {
-    flex: 0 0 45%; // Ocupa el 45% del ancho
+  flex: 1;
+
+  @include para-movil{
+
+    margin-top: 20px;
+    margin-bottom: 50px;
   }
-}
-
-.home_s4__header-col-der {
-
-  display: flex;
-  flex-direction: column;
-  // gap: 24px;
-  font-size: 18px;
-  line-height: 27px; /* También puedes usar 1.5 (27/18) */
-  font-weight: 400;  /* "Regular" suele ser 400 */
-  color: #000000;    /* Según el apartado "Relleno" */
-  font-family: 'Nombre de la fuente', sans-serif; /* Reemplaza con la fuente que estés usando */
-
-  @include para-escritorio {
-    flex: 0 0 45%; // Ocupa el 45% del ancho
-  }
-}
-
-.home_s4__tagline {
-  font-size: 0.9rem;
-  font-weight: 600;
-  display: block;
-  margin-bottom: 12px;
 }
 
 .home_s4__titulo {
-
- font-family: 'Comfortaa', sans-serif;
-  font-size: 55px;
-  font-weight: 700; /* Bold */
-  line-height: 57.6px;
-  letter-spacing: 0px;
-  color: #FA8072; /* Código aproximado para color 'Salmon' */
+  font-family: 'Comfortaa', sans-serif;
+  font-size: 55px; // Tamaño según tu requerimiento anterior
+  font-weight: 700;
+  line-height: 1.1; // Interlineado cerrado como en la imagen
+  color: #FA8072; // Color Salmón de la imagen
+  margin: 0;
   text-align: left;
 
-  @include para-escritorio {
-    //font-size: 3rem;
-    //margin-left: 64px;
-  }
+  width: 430px;
+
+  //border: 1px solid red;
+}
+
+.home_s4__header-col-der {
+  flex: 1;
+  max-width: 500px; // Evita que el texto se estire demasiado a lo ancho
+  display: flex;
+  flex-direction: column;
+ // gap: 12px; // Espacio entre el párrafo y la negrita
 }
 
 .home_s4__descripcion {
-  font-size: 1rem;
-  line-height: 1.6;
+  font-size: 16px;
+  line-height: 1.5;
   color: #333;
   margin: 0;
 }
 
-.home_s4__acciones {
-  display: flex;
-  gap: 16px;
-  align-items: center;
+.home_s4__cta {
+  font-size: 16px;
+  font-weight: 800; // Negrita intensa
+  color: #000;
+  display: block; // Asegura que ocupe su propio renglón al final
 }
 
-// --- Botones Estilo Imagen ---
-.home_s4__btn-principal {
-  padding: 12px 24px;
-  //border: 1px solid #000;
-  background: #fff;
-  cursor: pointer;
-  font-weight: 500;
-  transition: all 0.3s;
-
-  &:hover {
-    background: #000;
-    color: #fff;
-  }
-}
-
-.home_s4__btn-secundario {
-  background: none;
-  border: none;
-  font-weight: 500;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  gap: 4px;
-
-  &:hover {
-    text-decoration: underline;
-  }
-}
-
-// --- Galería ---
-// Contenedor principal que oculta lo que sale de la pantalla
+// --- AJUSTE PARA LA GALERÍA ---
+// Para que la galería ignore el padding de 64px del contenedor padre y se vea de borde a borde
 .home_s4__galeria-container {
-  width: 100%;
-  overflow: hidden; // Esconde las imágenes que se salen
+  margin-top: 20px;
+  // Si usas el truco de 100vw que te di antes, se verá perfecto.
+}
+
+
+
+.home_s4__galeria-container {
+  // Mantenemos el efecto Full Width para que las fotos fluyan por toda la pantalla
+  width: 100vw;
+  position: relative;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+  
+  display: flex;
+  flex-direction: column;
+  gap: 30px; // Espacio entre la fila 1 y fila 2
   padding: 20px 0;
-  position: relative;
-  
-  // Opcional: Desvanecimiento en los bordes para que parezca que las fotos aparecen/desaparecen
+
+  // Degradados laterales para suavizar el flujo de las fotos
   &::before, &::after {
     content: "";
     position: absolute;
     top: 0;
-    width: 100px;
+    width: 15vw;
     height: 100%;
-    z-index: 2;
+    z-index: 5;
+    pointer-events: none;
   }
-  &::before { left: 0; background: linear-gradient(to right, #ffffff, transparent); }
-  &::after { right: 0; background: linear-gradient(to left, #ffffff, transparent); }
-}
-
-// El "riel" que contiene todas las imágenes y se mueve
-.home_s4__galeria-track {
-  display: flex;
-  width: max-content; // Importante para que no se aprieten
-  gap: 16px;
-  animation: scroll-horizontal 30s linear infinite; // 30s controla la velocidad
-
-  // Pausa la animación cuando el usuario pone el mouse encima
-  &:hover {
-    animation-play-state: paused;
-  }
-}
-
-.home_s4__galeria-item {
-  width: 260px;            // Aumentamos un poquito el cuadro para dar aire
-  height: 260px;
-  flex-shrink: 0;
-  aspect-ratio: 1 / 1;
-  background-color: #fcfcfc; // Un blanco roto o gris muy claro de fondo
-  border-radius: 16px;      // Bordes más redondeados para un look más moderno
-  overflow: hidden;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  
-  // --- EL TRUCO PARA QUITAR EL ZOOM ---
-  padding: 25px;            // Aumentamos el padding para "empujar" la foto hacia adentro
-  border: 1px solid #eee;   // Un borde sutil para definir el cuadro
-}
-
-// ANIMACIÓN
-@keyframes scroll-horizontal {
-  0% {
-    transform: translateX(0);
-  }
-  100% {
-    // Se mueve exactamente la mitad (porque duplicamos el contenido)
-    transform: translateX(calc(-50% - 10px)); // 10px es la mitad del gap
-  }
-}
-
-// Ajuste para tablets y móviles (puedes hacer las imágenes más pequeñas)
-@include para-tablet-vertical {
-  .home_s4__galeria-item {
-    width: 300px;
-  }
-}
-
-.home_s4__galeria-container {
-  width: 100%;
-  margin-bottom: 120px;
-  overflow: hidden;
-  //padding: 20px 0;
-  position: relative;
-  display: flex;       // Añadido para organizar las filas
-  flex-direction: column; 
-  gap: 16px;           // Espacio entre la fila 1 y la fila 2
-
-  border: 1px solid blue;
-  
-  &::before, &::after {
-    content: "";
-    position: absolute;
-    top: 0;
-    width: 100px;
-    height: 100%;
-    z-index: 2;
-  }
-  &::before { left: 0; background: linear-gradient(to right, #ffffff, transparent); }
-  &::after { right: 0; background: linear-gradient(to left, #ffffff, transparent); }
+  &::before { left: 0; background: linear-gradient(to right, white 10%, rgba(255,255,255,0)); }
+  &::after { right: 0; background: linear-gradient(to left, white 10%, rgba(255,255,255,0)); }
 }
 
 .home_s4__galeria-track {
-
   display: flex;
   width: max-content;
-  gap: 16px;
-  animation: scroll-horizontal 30s linear infinite;
+  gap: 30px; // Gap exacto solicitado entre fotos
+  animation: scroll-horizontal 45s linear infinite;
 
-  border: 1px solid blue;
+  &--reversa {
+    animation-direction: reverse;
+  }
 
   &:hover {
     animation-play-state: paused;
   }
-
-  // ESTA ES LA CLASE CLAVE PARA EL SENTIDO CONTRARIO
-  &--reversa {
-    animation-direction: reverse; // Invierte el sentido de la animación existente
-  }
 }
 
 .home_s4__galeria-item {
-  // 1. Aumentamos el ancho (estaba en 250px)
-  width: 395px;          // Aumentamos el ancho
-  height: 292px;         // <--- AGREGAMOS UNA ALTURA FIJA GRANDE
-  
-  //width: 4%;
-  //height: 20%;
+  // --- MEDIDAS SOLICITADAS ---
+  width: 300px;
+  height: 400px;
   flex-shrink: 0;
-
-  // 2. CAMBIO CLAVE: Cambiamos de 1/1 (cuadrado) a una proporción más vertical
-  // o simplemente definimos una altura fija.
-  // aspect-ratio: 355 / 292.82; // Esto las hace ligeramente más altas que anchas
-  aspect-ratio: auto;
   
-  background-color: transparent;
-  border: none;
+  border-radius: 20px; // Bordes definidos
   overflow: hidden;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  
-  // Asegúrate de que no haya padding que "empuje" la imagen hacia adentro
-  padding: 0; 
+  background-color: white;
+ // box-shadow: 0 10px 30px rgba(0,0,0,0.06);
+  //border: 1px solid #f0f0f0; // Un borde muy fino para dar definición
 }
 
 .home_s4__imagen {
   width: 100%;
   height: 100%;
   
-  // Cambiamos 'cover' por 'contain' para que la foto se vea COMPLETA
-  // sin importar si es horizontal o vertical.
-  object-fit: contain; 
+  /* 
+     IMPORTANTE: 
+     Al ser tan alta (600px), 'cover' es obligatorio para que no queden 
+     espacios en blanco. Asegúrate de que las fotos tengan buena resolución.
+  */
+  object-fit: cover; 
+  object-position: center; 
   
-  // Si prefieres que sigan llenando el espacio pero con menos zoom, 
-  // usa 'cover' pero añade esta línea:
-  // transform: scale(0.9); // Esto reduce la imagen un 10% adicional
-  
-  border-radius: 8px;      // Redondeamos la foto interna también
-  display: block;
+  transition: transform 0.7s ease;
+
+  &:hover {
+    transform: scale(1.1); // Zoom sutil al pasar el mouse
+  }
 }
 
+// --- RESPONSIVIDAD PARA MÓVILES ---
+@media (max-width: 768px) {
+  .home_s4__galeria-item {
+    /* En móviles reducimos proporcionalmente para que no ocupe toda la pantalla */
+    width: 200px;
+    height: 400px;
+  }
+  
+  .home_s4__galeria-track {
+    gap: 15px; // Gap más pequeño en móviles
+    animation-duration: 25s; // Un poco más rápido por ser items pequeños
+  }
+}
 
-// La animación se mantiene igual
+// Animación de desplazamiento
 @keyframes scroll-horizontal {
-  0% {
-    transform: translateX(0);
+  0% { transform: translateX(0); }
+  100% { 
+    /* El ajuste de -15px es la mitad del gap de 30px */
+    transform: translateX(calc(-50% - 15px)); 
   }
-  100% {
-    transform: translateX(calc(-50% - 10px)); // 10px es la mitad del gap
-  }
-
-
-
 }
-
 // ==========================================================================
 // HOME — SECCIÓN 5 (Preguntas Frecuentes) - CLEAN VERSION
 // ==========================================================================
@@ -1731,7 +1602,7 @@ body {
   padding: 0 64px; 
 
   @include para-escritorio {
-    
+
     flex-direction: row;
     justify-content: space-between;
     align-items: flex-start;
