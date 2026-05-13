@@ -164,6 +164,10 @@
 
          //border: 1px solid black;
 
+        @include para-movil{
+            margin-bottom: 100px;
+        }
+
         @include para-escritorio{
             padding: 0px 100px;
 
@@ -190,14 +194,14 @@
     margin: 0;
 
    @include para-movil {
-        font-size: 18px;
+        font-size: 35px;
         color: #000000; // Cambiado a negro como en tu imagen de referencia
         
         // El ancho de 230px es el punto exacto para que:
         // 1. "Elige el hemocomponente" quepa justo.
         // 2. "adecuado para cada" quepa en el segundo.
         // 3. "situación" baje al tercero.
-        max-width: 230px; 
+        width: 100%; 
         
         margin: 60px auto 0 auto; // 60px de margen superior para alejarlo del botón
         line-height: 1.2;
@@ -289,6 +293,8 @@
     @include para-movil {
         grid-template-columns: 1fr;
         .hemo-card--plasma { flex-direction: column !important; }
+        
+        
     }
 }
 
@@ -305,7 +311,7 @@
 
      @include para-movil{
         margin: 0 auto;
-            width: 211px;
+            width: 311px;
         }
 
     &__img-container {
