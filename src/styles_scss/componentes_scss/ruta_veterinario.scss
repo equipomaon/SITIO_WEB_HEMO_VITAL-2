@@ -121,14 +121,14 @@
                     background-color: #e04a4a;
                     transform: translateY(-3px);
                 } 
-@include para-movil {
-        // Mueve el botón 150px hacia abajo desde su lugar original
-        transform: translateY(90px); 
-        
-        padding: 12px 25px;
-        font-size: 14px;
-        width: 250px;
-    }
+                @include para-movil {
+                        // Mueve el botón 150px hacia abajo desde su lugar original
+                        transform: translateY(90px); 
+                        
+                        padding: 12px 25px;
+                        font-size: 14px;
+                        width: 250px;
+                    }
                  @include para-tablet-vertical {
                 // AJUSTE PARA QUE SEA MÁS DELGADO:
                 width: 200px;      // Un poco más ancho para que no se amontone el texto
@@ -156,37 +156,67 @@
     .padre_contendor_home_seccion_dos_eres_veterinario {
 
         width: 100%;
-        max-width: 1200px;
-        padding: 40px 0;
+        
+        //padding: 40px 0;
         display: flex;
         flex-direction: column;
         align-items: center;
+
+        border: 1px solid black;
+
+        @include para-escritorio{
+            padding: 0px 60px;
+
+            margin-bottom: 120px;
+
+           
+        }
     }
 }
 
 .hemo-titulo {
-
     font-size: 42px;
-    font-weight: 700;
-    margin-bottom: 50px;
+    font-weight: 500 !important;
     text-align: center;
-    color: #e04a4a;
+    color: black;
+    font-family: 'Arlon', sans-serif;
+    margin: 0;
 
-    @include para-movil {
-        font-size: 28px;
+   @include para-movil {
+        font-size: 18px;
+        color: #000000; // Cambiado a negro como en tu imagen de referencia
+        
+        // El ancho de 230px es el punto exacto para que:
+        // 1. "Elige el hemocomponente" quepa justo.
+        // 2. "adecuado para cada" quepa en el segundo.
+        // 3. "situación" baje al tercero.
+        max-width: 230px; 
+        
+        margin: 60px auto 0 auto; // 60px de margen superior para alejarlo del botón
+        line-height: 1.2;
+        display: block;
+        font-weight: 500;
+
+        margin-bottom: 50px;
     }
 
-    
+    @include para-tablet-vertical {}
+    @include para-escritorio {}
 }
 
 .hemo-grid {
     display: grid;
     gap: 25px;
-    width: 100%;
+    //width: 100%;
 
     @include para-escritorio {
+        width: 100%;
         grid-template-columns: 1fr 1fr 1fr;
         grid-template-rows: auto auto;
+
+        margin-top: 50px;
+
+        border: 1px solid blue;
 
         .hemo-card--eritrocitos { grid-column: 1; grid-row: 1; }
         .hemo-card--plaquetas { grid-column: 2; grid-row: 1; }
@@ -221,20 +251,27 @@
     border: 1px solid #f0f0f0;
     height: 100%;
 
+     @include para-movil{
+        margin: 0 auto;
+            width: 211px;
+        }
+
     &__img-container {
         flex: 1;
         display: flex;
         align-items: center;
         justify-content: center;
         padding: 20px;
-        min-height: 200px;
+        //min-height: 200px;
         overflow: hidden;
 
         img {
             max-width: 100%;
-            height: auto;
+            // height: auto;
             object-fit: contain;
-        }
+
+          
+        } 
     }
 
     &__info {
@@ -257,6 +294,8 @@
             color: #222;
             margin: 0;
         }
+
+       
     }
 
     &--sangre .hemo-card__img-container { flex: 3; }
@@ -268,9 +307,20 @@
         padding: 0;
         img {
             width: 100%;
-            height: 100%;
+            // height: 100%;
             object-fit: cover;
             transform: scale(1.1); // Pequeño zoom para llenar el card
+
+            @include para-movil{
+                height: 145px;
+            }
         }
     }
+}
+
+.padre_contendor_home_seccion_5.ruta_veterinarios_seccion_tres_preguntas{
+
+   
+    color: red;
+    width: 50%;
 }

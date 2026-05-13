@@ -1705,13 +1705,15 @@ body {
 
 
 
-}// ==========================================================================
+}
+
+// ==========================================================================
 // HOME — SECCIÓN 5 (Preguntas Frecuentes) - CLEAN VERSION
 // ==========================================================================
 
 .layout-pagina__seccion--cinco {
   background: #ffffff;
-}
+} 
 
 .padre_contendor_home_seccion_5 {
 
@@ -1725,11 +1727,14 @@ body {
   height: auto; // Dinámico para que no se corte el contenido
   min-height: 500px;
 
+   box-sizing: border-box;
+  padding: 0 64px; 
+
   @include para-escritorio {
     flex-direction: row;
     justify-content: space-between;
     align-items: flex-start;
-    padding: 112px 64px;
+    //padding: 112px 64px;
     
   }
 
@@ -1863,7 +1868,7 @@ body {
   line-height: 1.6;
   font-size: 1rem;
 }
-// ... (Resto de tus estilos de acordeón se mantienen iguales)
+
 
 // ==========================================================================
 // HOME — SECCIÓN 6 (Testimonios) - REFACTORED RESPONSIVE
