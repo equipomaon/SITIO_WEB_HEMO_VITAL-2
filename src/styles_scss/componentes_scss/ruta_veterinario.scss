@@ -59,9 +59,13 @@
             max-width: 700px;
             padding: 0 20px;
 
-            @include para-escritorio{}
+            @include para-escritorio{
+                // border: 1px solid red;
+            }
 
-            @include para-tablet-vertical{}
+            @include para-tablet-vertical{
+               
+            }
 
             @include para-movil{
 
