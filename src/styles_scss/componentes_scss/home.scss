@@ -1451,6 +1451,30 @@ body {
   width: 100%;
   }
 
+  @include para-tablet-vertical{
+      font-family: 'Comfortaa', sans-serif;
+      font-size: 45px; // Tamaño según tu requerimiento anterior
+      //font-weight: 700;
+      line-height: 1.1; // Interlineado cerrado como en la imagen
+      color: #FA8072; // Color Salmón de la imagen
+      margin: 0;
+      text-align: left;
+
+      width: 100%;
+  }
+
+  @include para-escritorio{
+    font-family: 'Comfortaa', sans-serif;
+      font-size: 45px; // Tamaño según tu requerimiento anterior
+      //font-weight: 700;
+      line-height: 1.1; // Interlineado cerrado como en la imagen
+      color: #FA8072; // Color Salmón de la imagen
+      margin: 0;
+      text-align: left;
+
+      width: 100%;
+  }
+
   //border: 1px solid red;
 }
 
