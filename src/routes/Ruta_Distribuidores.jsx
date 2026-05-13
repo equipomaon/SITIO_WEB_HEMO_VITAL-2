@@ -7,6 +7,8 @@ import '../styles_scss/componentes_scss/ruta_distribuidores.scss';
 import productos_seccion_uno from '../assets/productos_seccion_uno.png'
 import cimiVet from '../assets/cimiVet.png'
 import clinipet from '../assets/clinipetjpg.jpg'
+import animalvetdos from '../assets/animalVet2.jpg'
+import tres_ocho_plus from '../assets/tres_pluspng.png'
  
 export const Ruta_Distribuidores = () => { 
 
@@ -104,7 +106,7 @@ export const Ruta_Distribuidores = () => {
       direccion: 'Calle 33 # 26-14 Antonio Santos',
       telefonos: '3107590640',
       horario: '24 Horas',
-      logo: 'url-a-tu-logo-animalvet.png'
+      logo: animalvetdos
     },
     {
       ciudad: 'Barranquilla',
@@ -112,7 +114,7 @@ export const Ruta_Distribuidores = () => {
       direccion: 'Carrera 38 # 74-232',
       telefonos: '3016888271',
       horario: '24 Horas',
-      logo: 'url-a-tu-logo-3bplus.png'
+      logo: tres_ocho_plus
     }
   ];
   return (
@@ -179,7 +181,6 @@ export const Ruta_Distribuidores = () => {
       <section className='layout-pagina__seccion distribuidores_layout-pagina__seccion_tres'>
       <div className='distribuidores_header'>
         <h2>Distribuidores</h2>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
       </div>
 
       <div className='distribuidores_padre_contendor_seccion_tres'>
