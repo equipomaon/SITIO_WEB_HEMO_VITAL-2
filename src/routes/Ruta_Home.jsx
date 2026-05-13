@@ -202,7 +202,7 @@ export const Ruta_Home = () => {
                 <div className="home_s2_card__icon"> <img src= {iconSangre} alt="Veterinario" /> </div>
                 <h3 className="home_s2_card__title">¿Eres veterinario?</h3>
                 <p className="home_s2_card__text">Accede a nuestras unidades de sangre de forma rápida y segura.</p>
-                <a href="#" className="home_s2_card__link">Más información &rsaquo;</a>
+                <a href="/soy-veterinario" className="home_s2_card__link">Más información &rsaquo;</a>
               </div>
 
               {/* Tarjeta 2 - DESTACADA (CENTRAL) */}
@@ -229,7 +229,7 @@ export const Ruta_Home = () => {
                 <div className="home_s2_card__icon"> <img src= {iconBlood} alt="Productos" /> </div>
                 <h3 className="home_s2_card__title">Nuestros productos</h3>
                 <p className="home_s2_card__text">Contamos con diferentes tamaños de plasma y sangre entera.</p>
-                <a href="#" className="home_s2_card__link">Más información &rsaquo;</a>
+                <a href="/distribuidores" className="home_s2_card__link">Más información &rsaquo;</a>
               </div>
 
             </div>
