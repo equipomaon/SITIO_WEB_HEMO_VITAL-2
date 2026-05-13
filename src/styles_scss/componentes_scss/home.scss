@@ -1024,15 +1024,16 @@ body {
 
 @include para-movil {
   
-  // 1. Quitamos el clip-path para que el contenedor vuelva a ser rectangular
+  // 1. ACTIVAMOS EL CLIP PATH (Usando el ID de tu SVG)
   .home_s2_ellipse--clipped {
-    clip-path: none !important;
-    -webkit-clip-path: none !important;
+    clip-path: url(#relativeClip_home_s2) !important;
+    -webkit-clip-path: url(#relativeClip_home_s2) !important;
   }
 
   // 2. Ocultamos el borde SVG que dibujaba la curva
   .home_s2_ellipse__border {
-    display: none !important;
+    // display: none !important; 
+     display: block !important; 
   }
 
   // 3. Ajustamos el contenedor principal
@@ -1040,6 +1041,7 @@ body {
     height: auto; 
     border-radius: 0; // Opcional: pon 20px si quieres esquinas apenas redondeadas
     overflow: visible; // Permite que el contenido fluya bien
+    margin-top: -130px;
   }
 
   // 4. Ajustamos el fondo de los perritos
@@ -1059,7 +1061,7 @@ body {
   }
    // 6. Sombreado sutil solo en la parte inferior para móvil
   .home_s2_ellipse__overlay {
-    display: block !important;
+    // display: block !important;
     //background: transparent !important; // Mantenemos el fondo transparente
     
     // Creamos el efecto de sombreado en la base
@@ -1303,11 +1305,13 @@ body {
 .home_s3__botones {
   
   .home_seccion_header__botones {
-  width: 100%;
-  display: flex;
-  justify-content: center; /* Centrado horizontal */
-  align-items: center;
-  margin-top: 30px;
+    width: 100%;
+    display: flex;
+    justify-content: center; /* Centrado horizontal */
+    align-items: center;
+    margin-top: 30px;
+
+  
   }
 
 
@@ -1318,6 +1322,7 @@ body {
     cursor: pointer;
     background: none;
     transition: 0.3s;
+     margin-bottom: 10px;
   }
 
   .btn-negro {
@@ -1331,6 +1336,7 @@ body {
     background-color: #FF6B6B; /* Rojo coral vibrante */
     color: #ffffff;
     padding: 16px 45px;
+    //top: 60px;
     border-radius: 50px; /* Forma de cápsula */
     font-size: 18px;
     //font-weight: 600;
