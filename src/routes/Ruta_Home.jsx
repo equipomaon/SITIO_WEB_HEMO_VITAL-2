@@ -157,11 +157,17 @@ export const Ruta_Home = () => {
                 Llevamos más de 15 años salvando vidas con transfusiones seguras, disponibilidad inmediata, envíos nacionales y acompañamiento veterinario especializado.           
             </p>
 
-             <div className="home_seccion_header__botones">
-                { /*<button className="btn-negro">Button</button> */}
-                
-                <button className="btn-outline">¿Quieres ser donante?</button>
-             </div>
+             <div className="home_s3__botones">
+  <a 
+href="https://wa.me/573007202428?text=Hola%20Hemovital%2C%20estoy%20interesado%20en%20ser%20donante"
+target="_blank" 
+    rel="noopener noreferrer" 
+    className="btn-outline"
+    style={{ textDecoration: 'none', display: 'inline-block' }}
+  >
+    ¿Quieres ser donante? ›
+  </a>
+</div>
           </section>
 
             {/* PARTE IZQUIERDA: TEXTO 
@@ -230,7 +236,7 @@ export const Ruta_Home = () => {
                 <h3 className="home_s2_card__title">Nuestros productos</h3>
                 <p className="home_s2_card__text">Contamos con diferentes tamaños de plasma y sangre entera.</p>
                 <a href="/distribuidores" className="home_s2_card__link">Más información &rsaquo;</a>
-              </div>
+              </div> 
 
             </div>
           </div>
@@ -259,9 +265,17 @@ export const Ruta_Home = () => {
             <img src={video_placeholder} alt="Proceso de donación Hemovital" />
           </div>
 
-          <div className="home_s3__botones">
-            <button className="btn-outline">Quiero saber más &rsaquo;</button>
-          </div>
+         <div className="home_s3__botones">
+  <a 
+    href="https://wa.me/573007202428?text=Hola%20Hemovital%2C%20vi%20el%20video%20de%20c%C3%B3mo%20cuidan%20a%20cada%20donante%20y%20quiero%20saber%20m%C3%A1s%20informaci%C3%B3n" 
+    target="_blank" 
+    rel="noopener noreferrer" 
+    className="btn-outline"
+    style={{ textDecoration: 'none', display: 'inline-block' }}
+  >
+    Quiero saber más ›
+  </a>
+</div>
 
         </div>
       </div>

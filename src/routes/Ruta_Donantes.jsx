@@ -242,15 +242,15 @@ export const Ruta_Donantes = () => {
               </li>
             </ul>
 
-           <a 
-              href="https://wa.me/573007202428?text=Hola%20Hemovital%2C%20estoy%20interesado%20en%20que%20mi%20mascota%20sea%20donante%20de%20sangre" 
-              target="_blank" 
-              rel="noopener noreferrer" 
-              className="donantes_seccion_tres__btn"
-              style={{ textDecoration: 'none', display: 'inline-block' }}
-            >
-              Quiero ser donante
-            </a>
+            <a 
+                href="https://wa.me/573007202428?text=Hola%20Hemovital%2C%20estoy%20interesado%20en%20que%20mi%20mascota%20sea%20donante%20de%20sangre" 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                className="donantes_seccion_tres__btn"
+                style={{ textDecoration: 'none', display: 'inline-block' }}
+              >
+                Quiero ser donante
+              </a>
           </div>
 
         </div>
