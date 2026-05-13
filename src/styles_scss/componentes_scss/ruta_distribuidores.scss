@@ -29,7 +29,7 @@ $font-family: 'Montserrat', sans-serif; // O la que uses
       justify-content: space-between;
       align-items: flex-start;
       //border-bottom: 1px dotted #ccc; // Línea divisoria opcional como se ve en tu guía
-      padding: 65px; 
+      //padding: 65px; 
       //gap: 40px;
 
       margin-top: 100px;
@@ -43,6 +43,8 @@ $font-family: 'Montserrat', sans-serif; // O la que uses
 
       @include para-movil{
         padding-top: 100px;
+        padding-left: 20px;
+        padding-right: 20px;
 
         display: flex;
         flex-direction: column;
@@ -55,6 +57,10 @@ $font-family: 'Montserrat', sans-serif; // O la que uses
 
       .col_izquierda {
         flex: 1.2;
+
+        @include para-movil{
+            //padding: 20px;
+        }
 
       
         h1 {
@@ -74,12 +80,19 @@ $font-family: 'Montserrat', sans-serif; // O la que uses
             
             /* Cambiamos el ancho: en el diseño original el título ocupa un poco más del 50% 
             para permitir que las palabras largas como "transfusionales" no se corten feo */
-            width: 60%; 
+           
             max-width: 650px; /* Evita que en pantallas muy grandes se estire demasiado */
             
             /* Quita el borde azul cuando ya no lo necesites para ver el espacio real */
             border: none; 
             margin-bottom: 20px;
+
+
+            @include para-movil{
+
+                width: 100%;
+                margin-right: 20px;
+            }
         }
       }
 
