@@ -343,9 +343,9 @@
             transform: scale(1.1); // Pequeño zoom para llenar el card
 
             @include para-movil{
-                height: 145px;
+                height: 146px;
             }
         }
-    }
+    } 
 }
 
