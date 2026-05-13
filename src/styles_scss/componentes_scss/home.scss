@@ -1437,15 +1437,19 @@ body {
 }
 
 .home_s4__titulo {
-  font-family: 'Comfortaa', sans-serif;
-  font-size: 55px; // Tamaño según tu requerimiento anterior
-  font-weight: 700;
+  
+
+  @include para-movil{
+    font-family: 'Comfortaa', sans-serif;
+  font-size: 35px; // Tamaño según tu requerimiento anterior
+  //font-weight: 700;
   line-height: 1.1; // Interlineado cerrado como en la imagen
   color: #FA8072; // Color Salmón de la imagen
   margin: 0;
   text-align: left;
 
-  width: 430px;
+  width: 100%;
+  }
 
   //border: 1px solid red;
 }
