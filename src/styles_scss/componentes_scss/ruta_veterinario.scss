@@ -328,13 +328,13 @@
 
     &__info {
 
-        // background-color: #ff9a90;
-        background-color: red;
+         background-color: #ff9a90;
+        //background-color: red;
         padding: 30px 25px;
         display: flex;
         flex-direction: column;
         justify-content: center;
-        min-height: 160px;
+        min-height: 165px;
 
         h3 {
             font-size: 28px;
@@ -356,7 +356,7 @@
 
         height: 100px;
         flex: 3;
-        background-color: blue;
+        //background-color: blue;
     
     }
 
