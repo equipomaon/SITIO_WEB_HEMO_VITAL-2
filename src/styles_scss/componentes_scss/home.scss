@@ -1731,6 +1731,7 @@ body {
   padding: 0 64px; 
 
   @include para-escritorio {
+    
     flex-direction: row;
     justify-content: space-between;
     align-items: flex-start;
@@ -1740,7 +1741,7 @@ body {
 
   @include para-tablet-vertical {
 
-    padding: 5px 40px;
+    //padding: 5px 40px;
 
     // border: 1px solid red; 
 
