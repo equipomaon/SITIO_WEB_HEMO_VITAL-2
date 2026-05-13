@@ -55,11 +55,13 @@ $font-arlon: 'Arlon', sans-serif;
         height: auto; // Esto garantiza que la foto se vea COMPLETA según su proporción original
         display: block;
         object-fit: contain; // Asegura que no se corte nada de la imagen
+        margin-top: 70px;
 
         @media (min-width: 1030px) {
             border-radius: 12px;
             object-fit: cover; // En escritorio sí podemos usar cover si queremos una altura fija
             //height: 550px; 
+            margin-top: 30px;
         }
     }
 }

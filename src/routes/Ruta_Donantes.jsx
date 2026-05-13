@@ -261,7 +261,7 @@ export const Ruta_Donantes = () => {
             <div className="home_s4__header-col-der">
               <p>
                 Estos son algunos de los peluditos que ha ayudado a salvar vidas con su donación de sangre en Hemovital; Gracias a ellos, muchos perritos y gatitos han tenido una segunda oportunidad cuando más lo necesitaban. 
-                <strong>Tu mascota también puede estar aquí</strong>
+                
               </p>
               <strong>Tu mascota también puede estar aquí</strong>
             </div>
