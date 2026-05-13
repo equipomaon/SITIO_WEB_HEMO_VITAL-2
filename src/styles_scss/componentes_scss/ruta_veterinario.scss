@@ -273,7 +273,7 @@
 }
 
 .hemo-card {
-    background: #ffffff;
+    background: #e20707;
     border-radius: 40px;
     overflow: hidden;
     display: flex;
@@ -334,6 +334,7 @@
 
 // Estilos específicos para imágenes con zoom (Plaquetas y Eritrocitos)
 .hemo-card--plaquetas, .hemo-card--eritrocitos {
+
     .hemo-card__img-container {
         padding: 0;
         img {
