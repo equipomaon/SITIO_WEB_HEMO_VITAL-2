@@ -130,6 +130,10 @@ $font-family: 'Montserrat', sans-serif; // O la que uses
         }
 
         .contenedor_boton {
+
+            @include para-movil{
+                margin: 0 auto;
+            }
           .btn-solicitar {
             background-color: $color-rojo-boton;
             color: white;
