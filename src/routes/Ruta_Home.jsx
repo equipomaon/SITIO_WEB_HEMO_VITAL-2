@@ -35,7 +35,7 @@ export const Ruta_Home = () => {
 
     const [currentIndex, setCurrentIndex] = useState(0);
 
-     // 1. Reemplaza el antiguo array por este:
+    
     const testimonios = [
         {
           nombre: "Camila Osorio",

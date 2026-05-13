@@ -115,3 +115,114 @@ $font-family: 'Montserrat', sans-serif; // O la que uses
     }
   }
 }
+
+/*-------------------------------------- DISTRIBUIDORES TESTIMNIOS------------------------------------------------------------------------------------- */
+.distribuidores_layout-pagina__seccion_tres {
+ 
+  //max-width: 1200px;
+  margin-bottom: 50px !important;
+  background-color: white;
+
+  @include para-escritorio{
+
+    width: 100%;
+    margin-left: 64px !important;
+    
+
+     //border: 1px solid red;
+  }
+}
+
+.distribuidores_header h2 {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.distribuidores_header p {
+  color: #666;
+  margin-bottom: 30px;
+}
+
+/* Grid responsivo: 2 columnas en desktop, 1 en mobile */
+.distribuidores_padre_contendor_seccion_tres {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* 2 columnas iguales */
+  gap: 20px;
+}
+
+/* Estilo de cada tarjeta */
+.distribuidor_tarjeta {
+  display: flex;
+  border: 1px solid #ddd;
+  background-color: #fff;
+  min-height: 180px;
+  align-items: center;
+}
+
+/* Contenedor del logo (lado izquierdo) */
+.distribuidor_logo {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  /* Si el logo de Clinipet es oscuro, podrías manejar fondos condicionales aquí */
+}
+
+.distribuidor_logo img {
+  max-width: 100%;
+  max-height: 120px;
+  object-fit: contain;
+}
+
+/* Contenedor de texto (lado derecho) */
+.distribuidor_info {
+  flex: 1.5;
+  padding: 15px;
+  text-align: left;
+}
+
+.distribuidor_info h3 {
+  font-size: 1.2rem;
+  margin: 0;
+  font-weight: 600;
+}
+
+.distribuidor_info h4 {
+  font-size: 1.1rem;
+  margin: 0 0 10px 0;
+  color: #444;
+}
+
+.distribuidor_info p {
+  font-size: 0.85rem;
+  margin: 2px 0;
+  color: #555;
+  line-height: 1.4;
+}
+
+/* --- RESPONSIVIDAD --- */
+
+/* Tablets y pantallas medianas */
+@media (max-width: 992px) {
+  .distribuidores_padre_contendor_seccion_tres {
+    gap: 15px;
+  }
+}
+
+/* Móviles: Cambia a 1 columna y las tarjetas pueden ser verticales si prefieres */
+@media (max-width: 768px) {
+  .distribuidores_padre_contendor_seccion_tres {
+    grid-template-columns: 1fr; /* Una sola columna */
+  }
+
+  .distribuidor_tarjeta {
+    flex-direction: column; /* Opcional: logo arriba, texto abajo en móvil */
+    text-align: center;
+  }
+  
+  .distribuidor_info {
+    text-align: center;
+  }
+}

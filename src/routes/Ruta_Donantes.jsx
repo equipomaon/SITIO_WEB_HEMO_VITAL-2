@@ -250,6 +250,7 @@ export const Ruta_Donantes = () => {
         </div>
       </div>
 
+         {/* ---------------- HOME SECCIÓN 4  ---------------- */}
       <div className="layout-pagina__seccion layout-pagina__seccion--media home_s4">
         <div className="padre_contendor padre_contendor_home_seccion_4">
           
@@ -294,6 +295,8 @@ export const Ruta_Donantes = () => {
 
         </div>
       </div>
+      
+       
 
       
     </>
