@@ -25,6 +25,7 @@ $font-family: 'Montserrat', sans-serif; // O la que uses
 
     // Grid superior
     .distribuidores_header_grid {
+
       display: flex;
       justify-content: space-between;
       align-items: flex-start;
@@ -36,9 +37,14 @@ $font-family: 'Montserrat', sans-serif; // O la que uses
 
       //border: 1px solid red;
 
+      @include para-escritorio{
+        padding: 60px; 
+      }
+
       @include para-tablet-vertical{
         flex-direction: column;
         gap: 20px;
+        padding: 30px;
       }
 
       @include para-movil{
