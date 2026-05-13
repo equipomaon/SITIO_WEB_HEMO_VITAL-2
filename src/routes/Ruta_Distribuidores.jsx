@@ -135,8 +135,16 @@ export const Ruta_Distribuidores = () => {
                 cada necesidad clínica.
               </p>
               <div className="contenedor_boton">
-                <button className="btn-solicitar">Quiero solicitar sangre</button>
-              </div>
+              <a 
+                href="https://wa.me/573007202428?text=Hola%20Hemovital%2C%20necesito%20solicitar%20sangre%20para%20mi%20mascota%2E%20%C2%BFMe%20podr%C3%ADan%20ayudar%3F" 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                className="btn-solicitar"
+                style={{ textDecoration: 'none', display: 'inline-block' }}
+              >
+                Quiero solicitar sangre
+              </a>
+            </div>
             </div>
           </div>
 
