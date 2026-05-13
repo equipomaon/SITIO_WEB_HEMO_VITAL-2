@@ -165,11 +165,17 @@
          //border: 1px solid black;
 
         @include para-escritorio{
-            padding: 0px 60px;
+            padding: 0px 100px;
 
             margin-bottom: 120px;
 
            
+        }
+        @include para-tablet-vertical{
+
+             padding: 0px 60px;
+
+            margin-bottom: 120px;
         }
     }
 }
@@ -210,7 +216,7 @@
         
         //width: 100%;
         max-width: 1100px;     // Limitamos un poco para que no toque los bordes pero sea amplio
-        margin-top: 80px;
+        //margin-top: 80px;
         margin-bottom: 60px;
         
         // Quitamos el border una vez verificado
@@ -321,8 +327,9 @@
     }
 
     &__info {
+
         // background-color: #ff9a90;
-         background-color: red;
+        background-color: red;
         padding: 30px 25px;
         display: flex;
         flex-direction: column;
@@ -346,8 +353,8 @@
     }
 
     &--sangre .hemo-card__img-container { 
-        
-        height: 10px;
+
+        height: 100px;
         flex: 3;
         background-color: blue;
     
