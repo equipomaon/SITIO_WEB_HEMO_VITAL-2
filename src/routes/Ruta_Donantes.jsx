@@ -170,20 +170,20 @@ export const Ruta_Donantes = () => {
                 <div className="donantes_modal__body">
                   <h2>Requisitos para tu peludito</h2>
                   <ul className="donantes_modal__list">
-                    <li><strong>Edad:</strong> entre 1 y 8 años</li>
-                    <li><strong>Peso:</strong> desde 20 kilogramos</li>
-                    <li><strong>Vacunación:</strong> anual al día</li>
-                    <li><strong>Desparasitación:</strong> interna y externa</li>
+                    <li><strong>Edad:</strong> Entre 1 y 8 años</li>
+                    <li><strong>Peso:</strong> Desde 20 kilogramos</li>
+                    <li><strong>Vacunación:</strong> Anual al día</li>
+                    <li><strong>Desparasitación:</strong> Interna y externa</li>
                   </ul>
                 </div>
               ) : (
                 <div className="donantes_modal__body">
                   <h2>Requisitos para tu michi</h2>
                   <ul className="donantes_modal__list">
-                    <li><strong>Edad:</strong> entre 1 y 10 años</li>
-                    <li><strong>Peso:</strong> desde 3.5 kilogramos</li>
-                    <li><strong>Vacunación:</strong> anual al día</li>
-                    <li><strong>Desparasitación:</strong> interna y externa</li>
+                    <li><strong>Edad:</strong> Entre 1 y 10 años</li>
+                    <li><strong>Peso:</strong> Desde 3.5 kilogramos</li>
+                    <li><strong>Vacunación:</strong> Anual al día</li>
+                    <li><strong>Desparasitación:</strong> Interna y externa</li>
                     <li><strong>Extra:</strong> Deben ser estrictamente caseros</li>
                   </ul>
                 </div>

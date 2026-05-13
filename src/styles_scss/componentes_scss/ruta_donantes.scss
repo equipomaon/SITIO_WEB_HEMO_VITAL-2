@@ -31,6 +31,13 @@ $color-texto-oscuro: #111111;
             text-align: center;
             gap: 30px;
         }
+
+        @include para-tablet-vertical{
+            margin-top: 100px;
+            flex-direction: column;
+            text-align: center;
+            gap: 30px; 
+        }
     }
 }
 
@@ -113,6 +120,7 @@ $color-texto-oscuro: #111111;
             letter-spacing: -0.02em; // Sugerencia de tu reset para Arlon
             color: #000;
             margin: 0;
+
 
         } 
 
