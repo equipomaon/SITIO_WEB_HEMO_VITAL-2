@@ -43,9 +43,15 @@ export const Ruta_Eresveterinario = () => {
                       cada transfusión
                   </h1>
                   
-                  <button className="veterinario_header__boton">
-                      Quiero solicitar sangre
-                  </button>
+                   {/* Botón directo a WhatsApp */}
+      <a 
+        href="https://wa.me/573007202428?text=Hola%20Hemovital%2C%20quiero%20solicitar%20sangre" 
+        target="_blank" 
+        rel="noopener noreferrer" 
+        className="veterinario_header__boton"
+      >
+        Quiero solicitar sangre
+      </a>
               </div>
           </div>
       </div> 
