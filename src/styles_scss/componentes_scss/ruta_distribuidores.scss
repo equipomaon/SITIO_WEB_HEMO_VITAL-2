@@ -186,34 +186,45 @@ $font-family: 'Montserrat', sans-serif; // O la que uses
 
      //border: 1px solid red;
   }
+
+  @include para-movil{
+    margin: 20px !important;
+
+    //border: 1px solid red;
+  }
 }
 
 .distribuidores_header h2 {
-  font-size: 2rem;
-  font-weight: bold;
-  margin-bottom: 5px;
-  font-family: "Arlon", sans-serif;
-            font-weight: 500 !important;
-            /* Usamos clamp para que sea responsivo: mínimo 35px, ideal 4.5vw, máximo 60px */
-            font-size: 45px; 
-            
-            /* El line-height bajo (1.0 a 1.1) hace que las letras se vean más compactas y ocupen mejor el bloque */
-            line-height: 1.1; 
-            
-            /* Un ligero ajuste en el espaciado entre letras ayuda a que se vea más profesional */
-            letter-spacing: -0.02em; 
-            
-            text-align: left;
-            color: black;
-            
-            /* Cambiamos el ancho: en el diseño original el título ocupa un poco más del 50% 
-            para permitir que las palabras largas como "transfusionales" no se corten feo */
-            width: 60%; 
-            max-width: 650px; /* Evita que en pantallas muy grandes se estire demasiado */
-            
-            /* Quita el borde azul cuando ya no lo necesites para ver el espacio real */
-            border: none; 
-            margin-bottom: 20px;
+        font-size: 2rem;
+        font-weight: bold;
+        margin-bottom: 5px;
+        font-family: "Arlon", sans-serif;
+        font-weight: 500 !important;
+        /* Usamos clamp para que sea responsivo: mínimo 35px, ideal 4.5vw, máximo 60px */
+        font-size: 45px; 
+
+        /* El line-height bajo (1.0 a 1.1) hace que las letras se vean más compactas y ocupen mejor el bloque */
+        line-height: 1.1; 
+
+        /* Un ligero ajuste en el espaciado entre letras ayuda a que se vea más profesional */
+        letter-spacing: -0.02em; 
+
+        //text-align: left;
+        color: black;
+
+        /* Cambiamos el ancho: en el diseño original el título ocupa un poco más del 50% 
+        para permitir que las palabras largas como "transfusionales" no se corten feo */
+        //width: 60%; 
+        max-width: 650px; /* Evita que en pantallas muy grandes se estire demasiado */
+
+        /* Quita el borde azul cuando ya no lo necesites para ver el espacio real */
+        border: none; 
+        margin-bottom: 20px;
+
+        @include para-movil{
+            width: 100%;
+            text-align: center;
+        }
 }
 
 .distribuidores_header p {
