@@ -250,6 +250,51 @@ export const Ruta_Donantes = () => {
         </div>
       </div>
 
+      <div className="layout-pagina__seccion layout-pagina__seccion--media home_s4">
+        <div className="padre_contendor padre_contendor_home_seccion_4">
+          
+          <header className="home_s4__header">
+            <div className="home_s4__header-col-izq">
+              <h2 className="home_s4__titulo">Ellos ya están salvando vidas</h2>
+            </div>
+            <div className="home_s4__header-col-der">
+              <p>
+                Estos son algunos de los peluditos que ha ayudado a salvar vidas con su donación de sangre en Hemovital; Gracias a ellos, muchos perritos y gatitos han tenido una segunda oportunidad cuando más lo necesitaban. 
+                <strong>Tu mascota también puede estar aquí</strong>
+              </p>
+              <strong>Tu mascota también puede estar aquí</strong>
+            </div>
+          </header>
+
+          <div className="home_s4__galeria-container">
+            
+            {/* FILA 1: Derecha a Izquierda */}
+            <div className="home_s4__galeria-track">
+              {[...fotosFila1, ...fotosFila1].map((foto, index) => (
+                <div key={`track1-${index}`} className="home_s4__galeria-item">
+                  <div className="home_s4__placeholder-img">
+                      <img src={foto.url} alt={foto.alt} className="home_s4__imagen" />
+                  </div>
+                </div>
+              ))}
+            </div>
+
+            {/* FILA 2: Izquierda a Derecha */}
+            <div className="home_s4__galeria-track home_s4__galeria-track--reversa">
+              {[...fotosFila2, ...fotosFila2].map((foto, index) => (
+                <div key={`track2-${index}`} className="home_s4__galeria-item">
+                  <div className="home_s4__placeholder-img">
+                      <img src={foto.url} alt={foto.alt} className="home_s4__imagen" />
+                  </div>
+                </div>
+              ))}
+            </div>
+
+          </div>
+
+        </div>
+      </div>
+
       
     </>
   );

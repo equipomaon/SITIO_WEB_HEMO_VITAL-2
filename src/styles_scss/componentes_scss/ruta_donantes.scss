@@ -7,152 +7,177 @@ $color-gato-fondo: #fca198;  // Salmón/Coral pastel
 $color-texto-oscuro: #111111;
 
 
+
+$color-texto-oscuro: #111111;
+$color-coral: #f2514d;
+$font-arlon: 'Arlon', sans-serif;
+
 .donantes_layout-pagina__seccion_uno {
-    height: 100vh;
     width: 100%;
-    //padding: 60px 0 0 0; // Padding 0 abajo para que el banner toque el fondo
     background-color: #ffffff;
     display: flex;
-    flex-direction: column; // Cambiamos a columna para apilar el contenido y el banner
+    flex-direction: column;
     align-items: center;
     position: relative;
     overflow: hidden;
 
     .donantes_padre_contendor_home_seccion_header {
-
-        border: 1px solid red;
-        max-width: 1200px;
-        width: 90%;
+        width: 100%; // Cambiado a 100% para que la imagen pueda tocar los bordes en tablet
         display: flex;
-        align-items: center;
-        gap: 50px;
-        margin-top: 150px;
-        margin-bottom: 60px; // Espacio entre el contenido y el banner animado
+        flex-direction: column; 
+        margin-bottom: 60px;
+        gap: 40px;
 
-        @include para-movil {
+        // DISEÑO ESCRITORIO (Desde 1030px)
+        @media (min-width: 1030px) {
+            flex-direction: row;
+            width: 90%;
+            max-width: 1300px;
+            align-items: center;
+            gap: 60px;
             margin-top: 100px;
-            flex-direction: column;
-            text-align: center;
-            gap: 30px;
-        }
-
-        @include para-tablet-vertical{
-            width: 100%;
-
-            margin-top: -180px;
-            display: flex;
-            flex-direction: column;
-            text-align: center;
-            gap: 30px; 
         }
     }
 }
 
-/* --- BANNER ANIMADO (PARTE INFERIOR) --- */
-.donantes_banner_infinito {
-    width: 100%;
-    background-color: #ffffff;
-    border-top: 1px solid #f0f0f0;
-    overflow: hidden;
-    padding: 30px 0;
-    display: flex;
-
-    .donantes_banner_track {
-        display: flex;
-        gap: 60px;
-        animation: scrollIzquierda 25s linear infinite;
-        
-        span {
-            font-size: 3rem;
-            font-weight: 500;
-            color: #f2514d; // Color coral de la imagen
-            white-space: nowrap;
-            font-family: 'Montserrat', sans-serif;
-        }
-    }
-}
-
-// Keyframes para el movimiento infinito
-@keyframes scrollIzquierda {
-    0% { transform: translateX(0); }
-    100% { transform: translateX(-50%); } 
-}
-
-/* --- ESTILOS DE CONTENIDO --- */
+/* --- CONTENEDOR DE IMAGEN --- */
 .donantes_home_seccion_header__imagen-contenedor {
-    flex: 1;
+    width: 100%; // Ocupa todo el ancho en Tablet/Móvil
+    
+    @media (min-width: 1030px) {
+        flex: 1;
+    }
+
     .donantes_imagen_principal {
-       
+        width: 100%;
+        height: auto; // Esto garantiza que la foto se vea COMPLETA según su proporción original
+        display: block;
+        object-fit: contain; // Asegura que no se corte nada de la imagen
 
-        @include para-escritorio{
-             width: 100%;
-            height: 500px;
-            border-radius: 8px;
-
+        @media (min-width: 1030px) {
+            border-radius: 12px;
+            object-fit: cover; // En escritorio sí podemos usar cover si queremos una altura fija
+            //height: 550px; 
         }
-
-        @include para-tablet-vertical{}
-
-        @include para-movil{}
     }
 }
 
+/* --- CONTENEDOR DE TEXTO --- */
 .donantes_home_seccion_header__texto-infromativo {
-    flex: 1;
-
-    font-family: 'Arlon', sans-serif;
-
-
-    @include para-movil{
-        
-        margin-top: -10px;
+    width: 100%;
+    padding: 0 20px; // Padding lateral para que el texto no toque los bordes en móvil/tablet
+    box-sizing: border-box;
+    
+    @media (min-width: 1030px) {
+        flex: 1;
+        padding: 0;
+        text-align: left;
     }
 
-    @include para-tablet-vertical{
-        margin-top: -20px;
-    }
     .donantes_contenido_texto {
-
         display: flex;
         flex-direction: column;
-        //gap: 20px;
+        gap: 25px;
+        max-width: 700px; // Evita que el texto sea demasiado ancho en tablets grandes
+        margin: 0 auto;
 
-        width: 50%;
-
-        border: 1px solid blue;
-
-        @include para-escritorio{
-            width: 600px;
+        @media (min-width: 1030px) {
+            max-width: 100%;
+            margin: 0;
         }
-
-        @include para-tablet-vertical{
-            width: 100%;
-        }
-
-        //border: 1px solid red;
 
         .donantes_titulo_principal {
-            
-
-            font-family: 'Arlon', sans-serif;
-            font-size: 2.5rem;   // Los 40px del diseño
-            font-weight: 40;     // Usa arlon-bold.ttf
-            line-height: 1.2;
-            letter-spacing: -0.02em; // Sugerencia de tu reset para Arlon
-            color: #000;
+            font-family: $font-arlon;
+            font-size: 2.2rem;
+            font-weight: 700;
+            line-height: 1.1;
+            color: $color-texto-oscuro;
             margin: 0;
 
-
+            @media (min-width: 1030px) {
+                font-size: 3.5rem;
+            }
         } 
 
         .donantes_descripcion {
-            font-family: 'Arlon', sans-serif;
-            font-size: 1.3rem;
-            line-height: 1.6;
-            font-weight: 140;     // Usa arlon-bold.ttf
+            font-family: $font-arlon;
+            font-size: 1.1rem;
+            line-height: 1.5;
             color: #333;
         }
     }
+}
+
+/* --- ESTADÍSTICAS (Stats) --- */
+.donantes_stats_contenedor {
+    display: grid;
+    grid-template-columns: 1fr 1fr; // Siempre 2 columnas como en tu imagen de tablet
+    gap: 20px;
+    margin-top: 10px;
+    text-align: left; // Alineación a la izquierda para los números
+
+    @media (max-width: 480px) {
+        grid-template-columns: 1fr; // Solo en teléfonos muy pequeños se pone en 1 columna
+    }
+
+    .donantes_stat_item {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+    }
+
+    .donantes_stat_numero {
+        display: flex;
+        flex-direction: column;
+        font-family: $font-arlon;
+        
+        strong { 
+            font-size: 2.8rem; 
+            font-weight: 700;
+            color: $color-texto-oscuro;
+            line-height: 1;
+        }
+        span { 
+            font-size: 1.6rem;
+            color: $color-texto-oscuro;
+            font-weight: 500;
+        }
+    }
+
+    .donantes_stat_descripcion {
+        font-family: $font-arlon;
+        font-size: 0.95rem;
+        color: #555;
+        line-height: 1.3;
+        margin: 0;
+    }
+}
+
+/* --- BANNER ANIMADO --- */
+.donantes_banner_infinito {
+    width: 100%;
+    border-top: 1px solid #f0f0f0;
+    padding: 40px 0;
+    margin-top: 20px;
+
+    .donantes_banner_track {
+        display: flex;
+        gap: 50px;
+        animation: scrollIzquierda 30s linear infinite;
+        
+        span {
+            font-size: 2.2rem;
+            color: $color-coral;
+            white-space: nowrap;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 600;
+        }
+    }
+}
+
+@keyframes scrollIzquierda {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); } 
 }
 
 .donantes_stats_contenedor {
@@ -247,10 +272,11 @@ $color-texto-oscuro: #111111;
 
 /* --- GRID DE TARJETAS --- */
 .donantes_cards_grid {
+
     display: grid;
     grid-template-columns: 1fr 1fr; // Dos columnas a los lados
     gap: 40px;
-    width: 100%;
+    width: 80%;
 
     
     font-family: 'Arlon', sans-serif;
@@ -523,7 +549,7 @@ $color-texto-oscuro: #111111;
 
     .padre_contenedor_donantes_seccion_tres {
 
-        max-width: 1200px;
+        //max-width: 1200px;
         width: 100%;
         padding: 20px;
         
@@ -554,7 +580,7 @@ $color-texto-oscuro: #111111;
         }
 
         @include para-escritorio{
-           
+           margin: 90px;
         }
     }
 }
