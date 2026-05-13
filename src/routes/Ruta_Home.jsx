@@ -279,7 +279,7 @@ export const Ruta_Home = () => {
             <div className="home_s4__header-col-der">
               <p>
                 Estos son algunos de los peluditos que ha ayudado a salvar vidas con su donación de sangre en Hemovital; Gracias a ellos, muchos perritos y gatitos han tenido una segunda oportunidad cuando más lo necesitaban. 
-               
+                <strong>Tu mascota también puede estar aquí</strong>
               </p>
               <strong>Tu mascota también puede estar aquí</strong>
             </div>
@@ -391,7 +391,7 @@ export const Ruta_Home = () => {
       {/* ---------------- HOME SECCIÓN 5  ---------------- */}
       <div className="layout-pagina__seccion layout-pagina__seccion--cinco">
 
-        <div className='padre_contendor padre_contendor_home_seccion_5' >
+        <div className='padre_contendor padre_contendor_home_seccion_5 ruta_veterinarios_seccion_tres_preguntas' >
 
             {/* COLUMNA IZQUIERDA: TEXTO */}
                 <div className="home_s5__info">

@@ -162,7 +162,7 @@
         flex-direction: column;
         align-items: center;
 
-        border: 1px solid black;
+         //border: 1px solid black;
 
         @include para-escritorio{
             padding: 0px 60px;
@@ -175,7 +175,8 @@
 }
 
 .hemo-titulo {
-    font-size: 42px;
+
+    //font-size: 42px;
     font-weight: 500 !important;
     text-align: center;
     color: black;
@@ -198,10 +199,38 @@
         font-weight: 500;
 
         margin-bottom: 50px;
+
+       
     }
 
-    @include para-tablet-vertical {}
-    @include para-escritorio {}
+    @include para-tablet-vertical {
+        font-size: 35px;       // Aumentamos el tamaño para que tenga más presencia
+        line-height: 1.1;      // Altura de línea más cerrada para que se vea más unido
+        letter-spacing: -0.02em; // Un toque negativo hace que Arlon se vea más "estirada" y pro
+        
+        //width: 100%;
+        max-width: 1100px;     // Limitamos un poco para que no toque los bordes pero sea amplio
+        margin-top: 80px;
+        margin-bottom: 60px;
+        
+        // Quitamos el border una vez verificado
+        border: 1px solid black; 
+    }
+
+
+    @include para-escritorio {
+        font-size: 35px;       // Aumentamos el tamaño para que tenga más presencia
+        line-height: 1.1;      // Altura de línea más cerrada para que se vea más unido
+        letter-spacing: -0.02em; // Un toque negativo hace que Arlon se vea más "estirada" y pro
+        
+        width: 100%;
+        //max-width: 1100px;     // Limitamos un poco para que no toque los bordes pero sea amplio
+        margin-top: 80px;
+        margin-bottom: 60px;
+        
+        // Quitamos el border una vez verificado
+        border: 1px solid black; 
+    }
 }
 
 .hemo-grid {
@@ -233,6 +262,8 @@
     @include para-tablet-vertical {
         grid-template-columns: 1fr 1fr;
         .hemo-card--plasma, .hemo-card--sangre { grid-column: 1 / span 2; }
+
+        padding: 35px;
     }
 
     @include para-movil {
