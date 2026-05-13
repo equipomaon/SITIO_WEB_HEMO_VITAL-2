@@ -321,7 +321,8 @@
     }
 
     &__info {
-        background-color: #ff9a90;
+        // background-color: #ff9a90;
+         background-color: red;
         padding: 30px 25px;
         display: flex;
         flex-direction: column;
@@ -344,7 +345,15 @@
        
     }
 
-    &--sangre .hemo-card__img-container { flex: 3; }
+    &--sangre .hemo-card__img-container { 
+        
+        height: 10px;
+        flex: 3;
+        background-color: blue;
+    
+    }
+
+    
 }
 
 // Estilos específicos para imágenes con zoom (Plaquetas y Eritrocitos)
