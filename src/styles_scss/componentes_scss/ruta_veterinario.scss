@@ -260,10 +260,24 @@
     }
 
     @include para-tablet-vertical {
-        grid-template-columns: 1fr 1fr;
-        .hemo-card--plasma, .hemo-card--sangre { grid-column: 1 / span 2; }
+        width: 100%;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-rows: auto auto;
 
-        padding: 35px;
+        margin-top: 50px;
+
+         //border: 1px solid blue;
+
+        .hemo-card--eritrocitos { grid-column: 1; grid-row: 1; }
+        .hemo-card--plaquetas { grid-column: 2; grid-row: 1; }
+        .hemo-card--sangre { grid-column: 3; grid-row: 1 / span 2; }
+        
+        .hemo-card--plasma { 
+            grid-column: 1 / span 2; 
+            grid-row: 2; 
+            flex-direction: row !important;
+            .hemo-card__img-container, .hemo-card__info { flex: 1; }
+        }
     }
 
     @include para-movil {
@@ -273,14 +287,15 @@
 }
 
 .hemo-card {
-    background: #e20707;
+
+    background: white;
     border-radius: 40px;
     overflow: hidden;
     display: flex;
     flex-direction: column;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
     border: 1px solid #f0f0f0;
-    height: 100%;
+    height: auto;
 
      @include para-movil{
         margin: 0 auto;
