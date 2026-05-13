@@ -158,16 +158,16 @@ export const Ruta_Home = () => {
             </p>
 
              <div className="home_s3__botones">
-  <a 
-href="https://wa.me/573007202428?text=Hola%20Hemovital%2C%20estoy%20interesado%20en%20ser%20donante"
-target="_blank" 
-    rel="noopener noreferrer" 
-    className="btn-outline"
-    style={{ textDecoration: 'none', display: 'inline-block' }}
-  >
-    ¿Quieres ser donante? ›
-  </a>
-</div>
+              <a 
+              href="https://wa.me/573007202428?text=Hola%20Hemovital%2C%20estoy%20interesado%20en%20ser%20donante"
+              target="_blank" 
+                  rel="noopener noreferrer" 
+                  className="btn-outline"
+                  style={{ textDecoration: 'none', display: 'inline-block' }}
+                >
+                  ¿Quieres ser donante? ›
+              </a>
+            </div>
           </section>
 
             {/* PARTE IZQUIERDA: TEXTO 
