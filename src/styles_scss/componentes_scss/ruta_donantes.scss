@@ -8,8 +8,9 @@ $color-texto-oscuro: #111111;
 
 
 .donantes_layout-pagina__seccion_uno {
+    height: 100vh;
     width: 100%;
-    padding: 60px 0 0 0; // Padding 0 abajo para que el banner toque el fondo
+    //padding: 60px 0 0 0; // Padding 0 abajo para que el banner toque el fondo
     background-color: #ffffff;
     display: flex;
     flex-direction: column; // Cambiamos a columna para apilar el contenido y el banner
@@ -17,12 +18,15 @@ $color-texto-oscuro: #111111;
     position: relative;
     overflow: hidden;
 
-    .padre_contendor_home_seccion_header {
+    .donantes_padre_contendor_home_seccion_header {
+
+        border: 1px solid red;
         max-width: 1200px;
         width: 90%;
         display: flex;
         align-items: center;
         gap: 50px;
+        margin-top: 150px;
         margin-bottom: 60px; // Espacio entre el contenido y el banner animado
 
         @include para-movil {
@@ -33,7 +37,10 @@ $color-texto-oscuro: #111111;
         }
 
         @include para-tablet-vertical{
-            margin-top: 100px;
+            width: 100%;
+
+            margin-top: -180px;
+            display: flex;
             flex-direction: column;
             text-align: center;
             gap: 30px; 
@@ -72,16 +79,25 @@ $color-texto-oscuro: #111111;
 }
 
 /* --- ESTILOS DE CONTENIDO --- */
-.home_seccion_header__imagen-contenedor {
+.donantes_home_seccion_header__imagen-contenedor {
     flex: 1;
     .donantes_imagen_principal {
-        width: 100%;
-        height: auto;
-        border-radius: 8px;
+       
+
+        @include para-escritorio{
+             width: 100%;
+            height: 500px;
+            border-radius: 8px;
+
+        }
+
+        @include para-tablet-vertical{}
+
+        @include para-movil{}
     }
 }
 
-.home_seccion_header__texto-infromativo {
+.donantes_home_seccion_header__texto-infromativo {
     flex: 1;
 
     font-family: 'Arlon', sans-serif;
@@ -96,9 +112,14 @@ $color-texto-oscuro: #111111;
         margin-top: -20px;
     }
     .donantes_contenido_texto {
+
         display: flex;
         flex-direction: column;
-        gap: 20px;
+        //gap: 20px;
+
+        width: 50%;
+
+        border: 1px solid blue;
 
         @include para-escritorio{
             width: 600px;

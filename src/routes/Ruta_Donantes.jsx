@@ -57,9 +57,9 @@ export const Ruta_Donantes = () => {
       {/*DONANTES: SECCION 1 */}
       <div className="layout-pagina__seccion donantes_layout-pagina__seccion_uno">
         
-        <div className="padre_contendor padre_contendor_home_seccion_header">
+        <div className="padre_contendor donantes_padre_contendor_home_seccion_header">
           {/* PARTE IZQUIERDA : IMAGEN */}
-          <section className='home_seccion_header__imagen-contenedor'>
+          <section className='donantes_home_seccion_header__imagen-contenedor'>
             <img 
               src={imagen_derecha} 
               alt="Veterinaria atendiendo a un perro para donación de sangre" 
@@ -68,7 +68,7 @@ export const Ruta_Donantes = () => {
           </section>
 
           {/* PARTE DERECHA: TEXTO */} 
-          <section className='home_seccion_header__texto-infromativo'>
+          <section className='donantes_home_seccion_header__texto-infromativo'>
             <div className="donantes_contenido_texto">
               <h2 className="donantes_titulo_principal">
                 Hoy puedes cambiar la historia de otro peludito
