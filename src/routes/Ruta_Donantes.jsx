@@ -199,7 +199,7 @@ export const Ruta_Donantes = () => {
       <div className="layout-pagina__seccion donantes_layout-pagina__seccion_tres">
         <div className="padre_contendor padre_contenedor_donantes_seccion_tres">
           
-          {/* PARTE IZQUIERDA: VIDEO / IMAGEN */}
+          {/* PARTE IZQUIERDA: VIDEO / IMAGEN 
           <div className="donantes_seccion_tres__video-contenedor">
             <div className="video_placeholder">
               video
