@@ -1026,8 +1026,11 @@ body {
   
   // 1. ACTIVAMOS EL CLIP PATH (Usando el ID de tu SVG)
   .home_s2_ellipse--clipped {
-    clip-path: url(#relativeClip_home_s2) !important;
-    -webkit-clip-path: url(#relativeClip_home_s2) !important;
+    display: none;
+   // clip-path: url(#relativeClip_home_s2) !important;
+   // -webkit-clip-path: url(#relativeClip_home_s2) !important;
+
+
   }
 
   // 2. Ocultamos el borde SVG que dibujaba la curva
@@ -1440,6 +1443,8 @@ body {
       flex-direction: column; // En tablets/móvil se apilan
       padding-left: 20px;
       padding-right: 20px;
+
+      margin-top: 100px;
   }
 }
 
