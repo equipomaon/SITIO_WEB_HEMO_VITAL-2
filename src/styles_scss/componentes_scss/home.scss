@@ -1438,8 +1438,10 @@ body {
 
   @include para-tablet-vertical {
     flex-direction: column; // En tablets/móvil se apilan
-    padding-left: 20px;
+    padding-left: 64px;
     padding-right: 20px;
+    border: 1px solid red;
+
   }
 
   @include para-movil{
@@ -1675,9 +1677,11 @@ body {
 
   @include para-tablet-vertical {
 
-    //padding: 5px 40px;
+    padding-top: 112px;
 
     // border: 1px solid red; 
+
+    margin: 0 64px; 
 
   }
 
@@ -1889,7 +1893,7 @@ body {
   }
 
   @include para-tablet-vertical{
-     padding: 20px;
+     padding-left: 64px;
   }
 
 
@@ -1922,7 +1926,7 @@ body {
     @include para-tablet-vertical{
       font-size: 2.5rem;
       width: 60%;
-      margin-left: 20px;
+      //margin-left: 64px;
       // border: 1px solid red;
       
     }
