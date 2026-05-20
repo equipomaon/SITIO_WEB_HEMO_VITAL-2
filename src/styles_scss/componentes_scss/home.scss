@@ -1945,7 +1945,15 @@ body {
 
   //border: 1px solid blue;
 
-  height: 600px;
+ 
+
+  @include para-escritorio{
+     height: 600px;
+  }
+
+  @include para-tablet-vertical{
+    height: auto;
+  }
 }
 
 // Tarjeta individual
@@ -1971,6 +1979,10 @@ body {
     height: 260px;
     margin-right: 30px; 
     border-radius: 35px;
+  }
+
+  @include para-tablet-vertical{
+    height: 50px;
   }
 }
 
