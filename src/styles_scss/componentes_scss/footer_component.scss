@@ -2,7 +2,7 @@
 @use '../base_scss/responsive' as *;
 
 // ─────────────────────────────────────────────
-// 🎨 TOKENS LOCALES (AJUSTADOS A TEMA CLARO)
+//  TOKENS LOCALES (AJUSTADOS A TEMA CLARO)
 // ─────────────────────────────────────────────
 $footer-bg-light:     #ffffff;        // Fondo blanco como la imagen
 $footer-border-top:   #c0392b;        // Rojo corporativo
@@ -10,14 +10,19 @@ $footer-text-black:   #000000;        // Negro absoluto pedido
 $footer-font-contact: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
 
 .footer {
+  
   background-color: $footer-bg-light;
-  width: 100%;
+  width: 92%;
   box-sizing: border-box;
   font-family: $footer-font-contact;
   color: $footer-text-black;
   display: flex;
   align-items: center;
-  padding: 20px 40px;
+  //padding: 20px 40px;
+
+  //border: 1px solid red;
+
+  margin: 0 64px;
 
   @include para-movil {
     flex-direction: column;

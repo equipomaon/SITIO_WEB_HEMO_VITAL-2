@@ -16,6 +16,7 @@ export const Footer = () => {
       
       {/* SECCIÓN 1: LOGO - Sin imagen para probar buildd */}
       <section className="footer__seccion footer__seccion--uno">
+        
         <a href="/" className="footer__logo">
           <div style={{fontWeight: 'bold', padding: '5px'}}>
           <img src={logo} alt="Logo Hemovital" />

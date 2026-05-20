@@ -1408,6 +1408,9 @@ body {
     background-color: rgba(0, 0, 0, 0.65);
   }
 }
+
+
+
 // ==========================================================================
 // HOME — SECCIÓN 4 (GALERÍA VERTICAL)
 // ==========================================================================
@@ -1526,7 +1529,7 @@ body {
 // Para que la galería ignore el padding de 64px del contenedor padre y se vea de borde a borde
 .home_s4__galeria-container {
   margin-top: 20px;
-  // Si usas el truco de 100vw que te di antes, se verá perfecto.
+
 }
 
 
@@ -1539,13 +1542,14 @@ body {
   right: 50%;
   margin-left: -50vw;
   margin-right: -50vw;
+  margin-bottom: 112px;
   
   display: flex;
   flex-direction: column;
   gap: 30px; // Espacio entre la fila 1 y fila 2
   padding: 20px 0;
 
-  // Degradados laterales para suavizar el flujo de las fotos
+  /* Degradados laterales para suavizar el flujo de las fotos
   &::before, &::after {
     content: "";
     position: absolute;
@@ -1557,6 +1561,8 @@ body {
   }
   &::before { left: 0; background: linear-gradient(to right, white 10%, rgba(255,255,255,0)); }
   &::after { right: 0; background: linear-gradient(to left, white 10%, rgba(255,255,255,0)); }
+
+  */
 }
 
 .home_s4__galeria-track {
@@ -1580,7 +1586,7 @@ body {
   height: 400px;
   flex-shrink: 0;
   
-  border-radius: 20px; // Bordes definidos
+  border-radius: none; // Bordes definidos
   overflow: hidden;
   background-color: white;
  // box-shadow: 0 10px 30px rgba(0,0,0,0.06);
@@ -1639,7 +1645,7 @@ body {
 .padre_contendor_home_seccion_5 {
 
   max-width: 1400px;
-  margin: 0 auto;
+  //margin: 0 auto;
   display: flex;
   flex-direction: column;
   gap: 40px;
@@ -1649,14 +1655,21 @@ body {
   min-height: 500px;
 
    box-sizing: border-box;
-  padding: 0 64px; 
+  //padding: 0 64px; 
+
+  //border: 1px solid red;
 
   @include para-escritorio {
 
     flex-direction: row;
     justify-content: space-between;
     align-items: flex-start;
-    //padding: 112px 64px;
+
+
+
+    margin-left: 64px;
+    margin-top: 112px;
+    //padding-top: 112px;
     
   }
 
@@ -1801,6 +1814,7 @@ body {
 }
 
 .home_s6 {
+
   // 1. CONFIGURACIÓN DEL FONDO
   background-image: url('../../assets/home_s1_s2_fondo_blanco_perritos.png'); 
  // background-size: 0.5%; // Más grande en móvil para que se vea
@@ -1828,8 +1842,12 @@ body {
   @include para-escritorio {
     margin-top: -80px; 
     margin-bottom: 100px;
+
     padding: 100px; 
+
     background-size: 50%;
+
+    height: 90vh;
   } 
 
   @include para-tablet-vertical{
@@ -1840,7 +1858,7 @@ body {
 }
 
 .padre_contendor_home_seccion_6 {
-  // Quitamos el height fijo de 600px para que no corte el contenido en móviles
+  
   height: auto; 
   //margin-top: 50px;
 
@@ -1849,14 +1867,18 @@ body {
   
 
   @include para-escritorio {
-    height: 700px; // Se mantiene en escritorio si es necesario
+
+    height: 750px; // Se mantiene en escritorio si es necesario
     //margin-top: 112px;
     margin-left: 64px;
     padding-top: 112px;
+    //padding-bottom: 112px;
     
     display: flex;
     flex-direction: column;
     justify-content: center;
+
+    //border: 1px solid red;
   } 
 
   @include para-movil {
@@ -1915,10 +1937,15 @@ body {
 }
 
 .home_s6__track {
+
   display: flex;
   flex-direction: row;
   transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1);
   will-change: transform;
+
+  //border: 1px solid blue;
+
+  height: 600px;
 }
 
 // Tarjeta individual
@@ -2113,9 +2140,14 @@ body {
 
 // Estilo para los Puntos (Pagination dots) para que combinen
 .home_s6__pagination {
+
   display: flex;
   gap: 12px;
   align-items: center;
+
+  margin-top: 120px;
+
+  //border: 1px solid red;
 
   .dot {
     width: 10px;
